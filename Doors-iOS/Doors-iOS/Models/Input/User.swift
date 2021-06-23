@@ -1,15 +1,18 @@
 //
 //  User.swift
-//  Subtuner
+//  Doors-iOS
 //
 //  Created by Igor Leonovich on 5/11/20.
-//  Copyright © 2020 IELIS. All rights reserved.
+//  Copyright © 2020 FT. All rights reserved.
 //
 
 import Foundation
 
 struct User: Codable {
-    let id: Int
+    let id: UUID
     let username: String
     let email: String
+    let role: String
+    let isEmailVerified: Bool
+    let isPhoneVerified: Bool
 }

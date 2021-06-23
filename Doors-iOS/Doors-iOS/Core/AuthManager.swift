@@ -1,9 +1,9 @@
 //
 //  AuthManager.swift
-//  Subtuner
+//  Doors-iOS
 //
 //  Created by Igor Leonovich on 5/11/20.
-//  Copyright © 2020 IELIS. All rights reserved.
+//  Copyright © 2020 FT. All rights reserved.
 //
 
 import Foundation
@@ -24,7 +24,7 @@ class AuthManager {
     var refreshTokenDataTask: URLSessionDataTask?
     
     init() {
-        let genericPwdQueryable = GenericPasswordQueryable(service: "Subtuner")
+        let genericPwdQueryable = GenericPasswordQueryable(service: "Doors-iOS")
         secureStoreWithGenericPwd = SecureStore(secureStoreQueryable: genericPwdQueryable)
     }
     
@@ -34,7 +34,7 @@ class AuthManager {
         let sessionDelegate = SessionDelegate()
         let session = URLSession(configuration: sessionConfiguration, delegate: sessionDelegate, delegateQueue: OperationQueue.main)
         
-        guard let url = URL(string: "\(Constants.baseURL)users/register") else {
+        guard let url = URL(string: "\(Constants.baseURL)/auth/register") else {
             return
         }
         var request = URLRequest(url: url)
@@ -88,7 +88,7 @@ class AuthManager {
         let session = URLSession(configuration: sessionConfiguration, delegate: sessionDelegate, delegateQueue: OperationQueue.main)
 
         
-        guard let url = URL(string: "\(Constants.baseURL)users/login") else {
+        guard let url = URL(string: "\(Constants.baseURL)/auth/login") else {
             return
         }
         var request = URLRequest(url: url)
@@ -152,7 +152,7 @@ class AuthManager {
         let sessionDelegate = SessionDelegate()
         let session = URLSession(configuration: sessionConfiguration, delegate: sessionDelegate, delegateQueue: OperationQueue.main)
         
-        guard let url = URL(string: "\(Constants.baseURL)users/accessToken") else {
+        guard let url = URL(string: "\(Constants.baseURL)/auth/accessToken") else {
             return
         }
         var request = URLRequest(url: url)

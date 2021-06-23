@@ -1,15 +1,15 @@
 //
-//  SubtunerTests.swift
-//  SubtunerTests
+//  Doors-iOSTests.swift
+//  Doors-iOSTests
 //
 //  Created by Igor Leonovich on 5/5/20.
-//  Copyright © 2020 IELIS. All rights reserved.
+//  Copyright © 2020 FT. All rights reserved.
 //
 
 import XCTest
-@testable import Subtuner
+@testable import Doors-iOS
 
-class SubtunerTests: XCTestCase {
+class Doors-iOSTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

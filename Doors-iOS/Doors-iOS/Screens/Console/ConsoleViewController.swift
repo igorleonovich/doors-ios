@@ -1,9 +1,9 @@
 //
 //  ConsoleViewController.swift
-//  Subtuner
+//  Doors-iOS
 //
 //  Created by Igor Leonovich on 5/9/20.
-//  Copyright © 2020 IELIS. All rights reserved.
+//  Copyright © 2020 FT. All rights reserved.
 //
 
 import UIKit
@@ -38,7 +38,7 @@ class ConsoleViewController: BaseViewController {
         let sessionDelegate = SessionDelegate()
         let session = URLSession(configuration: core.signedSessionConfiguration, delegate: sessionDelegate, delegateQueue: OperationQueue.main)
         
-        guard let url = URL(string: "\(Constants.baseURL)users/profile") else {
+        guard let url = URL(string: "\(Constants.baseURL)/users/me") else {
             return
         }
         var request = URLRequest(url: url)
@@ -53,7 +53,7 @@ class ConsoleViewController: BaseViewController {
             } else if let data = data, let response = response as? HTTPURLResponse {
                 print(response.statusCode)
                 if response.statusCode == 200 {
-                    let user = try! JSONDecoder().decode(UserSuccessInput.self, from: data)
+                    let user = try! JSONDecoder().decode(UserPrivateInput.self, from: data)
                     print(user)
                     completion(nil)
                 } else if let error = error {

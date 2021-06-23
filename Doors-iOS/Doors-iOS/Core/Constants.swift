@@ -1,13 +1,13 @@
 //
 //  Constants.swift
-//  Subtuner
+//  Doors-iOS
 //
 //  Created by Igor Leonovich on 5/11/20.
-//  Copyright © 2020 IELIS. All rights reserved.
+//  Copyright © 2020 FT. All rights reserved.
 //
 
 import Foundation
 
 struct Constants {
-    static let baseURL = "http://dev-subtuner.com:8090/v1/"
+    static let baseURL = "http://localhost:8090/api"
 }

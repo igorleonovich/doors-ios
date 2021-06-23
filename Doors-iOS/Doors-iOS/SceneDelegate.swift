@@ -1,9 +1,9 @@
 //
 //  SceneDelegate.swift
-//  Subtuner
+//  Doors-iOS
 //
 //  Created by Igor Leonovich on 5/5/20.
-//  Copyright © 2020 IELIS. All rights reserved.
+//  Copyright © 2020 FT. All rights reserved.
 //
 
 import UIKit
