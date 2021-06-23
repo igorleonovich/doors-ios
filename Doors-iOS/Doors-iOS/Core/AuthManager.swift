@@ -50,18 +50,8 @@ class AuthManager {
                 if let error = error {
                     completion(error)
                 } else if let data = data, let response = response as? HTTPURLResponse {
-                    if response.statusCode == 200 {
-                        do {
-                            let signUpResponse = try JSONDecoder().decode(LogInSignUpInput.self, from: data)
-                            let accessToken = signUpResponse.accessToken
-                            try self.secureStoreWithGenericPwd.setValue(accessToken, for: "accessToken")
-                            self.core.signedSessionConfiguration.httpAdditionalHeaders!["Authorization"] = "Bearer \(accessToken)"
-                            try self.secureStoreWithGenericPwd.setValue(signUpResponse.refreshToken, for: "refreshToken")
-                            self.core.userManager.user = signUpResponse.user
-                            completion(nil)
-                        } catch {
-                            completion(error)
-                        }
+                    if response.statusCode == 201 {
+                        self.logIn(login: LoginOutput(email: newUser.email, password: newUser.password), completion)
                     } else if let error = error {
                         completion(error)
                     } else {
