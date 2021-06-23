@@ -8,12 +8,18 @@
 
 import UIKit
 import MBProgressHUD
+import Rswift
 
 class ConsoleViewController: BaseViewController {
     
     let core: Core
     
     var checkDataTask: URLSessionTask?
+    
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    let cellSide: CGFloat = 100.0
+    let cellSize = CGSize(width: 100, height: 100)
     
     init(core: Core) {
         self.core = core
@@ -22,6 +28,11 @@ class ConsoleViewController: BaseViewController {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        collectionView.register(R.nib.doorsServiceCell)
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -10,6 +10,10 @@
 		1C98476C82E31B2E16A426D1 /* Pods_Doors_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDF210D33472EC363B4C6EA9 /* Pods_Doors_iOS.framework */; };
 		6935CD1A26838950003CB7C0 /* DoorsiOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6935CD1926838950003CB7C0 /* DoorsiOSTests.swift */; };
 		6935CD1F26838B04003CB7C0 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6935CD1E26838B04003CB7C0 /* Colors.swift */; };
+		6954B6472683C6400073587B /* ConsoleViewController+UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6954B6462683C6400073587B /* ConsoleViewController+UICollectionView.swift */; };
+		6954B6492683C8500073587B /* DoorsServiceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6954B6482683C8500073587B /* DoorsServiceCell.xib */; };
+		69D868A72683CFCD00CA329C /* DoorServiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D868A62683CFCD00CA329C /* DoorServiceCell.swift */; };
+		69D868AD2683D96200CA329C /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D868AC2683D96200CA329C /* R.generated.swift */; };
 		918920082A7A3179DCEE6275 /* Pods_Doors_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51ED63721CC009929C04F27C /* Pods_Doors_iOSTests.framework */; };
 		C37D4BEF246AF35800B94F39 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37D4BEE246AF35800B94F39 /* UserManager.swift */; };
 		C37D4BF1246AFE0000B94F39 /* LoginOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37D4BF0246AFE0000B94F39 /* LoginOutput.swift */; };
@@ -78,6 +82,10 @@
 		63AFE602F2C55B9EB7CDB1CF /* Pods-SubtunerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SubtunerTests.release.xcconfig"; path = "Target Support Files/Pods-SubtunerTests/Pods-SubtunerTests.release.xcconfig"; sourceTree = "<group>"; };
 		6935CD1926838950003CB7C0 /* DoorsiOSTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoorsiOSTests.swift; sourceTree = "<group>"; };
 		6935CD1E26838B04003CB7C0 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		6954B6462683C6400073587B /* ConsoleViewController+UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ConsoleViewController+UICollectionView.swift"; sourceTree = "<group>"; };
+		6954B6482683C8500073587B /* DoorsServiceCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DoorsServiceCell.xib; sourceTree = "<group>"; };
+		69D868A62683CFCD00CA329C /* DoorServiceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorServiceCell.swift; sourceTree = "<group>"; };
+		69D868AC2683D96200CA329C /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		8A5B89626EC675D12F88B7D4 /* Pods-Doors-iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doors-iOSTests.release.xcconfig"; path = "Target Support Files/Pods-Doors-iOSTests/Pods-Doors-iOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		8C83F4ED6C5966CDD925730D /* Pods-Subtuner-SubtunerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Subtuner-SubtunerUITests.debug.xcconfig"; path = "Target Support Files/Pods-Subtuner-SubtunerUITests/Pods-Subtuner-SubtunerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		8DBF6BF431811BDC1EC7B91D /* Pods-Subtuner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Subtuner.debug.xcconfig"; path = "Target Support Files/Pods-Subtuner/Pods-Subtuner.debug.xcconfig"; sourceTree = "<group>"; };
@@ -172,6 +180,14 @@
 			path = Tools;
 			sourceTree = "<group>";
 		};
+		69D868AB2683D96200CA329C /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				69D868AC2683D96200CA329C /* R.generated.swift */,
+			);
+			path = "Supporting files";
+			sourceTree = "<group>";
+		};
 		7C8FE749185701E22701EC5C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -218,6 +234,7 @@
 				C38FB46024612F43000C187C /* Products */,
 				7C8FE749185701E22701EC5C /* Pods */,
 				9C3A9102AF8C23F277C6DD3B /* Frameworks */,
+				69D868AB2683D96200CA329C /* Supporting files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -344,7 +361,10 @@
 			isa = PBXGroup;
 			children = (
 				C3BBC07C24672E72001158C8 /* ConsoleViewController.swift */,
+				6954B6462683C6400073587B /* ConsoleViewController+UICollectionView.swift */,
 				C3BBC09A24675256001158C8 /* ConsoleViewController.xib */,
+				6954B6482683C8500073587B /* DoorsServiceCell.xib */,
+				69D868A62683CFCD00CA329C /* DoorServiceCell.swift */,
 			);
 			path = Console;
 			sourceTree = "<group>";
@@ -401,6 +421,7 @@
 			buildConfigurationList = C38FB48924612F47000C187C /* Build configuration list for PBXNativeTarget "Doors-iOS" */;
 			buildPhases = (
 				9853BDC83AE5F031110F2C07 /* [CP] Check Pods Manifest.lock */,
+				69D868A82683D8BD00CA329C /* R.swift */,
 				C38FB45B24612F43000C187C /* Sources */,
 				C38FB45C24612F43000C187C /* Frameworks */,
 				C38FB45D24612F43000C187C /* Resources */,
@@ -504,6 +525,7 @@
 			files = (
 				C3BBC0A324676AC0001158C8 /* ForgotPasswordViewController.xib in Resources */,
 				C3BBC09B24675256001158C8 /* ConsoleViewController.xib in Resources */,
+				6954B6492683C8500073587B /* DoorsServiceCell.xib in Resources */,
 				C3BBC09424674FA9001158C8 /* LogInViewController.xib in Resources */,
 				C38FB46F24612F46000C187C /* LaunchScreen.storyboard in Resources */,
 				C38FB46C24612F46000C187C /* Assets.xcassets in Resources */,
@@ -573,6 +595,26 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		69D868A82683D8BD00CA329C /* R.swift */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
+			);
+			name = R.swift;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$SRCROOT/Supporting files/R.generated.swift",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/Supporting files/R.generated.swift\"\n";
 		};
 		6FF74D359F4383678185AF97 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -645,6 +687,7 @@
 				6935CD1F26838B04003CB7C0 /* Colors.swift in Sources */,
 				C3BBC0B224694E2F001158C8 /* SecureStore.swift in Sources */,
 				C3BBC07924671098001158C8 /* LogInViewController.swift in Sources */,
+				6954B6472683C6400073587B /* ConsoleViewController+UICollectionView.swift in Sources */,
 				C37D4BF5246B1C9D00B94F39 /* RefreshTokenOutput.swift in Sources */,
 				C3BBC0C22469CA98001158C8 /* ServerError.swift in Sources */,
 				C38FB46724612F43000C187C /* LoadingViewController.swift in Sources */,
@@ -656,7 +699,9 @@
 				C3BBC08124673395001158C8 /* UIViewController+Extensions.swift in Sources */,
 				C3BBC0AF24694E2F001158C8 /* InternetProtocol.swift in Sources */,
 				C38FB46324612F43000C187C /* AppDelegate.swift in Sources */,
+				69D868AD2683D96200CA329C /* R.generated.swift in Sources */,
 				C37D4BF1246AFE0000B94F39 /* LoginOutput.swift in Sources */,
+				69D868A72683CFCD00CA329C /* DoorServiceCell.swift in Sources */,
 				C3BBC0842467342E001158C8 /* BaseViewController.swift in Sources */,
 				C3BBC0BA246956E1001158C8 /* NewUserOutput.swift in Sources */,
 				C3BBC0B024694E2F001158C8 /* InternetAuthenticationType.swift in Sources */,

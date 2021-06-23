@@ -17,7 +17,8 @@ struct UserPrivateInput: Codable {
     let phone: String?
     let isPhoneVerified: Bool
     let role: String
-    let doorsServices: [DoorsService]
+    let doorsServicesActive: [DoorsService]
+    let doorsServicesInactive: [DoorsService]
 }
 
 
