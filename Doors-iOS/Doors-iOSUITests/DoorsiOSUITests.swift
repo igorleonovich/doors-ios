@@ -1,5 +1,5 @@
 //
-//  Doors-iOSUITests.swift
+//  DoorsiOSUITests.swift
 //  Doors-iOSUITests
 //
 //  Created by Igor Leonovich on 5/5/20.
@@ -8,7 +8,7 @@
 
 import XCTest
 
-class Doors-iOSUITests: XCTestCase {
+class DoorsiOSUITests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

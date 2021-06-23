@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Subtuner.xcodeproj">
+      location = "self:Doors-iOS.xcodeproj">
    </FileRef>
 </Workspace>

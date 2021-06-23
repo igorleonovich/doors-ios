@@ -1,16 +1,15 @@
 //
 //  Colors.swift
-//  Subtuner
+//  Doors-iOS
 //
-//  Created by Untitled on 5/17/20.
-//  Copyright © 2020 Subtuner. All rights reserved.
+//  Created by Igor Leonovich on 5/17/20.
+//  Copyright © 2020 FT. All rights reserved.
 //
-
-import UIKit
 
 import UIKit
 
 extension UIColor {
+    
     static var customAccent: UIColor {
         if #available(iOS 13, *) {
             return UIColor { (traitCollection: UITraitCollection) -> UIColor in
