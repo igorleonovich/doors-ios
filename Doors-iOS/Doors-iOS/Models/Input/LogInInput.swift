@@ -1,5 +1,5 @@
 //
-//  SignUpResponse.swift
+//  LogInInput.swift
 //  Doors-iOS
 //
 //  Created by Igor Leonovich on 5/11/20.
@@ -8,8 +8,8 @@
 
 import Foundation
 
-struct LogInSignUpInput: Codable {
-    let user: User
+struct LogInInput: Codable {
+    let user: UserPrivateInput
     let refreshToken: String
     let accessToken: String
 }

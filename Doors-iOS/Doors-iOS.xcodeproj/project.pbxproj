@@ -13,7 +13,7 @@
 		918920082A7A3179DCEE6275 /* Pods_Doors_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51ED63721CC009929C04F27C /* Pods_Doors_iOSTests.framework */; };
 		C37D4BEF246AF35800B94F39 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37D4BEE246AF35800B94F39 /* UserManager.swift */; };
 		C37D4BF1246AFE0000B94F39 /* LoginOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37D4BF0246AFE0000B94F39 /* LoginOutput.swift */; };
-		C37D4BF3246B157600B94F39 /* UserSuccessInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37D4BF2246B157600B94F39 /* UserSuccessInput.swift */; };
+		C37D4BF3246B157600B94F39 /* UserPrivateInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37D4BF2246B157600B94F39 /* UserPrivateInput.swift */; };
 		C37D4BF5246B1C9D00B94F39 /* RefreshTokenOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37D4BF4246B1C9D00B94F39 /* RefreshTokenOutput.swift */; };
 		C37D4BF7246B1DE900B94F39 /* RefreshTokenInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37D4BF6246B1DE900B94F39 /* RefreshTokenInput.swift */; };
 		C37D4BFA246B2ADC00B94F39 /* SignedDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37D4BF9246B2ADC00B94F39 /* SignedDataTask.swift */; };
@@ -48,8 +48,7 @@
 		C3BBC0B524694F2E001158C8 /* SecureStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BBC0B424694F2E001158C8 /* SecureStoreTests.swift */; };
 		C3BBC0B7246952F5001158C8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BBC0B6246952F5001158C8 /* Constants.swift */; };
 		C3BBC0BA246956E1001158C8 /* NewUserOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BBC0B9246956E1001158C8 /* NewUserOutput.swift */; };
-		C3BBC0BE24695EE5001158C8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BBC0BD24695EE5001158C8 /* User.swift */; };
-		C3BBC0C024695F7A001158C8 /* LogInSignUpInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BBC0BF24695F7A001158C8 /* LogInSignUpInput.swift */; };
+		C3BBC0C024695F7A001158C8 /* LogInInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BBC0BF24695F7A001158C8 /* LogInInput.swift */; };
 		C3BBC0C22469CA98001158C8 /* ServerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BBC0C12469CA98001158C8 /* ServerError.swift */; };
 		DCB8AC961C16E53C706A0DA7 /* Pods_Doors_iOS_Doors_iOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B691D603BD669D6D803ECC7C /* Pods_Doors_iOS_Doors_iOSUITests.framework */; };
 /* End PBXBuildFile section */
@@ -87,7 +86,7 @@
 		B691D603BD669D6D803ECC7C /* Pods_Doors_iOS_Doors_iOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Doors_iOS_Doors_iOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C37D4BEE246AF35800B94F39 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		C37D4BF0246AFE0000B94F39 /* LoginOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginOutput.swift; sourceTree = "<group>"; };
-		C37D4BF2246B157600B94F39 /* UserSuccessInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSuccessInput.swift; sourceTree = "<group>"; };
+		C37D4BF2246B157600B94F39 /* UserPrivateInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPrivateInput.swift; sourceTree = "<group>"; };
 		C37D4BF4246B1C9D00B94F39 /* RefreshTokenOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTokenOutput.swift; sourceTree = "<group>"; };
 		C37D4BF6246B1DE900B94F39 /* RefreshTokenInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTokenInput.swift; sourceTree = "<group>"; };
 		C37D4BF9246B2ADC00B94F39 /* SignedDataTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignedDataTask.swift; sourceTree = "<group>"; };
@@ -129,8 +128,7 @@
 		C3BBC0B424694F2E001158C8 /* SecureStoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecureStoreTests.swift; sourceTree = "<group>"; };
 		C3BBC0B6246952F5001158C8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C3BBC0B9246956E1001158C8 /* NewUserOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserOutput.swift; sourceTree = "<group>"; };
-		C3BBC0BD24695EE5001158C8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		C3BBC0BF24695F7A001158C8 /* LogInSignUpInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInSignUpInput.swift; sourceTree = "<group>"; };
+		C3BBC0BF24695F7A001158C8 /* LogInInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInInput.swift; sourceTree = "<group>"; };
 		C3BBC0C12469CA98001158C8 /* ServerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerError.swift; sourceTree = "<group>"; };
 		E356F42CB3B08A8F19E298B3 /* Pods-Subtuner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Subtuner.release.xcconfig"; path = "Target Support Files/Pods-Subtuner/Pods-Subtuner.release.xcconfig"; sourceTree = "<group>"; };
 		EDC69E6A35E2EFB9EEF4EF93 /* Pods-Doors-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doors-iOS.debug.xcconfig"; path = "Target Support Files/Pods-Doors-iOS/Pods-Doors-iOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -387,10 +385,9 @@
 		C3BBC0BC24695ED1001158C8 /* Input */ = {
 			isa = PBXGroup;
 			children = (
-				C3BBC0BD24695EE5001158C8 /* User.swift */,
-				C3BBC0BF24695F7A001158C8 /* LogInSignUpInput.swift */,
+				C3BBC0BF24695F7A001158C8 /* LogInInput.swift */,
 				C3BBC0C12469CA98001158C8 /* ServerError.swift */,
-				C37D4BF2246B157600B94F39 /* UserSuccessInput.swift */,
+				C37D4BF2246B157600B94F39 /* UserPrivateInput.swift */,
 				C37D4BF6246B1DE900B94F39 /* RefreshTokenInput.swift */,
 			);
 			path = Input;
@@ -640,7 +637,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C3BBC0C024695F7A001158C8 /* LogInSignUpInput.swift in Sources */,
+				C3BBC0C024695F7A001158C8 /* LogInInput.swift in Sources */,
 				C3BBC07D24672E72001158C8 /* ConsoleViewController.swift in Sources */,
 				C3BBC0A7246948EE001158C8 /* AuthManager.swift in Sources */,
 				C37D4BFA246B2ADC00B94F39 /* SignedDataTask.swift in Sources */,
@@ -651,13 +648,12 @@
 				C37D4BF5246B1C9D00B94F39 /* RefreshTokenOutput.swift in Sources */,
 				C3BBC0C22469CA98001158C8 /* ServerError.swift in Sources */,
 				C38FB46724612F43000C187C /* LoadingViewController.swift in Sources */,
-				C37D4BF3246B157600B94F39 /* UserSuccessInput.swift in Sources */,
+				C37D4BF3246B157600B94F39 /* UserPrivateInput.swift in Sources */,
 				C3BBC08D2467472F001158C8 /* RootViewController.swift in Sources */,
 				C3BBC08724674306001158C8 /* Device.swift in Sources */,
 				C3BBC08A246746BE001158C8 /* Settings.swift in Sources */,
 				C3BBC0902467479C001158C8 /* Core.swift in Sources */,
 				C3BBC08124673395001158C8 /* UIViewController+Extensions.swift in Sources */,
-				C3BBC0BE24695EE5001158C8 /* User.swift in Sources */,
 				C3BBC0AF24694E2F001158C8 /* InternetProtocol.swift in Sources */,
 				C38FB46324612F43000C187C /* AppDelegate.swift in Sources */,
 				C37D4BF1246AFE0000B94F39 /* LoginOutput.swift in Sources */,

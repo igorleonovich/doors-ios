@@ -96,7 +96,7 @@ class AuthManager {
                 } else if let data = data, let response = response as? HTTPURLResponse {
                     if response.statusCode == 200 {
                         do {
-                            let logInResponse = try JSONDecoder().decode(LogInSignUpInput.self, from: data)
+                            let logInResponse = try JSONDecoder().decode(LogInInput.self, from: data)
                             let accessToken = logInResponse.accessToken
                             try self.secureStoreWithGenericPwd.setValue(accessToken, for: "accessToken")
                             self.core.signedSessionConfiguration.httpAdditionalHeaders!["Authorization"] = "Bearer \(accessToken)"

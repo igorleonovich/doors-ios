@@ -19,12 +19,12 @@ class UserManager {
         return fileURL
     }()
     
-    var user: User? {
+    var user: UserPrivateInput? {
         get {
             do {
                 guard let userFileURL = userFileURL else { return nil }
                 let data = try Data(contentsOf: userFileURL)
-                return try JSONDecoder().decode(User.self, from: data)
+                return try JSONDecoder().decode(UserPrivateInput.self, from: data)
             } catch {
                 print(error)
                 return nil

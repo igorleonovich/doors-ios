@@ -1,5 +1,5 @@
 //
-//  UserSuccessInput.swift
+//  UserPrivateInput.swift
 //  Doors-iOS
 //
 //  Created by Igor Leonovich on 5/12/20.
@@ -17,4 +17,14 @@ struct UserPrivateInput: Codable {
     let phone: String?
     let isPhoneVerified: Bool
     let role: String
+    let doorsServices: [DoorsService]
+}
+
+
+enum Role: String, Codable {
+    case empty, guest, use, test, dev, publish, admin
+}
+
+enum DoorsService: String, Codable {
+    case id, scene, engine, bank, arteka
 }
