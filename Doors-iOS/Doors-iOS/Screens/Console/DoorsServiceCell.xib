@@ -13,7 +13,7 @@
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DoorsServiceCell" id="nzE-PN-dbI" customClass="DoorServiceCell" customModule="Doors_iOS" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="exk-uz-JNo" customClass="CustomView" customModule="Doors_iOS" customModuleProvider="target">
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="exk-uz-JNo">
                 <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
@@ -34,11 +34,6 @@
                     <constraint firstItem="VrM-Cy-ZkB" firstAttribute="centerX" secondItem="exk-uz-JNo" secondAttribute="centerX" id="bvd-ZN-UdE"/>
                     <constraint firstItem="rjg-lZ-OdA" firstAttribute="centerX" secondItem="exk-uz-JNo" secondAttribute="centerX" id="d1U-c7-7e6"/>
                 </constraints>
-                <userDefinedRuntimeAttributes>
-                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusValue">
-                        <real key="value" value="12"/>
-                    </userDefinedRuntimeAttribute>
-                </userDefinedRuntimeAttributes>
             </collectionViewCellContentView>
             <size key="customSize" width="100" height="100"/>
             <connections>
