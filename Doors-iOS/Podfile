@@ -5,6 +5,18 @@ target 'Doors-iOS' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
+  pod 'MBProgressHUD'
+  pod 'JWTDecode'
+
   # Pods for Doors-iOS
+
+  target 'Doors-iOSTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'Doors-iOSUITests' do
+    # Pods for testing
+  end
 
 end

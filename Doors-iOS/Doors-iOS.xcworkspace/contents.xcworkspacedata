@@ -2,9 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Doors-iOS.xcodeproj">
+      location = "group:/Users/Shared/doors/il/dev/doors/doors-clients/doors-ios/Doors-iOS/Doors-iOS.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Doors-iOS.xcodeproj">
    </FileRef>
 </Workspace>

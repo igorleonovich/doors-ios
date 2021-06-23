@@ -1,16 +1,15 @@
 //
 //  AppDelegate.swift
-//  Doors-iOS
+//  Subtuner
 //
-//  Created by Igor Leonovich on 23.06.21
-//  Copyright © 2021 FT. All rights reserved.
+//  Created by Igor Leonovich on 5/5/20.
+//  Copyright © 2020 IELIS. All rights reserved.
 //
 
 import UIKit
 
-@main
+@UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {

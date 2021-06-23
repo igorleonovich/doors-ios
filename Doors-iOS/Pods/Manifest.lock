@@ -1,3 +1,20 @@
-PODFILE CHECKSUM: 1aa516de907fac0c1545e7781dc0e069614164e4
+PODS:
+  - JWTDecode (2.6.1)
+  - MBProgressHUD (1.2.0)
+
+DEPENDENCIES:
+  - JWTDecode
+  - MBProgressHUD
+
+SPEC REPOS:
+  trunk:
+    - JWTDecode
+    - MBProgressHUD
+
+SPEC CHECKSUMS:
+  JWTDecode: 5e6d4b49c2b098f994cf7617401c195c8c06300b
+  MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
+
+PODFILE CHECKSUM: f09b2919cb605055cbd90c54bcdb78bf791ebbb8
 
 COCOAPODS: 1.10.1

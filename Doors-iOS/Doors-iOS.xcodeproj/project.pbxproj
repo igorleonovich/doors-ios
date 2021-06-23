@@ -3,131 +3,473 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4D0351D5BA2808F895989320 /* Pods_Doors_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90C6E86FAA005A274AF9F289 /* Pods_Doors_iOS.framework */; };
-		69106590268364E8001B1F7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6910658F268364E8001B1F7D /* AppDelegate.swift */; };
-		69106592268364E8001B1F7D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69106591268364E8001B1F7D /* SceneDelegate.swift */; };
-		69106594268364E8001B1F7D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69106593268364E8001B1F7D /* ViewController.swift */; };
-		69106597268364E8001B1F7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69106595268364E8001B1F7D /* Main.storyboard */; };
-		69106599268364E8001B1F7D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69106598268364E8001B1F7D /* Assets.xcassets */; };
-		6910659C268364E8001B1F7D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6910659A268364E8001B1F7D /* LaunchScreen.storyboard */; };
+		1C98476C82E31B2E16A426D1 /* Pods_Doors_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDF210D33472EC363B4C6EA9 /* Pods_Doors_iOS.framework */; };
+		918920082A7A3179DCEE6275 /* Pods_Doors_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51ED63721CC009929C04F27C /* Pods_Doors_iOSTests.framework */; };
+		C37D4BEF246AF35800B94F39 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37D4BEE246AF35800B94F39 /* UserManager.swift */; };
+		C37D4BF1246AFE0000B94F39 /* LoginOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37D4BF0246AFE0000B94F39 /* LoginOutput.swift */; };
+		C37D4BF3246B157600B94F39 /* UserSuccessInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37D4BF2246B157600B94F39 /* UserSuccessInput.swift */; };
+		C37D4BF5246B1C9D00B94F39 /* RefreshTokenOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37D4BF4246B1C9D00B94F39 /* RefreshTokenOutput.swift */; };
+		C37D4BF7246B1DE900B94F39 /* RefreshTokenInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37D4BF6246B1DE900B94F39 /* RefreshTokenInput.swift */; };
+		C37D4BFA246B2ADC00B94F39 /* SignedDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37D4BF9246B2ADC00B94F39 /* SignedDataTask.swift */; };
+		C38FB46324612F43000C187C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38FB46224612F43000C187C /* AppDelegate.swift */; };
+		C38FB46524612F43000C187C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38FB46424612F43000C187C /* SceneDelegate.swift */; };
+		C38FB46724612F43000C187C /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38FB46624612F43000C187C /* LoadingViewController.swift */; };
+		C38FB46A24612F43000C187C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C38FB46824612F43000C187C /* Main.storyboard */; };
+		C38FB46C24612F46000C187C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C38FB46B24612F46000C187C /* Assets.xcassets */; };
+		C38FB46F24612F46000C187C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C38FB46D24612F46000C187C /* LaunchScreen.storyboard */; };
+		C38FB47A24612F47000C187C /* SubtunerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38FB47924612F47000C187C /* SubtunerTests.swift */; };
+		C38FB48524612F47000C187C /* SubtunerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38FB48424612F47000C187C /* SubtunerUITests.swift */; };
+		C3BBC07924671098001158C8 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BBC07824671098001158C8 /* LogInViewController.swift */; };
+		C3BBC07B24672E4C001158C8 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BBC07A24672E4C001158C8 /* SignUpViewController.swift */; };
+		C3BBC07D24672E72001158C8 /* ConsoleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BBC07C24672E72001158C8 /* ConsoleViewController.swift */; };
+		C3BBC08124673395001158C8 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BBC08024673395001158C8 /* UIViewController+Extensions.swift */; };
+		C3BBC0842467342E001158C8 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BBC0832467342E001158C8 /* BaseViewController.swift */; };
+		C3BBC08724674306001158C8 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BBC08624674306001158C8 /* Device.swift */; };
+		C3BBC08A246746BE001158C8 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BBC089246746BE001158C8 /* Settings.swift */; };
+		C3BBC08D2467472F001158C8 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BBC08C2467472F001158C8 /* RootViewController.swift */; };
+		C3BBC0902467479C001158C8 /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BBC08F2467479C001158C8 /* Core.swift */; };
+		C3BBC09224674E9E001158C8 /* LoadingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3BBC09124674E9E001158C8 /* LoadingViewController.xib */; };
+		C3BBC09424674FA9001158C8 /* LogInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3BBC09324674FA9001158C8 /* LogInViewController.xib */; };
+		C3BBC09B24675256001158C8 /* ConsoleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3BBC09A24675256001158C8 /* ConsoleViewController.xib */; };
+		C3BBC09F246766F6001158C8 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3BBC09E246766F6001158C8 /* SignUpViewController.xib */; };
+		C3BBC0A124676A7D001158C8 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BBC0A024676A7D001158C8 /* ForgotPasswordViewController.swift */; };
+		C3BBC0A324676AC0001158C8 /* ForgotPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3BBC0A224676AC0001158C8 /* ForgotPasswordViewController.xib */; };
+		C3BBC0A7246948EE001158C8 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BBC0A6246948EE001158C8 /* AuthManager.swift */; };
+		C3BBC0AF24694E2F001158C8 /* InternetProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BBC0AA24694E2F001158C8 /* InternetProtocol.swift */; };
+		C3BBC0B024694E2F001158C8 /* InternetAuthenticationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BBC0AB24694E2F001158C8 /* InternetAuthenticationType.swift */; };
+		C3BBC0B124694E2F001158C8 /* SecureStoreError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BBC0AC24694E2F001158C8 /* SecureStoreError.swift */; };
+		C3BBC0B224694E2F001158C8 /* SecureStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BBC0AD24694E2F001158C8 /* SecureStore.swift */; };
+		C3BBC0B324694E2F001158C8 /* SecureStoreQueryable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BBC0AE24694E2F001158C8 /* SecureStoreQueryable.swift */; };
+		C3BBC0B524694F2E001158C8 /* SecureStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BBC0B424694F2E001158C8 /* SecureStoreTests.swift */; };
+		C3BBC0B7246952F5001158C8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BBC0B6246952F5001158C8 /* Constants.swift */; };
+		C3BBC0BA246956E1001158C8 /* NewUserOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BBC0B9246956E1001158C8 /* NewUserOutput.swift */; };
+		C3BBC0BE24695EE5001158C8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BBC0BD24695EE5001158C8 /* User.swift */; };
+		C3BBC0C024695F7A001158C8 /* LogInSignUpInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BBC0BF24695F7A001158C8 /* LogInSignUpInput.swift */; };
+		C3BBC0C22469CA98001158C8 /* ServerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BBC0C12469CA98001158C8 /* ServerError.swift */; };
+		DCB8AC961C16E53C706A0DA7 /* Pods_Doors_iOS_Doors_iOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B691D603BD669D6D803ECC7C /* Pods_Doors_iOS_Doors_iOSUITests.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		C38FB47624612F47000C187C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C38FB45724612F43000C187C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C38FB45E24612F43000C187C;
+			remoteInfo = Subtuner;
+		};
+		C38FB48124612F47000C187C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C38FB45724612F43000C187C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C38FB45E24612F43000C187C;
+			remoteInfo = Subtuner;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
-		6910658C268364E8001B1F7D /* Doors-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Doors-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6910658F268364E8001B1F7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		69106591268364E8001B1F7D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		69106593268364E8001B1F7D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		69106596268364E8001B1F7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		69106598268364E8001B1F7D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		6910659B268364E8001B1F7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		6910659D268364E8001B1F7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		90C6E86FAA005A274AF9F289 /* Pods_Doors_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Doors_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A245C00FF8809BCDDE504A1C /* Pods-Doors-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doors-iOS.debug.xcconfig"; path = "Target Support Files/Pods-Doors-iOS/Pods-Doors-iOS.debug.xcconfig"; sourceTree = "<group>"; };
-		B2A2F1C3E906D6CE7E56C73D /* Pods-Doors-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doors-iOS.release.xcconfig"; path = "Target Support Files/Pods-Doors-iOS/Pods-Doors-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		0C684045642D5590459BA22F /* Pods-Subtuner-SubtunerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Subtuner-SubtunerUITests.release.xcconfig"; path = "Target Support Files/Pods-Subtuner-SubtunerUITests/Pods-Subtuner-SubtunerUITests.release.xcconfig"; sourceTree = "<group>"; };
+		17770AD44E5EF9F12F40F9D5 /* Pods-Doors-iOS-Doors-iOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doors-iOS-Doors-iOSUITests.debug.xcconfig"; path = "Target Support Files/Pods-Doors-iOS-Doors-iOSUITests/Pods-Doors-iOS-Doors-iOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		51ED63721CC009929C04F27C /* Pods_Doors_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Doors_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		60539553F606A7DA62DF3090 /* Pods-Doors-iOS-Doors-iOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doors-iOS-Doors-iOSUITests.release.xcconfig"; path = "Target Support Files/Pods-Doors-iOS-Doors-iOSUITests/Pods-Doors-iOS-Doors-iOSUITests.release.xcconfig"; sourceTree = "<group>"; };
+		63AFE602F2C55B9EB7CDB1CF /* Pods-SubtunerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SubtunerTests.release.xcconfig"; path = "Target Support Files/Pods-SubtunerTests/Pods-SubtunerTests.release.xcconfig"; sourceTree = "<group>"; };
+		8A5B89626EC675D12F88B7D4 /* Pods-Doors-iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doors-iOSTests.release.xcconfig"; path = "Target Support Files/Pods-Doors-iOSTests/Pods-Doors-iOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		8C83F4ED6C5966CDD925730D /* Pods-Subtuner-SubtunerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Subtuner-SubtunerUITests.debug.xcconfig"; path = "Target Support Files/Pods-Subtuner-SubtunerUITests/Pods-Subtuner-SubtunerUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		8DBF6BF431811BDC1EC7B91D /* Pods-Subtuner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Subtuner.debug.xcconfig"; path = "Target Support Files/Pods-Subtuner/Pods-Subtuner.debug.xcconfig"; sourceTree = "<group>"; };
+		9F23DFACFF2645CF391F9945 /* Pods-Doors-iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doors-iOSTests.debug.xcconfig"; path = "Target Support Files/Pods-Doors-iOSTests/Pods-Doors-iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B648C3F60EE1C42EA7AF91E6 /* Pods-SubtunerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SubtunerTests.debug.xcconfig"; path = "Target Support Files/Pods-SubtunerTests/Pods-SubtunerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B691D603BD669D6D803ECC7C /* Pods_Doors_iOS_Doors_iOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Doors_iOS_Doors_iOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C37D4BEE246AF35800B94F39 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		C37D4BF0246AFE0000B94F39 /* LoginOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginOutput.swift; sourceTree = "<group>"; };
+		C37D4BF2246B157600B94F39 /* UserSuccessInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSuccessInput.swift; sourceTree = "<group>"; };
+		C37D4BF4246B1C9D00B94F39 /* RefreshTokenOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTokenOutput.swift; sourceTree = "<group>"; };
+		C37D4BF6246B1DE900B94F39 /* RefreshTokenInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTokenInput.swift; sourceTree = "<group>"; };
+		C37D4BF9246B2ADC00B94F39 /* SignedDataTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignedDataTask.swift; sourceTree = "<group>"; };
+		C38FB45F24612F43000C187C /* Doors-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Doors-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C38FB46224612F43000C187C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C38FB46424612F43000C187C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		C38FB46624612F43000C187C /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		C38FB46924612F43000C187C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C38FB46B24612F46000C187C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C38FB46E24612F46000C187C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C38FB47024612F46000C187C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C38FB47524612F47000C187C /* Doors-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Doors-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C38FB47924612F47000C187C /* SubtunerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtunerTests.swift; sourceTree = "<group>"; };
+		C38FB47B24612F47000C187C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C38FB48024612F47000C187C /* Doors-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Doors-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C38FB48424612F47000C187C /* SubtunerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtunerUITests.swift; sourceTree = "<group>"; };
+		C38FB48624612F47000C187C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C3BBC07824671098001158C8 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		C3BBC07A24672E4C001158C8 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		C3BBC07C24672E72001158C8 /* ConsoleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleViewController.swift; sourceTree = "<group>"; };
+		C3BBC08024673395001158C8 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		C3BBC0832467342E001158C8 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		C3BBC08624674306001158C8 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		C3BBC089246746BE001158C8 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		C3BBC08C2467472F001158C8 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		C3BBC08F2467479C001158C8 /* Core.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core.swift; sourceTree = "<group>"; };
+		C3BBC09124674E9E001158C8 /* LoadingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingViewController.xib; sourceTree = "<group>"; };
+		C3BBC09324674FA9001158C8 /* LogInViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogInViewController.xib; sourceTree = "<group>"; };
+		C3BBC09A24675256001158C8 /* ConsoleViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConsoleViewController.xib; sourceTree = "<group>"; };
+		C3BBC09E246766F6001158C8 /* SignUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
+		C3BBC0A024676A7D001158C8 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		C3BBC0A224676AC0001158C8 /* ForgotPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ForgotPasswordViewController.xib; sourceTree = "<group>"; };
+		C3BBC0A6246948EE001158C8 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		C3BBC0A924694E2E001158C8 /* SecureStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecureStore.h; sourceTree = "<group>"; };
+		C3BBC0AA24694E2F001158C8 /* InternetProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InternetProtocol.swift; sourceTree = "<group>"; };
+		C3BBC0AB24694E2F001158C8 /* InternetAuthenticationType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InternetAuthenticationType.swift; sourceTree = "<group>"; };
+		C3BBC0AC24694E2F001158C8 /* SecureStoreError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecureStoreError.swift; sourceTree = "<group>"; };
+		C3BBC0AD24694E2F001158C8 /* SecureStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecureStore.swift; sourceTree = "<group>"; };
+		C3BBC0AE24694E2F001158C8 /* SecureStoreQueryable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecureStoreQueryable.swift; sourceTree = "<group>"; };
+		C3BBC0B424694F2E001158C8 /* SecureStoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecureStoreTests.swift; sourceTree = "<group>"; };
+		C3BBC0B6246952F5001158C8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		C3BBC0B9246956E1001158C8 /* NewUserOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserOutput.swift; sourceTree = "<group>"; };
+		C3BBC0BD24695EE5001158C8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		C3BBC0BF24695F7A001158C8 /* LogInSignUpInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInSignUpInput.swift; sourceTree = "<group>"; };
+		C3BBC0C12469CA98001158C8 /* ServerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerError.swift; sourceTree = "<group>"; };
+		E356F42CB3B08A8F19E298B3 /* Pods-Subtuner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Subtuner.release.xcconfig"; path = "Target Support Files/Pods-Subtuner/Pods-Subtuner.release.xcconfig"; sourceTree = "<group>"; };
+		EDC69E6A35E2EFB9EEF4EF93 /* Pods-Doors-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doors-iOS.debug.xcconfig"; path = "Target Support Files/Pods-Doors-iOS/Pods-Doors-iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		F89795B6214D5EF4CE3C793C /* Pods-Doors-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doors-iOS.release.xcconfig"; path = "Target Support Files/Pods-Doors-iOS/Pods-Doors-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		FDF210D33472EC363B4C6EA9 /* Pods_Doors_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Doors_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		69106589268364E8001B1F7D /* Frameworks */ = {
+		C38FB45C24612F43000C187C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4D0351D5BA2808F895989320 /* Pods_Doors_iOS.framework in Frameworks */,
+				1C98476C82E31B2E16A426D1 /* Pods_Doors_iOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C38FB47224612F47000C187C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				918920082A7A3179DCEE6275 /* Pods_Doors_iOSTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C38FB47D24612F47000C187C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCB8AC961C16E53C706A0DA7 /* Pods_Doors_iOS_Doors_iOSUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		69106583268364E7001B1F7D = {
+		7C8FE749185701E22701EC5C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				6910658E268364E8001B1F7D /* Doors-iOS */,
-				6910658D268364E8001B1F7D /* Products */,
-				72EEEED740E011352096D127 /* Pods */,
-				A75F9A4E8CCEFC5C37440238 /* Frameworks */,
+				8DBF6BF431811BDC1EC7B91D /* Pods-Subtuner.debug.xcconfig */,
+				E356F42CB3B08A8F19E298B3 /* Pods-Subtuner.release.xcconfig */,
+				8C83F4ED6C5966CDD925730D /* Pods-Subtuner-SubtunerUITests.debug.xcconfig */,
+				0C684045642D5590459BA22F /* Pods-Subtuner-SubtunerUITests.release.xcconfig */,
+				B648C3F60EE1C42EA7AF91E6 /* Pods-SubtunerTests.debug.xcconfig */,
+				63AFE602F2C55B9EB7CDB1CF /* Pods-SubtunerTests.release.xcconfig */,
+				EDC69E6A35E2EFB9EEF4EF93 /* Pods-Doors-iOS.debug.xcconfig */,
+				F89795B6214D5EF4CE3C793C /* Pods-Doors-iOS.release.xcconfig */,
+				17770AD44E5EF9F12F40F9D5 /* Pods-Doors-iOS-Doors-iOSUITests.debug.xcconfig */,
+				60539553F606A7DA62DF3090 /* Pods-Doors-iOS-Doors-iOSUITests.release.xcconfig */,
+				9F23DFACFF2645CF391F9945 /* Pods-Doors-iOSTests.debug.xcconfig */,
+				8A5B89626EC675D12F88B7D4 /* Pods-Doors-iOSTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		9C3A9102AF8C23F277C6DD3B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FDF210D33472EC363B4C6EA9 /* Pods_Doors_iOS.framework */,
+				B691D603BD669D6D803ECC7C /* Pods_Doors_iOS_Doors_iOSUITests.framework */,
+				51ED63721CC009929C04F27C /* Pods_Doors_iOSTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C37D4BF8246B2AC800B94F39 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				C37D4BF9246B2ADC00B94F39 /* SignedDataTask.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		C38FB45624612F43000C187C = {
+			isa = PBXGroup;
+			children = (
+				C38FB46124612F43000C187C /* Doors-iOS */,
+				C38FB47824612F47000C187C /* Doors-iOSTests */,
+				C38FB48324612F47000C187C /* Doors-iOSUITests */,
+				C38FB46024612F43000C187C /* Products */,
+				7C8FE749185701E22701EC5C /* Pods */,
+				9C3A9102AF8C23F277C6DD3B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		6910658D268364E8001B1F7D /* Products */ = {
+		C38FB46024612F43000C187C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6910658C268364E8001B1F7D /* Doors-iOS.app */,
+				C38FB45F24612F43000C187C /* Doors-iOS.app */,
+				C38FB47524612F47000C187C /* Doors-iOSTests.xctest */,
+				C38FB48024612F47000C187C /* Doors-iOSUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		6910658E268364E8001B1F7D /* Doors-iOS */ = {
+		C38FB46124612F43000C187C /* Doors-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				6910658F268364E8001B1F7D /* AppDelegate.swift */,
-				69106591268364E8001B1F7D /* SceneDelegate.swift */,
-				69106593268364E8001B1F7D /* ViewController.swift */,
-				69106595268364E8001B1F7D /* Main.storyboard */,
-				69106598268364E8001B1F7D /* Assets.xcassets */,
-				6910659A268364E8001B1F7D /* LaunchScreen.storyboard */,
-				6910659D268364E8001B1F7D /* Info.plist */,
+				C3BBC0B8246956B0001158C8 /* Models */,
+				C3BBC0822467341E001158C8 /* Base */,
+				C3BBC08B246746E6001158C8 /* Screens */,
+				C3BBC08E2467478C001158C8 /* Core */,
+				C3BBC0882467434F001158C8 /* Settings */,
+				C3BBC085246742FC001158C8 /* Utils */,
+				C3BBC07F24673387001158C8 /* Extensions */,
+				C38FB46224612F43000C187C /* AppDelegate.swift */,
+				C38FB46424612F43000C187C /* SceneDelegate.swift */,
+				C38FB46824612F43000C187C /* Main.storyboard */,
+				C38FB46B24612F46000C187C /* Assets.xcassets */,
+				C38FB46D24612F46000C187C /* LaunchScreen.storyboard */,
+				C38FB47024612F46000C187C /* Info.plist */,
 			);
 			path = "Doors-iOS";
 			sourceTree = "<group>";
 		};
-		72EEEED740E011352096D127 /* Pods */ = {
+		C38FB47824612F47000C187C /* Doors-iOSTests */ = {
 			isa = PBXGroup;
 			children = (
-				A245C00FF8809BCDDE504A1C /* Pods-Doors-iOS.debug.xcconfig */,
-				B2A2F1C3E906D6CE7E56C73D /* Pods-Doors-iOS.release.xcconfig */,
+				C38FB47924612F47000C187C /* SubtunerTests.swift */,
+				C3BBC0B424694F2E001158C8 /* SecureStoreTests.swift */,
+				C38FB47B24612F47000C187C /* Info.plist */,
 			);
-			name = Pods;
-			path = Pods;
+			path = "Doors-iOSTests";
 			sourceTree = "<group>";
 		};
-		A75F9A4E8CCEFC5C37440238 /* Frameworks */ = {
+		C38FB48324612F47000C187C /* Doors-iOSUITests */ = {
 			isa = PBXGroup;
 			children = (
-				90C6E86FAA005A274AF9F289 /* Pods_Doors_iOS.framework */,
+				C38FB48424612F47000C187C /* SubtunerUITests.swift */,
+				C38FB48624612F47000C187C /* Info.plist */,
 			);
-			name = Frameworks;
+			path = "Doors-iOSUITests";
+			sourceTree = "<group>";
+		};
+		C3BBC07E24672E8B001158C8 /* Start */ = {
+			isa = PBXGroup;
+			children = (
+				C38FB46624612F43000C187C /* LoadingViewController.swift */,
+				C3BBC09124674E9E001158C8 /* LoadingViewController.xib */,
+				C3BBC07824671098001158C8 /* LogInViewController.swift */,
+				C3BBC09324674FA9001158C8 /* LogInViewController.xib */,
+				C3BBC07A24672E4C001158C8 /* SignUpViewController.swift */,
+				C3BBC09E246766F6001158C8 /* SignUpViewController.xib */,
+				C3BBC0A024676A7D001158C8 /* ForgotPasswordViewController.swift */,
+				C3BBC0A224676AC0001158C8 /* ForgotPasswordViewController.xib */,
+			);
+			path = Start;
+			sourceTree = "<group>";
+		};
+		C3BBC07F24673387001158C8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C3BBC08024673395001158C8 /* UIViewController+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C3BBC0822467341E001158C8 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				C3BBC0832467342E001158C8 /* BaseViewController.swift */,
+				C3BBC08C2467472F001158C8 /* RootViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		C3BBC085246742FC001158C8 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				C3BBC0A824694E10001158C8 /* SecureStore */,
+				C3BBC08624674306001158C8 /* Device.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		C3BBC0882467434F001158C8 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				C3BBC089246746BE001158C8 /* Settings.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		C3BBC08B246746E6001158C8 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				C3BBC07E24672E8B001158C8 /* Start */,
+				C3BBC09724675223001158C8 /* Console */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		C3BBC08E2467478C001158C8 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				C3BBC08F2467479C001158C8 /* Core.swift */,
+				C3BBC0A6246948EE001158C8 /* AuthManager.swift */,
+				C3BBC0B6246952F5001158C8 /* Constants.swift */,
+				C37D4BEE246AF35800B94F39 /* UserManager.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		C3BBC09724675223001158C8 /* Console */ = {
+			isa = PBXGroup;
+			children = (
+				C3BBC07C24672E72001158C8 /* ConsoleViewController.swift */,
+				C3BBC09A24675256001158C8 /* ConsoleViewController.xib */,
+			);
+			path = Console;
+			sourceTree = "<group>";
+		};
+		C3BBC0A824694E10001158C8 /* SecureStore */ = {
+			isa = PBXGroup;
+			children = (
+				C3BBC0AB24694E2F001158C8 /* InternetAuthenticationType.swift */,
+				C3BBC0AA24694E2F001158C8 /* InternetProtocol.swift */,
+				C3BBC0A924694E2E001158C8 /* SecureStore.h */,
+				C3BBC0AD24694E2F001158C8 /* SecureStore.swift */,
+				C3BBC0AC24694E2F001158C8 /* SecureStoreError.swift */,
+				C3BBC0AE24694E2F001158C8 /* SecureStoreQueryable.swift */,
+			);
+			path = SecureStore;
+			sourceTree = "<group>";
+		};
+		C3BBC0B8246956B0001158C8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C37D4BF8246B2AC800B94F39 /* Networking */,
+				C3BBC0BC24695ED1001158C8 /* Input */,
+				C3BBC0BB24695ECB001158C8 /* Output */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C3BBC0BB24695ECB001158C8 /* Output */ = {
+			isa = PBXGroup;
+			children = (
+				C3BBC0B9246956E1001158C8 /* NewUserOutput.swift */,
+				C37D4BF0246AFE0000B94F39 /* LoginOutput.swift */,
+				C37D4BF4246B1C9D00B94F39 /* RefreshTokenOutput.swift */,
+			);
+			path = Output;
+			sourceTree = "<group>";
+		};
+		C3BBC0BC24695ED1001158C8 /* Input */ = {
+			isa = PBXGroup;
+			children = (
+				C3BBC0BD24695EE5001158C8 /* User.swift */,
+				C3BBC0BF24695F7A001158C8 /* LogInSignUpInput.swift */,
+				C3BBC0C12469CA98001158C8 /* ServerError.swift */,
+				C37D4BF2246B157600B94F39 /* UserSuccessInput.swift */,
+				C37D4BF6246B1DE900B94F39 /* RefreshTokenInput.swift */,
+			);
+			path = Input;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6910658B268364E8001B1F7D /* Doors-iOS */ = {
+		C38FB45E24612F43000C187C /* Doors-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 691065A0268364E8001B1F7D /* Build configuration list for PBXNativeTarget "Doors-iOS" */;
+			buildConfigurationList = C38FB48924612F47000C187C /* Build configuration list for PBXNativeTarget "Doors-iOS" */;
 			buildPhases = (
-				6BC1258681059822CC390BC2 /* [CP] Check Pods Manifest.lock */,
-				69106588268364E8001B1F7D /* Sources */,
-				69106589268364E8001B1F7D /* Frameworks */,
-				6910658A268364E8001B1F7D /* Resources */,
+				9853BDC83AE5F031110F2C07 /* [CP] Check Pods Manifest.lock */,
+				C38FB45B24612F43000C187C /* Sources */,
+				C38FB45C24612F43000C187C /* Frameworks */,
+				C38FB45D24612F43000C187C /* Resources */,
+				6FF74D359F4383678185AF97 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "Doors-iOS";
-			productName = "Doors-iOS";
-			productReference = 6910658C268364E8001B1F7D /* Doors-iOS.app */;
+			productName = Subtuner;
+			productReference = C38FB45F24612F43000C187C /* Doors-iOS.app */;
 			productType = "com.apple.product-type.application";
+		};
+		C38FB47424612F47000C187C /* Doors-iOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C38FB48C24612F47000C187C /* Build configuration list for PBXNativeTarget "Doors-iOSTests" */;
+			buildPhases = (
+				04EBD0B784B8EDD0B8259B60 /* [CP] Check Pods Manifest.lock */,
+				C38FB47124612F47000C187C /* Sources */,
+				C38FB47224612F47000C187C /* Frameworks */,
+				C38FB47324612F47000C187C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C38FB47724612F47000C187C /* PBXTargetDependency */,
+			);
+			name = "Doors-iOSTests";
+			productName = SubtunerTests;
+			productReference = C38FB47524612F47000C187C /* Doors-iOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C38FB47F24612F47000C187C /* Doors-iOSUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C38FB48F24612F47000C187C /* Build configuration list for PBXNativeTarget "Doors-iOSUITests" */;
+			buildPhases = (
+				02342E1000E5DF147B46E637 /* [CP] Check Pods Manifest.lock */,
+				C38FB47C24612F47000C187C /* Sources */,
+				C38FB47D24612F47000C187C /* Frameworks */,
+				C38FB47E24612F47000C187C /* Resources */,
+				AA8E803AB3D7A7271067678A /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C38FB48224612F47000C187C /* PBXTargetDependency */,
+			);
+			name = "Doors-iOSUITests";
+			productName = SubtunerUITests;
+			productReference = C38FB48024612F47000C187C /* Doors-iOSUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		69106584268364E7001B1F7D /* Project object */ = {
+		C38FB45724612F43000C187C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1250;
-				LastUpgradeCheck = 1250;
+				LastSwiftUpdateCheck = 1140;
+				LastUpgradeCheck = 1140;
+				ORGANIZATIONNAME = Subtuner;
 				TargetAttributes = {
-					6910658B268364E8001B1F7D = {
-						CreatedOnToolsVersion = 12.5.1;
+					C38FB45E24612F43000C187C = {
+						CreatedOnToolsVersion = 11.4.1;
+					};
+					C38FB47424612F47000C187C = {
+						CreatedOnToolsVersion = 11.4.1;
+						TestTargetID = C38FB45E24612F43000C187C;
+					};
+					C38FB47F24612F47000C187C = {
+						CreatedOnToolsVersion = 11.4.1;
+						TestTargetID = C38FB45E24612F43000C187C;
 					};
 				};
 			};
-			buildConfigurationList = 69106587268364E7001B1F7D /* Build configuration list for PBXProject "Doors-iOS" */;
+			buildConfigurationList = C38FB45A24612F43000C187C /* Build configuration list for PBXProject "Doors-iOS" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -135,31 +477,113 @@
 				en,
 				Base,
 			);
-			mainGroup = 69106583268364E7001B1F7D;
-			productRefGroup = 6910658D268364E8001B1F7D /* Products */;
+			mainGroup = C38FB45624612F43000C187C;
+			productRefGroup = C38FB46024612F43000C187C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6910658B268364E8001B1F7D /* Doors-iOS */,
+				C38FB45E24612F43000C187C /* Doors-iOS */,
+				C38FB47424612F47000C187C /* Doors-iOSTests */,
+				C38FB47F24612F47000C187C /* Doors-iOSUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		6910658A268364E8001B1F7D /* Resources */ = {
+		C38FB45D24612F43000C187C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6910659C268364E8001B1F7D /* LaunchScreen.storyboard in Resources */,
-				69106599268364E8001B1F7D /* Assets.xcassets in Resources */,
-				69106597268364E8001B1F7D /* Main.storyboard in Resources */,
+				C3BBC0A324676AC0001158C8 /* ForgotPasswordViewController.xib in Resources */,
+				C3BBC09B24675256001158C8 /* ConsoleViewController.xib in Resources */,
+				C3BBC09424674FA9001158C8 /* LogInViewController.xib in Resources */,
+				C38FB46F24612F46000C187C /* LaunchScreen.storyboard in Resources */,
+				C38FB46C24612F46000C187C /* Assets.xcassets in Resources */,
+				C38FB46A24612F43000C187C /* Main.storyboard in Resources */,
+				C3BBC09F246766F6001158C8 /* SignUpViewController.xib in Resources */,
+				C3BBC09224674E9E001158C8 /* LoadingViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C38FB47324612F47000C187C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C38FB47E24612F47000C187C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		6BC1258681059822CC390BC2 /* [CP] Check Pods Manifest.lock */ = {
+		02342E1000E5DF147B46E637 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Doors-iOS-Doors-iOSUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		04EBD0B784B8EDD0B8259B60 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Doors-iOSTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6FF74D359F4383678185AF97 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Doors-iOS/Pods-Doors-iOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Doors-iOS/Pods-Doors-iOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Doors-iOS/Pods-Doors-iOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9853BDC83AE5F031110F2C07 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -181,34 +605,108 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		AA8E803AB3D7A7271067678A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Doors-iOS-Doors-iOSUITests/Pods-Doors-iOS-Doors-iOSUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Doors-iOS-Doors-iOSUITests/Pods-Doors-iOS-Doors-iOSUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Doors-iOS-Doors-iOSUITests/Pods-Doors-iOS-Doors-iOSUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		69106588268364E8001B1F7D /* Sources */ = {
+		C38FB45B24612F43000C187C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				69106594268364E8001B1F7D /* ViewController.swift in Sources */,
-				69106590268364E8001B1F7D /* AppDelegate.swift in Sources */,
-				69106592268364E8001B1F7D /* SceneDelegate.swift in Sources */,
+				C3BBC0C024695F7A001158C8 /* LogInSignUpInput.swift in Sources */,
+				C3BBC07D24672E72001158C8 /* ConsoleViewController.swift in Sources */,
+				C3BBC0A7246948EE001158C8 /* AuthManager.swift in Sources */,
+				C37D4BFA246B2ADC00B94F39 /* SignedDataTask.swift in Sources */,
+				C37D4BF7246B1DE900B94F39 /* RefreshTokenInput.swift in Sources */,
+				C3BBC0B224694E2F001158C8 /* SecureStore.swift in Sources */,
+				C3BBC07924671098001158C8 /* LogInViewController.swift in Sources */,
+				C37D4BF5246B1C9D00B94F39 /* RefreshTokenOutput.swift in Sources */,
+				C3BBC0C22469CA98001158C8 /* ServerError.swift in Sources */,
+				C38FB46724612F43000C187C /* LoadingViewController.swift in Sources */,
+				C37D4BF3246B157600B94F39 /* UserSuccessInput.swift in Sources */,
+				C3BBC08D2467472F001158C8 /* RootViewController.swift in Sources */,
+				C3BBC08724674306001158C8 /* Device.swift in Sources */,
+				C3BBC08A246746BE001158C8 /* Settings.swift in Sources */,
+				C3BBC0902467479C001158C8 /* Core.swift in Sources */,
+				C3BBC08124673395001158C8 /* UIViewController+Extensions.swift in Sources */,
+				C3BBC0BE24695EE5001158C8 /* User.swift in Sources */,
+				C3BBC0AF24694E2F001158C8 /* InternetProtocol.swift in Sources */,
+				C38FB46324612F43000C187C /* AppDelegate.swift in Sources */,
+				C37D4BF1246AFE0000B94F39 /* LoginOutput.swift in Sources */,
+				C3BBC0842467342E001158C8 /* BaseViewController.swift in Sources */,
+				C3BBC0BA246956E1001158C8 /* NewUserOutput.swift in Sources */,
+				C3BBC0B024694E2F001158C8 /* InternetAuthenticationType.swift in Sources */,
+				C37D4BEF246AF35800B94F39 /* UserManager.swift in Sources */,
+				C3BBC0A124676A7D001158C8 /* ForgotPasswordViewController.swift in Sources */,
+				C3BBC0B7246952F5001158C8 /* Constants.swift in Sources */,
+				C38FB46524612F43000C187C /* SceneDelegate.swift in Sources */,
+				C3BBC0B324694E2F001158C8 /* SecureStoreQueryable.swift in Sources */,
+				C3BBC07B24672E4C001158C8 /* SignUpViewController.swift in Sources */,
+				C3BBC0B124694E2F001158C8 /* SecureStoreError.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C38FB47124612F47000C187C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3BBC0B524694F2E001158C8 /* SecureStoreTests.swift in Sources */,
+				C38FB47A24612F47000C187C /* SubtunerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C38FB47C24612F47000C187C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C38FB48524612F47000C187C /* SubtunerUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		C38FB47724612F47000C187C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C38FB45E24612F43000C187C /* Doors-iOS */;
+			targetProxy = C38FB47624612F47000C187C /* PBXContainerItemProxy */;
+		};
+		C38FB48224612F47000C187C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C38FB45E24612F43000C187C /* Doors-iOS */;
+			targetProxy = C38FB48124612F47000C187C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
-		69106595268364E8001B1F7D /* Main.storyboard */ = {
+		C38FB46824612F43000C187C /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				69106596268364E8001B1F7D /* Base */,
+				C38FB46924612F43000C187C /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		6910659A268364E8001B1F7D /* LaunchScreen.storyboard */ = {
+		C38FB46D24612F46000C187C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				6910659B268364E8001B1F7D /* Base */,
+				C38FB46E24612F46000C187C /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -216,7 +714,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		6910659E268364E8001B1F7D /* Debug */ = {
+		C38FB48724612F47000C187C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -242,7 +740,6 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -267,7 +764,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -277,7 +774,7 @@
 			};
 			name = Debug;
 		};
-		6910659F268364E8001B1F7D /* Release */ = {
+		C38FB48824612F47000C187C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -303,7 +800,6 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -322,7 +818,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -332,12 +828,11 @@
 			};
 			name = Release;
 		};
-		691065A1268364E8001B1F7D /* Debug */ = {
+		C38FB48A24612F47000C187C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A245C00FF8809BCDDE504A1C /* Pods-Doors-iOS.debug.xcconfig */;
+			baseConfigurationReference = EDC69E6A35E2EFB9EEF4EF93 /* Pods-Doors-iOS.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "Doors-iOS";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9TZZKGNZ6W;
 				INFOPLIST_FILE = "Doors-iOS/Info.plist";
@@ -345,19 +840,18 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ft.Doors-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ft.doors.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
-		691065A2268364E8001B1F7D /* Release */ = {
+		C38FB48B24612F47000C187C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B2A2F1C3E906D6CE7E56C73D /* Pods-Doors-iOS.release.xcconfig */;
+			baseConfigurationReference = F89795B6214D5EF4CE3C793C /* Pods-Doors-iOS.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "Doors-iOS";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9TZZKGNZ6W;
 				INFOPLIST_FILE = "Doors-iOS/Info.plist";
@@ -365,35 +859,137 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ft.Doors-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ft.doors.ios;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		C38FB48D24612F47000C187C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9F23DFACFF2645CF391F9945 /* Pods-Doors-iOSTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Doors-iOSTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ft.doors.ios.tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Doors-iOS.app/Doors-iOS";
+			};
+			name = Debug;
+		};
+		C38FB48E24612F47000C187C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A5B89626EC675D12F88B7D4 /* Pods-Doors-iOSTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Doors-iOSTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ft.doors.ios.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Doors-iOS.app/Doors-iOS";
+			};
+			name = Release;
+		};
+		C38FB49024612F47000C187C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 17770AD44E5EF9F12F40F9D5 /* Pods-Doors-iOS-Doors-iOSUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Doors-iOSUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ft.doors.UITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Doors-IOS";
+			};
+			name = Debug;
+		};
+		C38FB49124612F47000C187C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 60539553F606A7DA62DF3090 /* Pods-Doors-iOS-Doors-iOSUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Doors-iOSUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ft.doors.UITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Doors-IOS";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		69106587268364E7001B1F7D /* Build configuration list for PBXProject "Doors-iOS" */ = {
+		C38FB45A24612F43000C187C /* Build configuration list for PBXProject "Doors-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6910659E268364E8001B1F7D /* Debug */,
-				6910659F268364E8001B1F7D /* Release */,
+				C38FB48724612F47000C187C /* Debug */,
+				C38FB48824612F47000C187C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		691065A0268364E8001B1F7D /* Build configuration list for PBXNativeTarget "Doors-iOS" */ = {
+		C38FB48924612F47000C187C /* Build configuration list for PBXNativeTarget "Doors-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				691065A1268364E8001B1F7D /* Debug */,
-				691065A2268364E8001B1F7D /* Release */,
+				C38FB48A24612F47000C187C /* Debug */,
+				C38FB48B24612F47000C187C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C38FB48C24612F47000C187C /* Build configuration list for PBXNativeTarget "Doors-iOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C38FB48D24612F47000C187C /* Debug */,
+				C38FB48E24612F47000C187C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C38FB48F24612F47000C187C /* Build configuration list for PBXNativeTarget "Doors-iOSUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C38FB49024612F47000C187C /* Debug */,
+				C38FB49124612F47000C187C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 69106584268364E7001B1F7D /* Project object */;
+	rootObject = C38FB45724612F43000C187C /* Project object */;
 }
