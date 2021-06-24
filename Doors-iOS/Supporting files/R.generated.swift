@@ -269,22 +269,15 @@ struct _R: Rswift.Validatable {
   #if os(iOS) || os(tvOS)
   struct nib: Rswift.Validatable {
     static func validate() throws {
-      try _ConsoleViewController.validate()
       try _DoorsServiceCell.validate()
     }
 
-    struct _ConsoleViewController: Rswift.NibResourceType, Rswift.Validatable {
+    struct _ConsoleViewController: Rswift.NibResourceType {
       let bundle = R.hostingBundle
       let name = "ConsoleViewController"
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
-      }
-
-      static func validate() throws {
-        if #available(iOS 13.0, *) { if UIKit.UIImage(systemName: "text.justify") == nil { throw Rswift.ValidationError(description: "[R.swift] System image named 'text.justify' is used in nib 'ConsoleViewController', but couldn't be loaded.") } }
-        if #available(iOS 11.0, tvOS 11.0, *) {
-        }
       }
 
       fileprivate init() {}
