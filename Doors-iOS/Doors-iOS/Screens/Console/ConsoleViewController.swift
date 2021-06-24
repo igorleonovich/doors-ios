@@ -21,10 +21,6 @@ class ConsoleViewController: BaseNavigableViewController {
         super.viewDidLoad()
         navigationItem.title = "Console"
         collectionView.register(R.nib.doorsServiceCell)
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         core.userManager.getUserProfile { error in
             if let error = error {
                 let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
@@ -35,7 +31,18 @@ class ConsoleViewController: BaseNavigableViewController {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+    }
+    
+    // MARK: Navigation
+    
+    func showSceneViewController() {
+        let sceneViewController = SceneViewController(core: core)
+        navigationController?.pushViewController(sceneViewController, animated: true)
     }
 }

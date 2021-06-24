@@ -14,6 +14,9 @@
 		6954B6492683C8500073587B /* DoorsServiceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6954B6482683C8500073587B /* DoorsServiceCell.xib */; };
 		69D868A72683CFCD00CA329C /* DoorServiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D868A62683CFCD00CA329C /* DoorServiceCell.swift */; };
 		69D868AD2683D96200CA329C /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D868AC2683D96200CA329C /* R.generated.swift */; };
+		69EFCA9B2684B7B600E17CB7 /* SceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69EFCA9A2684B7B600E17CB7 /* SceneViewController.swift */; };
+		69EFCA9D2684B7E300E17CB7 /* SceneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69EFCA9C2684B7E300E17CB7 /* SceneViewController.xib */; };
+		69EFCA9F2684B8C200E17CB7 /* ConsoleNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69EFCA9E2684B8C200E17CB7 /* ConsoleNavigationController.swift */; };
 		918920082A7A3179DCEE6275 /* Pods_Doors_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51ED63721CC009929C04F27C /* Pods_Doors_iOSTests.framework */; };
 		C37D4BEF246AF35800B94F39 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37D4BEE246AF35800B94F39 /* UserManager.swift */; };
 		C37D4BF1246AFE0000B94F39 /* LoginOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37D4BF0246AFE0000B94F39 /* LoginOutput.swift */; };
@@ -86,6 +89,9 @@
 		6954B6482683C8500073587B /* DoorsServiceCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DoorsServiceCell.xib; sourceTree = "<group>"; };
 		69D868A62683CFCD00CA329C /* DoorServiceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorServiceCell.swift; sourceTree = "<group>"; };
 		69D868AC2683D96200CA329C /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		69EFCA9A2684B7B600E17CB7 /* SceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneViewController.swift; sourceTree = "<group>"; };
+		69EFCA9C2684B7E300E17CB7 /* SceneViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SceneViewController.xib; sourceTree = "<group>"; };
+		69EFCA9E2684B8C200E17CB7 /* ConsoleNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleNavigationController.swift; sourceTree = "<group>"; };
 		8A5B89626EC675D12F88B7D4 /* Pods-Doors-iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doors-iOSTests.release.xcconfig"; path = "Target Support Files/Pods-Doors-iOSTests/Pods-Doors-iOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		8C83F4ED6C5966CDD925730D /* Pods-Subtuner-SubtunerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Subtuner-SubtunerUITests.debug.xcconfig"; path = "Target Support Files/Pods-Subtuner-SubtunerUITests/Pods-Subtuner-SubtunerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		8DBF6BF431811BDC1EC7B91D /* Pods-Subtuner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Subtuner.debug.xcconfig"; path = "Target Support Files/Pods-Subtuner/Pods-Subtuner.debug.xcconfig"; sourceTree = "<group>"; };
@@ -186,6 +192,15 @@
 				69D868AC2683D96200CA329C /* R.generated.swift */,
 			);
 			path = "Supporting files";
+			sourceTree = "<group>";
+		};
+		69EFCA992684B79D00E17CB7 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				69EFCA9A2684B7B600E17CB7 /* SceneViewController.swift */,
+				69EFCA9C2684B7E300E17CB7 /* SceneViewController.xib */,
+			);
+			path = Scene;
 			sourceTree = "<group>";
 		};
 		7C8FE749185701E22701EC5C /* Pods */ = {
@@ -342,6 +357,7 @@
 			children = (
 				C3BBC07E24672E8B001158C8 /* Start */,
 				C3BBC09724675223001158C8 /* Console */,
+				69EFCA992684B79D00E17CB7 /* Scene */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -365,6 +381,7 @@
 				C3BBC09A24675256001158C8 /* ConsoleViewController.xib */,
 				6954B6482683C8500073587B /* DoorsServiceCell.xib */,
 				69D868A62683CFCD00CA329C /* DoorServiceCell.swift */,
+				69EFCA9E2684B8C200E17CB7 /* ConsoleNavigationController.swift */,
 			);
 			path = Console;
 			sourceTree = "<group>";
@@ -524,6 +541,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3BBC0A324676AC0001158C8 /* ForgotPasswordViewController.xib in Resources */,
+				69EFCA9D2684B7E300E17CB7 /* SceneViewController.xib in Resources */,
 				C3BBC09B24675256001158C8 /* ConsoleViewController.xib in Resources */,
 				6954B6492683C8500073587B /* DoorsServiceCell.xib in Resources */,
 				C3BBC09424674FA9001158C8 /* LogInViewController.xib in Resources */,
@@ -682,6 +700,7 @@
 				C3BBC0C024695F7A001158C8 /* LogInInput.swift in Sources */,
 				C3BBC07D24672E72001158C8 /* ConsoleViewController.swift in Sources */,
 				C3BBC0A7246948EE001158C8 /* AuthManager.swift in Sources */,
+				69EFCA9B2684B7B600E17CB7 /* SceneViewController.swift in Sources */,
 				C37D4BFA246B2ADC00B94F39 /* SignedDataTask.swift in Sources */,
 				C37D4BF7246B1DE900B94F39 /* RefreshTokenInput.swift in Sources */,
 				6935CD1F26838B04003CB7C0 /* Colors.swift in Sources */,
@@ -704,6 +723,7 @@
 				69D868A72683CFCD00CA329C /* DoorServiceCell.swift in Sources */,
 				C3BBC0842467342E001158C8 /* BaseViewController.swift in Sources */,
 				C3BBC0BA246956E1001158C8 /* NewUserOutput.swift in Sources */,
+				69EFCA9F2684B8C200E17CB7 /* ConsoleNavigationController.swift in Sources */,
 				C3BBC0B024694E2F001158C8 /* InternetAuthenticationType.swift in Sources */,
 				C37D4BEF246AF35800B94F39 /* UserManager.swift in Sources */,
 				C3BBC0A124676A7D001158C8 /* ForgotPasswordViewController.swift in Sources */,

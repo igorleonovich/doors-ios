@@ -81,7 +81,7 @@ class RootViewController: BaseViewController {
     
     func showConsoleNavigationController() {
         let consoleViewController = ConsoleViewController(core: core)
-        let consoleNavigationController = UINavigationController(rootViewController: consoleViewController)
+        let consoleNavigationController = ConsoleNavigationController(rootViewController: consoleViewController)
         addChild(consoleNavigationController)
         consoleNavigationController.view.translatesAutoresizingMaskIntoConstraints = false
         centerView.addSubview(consoleNavigationController.view)

@@ -14,7 +14,13 @@ extension ConsoleViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let user = core.userManager.user else { return }
         if indexPath.section == 0 {
-            
+            let doorsService = user.doorsServicesActive[indexPath.row]
+            switch doorsService {
+            case .scene:
+                showSceneViewController()
+            default:
+                break
+            }
         } else {
             let doorsService = user.doorsServicesInactive[indexPath.row]
             core.userManager.activateDoorsService(doorsService: doorsService) { [weak self] error in
