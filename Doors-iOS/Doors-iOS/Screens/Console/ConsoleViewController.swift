@@ -12,8 +12,6 @@ import Rswift
 
 class ConsoleViewController: BaseNavigableViewController {
     
-    var checkDataTask: URLSessionTask?
-    
     @IBOutlet weak var collectionView: UICollectionView!
     
     let cellSide: CGFloat = 100.0
@@ -27,44 +25,17 @@ class ConsoleViewController: BaseNavigableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.signedCall { error in
-            print("")
+        core.userManager.getUserProfile { error in
+            if let error = error {
+                let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                alert.addAction(okAction)
+                self.present(alert, animated: true, completion: nil)
+            }
         }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-    }
-    
-    func signedCall(_ completion: @escaping (Swift.Error?) -> Void) {
-        checkDataTask?.cancel()
-        
-        let sessionDelegate = SessionDelegate()
-        let session = URLSession(configuration: core.signedSessionConfiguration, delegate: sessionDelegate, delegateQueue: OperationQueue.main)
-        
-        guard let url = URL(string: "\(Constants.baseURL)/users/me") else {
-            return
-        }
-        var request = URLRequest(url: url)
-        request.httpMethod = "GET"
-        checkDataTask = session.dataTask(with: request) { [weak self] (data, response, error) in
-            guard let `self` = self else { return }
-            defer {
-                self.checkDataTask = nil
-            }
-            if let error = error {
-                completion(error)
-            } else if let data = data, let response = response as? HTTPURLResponse {
-                print(response.statusCode)
-                if response.statusCode == 200 {
-                    let user = try! JSONDecoder().decode(UserPrivateInput.self, from: data)
-                    print(user)
-                    completion(nil)
-                } else if let error = error {
-                    completion(error)
-                }
-            }
-        }
-        checkDataTask?.signedResume(core: core)
     }
 }

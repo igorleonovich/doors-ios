@@ -12,7 +12,32 @@ import Rswift
 extension ConsoleViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        guard let user = core.userManager.user else { return }
+        if indexPath.section == 0 {
+            
+        } else {
+            let doorsService = user.doorsServicesInactive[indexPath.row]
+            core.userManager.activateDoorsService(doorsService: doorsService) { [weak self] error in
+                guard let `self` = self else { return }
+                if let error = error {
+                    let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+                    let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                    alert.addAction(okAction)
+                    self.present(alert, animated: true, completion: nil)
+                } else {
+                    self.core.userManager.getUserProfile { error in
+                        if let error = error {
+                            let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+                            let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                            alert.addAction(okAction)
+                            self.present(alert, animated: true, completion: nil)
+                        } else {
+                            collectionView.reloadData()
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
