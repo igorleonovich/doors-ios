@@ -13,6 +13,8 @@ class Core {
     let authManager = AuthManager()
     let userManager = UserManager()
     
+    var sceneManager: SceneManager?
+    
     lazy var signedSessionConfiguration: URLSessionConfiguration = {
         let config = URLSessionConfiguration.default
         config.httpAdditionalHeaders = ["Content-Type": "application/json"]

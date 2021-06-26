@@ -10,7 +10,7 @@ import Foundation
 
 class UserManager {
     
-    var core: Core!
+    weak var core: Core!
     
     var getUserProfileDataTask: URLSessionTask?
     var activateDoorsServiceDataTask: URLSessionTask?
