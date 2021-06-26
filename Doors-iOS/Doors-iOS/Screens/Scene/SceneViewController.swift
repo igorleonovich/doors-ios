@@ -35,7 +35,7 @@ class SceneViewController: BaseNavigableViewController {
         }
     }
     
-    // MARK: - List Actions
+    // MARK: - List Actions: Read
     
     private func read() {
         MBProgressHUD.showAdded(to: self.view, animated: true)
@@ -47,11 +47,21 @@ class SceneViewController: BaseNavigableViewController {
                 alert.addAction(okAction)
                 self.present(alert, animated: true, completion: nil)
             } else if let list = list {
-                self.textView.text = "\(print(list))"
+                self.putToEditor(list: list)
             }
             MBProgressHUD.hide(for: self.view, animated: true)
         }
     }
+    
+    private func putToEditor(list: ListDTO) {
+        var text = ""
+        list.points.forEach { point in
+            text += "* \(point.text)\n"
+        }
+        self.textView.text = text
+    }
+    
+    // MARK: - List Actions: Write
     
     private func write() {
         
