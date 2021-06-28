@@ -56,6 +56,9 @@ class SceneViewController: BaseNavigableViewController {
     private func putToEditor(list: ListDTO) {
         var text = ""
         list.points.forEach { point in
+            if let pointID = point.id {
+                text += "<!--\(pointID)-->\n"
+            }
             text += "* \(point.text)\n"
         }
         self.textView.text = text
@@ -64,7 +67,10 @@ class SceneViewController: BaseNavigableViewController {
     // MARK: - List Actions: Write
     
     private func write() {
-        
+        let lines = textView.text?.components(separatedBy: "/n")
+        lines?.forEach { line in
+            
+        }
     }
     
     // MARK: - Sub Menu Actions
