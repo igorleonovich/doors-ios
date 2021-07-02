@@ -12,7 +12,7 @@ class RootViewController: BaseViewController {
     
     let centerView = UIView()
     
-    let core: Core
+    weak var core: Core!
     
     var loadingViewController: UIViewController?
     var authNavigationController: UINavigationController?

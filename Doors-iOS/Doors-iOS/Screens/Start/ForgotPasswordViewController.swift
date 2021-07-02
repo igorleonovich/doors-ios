@@ -10,7 +10,7 @@ import UIKit
 
 class ForgotPasswordViewController: BaseViewController {
     
-    let core: Core
+    weak var core: Core!
     
     init(core: Core) {
         self.core = core

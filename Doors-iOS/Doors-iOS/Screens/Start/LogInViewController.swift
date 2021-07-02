@@ -14,7 +14,7 @@ class LogInViewController: BaseViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
-    let core: Core
+    weak var core: Core!
     
     init(core: Core) {
         self.core = core

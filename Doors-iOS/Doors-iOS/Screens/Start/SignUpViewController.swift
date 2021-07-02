@@ -11,7 +11,7 @@ import MBProgressHUD
 
 class SignUpViewController: BaseViewController {
     
-    let core: Core
+    weak var core: Core!
     
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!

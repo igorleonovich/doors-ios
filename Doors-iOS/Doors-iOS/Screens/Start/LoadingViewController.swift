@@ -10,7 +10,7 @@ import UIKit
 
 class LoadingViewController: UIViewController {
 
-    let core: Core
+    weak var core: Core!
     
     weak var delegate: LoadingViewControllerDelegate?
     

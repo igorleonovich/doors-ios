@@ -95,7 +95,7 @@ class BaseViewController: UIViewController {
 
 class BaseNavigableViewController: BaseViewController {
     
-    let core: Core
+    weak var core: Core!
     
     init(core: Core) {
         self.core = core
