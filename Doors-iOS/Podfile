@@ -19,6 +19,7 @@ target 'Doors-iOS' do
   end
 
   target 'Doors-iOSUITests' do
+    inherit! :search_paths
     # Pods for testing
   end
 

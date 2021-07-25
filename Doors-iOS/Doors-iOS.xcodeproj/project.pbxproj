@@ -60,7 +60,7 @@
 		C3BBC0BA246956E1001158C8 /* NewUserOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BBC0B9246956E1001158C8 /* NewUserOutput.swift */; };
 		C3BBC0C024695F7A001158C8 /* LogInInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BBC0BF24695F7A001158C8 /* LogInInput.swift */; };
 		C3BBC0C22469CA98001158C8 /* ServerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BBC0C12469CA98001158C8 /* ServerError.swift */; };
-		DCB8AC961C16E53C706A0DA7 /* Pods_Doors_iOS_Doors_iOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B691D603BD669D6D803ECC7C /* Pods_Doors_iOS_Doors_iOSUITests.framework */; };
+		FB8EEBF59519DE2CE33A9693 /* Pods_Doors_iOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68B62B85D56F339A28F80373 /* Pods_Doors_iOSUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,9 +83,11 @@
 /* Begin PBXFileReference section */
 		0C684045642D5590459BA22F /* Pods-Subtuner-SubtunerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Subtuner-SubtunerUITests.release.xcconfig"; path = "Target Support Files/Pods-Subtuner-SubtunerUITests/Pods-Subtuner-SubtunerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		17770AD44E5EF9F12F40F9D5 /* Pods-Doors-iOS-Doors-iOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doors-iOS-Doors-iOSUITests.debug.xcconfig"; path = "Target Support Files/Pods-Doors-iOS-Doors-iOSUITests/Pods-Doors-iOS-Doors-iOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		3BA5DB3434471DF3859CF7D2 /* Pods-Doors-iOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doors-iOSUITests.debug.xcconfig"; path = "Target Support Files/Pods-Doors-iOSUITests/Pods-Doors-iOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		51ED63721CC009929C04F27C /* Pods_Doors_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Doors_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		60539553F606A7DA62DF3090 /* Pods-Doors-iOS-Doors-iOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doors-iOS-Doors-iOSUITests.release.xcconfig"; path = "Target Support Files/Pods-Doors-iOS-Doors-iOSUITests/Pods-Doors-iOS-Doors-iOSUITests.release.xcconfig"; sourceTree = "<group>"; };
 		63AFE602F2C55B9EB7CDB1CF /* Pods-SubtunerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SubtunerTests.release.xcconfig"; path = "Target Support Files/Pods-SubtunerTests/Pods-SubtunerTests.release.xcconfig"; sourceTree = "<group>"; };
+		68B62B85D56F339A28F80373 /* Pods_Doors_iOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Doors_iOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6935CD1926838950003CB7C0 /* DoorsiOSTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoorsiOSTests.swift; sourceTree = "<group>"; };
 		6935CD1E26838B04003CB7C0 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		6954B6462683C6400073587B /* ConsoleViewController+UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ConsoleViewController+UICollectionView.swift"; sourceTree = "<group>"; };
@@ -103,7 +105,6 @@
 		8DBF6BF431811BDC1EC7B91D /* Pods-Subtuner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Subtuner.debug.xcconfig"; path = "Target Support Files/Pods-Subtuner/Pods-Subtuner.debug.xcconfig"; sourceTree = "<group>"; };
 		9F23DFACFF2645CF391F9945 /* Pods-Doors-iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doors-iOSTests.debug.xcconfig"; path = "Target Support Files/Pods-Doors-iOSTests/Pods-Doors-iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B648C3F60EE1C42EA7AF91E6 /* Pods-SubtunerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SubtunerTests.debug.xcconfig"; path = "Target Support Files/Pods-SubtunerTests/Pods-SubtunerTests.debug.xcconfig"; sourceTree = "<group>"; };
-		B691D603BD669D6D803ECC7C /* Pods_Doors_iOS_Doors_iOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Doors_iOS_Doors_iOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C37D4BEE246AF35800B94F39 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		C37D4BF0246AFE0000B94F39 /* LoginOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginOutput.swift; sourceTree = "<group>"; };
 		C37D4BF2246B157600B94F39 /* UserPrivateInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPrivateInput.swift; sourceTree = "<group>"; };
@@ -154,6 +155,7 @@
 		EDC69E6A35E2EFB9EEF4EF93 /* Pods-Doors-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doors-iOS.debug.xcconfig"; path = "Target Support Files/Pods-Doors-iOS/Pods-Doors-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		F89795B6214D5EF4CE3C793C /* Pods-Doors-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doors-iOS.release.xcconfig"; path = "Target Support Files/Pods-Doors-iOS/Pods-Doors-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		FDF210D33472EC363B4C6EA9 /* Pods_Doors_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Doors_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FED5AB1F2A0AE262D1D52EF0 /* Pods-Doors-iOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doors-iOSUITests.release.xcconfig"; path = "Target Support Files/Pods-Doors-iOSUITests/Pods-Doors-iOSUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,7 +179,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DCB8AC961C16E53C706A0DA7 /* Pods_Doors_iOS_Doors_iOSUITests.framework in Frameworks */,
+				FB8EEBF59519DE2CE33A9693 /* Pods_Doors_iOSUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,6 +237,8 @@
 				60539553F606A7DA62DF3090 /* Pods-Doors-iOS-Doors-iOSUITests.release.xcconfig */,
 				9F23DFACFF2645CF391F9945 /* Pods-Doors-iOSTests.debug.xcconfig */,
 				8A5B89626EC675D12F88B7D4 /* Pods-Doors-iOSTests.release.xcconfig */,
+				3BA5DB3434471DF3859CF7D2 /* Pods-Doors-iOSUITests.debug.xcconfig */,
+				FED5AB1F2A0AE262D1D52EF0 /* Pods-Doors-iOSUITests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -243,8 +247,8 @@
 			isa = PBXGroup;
 			children = (
 				FDF210D33472EC363B4C6EA9 /* Pods_Doors_iOS.framework */,
-				B691D603BD669D6D803ECC7C /* Pods_Doors_iOS_Doors_iOSUITests.framework */,
 				51ED63721CC009929C04F27C /* Pods_Doors_iOSTests.framework */,
+				68B62B85D56F339A28F80373 /* Pods_Doors_iOSUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -497,7 +501,6 @@
 				C38FB47C24612F47000C187C /* Sources */,
 				C38FB47D24612F47000C187C /* Frameworks */,
 				C38FB47E24612F47000C187C /* Resources */,
-				AA8E803AB3D7A7271067678A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -602,7 +605,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Doors-iOS-Doors-iOSUITests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Doors-iOSUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -688,23 +691,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		AA8E803AB3D7A7271067678A /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Doors-iOS-Doors-iOSUITests/Pods-Doors-iOS-Doors-iOSUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Doors-iOS-Doors-iOSUITests/Pods-Doors-iOS-Doors-iOSUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Doors-iOS-Doors-iOSUITests/Pods-Doors-iOS-Doors-iOSUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1005,7 +991,7 @@
 		};
 		C38FB49024612F47000C187C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 17770AD44E5EF9F12F40F9D5 /* Pods-Doors-iOS-Doors-iOSUITests.debug.xcconfig */;
+			baseConfigurationReference = 3BA5DB3434471DF3859CF7D2 /* Pods-Doors-iOSUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1025,7 +1011,7 @@
 		};
 		C38FB49124612F47000C187C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 60539553F606A7DA62DF3090 /* Pods-Doors-iOS-Doors-iOSUITests.release.xcconfig */;
+			baseConfigurationReference = FED5AB1F2A0AE262D1D52EF0 /* Pods-Doors-iOSUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
