@@ -14,7 +14,10 @@
                 <outlet property="bottomConstraint" destination="Cr4-Fy-FjX" id="K3n-C6-2JX"/>
                 <outlet property="containerHeightConstraint" destination="XgU-2m-cX4" id="0fg-7w-ssm"/>
                 <outlet property="emailTextField" destination="kue-Uh-7BQ" id="AiC-HG-YIh"/>
+                <outlet property="forgotPasswordButton" destination="hCr-Zn-Ie9" id="oon-3C-XD1"/>
+                <outlet property="logInButton" destination="Eax-X4-7xp" id="1ik-Vr-Qzr"/>
                 <outlet property="passwordTextField" destination="ag0-ue-AxG" id="yPP-TS-SuN"/>
+                <outlet property="signUpButton" destination="fxw-3P-b63" id="kfU-o4-UgK"/>
                 <outlet property="view" destination="iN0-l3-epB" id="Tj3-qZ-6Qu"/>
             </connections>
         </placeholder>
@@ -29,56 +32,56 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="li0-44-Laf" userLabel="Container View">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="500"/>
                             <subviews>
-                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="frE-au-ifK">
-                                    <rect key="frame" x="40" y="66.5" width="240" height="367"/>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="frE-au-ifK">
+                                    <rect key="frame" x="40" y="68" width="240" height="364"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Doors-iOS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UYo-MM-H6t">
-                                            <rect key="frame" x="0.0" y="0.0" width="240" height="43"/>
-                                            <fontDescription key="fontDescription" type="system" weight="black" pointSize="36"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="D O O R S" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UYo-MM-H6t">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="34"/>
+                                            <fontDescription key="fontDescription" type="system" weight="black" pointSize="15"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="il@ft.com" borderStyle="roundedRect" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kue-Uh-7BQ">
-                                            <rect key="frame" x="0.0" y="75" width="240" height="34"/>
-                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="16"/>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="il@ft.com" borderStyle="roundedRect" placeholder="E-mail" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kue-Uh-7BQ">
+                                            <rect key="frame" x="0.0" y="66" width="240" height="34"/>
+                                            <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="15"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ag0-ue-AxG">
-                                            <rect key="frame" x="0.0" y="141" width="240" height="34"/>
-                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="16"/>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ag0-ue-AxG">
+                                            <rect key="frame" x="0.0" y="132" width="240" height="34"/>
+                                            <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="15"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hCr-Zn-Ie9">
-                                            <rect key="frame" x="0.0" y="207" width="240" height="32"/>
-                                            <color key="backgroundColor" systemColor="darkTextColor"/>
-                                            <fontDescription key="fontDescription" type="system" weight="black" pointSize="16"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eax-X4-7xp" customClass="CustomButton" customModule="Doors_iOS" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="198" width="240" height="34"/>
+                                            <color key="backgroundColor" systemColor="labelColor"/>
+                                            <fontDescription key="fontDescription" type="system" weight="black" pointSize="15"/>
                                             <state key="normal" title="Log In">
-                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="titleColor" systemColor="systemBackgroundColor"/>
                                             </state>
                                             <connections>
-                                                <action selector="logInButtonTapped:" destination="-1" eventType="touchUpInside" id="gv5-2N-oC5"/>
+                                                <action selector="logInButtonTapped:" destination="-1" eventType="touchUpInside" id="lv3-bh-sTh"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fsf-u3-lWa">
-                                            <rect key="frame" x="0.0" y="271" width="240" height="32"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <fontDescription key="fontDescription" type="system" weight="black" pointSize="16"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fxw-3P-b63" customClass="CustomButton" customModule="Doors_iOS" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="264" width="240" height="34"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <fontDescription key="fontDescription" type="system" weight="black" pointSize="15"/>
                                             <state key="normal" title="Sign Up">
-                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="titleColor" systemColor="labelColor"/>
                                             </state>
                                             <connections>
-                                                <action selector="signUpButtonTapped:" destination="-1" eventType="touchUpInside" id="t4m-os-M90"/>
+                                                <action selector="signUpButtonTapped:" destination="-1" eventType="touchUpInside" id="5eD-Rw-Vlg"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X2P-xC-B9k" userLabel="Forgot Password">
-                                            <rect key="frame" x="0.0" y="335" width="240" height="32"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <fontDescription key="fontDescription" type="system" weight="black" pointSize="16"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hCr-Zn-Ie9" customClass="CustomButton" customModule="Doors_iOS" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="330" width="240" height="34"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <fontDescription key="fontDescription" type="system" weight="black" pointSize="15"/>
                                             <state key="normal" title="Forgot Password">
-                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="titleColor" systemColor="labelColor"/>
                                             </state>
                                             <connections>
-                                                <action selector="forgotPasswordButtonTapped:" destination="-1" eventType="touchUpInside" id="Ljv-hK-Dy3"/>
+                                                <action selector="forgotPasswordButtonTapped:" destination="-1" eventType="touchUpInside" id="nt6-eU-FS8"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -117,11 +120,22 @@
                 <constraint firstItem="Ohb-Cq-df7" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="a4T-ZT-TIB"/>
                 <constraint firstItem="Ohb-Cq-df7" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailing" id="w8W-qN-0Gk"/>
             </constraints>
-            <point key="canvasLocation" x="139" y="106"/>
+            <point key="canvasLocation" x="138.75" y="105.63380281690141"/>
         </view>
     </objects>
+    <designables>
+        <designable name="Eax-X4-7xp">
+            <size key="intrinsicContentSize" width="47" height="30"/>
+        </designable>
+        <designable name="fxw-3P-b63">
+            <size key="intrinsicContentSize" width="60" height="30"/>
+        </designable>
+        <designable name="hCr-Zn-Ie9">
+            <size key="intrinsicContentSize" width="132" height="30"/>
+        </designable>
+    </designables>
     <resources>
-        <systemColor name="darkTextColor">
+        <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">

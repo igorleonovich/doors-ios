@@ -10,7 +10,7 @@ import UIKit
 
 extension UIColor {
     
-    static var customAccent: UIColor {
+    static var backgroundActive: UIColor {
         if #available(iOS 13, *) {
             return UIColor { (traitCollection: UITraitCollection) -> UIColor in
                 if traitCollection.userInterfaceStyle == .dark {
@@ -20,7 +20,49 @@ extension UIColor {
                 }
             }
         } else {
+            return .black
+        }
+    }
+    
+    static var foregroundActive: UIColor {
+        if #available(iOS 13, *) {
+            return UIColor { (traitCollection: UITraitCollection) -> UIColor in
+                if traitCollection.userInterfaceStyle == .dark {
+                    return .white
+                } else {
+                    return .black
+                }
+            }
+        } else {
+            return .black
+        }
+    }
+    
+    static var backgroundInactive: UIColor {
+        if #available(iOS 13, *) {
+            return UIColor { (traitCollection: UITraitCollection) -> UIColor in
+                if traitCollection.userInterfaceStyle == .dark {
+                    return .black
+                } else {
+                    return .white
+                }
+            }
+        } else {
             return .white
+        }
+    }
+    
+    static var foregroundInactive: UIColor {
+        if #available(iOS 13, *) {
+            return UIColor { (traitCollection: UITraitCollection) -> UIColor in
+                if traitCollection.userInterfaceStyle == .dark {
+                    return .lightGray
+                } else {
+                    return .darkGray
+                }
+            }
+        } else {
+            return .darkGray
         }
     }
 }

@@ -12,6 +12,10 @@ class ForgotPasswordViewController: BaseViewController {
     
     weak var core: Core!
     
+    @IBOutlet weak var recoverButton: CustomButton!
+    @IBOutlet weak var backButton: CustomButton!
+    
+    
     init(core: Core) {
         self.core = core
         super.init()
@@ -24,6 +28,7 @@ class ForgotPasswordViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupHidingKeyboardTap()
+        setupAppearance()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -34,6 +39,13 @@ class ForgotPasswordViewController: BaseViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    
+    private func setupAppearance() {
+        recoverButton.backgroundColor = UIColor.backgroundActive
+        recoverButton.setTitleColor(UIColor.backgroundInactive , for: .normal)
+        backButton.backgroundColor = UIColor.backgroundInactive
+        backButton.setTitleColor(UIColor.foregroundActive, for: .normal)
     }
     
     @IBAction func recoverButtonTapped(_ sender: Any) {

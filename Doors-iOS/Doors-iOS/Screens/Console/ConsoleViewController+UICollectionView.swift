@@ -16,7 +16,7 @@ extension ConsoleViewController: UICollectionViewDelegate {
         if indexPath.section == 0 {
             let doorsService = user.doorsServicesActive[indexPath.row]
             switch doorsService {
-            case .scene:
+            case .plan:
                 showSceneViewController()
             default:
                 break
@@ -26,15 +26,15 @@ extension ConsoleViewController: UICollectionViewDelegate {
             core.userManager.activateDoorsService(doorsService: doorsService) { [weak self] error in
                 guard let `self` = self else { return }
                 if let error = error {
-                    let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
-                    let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                    let alert = CustomAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+                    let okAction = CustomAlertAction(title: "OK", style: .default, handler: nil)
                     alert.addAction(okAction)
                     self.present(alert, animated: true, completion: nil)
                 } else {
                     self.core.userManager.getUserProfile { error in
                         if let error = error {
-                            let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
-                            let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                            let alert = CustomAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+                            let okAction = CustomAlertAction(title: "OK", style: .default, handler: nil)
                             alert.addAction(okAction)
                             self.present(alert, animated: true, completion: nil)
                         } else {

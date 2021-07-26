@@ -33,6 +33,10 @@ class BaseViewController: UIViewController {
         setupKeyboard()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         containerHeightConstraint?.constant = view.frame.height
@@ -108,21 +112,35 @@ class BaseNavigableViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.navigationBar.tintColor = .black
-        let image = UIImage(systemName: "text.justify")
-        let barButtonItem = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(menuButtonTapped(_:)))
+        setupAppearance()
+    }
+    
+    private func setupAppearance() {
+        setupNavigationBar()
+    }
+    
+    private func setupNavigationBar() {
+        navigationController?.navigationBar.tintColor = UIColor.foregroundActive
+
+        let image = UIImage(named: "BurgerMenu")?.withRenderingMode(.alwaysOriginal)
+        let button = UIButton(type: .custom)
+        button.setBackgroundImage(image, for: .normal)
+        button.addTarget(self, action: #selector(menuButtonTapped(_:)), for: .touchUpInside)
+        let barButtonItem = UIBarButtonItem(customView: button)
+        barButtonItem.customView?.widthAnchor.constraint(equalToConstant: 24).isActive = true
+        barButtonItem.customView?.heightAnchor.constraint(equalToConstant: 24).isActive = true
         navigationItem.rightBarButtonItem = barButtonItem
     }
     
     @objc func menuButtonTapped(_ sender: Any) {
-        let optionMenu = UIAlertController(title: nil, message: "Menu", preferredStyle: .actionSheet)
-        let logOutAction = UIAlertAction(title: "Log Out", style: .destructive, handler: { action in
+        let optionMenu = CustomAlertController(title: nil, message: "Menu", preferredStyle: UIDevice.current.userInterfaceIdiom == .pad ? .alert : .actionSheet)
+        let logOutAction = CustomAlertAction(title: "Log Out", style: .destructive, handler: { action in
             MBProgressHUD.showAdded(to: self.view, animated: true)
             self.core.authManager.logOut { [weak self] error in
                 guard let `self` = self else { return }
                 if let error = error {
-                    let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
-                    let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                    let alert = CustomAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+                    let okAction = CustomAlertAction(title: "OK", style: .default, handler: nil)
                     alert.addAction(okAction)
                     self.present(alert, animated: true, completion: nil)
                 } else {
@@ -133,7 +151,7 @@ class BaseNavigableViewController: BaseViewController {
                 MBProgressHUD.hide(for: self.view, animated: true)
             }
         })
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        let cancelAction = CustomAlertAction(title: "Cancel", style: .cancel)
         [logOutAction, cancelAction].forEach { optionMenu.addAction($0) }
         self.parent?.present(optionMenu, animated: true, completion: nil)
     }

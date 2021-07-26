@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SceneViewController" customModule="Doors_iOS" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PlanViewController" customModule="Doors_iOS" customModuleProvider="target">
             <connections>
                 <outlet property="textView" destination="3ij-FK-tSy" id="nWF-96-lR8"/>
                 <outlet property="view" destination="iN0-l3-epB" id="cVk-gX-pSH"/>

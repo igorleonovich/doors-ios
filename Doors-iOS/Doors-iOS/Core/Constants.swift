@@ -10,4 +10,8 @@ import Foundation
 
 struct Constants {
     static let baseURL = "http://localhost:8090/api"
+    
+    struct Skin {
+        static let buttonCornerRadius: Double = 5.0
+    }
 }

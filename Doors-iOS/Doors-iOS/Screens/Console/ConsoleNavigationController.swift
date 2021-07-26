@@ -10,4 +10,27 @@ import UIKit
 
 class ConsoleNavigationController: UINavigationController {
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupAppearance()
+    }
+    
+    private func setupAppearance() {
+        let buttonAppearance = UIBarButtonItemAppearance()
+        buttonAppearance.normal.titleTextAttributes = [
+            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 15, weight: .ultraLight)
+        ]
+        
+        let navigationBarAppearance = UINavigationBarAppearance()
+        navigationBarAppearance.backgroundColor = UIColor.backgroundInactive
+        navigationBarAppearance.titleTextAttributes = [
+            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 15, weight: .black)
+        ]
+        navigationBarAppearance.shadowColor = .clear
+        navigationBarAppearance.buttonAppearance = buttonAppearance
+        
+        navigationBar.standardAppearance = navigationBarAppearance
+        navigationBar.compactAppearance = navigationBarAppearance
+        navigationBar.scrollEdgeAppearance = navigationBarAppearance
+    }
 }

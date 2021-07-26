@@ -27,5 +27,5 @@ enum Role: String, Codable {
 }
 
 enum DoorsService: String, Codable {
-    case id, scene, engine, bank, arteka
+    case id, plan, bank, engine, teker
 }

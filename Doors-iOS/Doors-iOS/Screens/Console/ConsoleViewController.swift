@@ -19,12 +19,13 @@ class ConsoleViewController: BaseNavigableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "Console"
+        navigationItem.title = "D O O R S"
+        navigationItem.backButtonTitle = "Console"
         collectionView.register(R.nib.doorsServiceCell)
         core.userManager.getUserProfile { error in
             if let error = error {
-                let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
-                let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                let alert = CustomAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+                let okAction = CustomAlertAction(title: "OK", style: .default, handler: nil)
                 alert.addAction(okAction)
                 self.present(alert, animated: true, completion: nil)
             }
@@ -42,7 +43,7 @@ class ConsoleViewController: BaseNavigableViewController {
     // MARK: Navigation
     
     func showSceneViewController() {
-        let sceneViewController = SceneViewController(core: core)
+        let sceneViewController = PlanViewController(core: core)
         navigationController?.pushViewController(sceneViewController, animated: true)
     }
 }

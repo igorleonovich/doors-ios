@@ -18,10 +18,6 @@ class RootViewController: BaseViewController {
     var authNavigationController: UINavigationController?
     var consoleNavigationController: UINavigationController?
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
-    
     init(core: Core) {
         self.core = core
         super.init()
@@ -41,6 +37,7 @@ class RootViewController: BaseViewController {
     }
     
     private func setupUI() {
+        view.backgroundColor = UIColor.backgroundInactive
         setupCenterView()
         showLoadingViewController()
     }

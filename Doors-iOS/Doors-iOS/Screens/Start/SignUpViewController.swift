@@ -17,6 +17,9 @@ class SignUpViewController: BaseViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    @IBOutlet weak var signUpButton: CustomButton!
+    @IBOutlet weak var backButton: CustomButton!
+    
     init(core: Core) {
         self.core = core
         super.init()
@@ -29,6 +32,7 @@ class SignUpViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupHidingKeyboardTap()
+        setupAppearance()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -39,6 +43,13 @@ class SignUpViewController: BaseViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    
+    private func setupAppearance() {
+        signUpButton.backgroundColor = UIColor.backgroundActive
+        signUpButton.setTitleColor(UIColor.backgroundInactive , for: .normal)
+        backButton.backgroundColor = UIColor.backgroundInactive
+        backButton.setTitleColor(UIColor.foregroundActive, for: .normal)
     }
     
     @IBAction func signUpButtonTapped(_ sender: Any) {
@@ -53,8 +64,8 @@ class SignUpViewController: BaseViewController {
             guard let `self` = self else { return }
             MBProgressHUD.hide(for: self.view, animated: true)
             if let error = error {
-                let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
-                let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                let alert = CustomAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+                let okAction = CustomAlertAction(title: "OK", style: .default, handler: nil)
                 alert.addAction(okAction)
                 self.present(alert, animated: true, completion: nil)
             } else {

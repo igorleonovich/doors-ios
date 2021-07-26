@@ -1,5 +1,5 @@
 //
-//  SceneViewController.swift
+//  PlanViewController.swift
 //  Doors-iOS
 //
 //  Created by Igor Leonovich on 24.06.21
@@ -9,7 +9,7 @@
 import UIKit
 import MBProgressHUD
 
-class SceneViewController: BaseNavigableViewController {
+class PlanViewController: BaseNavigableViewController {
     
     @IBOutlet weak var textView: UITextView!
     
@@ -20,8 +20,7 @@ class SceneViewController: BaseNavigableViewController {
     }
     
     private func setupNavigationPanel() {
-        navigationItem.title = "Scene"
-        navigationController?.navigationBar.tintColor = .black
+        navigationItem.title = "Plan"
         let image = UIImage(systemName: "arrow.upright.circle")
         let barButtonItem = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(subMenuTapped(_:)))
         navigationItem.rightBarButtonItems?.append(barButtonItem)
@@ -42,8 +41,8 @@ class SceneViewController: BaseNavigableViewController {
         self.core.sceneManager?.read { [weak self] (error, list) in
             guard let `self` = self else { return }
             if let error = error {
-                let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
-                let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                let alert = CustomAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+                let okAction = CustomAlertAction(title: "OK", style: .default, handler: nil)
                 alert.addAction(okAction)
                 self.present(alert, animated: true, completion: nil)
             } else if let list = list {
@@ -76,16 +75,16 @@ class SceneViewController: BaseNavigableViewController {
     // MARK: - Sub Menu Actions
     
     @objc func subMenuTapped(_ sender: Any) {
-        let optionMenu = UIAlertController(title: nil, message: "Sub Menu", preferredStyle: .actionSheet)
-        let readAction = UIAlertAction(title: "Read", style: .default, handler: { [weak self] action in
+        let optionMenu = CustomAlertController(title: nil, message: "Sub Menu", preferredStyle: UIDevice.current.userInterfaceIdiom == .pad ? .alert : .actionSheet)
+        let readAction = CustomAlertAction(title: "Read", style: .default, handler: { [weak self] action in
             guard let `self` = self else { return }
             self.read()
         })
-        let writeAction = UIAlertAction(title: "Write", style: .default, handler: { [weak self] action in
+        let writeAction = CustomAlertAction(title: "Write", style: .default, handler: { [weak self] action in
             guard let `self` = self else { return }
             self.write()
         })
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        let cancelAction = CustomAlertAction(title: "Cancel", style: .cancel)
         [readAction, writeAction, cancelAction].forEach { optionMenu.addAction($0) }
         self.parent?.present(optionMenu, animated: true, completion: nil)
     }
