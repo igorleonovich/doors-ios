@@ -122,7 +122,7 @@ class BaseNavigableViewController: BaseViewController {
     private func setupNavigationBar() {
         navigationController?.navigationBar.tintColor = UIColor.foregroundActive
 
-        let image = UIImage(named: "BurgerMenu")?.withRenderingMode(.alwaysOriginal)
+        let image = UIImage(named: "BurgerMenu")?.withRenderingMode(.alwaysTemplate)
         let button = UIButton(type: .custom)
         button.setBackgroundImage(image, for: .normal)
         button.addTarget(self, action: #selector(menuButtonTapped(_:)), for: .touchUpInside)
