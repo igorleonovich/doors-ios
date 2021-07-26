@@ -18,13 +18,13 @@ class ConsoleNavigationController: UINavigationController {
     private func setupAppearance() {
         let buttonAppearance = UIBarButtonItemAppearance()
         buttonAppearance.normal.titleTextAttributes = [
-            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 15, weight: .ultraLight)
+            NSAttributedString.Key.font: UIFont.systemFont(ofSize: Constants.Skin.fontSize, weight: .ultraLight)
         ]
         
         let navigationBarAppearance = UINavigationBarAppearance()
         navigationBarAppearance.backgroundColor = UIColor.backgroundInactive
         navigationBarAppearance.titleTextAttributes = [
-            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 15, weight: .black)
+            NSAttributedString.Key.font: UIFont.systemFont(ofSize: Constants.Skin.fontSize, weight: .black)
         ]
         navigationBarAppearance.shadowColor = .clear
         navigationBarAppearance.buttonAppearance = buttonAppearance

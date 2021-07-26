@@ -54,6 +54,10 @@ class LogInViewController: BaseViewController {
             button?.backgroundColor = UIColor.backgroundInactive
             button?.setTitleColor(UIColor.foregroundActive, for: .normal)
         }
+        
+        [emailTextField, passwordTextField].forEach({ $0?.font = UIFont.systemFont(ofSize: Constants.Skin.fontSize, weight: .ultraLight) })
+        
+        [logInButton, signUpButton, forgotPasswordButton].forEach{($0?.titleLabel?.font = UIFont.systemFont(ofSize: Constants.Skin.fontSize, weight: .black))}
     }
     
     @IBAction func logInButtonTapped(_ sender: Any) {

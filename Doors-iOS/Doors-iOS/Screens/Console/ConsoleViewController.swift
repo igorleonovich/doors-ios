@@ -19,7 +19,7 @@ class ConsoleViewController: BaseNavigableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "D O O R S"
+        navigationItem.title = "Console"
         navigationItem.backButtonTitle = "Console"
         collectionView.register(R.nib.doorsServiceCell)
         core.userManager.getUserProfile { error in

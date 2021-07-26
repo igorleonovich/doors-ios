@@ -28,4 +28,13 @@ enum Role: String, Codable {
 
 enum DoorsService: String, Codable {
     case id, plan, bank, engine, teker
+    
+    func humanReadableTitle() -> String {
+        switch self {
+        case .id:
+            return "ID"
+        default:
+            return self.rawValue.capitalized
+        }
+    }
 }

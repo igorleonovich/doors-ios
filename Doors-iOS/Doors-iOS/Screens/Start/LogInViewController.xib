@@ -37,24 +37,24 @@
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="D O O R S" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UYo-MM-H6t">
                                             <rect key="frame" x="0.0" y="0.0" width="240" height="34"/>
-                                            <fontDescription key="fontDescription" type="system" weight="black" pointSize="15"/>
+                                            <fontDescription key="fontDescription" type="system" weight="black" pointSize="18"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="il@ft.com" borderStyle="roundedRect" placeholder="E-mail" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kue-Uh-7BQ">
                                             <rect key="frame" x="0.0" y="66" width="240" height="34"/>
-                                            <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="15"/>
+                                            <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="18"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ag0-ue-AxG">
                                             <rect key="frame" x="0.0" y="132" width="240" height="34"/>
-                                            <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="15"/>
+                                            <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="18"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eax-X4-7xp" customClass="CustomButton" customModule="Doors_iOS" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="198" width="240" height="34"/>
                                             <color key="backgroundColor" systemColor="labelColor"/>
-                                            <fontDescription key="fontDescription" type="system" weight="black" pointSize="15"/>
+                                            <fontDescription key="fontDescription" type="system" weight="black" pointSize="18"/>
                                             <state key="normal" title="Log In">
                                                 <color key="titleColor" systemColor="systemBackgroundColor"/>
                                             </state>
@@ -65,7 +65,7 @@
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fxw-3P-b63" customClass="CustomButton" customModule="Doors_iOS" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="264" width="240" height="34"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                            <fontDescription key="fontDescription" type="system" weight="black" pointSize="15"/>
+                                            <fontDescription key="fontDescription" type="system" weight="black" pointSize="18"/>
                                             <state key="normal" title="Sign Up">
                                                 <color key="titleColor" systemColor="labelColor"/>
                                             </state>
@@ -76,7 +76,7 @@
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hCr-Zn-Ie9" customClass="CustomButton" customModule="Doors_iOS" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="330" width="240" height="34"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                            <fontDescription key="fontDescription" type="system" weight="black" pointSize="15"/>
+                                            <fontDescription key="fontDescription" type="system" weight="black" pointSize="18"/>
                                             <state key="normal" title="Forgot Password">
                                                 <color key="titleColor" systemColor="labelColor"/>
                                             </state>
@@ -125,13 +125,13 @@
     </objects>
     <designables>
         <designable name="Eax-X4-7xp">
-            <size key="intrinsicContentSize" width="47" height="30"/>
+            <size key="intrinsicContentSize" width="55" height="34"/>
         </designable>
         <designable name="fxw-3P-b63">
-            <size key="intrinsicContentSize" width="60" height="30"/>
+            <size key="intrinsicContentSize" width="71" height="34"/>
         </designable>
         <designable name="hCr-Zn-Ie9">
-            <size key="intrinsicContentSize" width="132" height="30"/>
+            <size key="intrinsicContentSize" width="155" height="34"/>
         </designable>
     </designables>
     <resources>
