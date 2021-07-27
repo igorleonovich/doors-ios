@@ -15,6 +15,7 @@
 		698B77F926AEED4000272A63 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698B77F826AEED4000272A63 /* UIView+Extensions.swift */; };
 		698B77FC26AEEE4800272A63 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698B77FB26AEEE4800272A63 /* CustomButton.swift */; };
 		698B780026AF09D300272A63 /* CustomAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698B77FF26AF09D300272A63 /* CustomAlertController.swift */; };
+		698B780226AF862900272A63 /* EntryBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698B780126AF862900272A63 /* EntryBaseViewController.swift */; };
 		69D868A72683CFCD00CA329C /* DoorServiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D868A62683CFCD00CA329C /* DoorServiceCell.swift */; };
 		69D868AD2683D96200CA329C /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D868AC2683D96200CA329C /* R.generated.swift */; };
 		69EFCA9B2684B7B600E17CB7 /* PlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69EFCA9A2684B7B600E17CB7 /* PlanViewController.swift */; };
@@ -98,6 +99,7 @@
 		698B77F826AEED4000272A63 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		698B77FB26AEEE4800272A63 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		698B77FF26AF09D300272A63 /* CustomAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertController.swift; sourceTree = "<group>"; };
+		698B780126AF862900272A63 /* EntryBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryBaseViewController.swift; sourceTree = "<group>"; };
 		69D868A62683CFCD00CA329C /* DoorServiceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorServiceCell.swift; sourceTree = "<group>"; };
 		69D868AC2683D96200CA329C /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		69EFCA9A2684B7B600E17CB7 /* PlanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanViewController.swift; sourceTree = "<group>"; };
@@ -367,6 +369,7 @@
 			isa = PBXGroup;
 			children = (
 				C3BBC0832467342E001158C8 /* BaseViewController.swift */,
+				698B780126AF862900272A63 /* EntryBaseViewController.swift */,
 				C3BBC08C2467472F001158C8 /* RootViewController.swift */,
 				698B77FF26AF09D300272A63 /* CustomAlertController.swift */,
 			);
@@ -753,6 +756,7 @@
 				C37D4BEF246AF35800B94F39 /* UserManager.swift in Sources */,
 				C3BBC0A124676A7D001158C8 /* ForgotPasswordViewController.swift in Sources */,
 				C3BBC0B7246952F5001158C8 /* Constants.swift in Sources */,
+				698B780226AF862900272A63 /* EntryBaseViewController.swift in Sources */,
 				C38FB46524612F43000C187C /* SceneDelegate.swift in Sources */,
 				C3BBC0B324694E2F001158C8 /* SecureStoreQueryable.swift in Sources */,
 				C3BBC07B24672E4C001158C8 /* SignUpViewController.swift in Sources */,

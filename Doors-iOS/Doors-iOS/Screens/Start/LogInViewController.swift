@@ -9,7 +9,7 @@
 import UIKit
 import MBProgressHUD
 
-class LogInViewController: BaseViewController {
+class LogInViewController: EntryBaseViewController {
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -57,7 +57,9 @@ class LogInViewController: BaseViewController {
         
         [emailTextField, passwordTextField].forEach({ $0?.font = UIFont.systemFont(ofSize: Constants.Skin.fontSize, weight: .ultraLight) })
         
-        [logInButton, signUpButton, forgotPasswordButton].forEach{($0?.titleLabel?.font = UIFont.systemFont(ofSize: Constants.Skin.fontSize, weight: .black))}
+        [logInButton, signUpButton, forgotPasswordButton].forEach{(
+            $0?.titleLabel?.font = UIFont.systemFont(ofSize: Constants.Skin.fontSize, weight: .ultraLight)
+        )}
     }
     
     @IBAction func logInButtonTapped(_ sender: Any) {

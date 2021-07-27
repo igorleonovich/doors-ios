@@ -24,7 +24,7 @@ class ConsoleNavigationController: UINavigationController {
         let navigationBarAppearance = UINavigationBarAppearance()
         navigationBarAppearance.backgroundColor = UIColor.backgroundInactive
         navigationBarAppearance.titleTextAttributes = [
-            NSAttributedString.Key.font: UIFont.systemFont(ofSize: Constants.Skin.fontSize, weight: .black)
+            NSAttributedString.Key.font: UIFont.systemFont(ofSize: Constants.Skin.fontSize, weight: .ultraLight)
         ]
         navigationBarAppearance.shadowColor = .clear
         navigationBarAppearance.buttonAppearance = buttonAppearance

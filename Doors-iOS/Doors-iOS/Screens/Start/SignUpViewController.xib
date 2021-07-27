@@ -33,34 +33,37 @@
                             <rect key="frame" x="0.0" y="0.0" width="414" height="500"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="dAv-EM-yVw">
-                                    <rect key="frame" x="87" y="68" width="240" height="364"/>
+                                    <rect key="frame" x="87" y="50" width="240" height="400"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="D O O R S" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hVy-FV-PE8">
-                                            <rect key="frame" x="0.0" y="0.0" width="240" height="34"/>
-                                            <fontDescription key="fontDescription" type="system" weight="black" pointSize="18"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="40"/>
+                                            <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="18"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="il" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bT4-Mr-eVP">
-                                            <rect key="frame" x="0.0" y="66" width="240" height="34"/>
+                                            <rect key="frame" x="0.0" y="72" width="240" height="40"/>
                                             <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="18"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="il@ft.com" borderStyle="roundedRect" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8kd-ni-9uw">
-                                            <rect key="frame" x="0.0" y="132" width="240" height="34"/>
+                                            <rect key="frame" x="0.0" y="144" width="240" height="40"/>
                                             <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="18"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RaV-bT-aPE">
-                                            <rect key="frame" x="0.0" y="198" width="240" height="34"/>
+                                            <rect key="frame" x="0.0" y="216" width="240" height="40"/>
                                             <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="18"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ymW-hj-nhB" customClass="CustomButton" customModule="Doors_iOS" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="264" width="240" height="34"/>
+                                            <rect key="frame" x="0.0" y="288" width="240" height="40"/>
                                             <color key="backgroundColor" systemColor="labelColor"/>
-                                            <fontDescription key="fontDescription" type="system" weight="black" pointSize="18"/>
-                                            <state key="normal" title="Sign Up">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="JFO-vp-wGH"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="18"/>
+                                            <state key="normal" title="SIGN UP">
                                                 <color key="titleColor" systemColor="systemBackgroundColor"/>
                                             </state>
                                             <connections>
@@ -68,10 +71,10 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hAQ-S2-hZe" customClass="CustomButton" customModule="Doors_iOS" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="330" width="240" height="34"/>
+                                            <rect key="frame" x="0.0" y="360" width="240" height="40"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                            <fontDescription key="fontDescription" type="system" weight="black" pointSize="18"/>
-                                            <state key="normal" title="Back">
+                                            <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="18"/>
+                                            <state key="normal" title="BACK">
                                                 <color key="titleColor" systemColor="labelColor"/>
                                             </state>
                                             <connections>
@@ -119,10 +122,10 @@
     </objects>
     <designables>
         <designable name="hAQ-S2-hZe">
-            <size key="intrinsicContentSize" width="46" height="34"/>
+            <size key="intrinsicContentSize" width="44" height="34"/>
         </designable>
         <designable name="ymW-hj-nhB">
-            <size key="intrinsicContentSize" width="71" height="34"/>
+            <size key="intrinsicContentSize" width="65" height="34"/>
         </designable>
     </designables>
     <resources>
