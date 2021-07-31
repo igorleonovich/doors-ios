@@ -1,5 +1,5 @@
 //
-//  ConsoleViewController+UICollectionView.swift
+//  ConstructorViewController+UICollectionView.swift
 //  Doors-iOS
 //
 //  Created by Igor Leonovich on 23.06.21
@@ -9,7 +9,7 @@
 import UIKit
 import Rswift
 
-extension ConsoleViewController: UICollectionViewDelegate {
+extension ConstructorViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let user = core.userManager.user else { return }
@@ -47,7 +47,7 @@ extension ConsoleViewController: UICollectionViewDelegate {
     }
 }
 
-extension ConsoleViewController: UICollectionViewDataSource {
+extension ConstructorViewController: UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 2
@@ -79,7 +79,7 @@ extension ConsoleViewController: UICollectionViewDataSource {
 
 // MARK: - Collection View Flow Layout Delegate
 
-extension ConsoleViewController: UICollectionViewDelegateFlowLayout {
+extension ConstructorViewController: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return cellSize

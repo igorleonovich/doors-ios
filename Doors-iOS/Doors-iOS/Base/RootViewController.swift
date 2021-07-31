@@ -16,7 +16,7 @@ class RootViewController: BaseViewController {
     
     var loadingViewController: UIViewController?
     var authNavigationController: UINavigationController?
-    var consoleNavigationController: UINavigationController?
+    var constructorNavigationController: UINavigationController?
     
     init(core: Core) {
         self.core = core
@@ -76,29 +76,29 @@ class RootViewController: BaseViewController {
         self.loadingViewController = nil
     }
     
-    func showConsoleNavigationController() {
-        let consoleViewController = ConsoleViewController(core: core)
-        let consoleNavigationController = ConsoleNavigationController(rootViewController: consoleViewController)
-        addChild(consoleNavigationController)
-        consoleNavigationController.view.translatesAutoresizingMaskIntoConstraints = false
-        centerView.addSubview(consoleNavigationController.view)
-        consoleNavigationController.view.topAnchor.constraint(equalTo: centerView.topAnchor).isActive = true
-        consoleNavigationController.view.leadingAnchor.constraint(equalTo: centerView.leadingAnchor).isActive = true
-        consoleNavigationController.view.trailingAnchor.constraint(equalTo: centerView.trailingAnchor).isActive = true
-        consoleNavigationController.view.bottomAnchor.constraint(equalTo: centerView.safeAreaLayoutGuide.bottomAnchor).isActive = true
+    func showConstructorNavigationController() {
+        let constructorViewController = ConstructorViewController(core: core)
+        let constructorNavigationController = ConstructorNavigationController(rootViewController: constructorViewController)
+        addChild(constructorNavigationController)
+        constructorNavigationController.view.translatesAutoresizingMaskIntoConstraints = false
+        centerView.addSubview(constructorNavigationController.view)
+        constructorNavigationController.view.topAnchor.constraint(equalTo: centerView.topAnchor).isActive = true
+        constructorNavigationController.view.leadingAnchor.constraint(equalTo: centerView.leadingAnchor).isActive = true
+        constructorNavigationController.view.trailingAnchor.constraint(equalTo: centerView.trailingAnchor).isActive = true
+        constructorNavigationController.view.bottomAnchor.constraint(equalTo: centerView.safeAreaLayoutGuide.bottomAnchor).isActive = true
         
-        consoleNavigationController.didMove(toParent: self)
-        self.consoleNavigationController = consoleNavigationController
+        constructorNavigationController.didMove(toParent: self)
+        self.constructorNavigationController = constructorNavigationController
         
         removeAuthNavigationController()
     }
     
-    func removeConsoleNavigationController() {
-        guard let consoleNavigationController = consoleNavigationController else { return }
-        consoleNavigationController.willMove(toParent: nil)
-        consoleNavigationController.view.removeFromSuperview()
-        consoleNavigationController.removeFromParent()
-        self.consoleNavigationController = nil
+    func removeConstructorNavigationController() {
+        guard let constructorNavigationController = constructorNavigationController else { return }
+        constructorNavigationController.willMove(toParent: nil)
+        constructorNavigationController.view.removeFromSuperview()
+        constructorNavigationController.removeFromParent()
+        self.constructorNavigationController = nil
     }
     
     private func removeAuthNavigationController() {

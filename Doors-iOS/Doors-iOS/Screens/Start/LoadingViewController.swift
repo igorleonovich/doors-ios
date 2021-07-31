@@ -33,7 +33,7 @@ class LoadingViewController: UIViewController {
         super.viewDidAppear(animated)
         if isInitialSetupPerformed == false {
             if core.userManager.user != nil {
-                delegate?.showConsoleNavigationController()
+                delegate?.showConstructorNavigationController()
             } else {
                 delegate?.showAuthNavigationController()
             }
@@ -45,5 +45,5 @@ class LoadingViewController: UIViewController {
 protocol LoadingViewControllerDelegate: AnyObject {
     
     func showAuthNavigationController()
-    func showConsoleNavigationController()
+    func showConstructorNavigationController()
 }

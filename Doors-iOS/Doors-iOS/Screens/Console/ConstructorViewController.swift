@@ -1,5 +1,5 @@
 //
-//  ConsoleViewController.swift
+//  ConstructorViewController.swift
 //  Doors-iOS
 //
 //  Created by Igor Leonovich on 5/9/20.
@@ -10,7 +10,7 @@ import UIKit
 import MBProgressHUD
 import Rswift
 
-class ConsoleViewController: BaseNavigableViewController {
+class ConstructorViewController: BaseNavigableViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -19,8 +19,7 @@ class ConsoleViewController: BaseNavigableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "Console"
-        navigationItem.backButtonTitle = "Console"
+        navigationItem.title = "Constructor"
         collectionView.register(R.nib.doorsServiceCell)
         core.userManager.getUserProfile { error in
             if let error = error {

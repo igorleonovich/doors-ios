@@ -1,5 +1,5 @@
 //
-//  ConsoleNavigationController.swift
+//  ConstructorNavigationController.swift
 //  Doors-iOS
 //
 //  Created by Igor Leonovich on 24.06.21
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ConsoleNavigationController: UINavigationController {
+class ConstructorNavigationController: UINavigationController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
