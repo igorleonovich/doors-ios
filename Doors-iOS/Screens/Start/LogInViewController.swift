@@ -55,10 +55,10 @@ class LogInViewController: EntryBaseViewController {
             button?.setTitleColor(UIColor.foregroundActive, for: .normal)
         }
         
-        [emailTextField, passwordTextField].forEach({ $0?.font = UIFont.systemFont(ofSize: Constants.Skin.fontSize, weight: .ultraLight) })
+        [emailTextField, passwordTextField].forEach({ $0?.font = Constants.Skin.font })
         
         [logInButton, signUpButton, forgotPasswordButton].forEach{(
-            $0?.titleLabel?.font = UIFont.systemFont(ofSize: Constants.Skin.fontSize, weight: .ultraLight)
+            $0?.titleLabel?.font = Constants.Skin.font
         )}
     }
     
