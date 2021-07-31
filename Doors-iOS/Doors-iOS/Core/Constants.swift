@@ -9,7 +9,7 @@
 import UIKit
 
 struct Constants {
-    static let baseURL = "http://il-mbp-mac-eth1.il.doors.fm:8090/api"
+    static let baseURL = "https://api.doorsid.com"
     
     struct Skin {
         static let buttonCornerRadius: CGFloat = 5.0
