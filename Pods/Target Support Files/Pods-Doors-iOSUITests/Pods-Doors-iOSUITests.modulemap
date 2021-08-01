@@ -1,6 +1,0 @@
-framework module Pods_Doors_iOSUITests {
-  umbrella header "Pods-Doors-iOSUITests-umbrella.h"
-
-  export *
-  module * { export * }
-}
