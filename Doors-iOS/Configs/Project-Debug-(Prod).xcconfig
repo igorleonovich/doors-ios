@@ -129,4 +129,4 @@ SWIFT_OPTIMIZATION_LEVEL = -Onone
 // C U S T O M
 //
 
-DOORS_API_BASE_URL = https:/$()/api.doorsid.com
+DOORS_API_BASE_URL = https:/$()/prod.api.doorsid-com.recolourmusic.com
