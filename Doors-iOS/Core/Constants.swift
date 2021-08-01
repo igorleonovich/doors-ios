@@ -10,6 +10,8 @@ import UIKit
 
 struct Constants {
     static let baseURL = "https://dev.api.doorsid-com.recolourmusic.com"
+//        static let baseURL = "https://stage.api.doorsid-com.recolourmusic.com"
+//    static let baseURL = "https://api.doorsid.com"
     
     struct Skin {
         static let buttonCornerRadius: CGFloat = 5.0
