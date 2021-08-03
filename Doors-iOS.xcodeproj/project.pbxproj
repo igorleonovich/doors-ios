@@ -65,8 +65,6 @@
 		69F070A626B6B9410027E94D /* PlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F0709326B6B9410027E94D /* PlanViewController.swift */; };
 		69F070A726B6B9410027E94D /* PlanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69F0709426B6B9410027E94D /* PlanViewController.xib */; };
 		69F070A826B6B9410027E94D /* PlanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69F0709426B6B9410027E94D /* PlanViewController.xib */; };
-		69F070A926B6B9410027E94D /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F0709626B6B9410027E94D /* SignUpViewController.swift */; };
-		69F070AA26B6B9410027E94D /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F0709626B6B9410027E94D /* SignUpViewController.swift */; };
 		69F070AB26B6B9410027E94D /* LoadingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69F0709726B6B9410027E94D /* LoadingViewController.xib */; };
 		69F070AC26B6B9410027E94D /* LoadingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69F0709726B6B9410027E94D /* LoadingViewController.xib */; };
 		69F070AD26B6B9410027E94D /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F0709826B6B9410027E94D /* ForgotPasswordViewController.swift */; };
@@ -75,8 +73,6 @@
 		69F070B026B6B9410027E94D /* LogInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69F0709926B6B9410027E94D /* LogInViewController.xib */; };
 		69F070B126B6B9410027E94D /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F0709A26B6B9410027E94D /* LogInViewController.swift */; };
 		69F070B226B6B9410027E94D /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F0709A26B6B9410027E94D /* LogInViewController.swift */; };
-		69F070B326B6B9410027E94D /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69F0709B26B6B9410027E94D /* SignUpViewController.xib */; };
-		69F070B426B6B9410027E94D /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69F0709B26B6B9410027E94D /* SignUpViewController.xib */; };
 		69F070B526B6B9410027E94D /* ForgotPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69F0709C26B6B9410027E94D /* ForgotPasswordViewController.xib */; };
 		69F070B626B6B9410027E94D /* ForgotPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69F0709C26B6B9410027E94D /* ForgotPasswordViewController.xib */; };
 		69F070B726B6B9410027E94D /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F0709D26B6B9410027E94D /* LoadingViewController.swift */; };
@@ -178,12 +174,10 @@
 		69F0707C26B6B9310027E94D /* SignedDataTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignedDataTask.swift; sourceTree = "<group>"; };
 		69F0709326B6B9410027E94D /* PlanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanViewController.swift; sourceTree = "<group>"; };
 		69F0709426B6B9410027E94D /* PlanViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlanViewController.xib; sourceTree = "<group>"; };
-		69F0709626B6B9410027E94D /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		69F0709726B6B9410027E94D /* LoadingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingViewController.xib; sourceTree = "<group>"; };
 		69F0709826B6B9410027E94D /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		69F0709926B6B9410027E94D /* LogInViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LogInViewController.xib; sourceTree = "<group>"; };
 		69F0709A26B6B9410027E94D /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
-		69F0709B26B6B9410027E94D /* SignUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
 		69F0709C26B6B9410027E94D /* ForgotPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ForgotPasswordViewController.xib; sourceTree = "<group>"; };
 		69F0709D26B6B9410027E94D /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		69F0709F26B6B9410027E94D /* ConstructorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConstructorViewController.xib; sourceTree = "<group>"; };
@@ -431,12 +425,10 @@
 		69F0709526B6B9410027E94D /* Start */ = {
 			isa = PBXGroup;
 			children = (
-				69F0709626B6B9410027E94D /* SignUpViewController.swift */,
 				69F0709726B6B9410027E94D /* LoadingViewController.xib */,
 				69F0709826B6B9410027E94D /* ForgotPasswordViewController.swift */,
 				69F0709926B6B9410027E94D /* LogInViewController.xib */,
 				69F0709A26B6B9410027E94D /* LogInViewController.swift */,
-				69F0709B26B6B9410027E94D /* SignUpViewController.xib */,
 				69F0709C26B6B9410027E94D /* ForgotPasswordViewController.xib */,
 				69F0709D26B6B9410027E94D /* LoadingViewController.swift */,
 			);
@@ -589,7 +581,6 @@
 				69F0700C26B6ADDD0027E94D /* LaunchScreen.storyboard in Resources */,
 				69F070A726B6B9410027E94D /* PlanViewController.xib in Resources */,
 				69F070BB26B6B9410027E94D /* DoorsServiceCell.xib in Resources */,
-				69F070B326B6B9410027E94D /* SignUpViewController.xib in Resources */,
 				69F070AF26B6B9410027E94D /* LogInViewController.xib in Resources */,
 				69F070B926B6B9410027E94D /* ConstructorViewController.xib in Resources */,
 				69F0700926B6ADDD0027E94D /* Assets.xcassets in Resources */,
@@ -606,7 +597,6 @@
 				69F0701A26B6AE340027E94D /* LaunchScreen.storyboard in Resources */,
 				69F070A826B6B9410027E94D /* PlanViewController.xib in Resources */,
 				69F070BC26B6B9410027E94D /* DoorsServiceCell.xib in Resources */,
-				69F070B426B6B9410027E94D /* SignUpViewController.xib in Resources */,
 				69F070B026B6B9410027E94D /* LogInViewController.xib in Resources */,
 				69F070BA26B6B9410027E94D /* ConstructorViewController.xib in Resources */,
 				69F0701B26B6AE340027E94D /* Assets.xcassets in Resources */,
@@ -780,7 +770,6 @@
 				69F0708F26B6B9310027E94D /* SignedDataTask.swift in Sources */,
 				69F070D426B6B9810027E94D /* InternetAuthenticationType.swift in Sources */,
 				69F070DD26B6B98A0027E94D /* Settings.swift in Sources */,
-				69F070A926B6B9410027E94D /* SignUpViewController.swift in Sources */,
 				69F0704F26B6B8DB0027E94D /* EntryBaseViewController.swift in Sources */,
 				69F070D626B6B9810027E94D /* SecureStoreQueryable.swift in Sources */,
 				69F070CE26B6B9810027E94D /* SecureStoreError.swift in Sources */,
@@ -829,7 +818,6 @@
 				69F0709026B6B9310027E94D /* SignedDataTask.swift in Sources */,
 				69F070D526B6B9810027E94D /* InternetAuthenticationType.swift in Sources */,
 				69F070DE26B6B98A0027E94D /* Settings.swift in Sources */,
-				69F070AA26B6B9410027E94D /* SignUpViewController.swift in Sources */,
 				69F0705026B6B8DB0027E94D /* EntryBaseViewController.swift in Sources */,
 				69F070D726B6B9810027E94D /* SecureStoreQueryable.swift in Sources */,
 				69F070CF26B6B9810027E94D /* SecureStoreError.swift in Sources */,

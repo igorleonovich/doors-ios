@@ -19,56 +19,12 @@ class AuthManager {
         return config
     }()
     
-    var signUpDataTask: URLSessionDataTask?
     var logInDataTask: URLSessionDataTask?
     var refreshTokenDataTask: URLSessionDataTask?
     
     init() {
         let genericPwdQueryable = GenericPasswordQueryable(service: "Doors-iOS")
         secureStoreWithGenericPwd = SecureStore(secureStoreQueryable: genericPwdQueryable)
-    }
-    
-    func signUp(newUser: NewUserOutput, completion: @escaping (Swift.Error?) -> Void) {
-        signUpDataTask?.cancel()
-        
-        let sessionDelegate = SessionDelegate()
-        let session = URLSession(configuration: sessionConfiguration, delegate: sessionDelegate, delegateQueue: OperationQueue.main)
-        
-        guard let url = URL(string: "\(Constants.baseURL)/auth/register") else {
-            return
-        }
-        var request = URLRequest(url: url)
-        do {
-            let data = try JSONEncoder().encode(newUser)
-            request.httpMethod = "POST"
-            request.httpBody = data
-            signUpDataTask = session.dataTask(with: request) { [weak self] (data, response, error) in
-                guard let `self` = self else { return }
-                defer {
-                    self.signUpDataTask = nil
-                }
-                if let error = error {
-                    completion(error)
-                } else if let data = data, let response = response as? HTTPURLResponse {
-                    if response.statusCode == 201 {
-                        self.logIn(login: LoginOutput(email: newUser.email, password: newUser.password), completion)
-                    } else if let error = error {
-                        completion(error)
-                    } else {
-                        do {
-                            let serverError = try JSONDecoder().decode(ServerError.self, from: data)
-                            let error = Error.serverError(reason: serverError.reason)
-                            completion(error)
-                        } catch {
-                            completion(error)
-                        }
-                    }
-                }
-            }
-            signUpDataTask?.resume()
-        } catch {
-            completion(error)
-        }
     }
     
     func logIn(login: LoginOutput, _ completion: @escaping (Swift.Error?) -> Void) {

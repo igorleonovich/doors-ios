@@ -2,14 +2,13 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LogInViewController" customModule="Doors_iOS" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LogInViewController" customModule="Doors" customModuleProvider="target">
             <connections>
                 <outlet property="appTitleLabel" destination="UYo-MM-H6t" id="8y4-p6-P2p"/>
                 <outlet property="bottomConstraint" destination="Cr4-Fy-FjX" id="K3n-C6-2JX"/>
@@ -18,7 +17,6 @@
                 <outlet property="forgotPasswordButton" destination="hCr-Zn-Ie9" id="oon-3C-XD1"/>
                 <outlet property="logInButton" destination="Eax-X4-7xp" id="1ik-Vr-Qzr"/>
                 <outlet property="passwordTextField" destination="ag0-ue-AxG" id="yPP-TS-SuN"/>
-                <outlet property="signUpButton" destination="fxw-3P-b63" id="kfU-o4-UgK"/>
                 <outlet property="view" destination="iN0-l3-epB" id="Tj3-qZ-6Qu"/>
             </connections>
         </placeholder>
@@ -34,7 +32,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="320" height="500"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="frE-au-ifK">
-                                    <rect key="frame" x="40" y="50" width="240" height="400"/>
+                                    <rect key="frame" x="40" y="86" width="240" height="328"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="D O O R S" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UYo-MM-H6t">
                                             <rect key="frame" x="0.0" y="0.0" width="240" height="40"/>
@@ -52,7 +50,7 @@
                                             <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="18"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eax-X4-7xp" customClass="CustomButton" customModule="Doors_iOS" customModuleProvider="target">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eax-X4-7xp" customClass="CustomButton" customModule="Doors" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="216" width="240" height="40"/>
                                             <color key="backgroundColor" systemColor="labelColor"/>
                                             <constraints>
@@ -66,19 +64,8 @@
                                                 <action selector="logInButtonTapped:" destination="-1" eventType="touchUpInside" id="lv3-bh-sTh"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fxw-3P-b63" customClass="CustomButton" customModule="Doors_iOS" customModuleProvider="target">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hCr-Zn-Ie9" customClass="CustomButton" customModule="Doors" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="288" width="240" height="40"/>
-                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                            <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="18"/>
-                                            <state key="normal" title="SIGN UP">
-                                                <color key="titleColor" systemColor="labelColor"/>
-                                            </state>
-                                            <connections>
-                                                <action selector="signUpButtonTapped:" destination="-1" eventType="touchUpInside" id="5eD-Rw-Vlg"/>
-                                            </connections>
-                                        </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hCr-Zn-Ie9" customClass="CustomButton" customModule="Doors_iOS" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="360" width="240" height="40"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="18"/>
                                             <state key="normal" title="FORGOT PASSWORD">
@@ -130,9 +117,6 @@
     <designables>
         <designable name="Eax-X4-7xp">
             <size key="intrinsicContentSize" width="53" height="34"/>
-        </designable>
-        <designable name="fxw-3P-b63">
-            <size key="intrinsicContentSize" width="65" height="34"/>
         </designable>
         <designable name="hCr-Zn-Ie9">
             <size key="intrinsicContentSize" width="164" height="34"/>
