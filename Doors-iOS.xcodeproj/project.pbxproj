@@ -67,14 +67,14 @@
 		69F070A826B6B9410027E94D /* PlanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69F0709426B6B9410027E94D /* PlanViewController.xib */; };
 		69F070AB26B6B9410027E94D /* LoadingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69F0709726B6B9410027E94D /* LoadingViewController.xib */; };
 		69F070AC26B6B9410027E94D /* LoadingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69F0709726B6B9410027E94D /* LoadingViewController.xib */; };
-		69F070AD26B6B9410027E94D /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F0709826B6B9410027E94D /* ForgotPasswordViewController.swift */; };
-		69F070AE26B6B9410027E94D /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F0709826B6B9410027E94D /* ForgotPasswordViewController.swift */; };
+		69F070AD26B6B9410027E94D /* RecoverPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F0709826B6B9410027E94D /* RecoverPasswordViewController.swift */; };
+		69F070AE26B6B9410027E94D /* RecoverPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F0709826B6B9410027E94D /* RecoverPasswordViewController.swift */; };
 		69F070AF26B6B9410027E94D /* LogInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69F0709926B6B9410027E94D /* LogInViewController.xib */; };
 		69F070B026B6B9410027E94D /* LogInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69F0709926B6B9410027E94D /* LogInViewController.xib */; };
 		69F070B126B6B9410027E94D /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F0709A26B6B9410027E94D /* LogInViewController.swift */; };
 		69F070B226B6B9410027E94D /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F0709A26B6B9410027E94D /* LogInViewController.swift */; };
-		69F070B526B6B9410027E94D /* ForgotPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69F0709C26B6B9410027E94D /* ForgotPasswordViewController.xib */; };
-		69F070B626B6B9410027E94D /* ForgotPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69F0709C26B6B9410027E94D /* ForgotPasswordViewController.xib */; };
+		69F070B526B6B9410027E94D /* RecoverPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69F0709C26B6B9410027E94D /* RecoverPasswordViewController.xib */; };
+		69F070B626B6B9410027E94D /* RecoverPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69F0709C26B6B9410027E94D /* RecoverPasswordViewController.xib */; };
 		69F070B726B6B9410027E94D /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F0709D26B6B9410027E94D /* LoadingViewController.swift */; };
 		69F070B826B6B9410027E94D /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F0709D26B6B9410027E94D /* LoadingViewController.swift */; };
 		69F070B926B6B9410027E94D /* ConstructorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69F0709F26B6B9410027E94D /* ConstructorViewController.xib */; };
@@ -175,10 +175,10 @@
 		69F0709326B6B9410027E94D /* PlanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanViewController.swift; sourceTree = "<group>"; };
 		69F0709426B6B9410027E94D /* PlanViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlanViewController.xib; sourceTree = "<group>"; };
 		69F0709726B6B9410027E94D /* LoadingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingViewController.xib; sourceTree = "<group>"; };
-		69F0709826B6B9410027E94D /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		69F0709826B6B9410027E94D /* RecoverPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecoverPasswordViewController.swift; sourceTree = "<group>"; };
 		69F0709926B6B9410027E94D /* LogInViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LogInViewController.xib; sourceTree = "<group>"; };
 		69F0709A26B6B9410027E94D /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
-		69F0709C26B6B9410027E94D /* ForgotPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ForgotPasswordViewController.xib; sourceTree = "<group>"; };
+		69F0709C26B6B9410027E94D /* RecoverPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecoverPasswordViewController.xib; sourceTree = "<group>"; };
 		69F0709D26B6B9410027E94D /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		69F0709F26B6B9410027E94D /* ConstructorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConstructorViewController.xib; sourceTree = "<group>"; };
 		69F070A026B6B9410027E94D /* DoorsServiceCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DoorsServiceCell.xib; sourceTree = "<group>"; };
@@ -425,12 +425,12 @@
 		69F0709526B6B9410027E94D /* Start */ = {
 			isa = PBXGroup;
 			children = (
+				69F0709D26B6B9410027E94D /* LoadingViewController.swift */,
 				69F0709726B6B9410027E94D /* LoadingViewController.xib */,
-				69F0709826B6B9410027E94D /* ForgotPasswordViewController.swift */,
 				69F0709926B6B9410027E94D /* LogInViewController.xib */,
 				69F0709A26B6B9410027E94D /* LogInViewController.swift */,
-				69F0709C26B6B9410027E94D /* ForgotPasswordViewController.xib */,
-				69F0709D26B6B9410027E94D /* LoadingViewController.swift */,
+				69F0709826B6B9410027E94D /* RecoverPasswordViewController.swift */,
+				69F0709C26B6B9410027E94D /* RecoverPasswordViewController.xib */,
 			);
 			path = Start;
 			sourceTree = "<group>";
@@ -577,7 +577,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				69F070B526B6B9410027E94D /* ForgotPasswordViewController.xib in Resources */,
+				69F070B526B6B9410027E94D /* RecoverPasswordViewController.xib in Resources */,
 				69F0700C26B6ADDD0027E94D /* LaunchScreen.storyboard in Resources */,
 				69F070A726B6B9410027E94D /* PlanViewController.xib in Resources */,
 				69F070BB26B6B9410027E94D /* DoorsServiceCell.xib in Resources */,
@@ -593,7 +593,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				69F070B626B6B9410027E94D /* ForgotPasswordViewController.xib in Resources */,
+				69F070B626B6B9410027E94D /* RecoverPasswordViewController.xib in Resources */,
 				69F0701A26B6AE340027E94D /* LaunchScreen.storyboard in Resources */,
 				69F070A826B6B9410027E94D /* PlanViewController.xib in Resources */,
 				69F070BC26B6B9410027E94D /* DoorsServiceCell.xib in Resources */,
@@ -763,7 +763,7 @@
 				69F0705F26B6B8EC0027E94D /* Core.swift in Sources */,
 				69F070BD26B6B9410027E94D /* ConstructorViewController+UICollectionView.swift in Sources */,
 				69F070E426B6BA7C0027E94D /* R.generated.swift in Sources */,
-				69F070AD26B6B9410027E94D /* ForgotPasswordViewController.swift in Sources */,
+				69F070AD26B6B9410027E94D /* RecoverPasswordViewController.swift in Sources */,
 				69F070C126B6B9410027E94D /* ConstructorNavigationController.swift in Sources */,
 				69F070B126B6B9410027E94D /* LogInViewController.swift in Sources */,
 				69F070BF26B6B9410027E94D /* ConstructorViewController.swift in Sources */,
@@ -811,7 +811,7 @@
 				69F0706026B6B8EC0027E94D /* Core.swift in Sources */,
 				69F070BE26B6B9410027E94D /* ConstructorViewController+UICollectionView.swift in Sources */,
 				69F070E526B6BA7C0027E94D /* R.generated.swift in Sources */,
-				69F070AE26B6B9410027E94D /* ForgotPasswordViewController.swift in Sources */,
+				69F070AE26B6B9410027E94D /* RecoverPasswordViewController.swift in Sources */,
 				69F070C226B6B9410027E94D /* ConstructorNavigationController.swift in Sources */,
 				69F070B226B6B9410027E94D /* LogInViewController.swift in Sources */,
 				69F070C026B6B9410027E94D /* ConstructorViewController.swift in Sources */,

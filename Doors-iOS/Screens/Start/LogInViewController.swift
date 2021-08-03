@@ -15,7 +15,7 @@ class LogInViewController: EntryBaseViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     
     @IBOutlet weak var logInButton: CustomButton!
-    @IBOutlet weak var forgotPasswordButton: CustomButton!
+    @IBOutlet weak var recoverPasswordButton: CustomButton!
     
     weak var core: Core!
     
@@ -49,14 +49,14 @@ class LogInViewController: EntryBaseViewController {
             button?.backgroundColor = UIColor.backgroundActive
             button?.setTitleColor(UIColor.backgroundInactive , for: .normal)
         }
-        [forgotPasswordButton].forEach { button in
+        [recoverPasswordButton].forEach { button in
             button?.backgroundColor = UIColor.backgroundInactive
             button?.setTitleColor(UIColor.foregroundActive, for: .normal)
         }
         
         [emailTextField, passwordTextField].forEach({ $0?.font = Constants.Skin.font })
         
-        [logInButton, forgotPasswordButton].forEach{(
+        [logInButton, recoverPasswordButton].forEach{(
             $0?.titleLabel?.font = Constants.Skin.font
         )}
     }
@@ -81,8 +81,8 @@ class LogInViewController: EntryBaseViewController {
         }
     }
 
-    @IBAction func forgotPasswordButtonTapped(_ sender: Any) {
-        let vc = ForgotPasswordViewController(core: core)
+    @IBAction func recoverPasswordButtonTapped(_ sender: Any) {
+        let vc = RecoverPasswordViewController(core: core)
         navigationController?.pushViewController(vc, animated: false)
     }
 }

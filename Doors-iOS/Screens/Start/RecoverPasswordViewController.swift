@@ -1,5 +1,5 @@
 //
-//  ForgotPasswordViewController.swift
+//  RecoverPasswordViewController.swift
 //  Doors-iOS
 //
 //  Created by Igor Leonovich on 5/10/20.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ForgotPasswordViewController: BaseViewController {
+class RecoverPasswordViewController: BaseViewController {
     
     weak var core: Core!
     

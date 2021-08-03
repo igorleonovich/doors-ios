@@ -14,9 +14,9 @@
                 <outlet property="bottomConstraint" destination="Cr4-Fy-FjX" id="K3n-C6-2JX"/>
                 <outlet property="containerHeightConstraint" destination="XgU-2m-cX4" id="0fg-7w-ssm"/>
                 <outlet property="emailTextField" destination="kue-Uh-7BQ" id="AiC-HG-YIh"/>
-                <outlet property="forgotPasswordButton" destination="hCr-Zn-Ie9" id="oon-3C-XD1"/>
                 <outlet property="logInButton" destination="Eax-X4-7xp" id="1ik-Vr-Qzr"/>
                 <outlet property="passwordTextField" destination="ag0-ue-AxG" id="yPP-TS-SuN"/>
+                <outlet property="recoverPasswordButton" destination="hCr-Zn-Ie9" id="oon-3C-XD1"/>
                 <outlet property="view" destination="iN0-l3-epB" id="Tj3-qZ-6Qu"/>
             </connections>
         </placeholder>
@@ -68,11 +68,11 @@
                                             <rect key="frame" x="0.0" y="288" width="240" height="40"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="18"/>
-                                            <state key="normal" title="FORGOT PASSWORD">
+                                            <state key="normal" title="RECOVER PASSWORD">
                                                 <color key="titleColor" systemColor="labelColor"/>
                                             </state>
                                             <connections>
-                                                <action selector="forgotPasswordButtonTapped:" destination="-1" eventType="touchUpInside" id="nt6-eU-FS8"/>
+                                                <action selector="recoverPasswordButtonTapped:" destination="-1" eventType="touchUpInside" id="nt6-eU-FS8"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -119,7 +119,7 @@
             <size key="intrinsicContentSize" width="53" height="34"/>
         </designable>
         <designable name="hCr-Zn-Ie9">
-            <size key="intrinsicContentSize" width="164" height="34"/>
+            <size key="intrinsicContentSize" width="172" height="34"/>
         </designable>
     </designables>
     <resources>
