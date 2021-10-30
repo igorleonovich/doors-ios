@@ -58,8 +58,8 @@ class SignUpViewController: BaseViewController {
                 alert.addAction(okAction)
                 self.present(alert, animated: true, completion: nil)
             } else {
-                guard let rootViewController = self.navigationController?.parent as? RootViewController else { return }
-                rootViewController.showConstructorNavigationController()
+//                guard let rootViewController = self.navigationController?.parent as? RootViewController else { return }
+//                rootViewController.showConstructorNavigationController()
             }
         }
     }

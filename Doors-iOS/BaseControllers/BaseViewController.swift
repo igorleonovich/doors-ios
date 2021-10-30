@@ -144,9 +144,9 @@ class BaseNavigableViewController: BaseViewController {
                     alert.addAction(okAction)
                     self.present(alert, animated: true, completion: nil)
                 } else {
-                    guard let rootViewController = self.navigationController?.parent as? RootViewController else { return }
-                    rootViewController.removeConstructorNavigationController()
-                    rootViewController.showAuthNavigationController()
+//                    guard let rootViewController = self.navigationController?.parent as? RootViewController else { return }
+//                    rootViewController.removeConstructorNavigationController()
+//                    rootViewController.showAuthNavigationController()
                 }
                 MBProgressHUD.hide(for: self.view, animated: true)
             }
