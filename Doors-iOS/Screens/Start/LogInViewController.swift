@@ -15,6 +15,7 @@ class LogInViewController: EntryBaseViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     
     @IBOutlet weak var logInButton: CustomButton!
+    @IBOutlet weak var signUpButton: CustomButton!
     @IBOutlet weak var recoverPasswordButton: CustomButton!
     
     weak var core: Core!
@@ -45,20 +46,20 @@ class LogInViewController: EntryBaseViewController {
     }
     
     private func setupAppearance() {
-        [logInButton].forEach { button in
-            button?.backgroundColor = UIColor.backgroundActive
-            button?.setTitleColor(UIColor.backgroundInactive , for: .normal)
-        }
-        [recoverPasswordButton].forEach { button in
-            button?.backgroundColor = UIColor.backgroundInactive
-            button?.setTitleColor(UIColor.foregroundActive, for: .normal)
-        }
-        
-        [emailTextField, passwordTextField].forEach({ $0?.font = Constants.Skin.font })
-        
-        [logInButton, recoverPasswordButton].forEach{(
-            $0?.titleLabel?.font = Constants.Skin.font
-        )}
+//        [logInButton].forEach { button in
+//            button?.backgroundColor = UIColor.backgroundActive
+//            button?.setTitleColor(UIColor.backgroundInactive , for: .normal)
+//        }
+//        [recoverPasswordButton].forEach { button in
+//            button?.backgroundColor = UIColor.backgroundInactive
+//            button?.setTitleColor(UIColor.foregroundActive, for: .normal)
+//        }
+//        
+//        [emailTextField, passwordTextField].forEach({ $0?.font = Constants.Skin.font })
+//        
+//        [logInButton,  recoverPasswordButton].forEach{(
+//            $0?.titleLabel?.font = Constants.Skin.font
+//        )}
     }
     
     @IBAction func logInButtonTapped(_ sender: Any) {
@@ -79,6 +80,11 @@ class LogInViewController: EntryBaseViewController {
                 rootViewController.showConstructorNavigationController()
             }
         }
+    }
+    
+    @IBAction func signUpButtonTapped(_ sender: Any) {
+        let vc = SignUpViewController(core: core)
+        navigationController?.pushViewController(vc, animated: false)
     }
 
     @IBAction func recoverPasswordButtonTapped(_ sender: Any) {
