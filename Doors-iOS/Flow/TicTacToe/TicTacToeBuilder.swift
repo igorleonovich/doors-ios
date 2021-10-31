@@ -14,7 +14,7 @@
 //  limitations under the License.
 //
 
-import RIBs
+import RIBs_Swift_SDK
 
 protocol TicTacToeDependency: Dependency {
     var player1Name: String { get }

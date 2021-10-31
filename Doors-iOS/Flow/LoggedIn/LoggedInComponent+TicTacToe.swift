@@ -14,7 +14,7 @@
 //  limitations under the License.
 //
 
-import RIBs
+import RIBs_Swift_SDK
 
 /// The dependencies needed from the parent scope of LoggedIn to provide for the TicTacToe scope.
 // TODO: Update LoggedInDependency protocol to inherit this protocol.

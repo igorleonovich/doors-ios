@@ -15,7 +15,7 @@
 //
 
 import RxSwift
-import RxCocoa
+import RxRelay
 
 public struct Score {
     public let player1Score: Int

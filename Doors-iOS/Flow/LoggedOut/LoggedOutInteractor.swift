@@ -14,11 +14,12 @@
 //  limitations under the License.
 //
 
-import RIBs
 import RxSwift
+import RIBs_Swift_SDK
 
 protocol LoggedOutRouting: ViewableRouting {
-    // TODO: Declare methods the interactor can invoke to manage sub-tree via the router.
+    func signUp()
+    func restorePassword()
 }
 
 protocol LoggedOutPresentable: Presentable {
@@ -60,6 +61,14 @@ final class LoggedOutInteractor: PresentableInteractor<LoggedOutPresentable>, Lo
         let player2NameWithDefault = playerName(player2Name, withDefaultName: "Player 2")
 
         listener?.didLogin(withPlayer1Name: player1NameWithDefault, player2Name: player2NameWithDefault)
+    }
+    
+    func signup() {
+        router?.signUp()
+    }
+    
+    func restorePassword() {
+        router?.restorePassword()
     }
 
     private func playerName(_ name: String?, withDefaultName defaultName: String) -> String {

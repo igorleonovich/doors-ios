@@ -6,9 +6,28 @@
 //  Copyright © 2020 FT. All rights reserved.
 //
 
-import RIBs
 import RxSwift
 import UIKit
+import RIBs_Swift_SDK
+
+#if os(iOS) || os(watchOS) || os(tvOS)
+    import UIKit
+    public typealias ViewController = UIViewController
+    public typealias NavigationController = UINavigationController
+    public typealias AlertController = UIAlertController
+    public typealias AlertAction = UIAlertAction
+    public typealias Color = UIColor
+    public typealias Button = UIButton
+    public typealias View = UIView
+    public typealias TextField = UITextField
+#elseif os(macOS)
+    import Cocoa
+    public typealias ViewController = NSViewController
+    public typealias Color = NSColor
+    public typealias Button = NSButton
+    public typealias View = NSView
+    public typealias TextField = NSTextField
+#endif
 
 /// Game app delegate.
 @UIApplicationMain

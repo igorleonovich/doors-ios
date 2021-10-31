@@ -14,8 +14,7 @@
 //  limitations under the License.
 //
 
-import RIBs
-import RxCocoa
+import RIBs_Swift_SDK
 import RxSwift
 import SnapKit
 import UIKit
@@ -45,9 +44,9 @@ final class OffGameViewController: UIViewController, OffGamePresentable, OffGame
     }
 
     func show(scoreBoardView: ViewControllable) {
-        addChild(scoreBoardView.uiviewController)
-        view.addSubview(scoreBoardView.uiviewController.view)
-        scoreBoardView.uiviewController.view.snp.makeConstraints { (maker: ConstraintMaker) in
+        addChild(scoreBoardView.viewController)
+        view.addSubview(scoreBoardView.viewController.view)
+        scoreBoardView.viewController.view.snp.makeConstraints { (maker: ConstraintMaker) in
             maker.top.equalTo(self.view).offset(70)
             maker.leading.trailing.equalTo(self.view).inset(20)
             maker.height.equalTo(120)

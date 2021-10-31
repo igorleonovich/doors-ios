@@ -14,7 +14,7 @@
 //  limitations under the License.
 //
 
-import RIBs
+import RIBs_Swift_SDK
 
 public protocol RandomWinDependency: Dependency {
     var player1Name: String { get }

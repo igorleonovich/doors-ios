@@ -14,7 +14,7 @@
 //  limitations under the License.
 //
 
-import RIBs
+import RIBs_Swift_SDK
 
 /// The dependencies needed from the parent scope of Root to provide for the LoggedOut scope.
 // TODO: Update RootDependency protocol to inherit this protocol.

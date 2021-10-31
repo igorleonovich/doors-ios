@@ -14,7 +14,7 @@
 //  limitations under the License.
 //
 
-import RIBs
+import RIBs_Swift_SDK
 
 protocol LoggedInDependency: Dependency {
     var loggedInViewController: LoggedInViewControllable { get }

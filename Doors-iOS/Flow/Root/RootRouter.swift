@@ -14,7 +14,7 @@
 //  limitations under the License.
 //
 
-import RIBs
+import RIBs_Swift_SDK
 
 protocol RootInteractable: Interactable, LoggedOutListener, LoggedInListener {
     var router: RootRouting? { get set }
@@ -23,6 +23,7 @@ protocol RootInteractable: Interactable, LoggedOutListener, LoggedInListener {
 
 protocol RootViewControllable: ViewControllable {
     func replaceModal(viewController: ViewControllable?)
+    func replaceModal(viewController: ViewControllable?, modalPresentationStyle: UIModalPresentationStyle?)
 }
 
 final class RootRouter: LaunchRouter<RootInteractable, RootViewControllable>, RootRouting {
@@ -53,6 +54,7 @@ final class RootRouter: LaunchRouter<RootInteractable, RootViewControllable>, Ro
 
         let loggedIn = loggedInBuilder.build(withListener: interactor, player1Name: player1Name, player2Name: player2Name)
         attachChild(loggedIn.router)
+        
         return loggedIn.actionableItem
     }
     
@@ -67,6 +69,6 @@ final class RootRouter: LaunchRouter<RootInteractable, RootViewControllable>, Ro
         let loggedOut = loggedOutBuilder.build(withListener: interactor)
         self.loggedOut = loggedOut
         attachChild(loggedOut)
-        viewController.replaceModal(viewController: loggedOut.viewControllable)
+        viewController.replaceModal(viewController: loggedOut.viewControllable, modalPresentationStyle: .fullScreen)
     }
 }

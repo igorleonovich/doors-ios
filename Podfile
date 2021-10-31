@@ -9,8 +9,10 @@ def pods
   pod 'JWTDecode'
   pod 'R.swift'
   pod 'SnapKit'
-  pod 'RIBs', :path => './RIBs-0.10.0'
+  pod 'RxSwift'
   pod 'RxCocoa'
+  pod 'RIBs-Swift-SDK', :git => 'https://github.com/igorleonovich/ribs-swift-sdk', :branch => 'master'
+#  pod 'RIBs-Swift-SDK', :path => '/Users/Shared/New/Doors/IL/Dev/Personal/Apple/Swift/ribs-swift-sdk'
 end
 
 target 'Doors-iOS-Uni' do

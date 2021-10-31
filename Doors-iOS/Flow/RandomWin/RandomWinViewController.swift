@@ -14,17 +14,16 @@
 //  limitations under the License.
 //
 
-import RIBs
-import RxCocoa
+import RIBs_Swift_SDK
 import RxSwift
+import RxCocoa
 import SnapKit
-import UIKit
 
 protocol RandomWinPresentableListener: AnyObject {
     func determineWinner()
 }
 
-final class RandomWinViewController: UIViewController, RandomWinPresentable, RandomWinViewControllable {
+final class RandomWinViewController: ViewController, RandomWinPresentable, RandomWinViewControllable {
 
     weak var listener: RandomWinPresentableListener?
 
@@ -42,7 +41,7 @@ final class RandomWinViewController: UIViewController, RandomWinPresentable, Ran
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = UIColor.cyan
+        view.backgroundColor = Color.cyan
         buildGoButton()
     }
 
@@ -57,12 +56,14 @@ final class RandomWinViewController: UIViewController, RandomWinPresentable, Ran
                 return "\(player2Name) Won!"
             }
         }()
-        let alert = UIAlertController(title: winnerString, message: nil, preferredStyle: .alert)
-        let closeAction = UIAlertAction(title: "That was random...", style: UIAlertAction.Style.default) { _ in
-            handler()
-        }
-        alert.addAction(closeAction)
-        present(alert, animated: true, completion: nil)
+        #if os(iOS) || os(watchOS) || os(tvOS)
+            let alert = AlertController(title: winnerString, message: nil, preferredStyle: .alert)
+            let closeAction = AlertAction(title: "That was random...", style: AlertAction.Style.default) { _ in
+                handler()
+            }
+            alert.addAction(closeAction)
+            present(alert, animated: true, completion: nil)
+        #endif
     }
 
     // MARK: - Private
@@ -71,10 +72,10 @@ final class RandomWinViewController: UIViewController, RandomWinPresentable, Ran
     private let player2Name: String
 
     private func buildGoButton() {
-        let button = UIButton()
+        let button = Button()
         button.setTitle("Magic", for: .normal)
-        button.backgroundColor = UIColor.purple
-        button.setTitleColor(UIColor.white, for: .normal)
+        button.backgroundColor = Color.purple
+        button.setTitleColor(Color.white, for: .normal)
         view.addSubview(button)
         button.snp.makeConstraints { (maker: ConstraintMaker) in
             maker.center.equalTo(self.view.snp.center)

@@ -14,7 +14,7 @@
 //  limitations under the License.
 //
 
-import RIBs
+import RIBs_Swift_SDK
 
 class TicTacToeAdapter: Game, GameBuildable, TicTacToeListener {
     let id = "tictactoe"

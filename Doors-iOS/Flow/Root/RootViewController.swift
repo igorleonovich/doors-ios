@@ -14,7 +14,7 @@
 //  limitations under the License.
 //
 
-import RIBs
+import RIBs_Swift_SDK
 import SnapKit
 import UIKit
 
@@ -43,8 +43,12 @@ final class RootViewController: UIViewController, RootPresentable, RootViewContr
     }
 
     // MARK: - RootViewControllable
-
+    
     func replaceModal(viewController: ViewControllable?) {
+        replaceModal(viewController: viewController, modalPresentationStyle: nil)
+    }
+
+    func replaceModal(viewController: ViewControllable?, modalPresentationStyle: UIModalPresentationStyle? = nil) {
         targetViewController = viewController
 
         guard !animationInProgress else {
@@ -55,13 +59,13 @@ final class RootViewController: UIViewController, RootPresentable, RootViewContr
             animationInProgress = true
             dismiss(animated: true) { [weak self] in
                 if self?.targetViewController != nil {
-                    self?.presentTargetViewController()
+                    self?.presentTargetViewController(modalPresentationStyle)
                 } else {
                     self?.animationInProgress = false
                 }
             }
         } else {
-            presentTargetViewController()
+            presentTargetViewController(modalPresentationStyle)
         }
     }
 
@@ -70,10 +74,13 @@ final class RootViewController: UIViewController, RootPresentable, RootViewContr
     private var targetViewController: ViewControllable?
     private var animationInProgress = false
 
-    private func presentTargetViewController() {
+    private func presentTargetViewController(_ modalPresentationStyle: UIModalPresentationStyle? = nil) {
         if let targetViewController = targetViewController {
             animationInProgress = true
-            present(targetViewController.uiviewController, animated: true) { [weak self] in
+            if let modalPresentationStyle = modalPresentationStyle {
+                targetViewController.viewController.modalPresentationStyle = modalPresentationStyle
+            }
+            present(targetViewController.viewController, animated: false) { [weak self] in
                 self?.animationInProgress = false
             }
         }

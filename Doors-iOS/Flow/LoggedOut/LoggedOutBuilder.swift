@@ -14,7 +14,8 @@
 //  limitations under the License.
 //
 
-import RIBs
+import Foundation
+import RIBs_Swift_SDK
 
 protocol LoggedOutDependency: Dependency {
     // TODO: Declare the set of dependencies required by this RIB, but cannot be
@@ -40,9 +41,11 @@ final class LoggedOutBuilder: Builder<LoggedOutDependency>, LoggedOutBuildable {
 
     func build(withListener listener: LoggedOutListener) -> LoggedOutRouting {
         _ = LoggedOutComponent(dependency: dependency)
-        let viewController = LoggedOutViewController()
-        let interactor = LoggedOutInteractor(presenter: viewController)
+        let logInViewController = LogInViewController()
+        let navigationController = LoggedOutNavigationViewController(rootViewController: logInViewController)
+        let interactor = LoggedOutInteractor(presenter: navigationController)
         interactor.listener = listener
-        return LoggedOutRouter(interactor: interactor, viewController: viewController)
+        logInViewController.listener = interactor
+        return LoggedOutRouter(interactor: interactor, viewController: navigationController)
     }
 }

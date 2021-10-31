@@ -14,8 +14,8 @@
 //  limitations under the License.
 //
 
-import RIBs
 import RxSwift
+import RIBs_Swift_SDK
 
 public protocol TicTacToeRouting: ViewableRouting {
     // TODO: Delcare methods the interactor can invoke to manage sub-tree via the router.

@@ -14,7 +14,7 @@
 //  limitations under the License.
 //
 
-import RIBs
+import RIBs_Swift_SDK
 
 protocol LoggedOutInteractable: Interactable {
     var router: LoggedOutRouting? { get set }
@@ -26,6 +26,15 @@ protocol LoggedOutViewControllable: ViewControllable {
 }
 
 final class LoggedOutRouter: ViewableRouter<LoggedOutInteractable, LoggedOutViewControllable>, LoggedOutRouting {
+    
+    func signUp() {
+        (viewController.viewController as? UINavigationController)?.pushViewController(SignUpViewController(), animated: false)
+    }
+    
+    func restorePassword() {
+        (viewController.viewController as? UINavigationController)?.pushViewController(RecoverPasswordViewController(), animated: false)
+    }
+    
 
     // TODO: Constructor inject child builder protocols to allow building children.
     override init(interactor: LoggedOutInteractable, viewController: LoggedOutViewControllable) {

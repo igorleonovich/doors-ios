@@ -14,7 +14,7 @@
 //  limitations under the License.
 //
 
-import RIBs
+import RIBs_Swift_SDK
 
 protocol TicTacToeInteractable: Interactable {
     var router: TicTacToeRouting? { get set }

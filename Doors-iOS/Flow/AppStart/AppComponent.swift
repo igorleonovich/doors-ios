@@ -6,7 +6,7 @@
 //  Copyright © 2021 FT. All rights reserved.
 //
 
-import RIBs
+import RIBs_Swift_SDK
 
 class AppComponent: Component<EmptyDependency>, RootDependency {
 

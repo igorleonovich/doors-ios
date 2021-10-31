@@ -14,8 +14,9 @@
 //  limitations under the License.
 //
 
-import RIBs
+import Foundation
 import RxSwift
+import RIBs_Swift_SDK
 
 protocol LoggedInRouting: Routing {
     func cleanupViews()

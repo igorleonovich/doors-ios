@@ -29,8 +29,8 @@
 		69709E92272D513000FBCCBB /* LoggedOutInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69709E8C272D513000FBCCBB /* LoggedOutInteractor.swift */; };
 		69709E93272D513000FBCCBB /* LoggedOutRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69709E8D272D513000FBCCBB /* LoggedOutRouter.swift */; };
 		69709E94272D513000FBCCBB /* LoggedOutRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69709E8D272D513000FBCCBB /* LoggedOutRouter.swift */; };
-		69709E95272D513000FBCCBB /* LoggedOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69709E8E272D513000FBCCBB /* LoggedOutViewController.swift */; };
-		69709E96272D513000FBCCBB /* LoggedOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69709E8E272D513000FBCCBB /* LoggedOutViewController.swift */; };
+		69709E95272D513000FBCCBB /* LoggedOutNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69709E8E272D513000FBCCBB /* LoggedOutNavigationViewController.swift */; };
+		69709E96272D513000FBCCBB /* LoggedOutNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69709E8E272D513000FBCCBB /* LoggedOutNavigationViewController.swift */; };
 		69709E9A272D515D00FBCCBB /* LoggedInActionableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69709E98272D515C00FBCCBB /* LoggedInActionableItem.swift */; };
 		69709E9B272D515D00FBCCBB /* LoggedInActionableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69709E98272D515C00FBCCBB /* LoggedInActionableItem.swift */; };
 		69709E9C272D515D00FBCCBB /* RootActionableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69709E99272D515C00FBCCBB /* RootActionableItem.swift */; };
@@ -216,7 +216,7 @@
 		69709E8B272D513000FBCCBB /* LoggedOutBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggedOutBuilder.swift; sourceTree = "<group>"; };
 		69709E8C272D513000FBCCBB /* LoggedOutInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggedOutInteractor.swift; sourceTree = "<group>"; };
 		69709E8D272D513000FBCCBB /* LoggedOutRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggedOutRouter.swift; sourceTree = "<group>"; };
-		69709E8E272D513000FBCCBB /* LoggedOutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggedOutViewController.swift; sourceTree = "<group>"; };
+		69709E8E272D513000FBCCBB /* LoggedOutNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggedOutNavigationViewController.swift; sourceTree = "<group>"; };
 		69709E98272D515C00FBCCBB /* LoggedInActionableItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggedInActionableItem.swift; sourceTree = "<group>"; };
 		69709E99272D515C00FBCCBB /* RootActionableItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootActionableItem.swift; sourceTree = "<group>"; };
 		69709E9F272D51A800FBCCBB /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
@@ -416,7 +416,13 @@
 				69709E8B272D513000FBCCBB /* LoggedOutBuilder.swift */,
 				69709E8C272D513000FBCCBB /* LoggedOutInteractor.swift */,
 				69709E8D272D513000FBCCBB /* LoggedOutRouter.swift */,
-				69709E8E272D513000FBCCBB /* LoggedOutViewController.swift */,
+				69709E8E272D513000FBCCBB /* LoggedOutNavigationViewController.swift */,
+				69F0709A26B6B9410027E94D /* LogInViewController.swift */,
+				69ED6406272CF96C00153653 /* LogInViewController.xib */,
+				69ED63FF272CF4F000153653 /* SignUpViewController.swift */,
+				69ED6400272CF4F100153653 /* SignUpViewController.xib */,
+				69F0709826B6B9410027E94D /* RecoverPasswordViewController.swift */,
+				69ED6405272CF96C00153653 /* RecoverPasswordViewController.xib */,
 			);
 			path = LoggedOut;
 			sourceTree = "<group>";
@@ -690,12 +696,6 @@
 			children = (
 				69F0709D26B6B9410027E94D /* LoadingViewController.swift */,
 				69F0709726B6B9410027E94D /* LoadingViewController.xib */,
-				69F0709A26B6B9410027E94D /* LogInViewController.swift */,
-				69ED6406272CF96C00153653 /* LogInViewController.xib */,
-				69ED63FF272CF4F000153653 /* SignUpViewController.swift */,
-				69ED6400272CF4F100153653 /* SignUpViewController.xib */,
-				69F0709826B6B9410027E94D /* RecoverPasswordViewController.swift */,
-				69ED6405272CF96C00153653 /* RecoverPasswordViewController.xib */,
 			);
 			path = Start;
 			sourceTree = "<group>";
@@ -1016,7 +1016,7 @@
 				69709EE7272D521100FBCCBB /* TicTacToeViewController.swift in Sources */,
 				69F0707F26B6B9310027E94D /* RefreshTokenInput.swift in Sources */,
 				69709EF5272D521100FBCCBB /* RandomWinRouter.swift in Sources */,
-				69709E95272D513000FBCCBB /* LoggedOutViewController.swift in Sources */,
+				69709E95272D513000FBCCBB /* LoggedOutNavigationViewController.swift in Sources */,
 				69F0706A26B6B9280027E94D /* UIViewController+Extensions.swift in Sources */,
 				69709EDF272D521100FBCCBB /* BasicScoreBoardViewController.swift in Sources */,
 				69709EDD272D521100FBCCBB /* BasicScoreBoardRouter.swift in Sources */,
@@ -1105,7 +1105,7 @@
 				69709EE8272D521100FBCCBB /* TicTacToeViewController.swift in Sources */,
 				69F0708026B6B9310027E94D /* RefreshTokenInput.swift in Sources */,
 				69709EF6272D521100FBCCBB /* RandomWinRouter.swift in Sources */,
-				69709E96272D513000FBCCBB /* LoggedOutViewController.swift in Sources */,
+				69709E96272D513000FBCCBB /* LoggedOutNavigationViewController.swift in Sources */,
 				69F0706B26B6B9280027E94D /* UIViewController+Extensions.swift in Sources */,
 				69709EE0272D521100FBCCBB /* BasicScoreBoardViewController.swift in Sources */,
 				69709EDE272D521100FBCCBB /* BasicScoreBoardRouter.swift in Sources */,

@@ -14,7 +14,7 @@
 //  limitations under the License.
 //
 
-import RIBs
+import RIBs_Swift_SDK
 
 protocol OffGameInteractable: Interactable, BasicScoreBoardListener {
     var router: OffGameRouting? { get set }

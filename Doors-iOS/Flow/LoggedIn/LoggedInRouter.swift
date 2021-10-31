@@ -14,7 +14,7 @@
 //  limitations under the License.
 //
 
-import RIBs
+import RIBs_Swift_SDK
 
 protocol LoggedInInteractable: Interactable, OffGameListener, GameListener {
     var router: LoggedInRouting? { get set }
@@ -23,6 +23,7 @@ protocol LoggedInInteractable: Interactable, OffGameListener, GameListener {
 
 protocol LoggedInViewControllable: ViewControllable {
     func replaceModal(viewController: ViewControllable?)
+    func replaceModal(viewController: ViewControllable?, modalPresentationStyle: UIModalPresentationStyle?)
 }
 
 final class LoggedInRouter: Router<LoggedInInteractable>, LoggedInRouting {
