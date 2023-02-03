@@ -10,6 +10,7 @@ import UIKit
 final class SessionViewController: BaseViewController {
 
     weak var core: Core!
+    weak var mainViewController: MainViewController?
     
     init(core: Core) {
         self.core = core
@@ -28,6 +29,19 @@ final class SessionViewController: BaseViewController {
     // MARK: - Setup
     
     private func setupUI() {
-        view.backgroundColor = .darkGray
+        showMain()
+    }
+    
+    
+    // MARK: Actions
+    
+    private func showMain() {
+        let mainViewController = MainViewController(core: core)
+        addChild(mainViewController)
+        view.addSubview(mainViewController.view)
+        mainViewController.view.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+        self.mainViewController = mainViewController
     }
 }
