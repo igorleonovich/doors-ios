@@ -10,12 +10,12 @@ import UIKit
 
 final class RootViewController: BaseViewController {
     
-    weak var core: Core!
+    weak var rootCore: RootCore!
     weak var loadingViewController: LoadingViewController?
     weak var rootSessionViewController: RootSessionViewController?
     
-    init(core: Core) {
-        self.core = core
+    init(rootCore: RootCore) {
+        self.rootCore = rootCore
         super.init()
     }
     
@@ -42,7 +42,7 @@ final class RootViewController: BaseViewController {
     // MARK: Screens: Loading
     
     private func showLoading() {
-        let loadingViewController = LoadingViewController(core: core)
+        let loadingViewController = LoadingViewController(rootCore: rootCore)
         self.loadingViewController = loadingViewController
         add(child: loadingViewController)
     }
@@ -60,6 +60,8 @@ final class RootViewController: BaseViewController {
     // MARK: Screens: Root Session
     
     private func showRootSession() {
+        let core = Core()
+        core.rootCore = rootCore
         let rootSessionViewController = RootSessionViewController(core: core)
         self.rootSessionViewController = rootSessionViewController
         add(child: rootSessionViewController)

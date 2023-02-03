@@ -9,7 +9,7 @@ import UIKit
 
 final class RootSessionViewController: BaseViewController {
 
-    weak var core: Core!
+    var core: Core!
     weak var currentSessionViewController: SessionViewController!
     
     init(core: Core) {

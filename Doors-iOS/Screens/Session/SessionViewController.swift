@@ -28,6 +28,6 @@ final class SessionViewController: BaseViewController {
     // MARK: - Setup
     
     private func setupUI() {
-        
+        view.backgroundColor = .darkGray
     }
 }

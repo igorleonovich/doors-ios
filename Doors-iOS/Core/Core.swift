@@ -8,6 +8,12 @@
 
 import Foundation
 
+final class RootCore {
+
+}
+
+
 final class Core {
 
+    weak var rootCore: RootCore!
 }

@@ -10,10 +10,10 @@ import UIKit
 
 final class LoadingViewController: BaseViewController {
 
-    weak var core: Core!
+    weak var rootCore: RootCore!
     
-    init(core: Core) {
-        self.core = core
+    init(rootCore: RootCore) {
+        self.rootCore = rootCore
         super.init()
     }
     
