@@ -3,7 +3,7 @@
 //  Doors-iOS
 //
 //  Created by Igor Leonovich on 5/9/20.
-//  Copyright © 2020 FT. All rights reserved.
+//  Copyright © 2020 IL. All rights reserved.
 //
 
 import UIKit
