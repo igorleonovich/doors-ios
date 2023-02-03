@@ -18,6 +18,6 @@
 // C U S T O M
 //
 
-PRODUCT_BUNDLE_IDENTIFIER = com.ft.doors.ios.uni.dev
+PRODUCT_BUNDLE_IDENTIFIER = fm.doors.ios.dev
 
 PRODUCT_NAME = Doors-Dev-Debug-Uni

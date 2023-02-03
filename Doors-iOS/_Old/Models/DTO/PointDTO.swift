@@ -9,6 +9,7 @@
 import Foundation
 
 struct PointDTO: Codable {
+    
     let id: UUID?
     let userID: UUID
     let superPointID: UUID?
