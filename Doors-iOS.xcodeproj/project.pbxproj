@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		690A4816298D73F0000C02B4 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690A4815298D73F0000C02B4 /* BaseViewController.swift */; };
+		690A4818298D743B000C02B4 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690A4817298D743B000C02B4 /* RootViewController.swift */; };
+		690A481A298D7492000C02B4 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690A4819298D7492000C02B4 /* LoadingViewController.swift */; };
+		690A481E298D74C4000C02B4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690A481D298D74C4000C02B4 /* MainViewController.swift */; };
+		690A4821298D754B000C02B4 /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690A4820298D754B000C02B4 /* Core.swift */; };
+		690A4824298D767F000C02B4 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690A4823298D767F000C02B4 /* Color.swift */; };
+		690A4827298D77A8000C02B4 /* RootSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690A4826298D77A8000C02B4 /* RootSessionViewController.swift */; };
+		690A482A298D77EA000C02B4 /* SessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690A4829298D77EA000C02B4 /* SessionViewController.swift */; };
 		69ED6401272CF4F100153653 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69ED63FF272CF4F000153653 /* SignUpViewController.swift */; };
 		69ED6402272CF4F100153653 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69ED63FF272CF4F000153653 /* SignUpViewController.swift */; };
 		69ED6403272CF4F100153653 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69ED6400272CF4F100153653 /* SignUpViewController.xib */; };
@@ -122,6 +130,14 @@
 		407A72E65612B5EADCC99679 /* Pods-Doors-iOS-Extra.release (dev).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doors-iOS-Extra.release (dev).xcconfig"; path = "Target Support Files/Pods-Doors-iOS-Extra/Pods-Doors-iOS-Extra.release (dev).xcconfig"; sourceTree = "<group>"; };
 		4478D04C27F2EC9B48435165 /* Pods-Doors-iOS-Uni.debug (stage).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doors-iOS-Uni.debug (stage).xcconfig"; path = "Target Support Files/Pods-Doors-iOS-Uni/Pods-Doors-iOS-Uni.debug (stage).xcconfig"; sourceTree = "<group>"; };
 		54E7E69C12EDC3EB6FCC107C /* Pods-Doors-iOS-Extra.release (prod).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doors-iOS-Extra.release (prod).xcconfig"; path = "Target Support Files/Pods-Doors-iOS-Extra/Pods-Doors-iOS-Extra.release (prod).xcconfig"; sourceTree = "<group>"; };
+		690A4815298D73F0000C02B4 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		690A4817298D743B000C02B4 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		690A4819298D7492000C02B4 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		690A481D298D74C4000C02B4 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		690A4820298D754B000C02B4 /* Core.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core.swift; sourceTree = "<group>"; };
+		690A4823298D767F000C02B4 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		690A4826298D77A8000C02B4 /* RootSessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootSessionViewController.swift; sourceTree = "<group>"; };
+		690A4829298D77EA000C02B4 /* SessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionViewController.swift; sourceTree = "<group>"; };
 		6919EB70298D1FC600F96016 /* Doors.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Doors.entitlements; sourceTree = "<group>"; };
 		69ED63FF272CF4F000153653 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		69ED6400272CF4F100153653 /* SignUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
@@ -247,9 +263,79 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		690A4811298D73C4000C02B4 /* General */ = {
+			isa = PBXGroup;
+			children = (
+				690A4815298D73F0000C02B4 /* BaseViewController.swift */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
+		690A4812298D73CA000C02B4 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				690A4817298D743B000C02B4 /* RootViewController.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		690A4813298D73D5000C02B4 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				690A481D298D74C4000C02B4 /* MainViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		690A4814298D73DE000C02B4 /* Loading */ = {
+			isa = PBXGroup;
+			children = (
+				690A4819298D7492000C02B4 /* LoadingViewController.swift */,
+			);
+			path = Loading;
+			sourceTree = "<group>";
+		};
+		690A481F298D7524000C02B4 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				690A4820298D754B000C02B4 /* Core.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		690A4822298D7666000C02B4 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				690A4823298D767F000C02B4 /* Color.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		690A4825298D7792000C02B4 /* RootSession */ = {
+			isa = PBXGroup;
+			children = (
+				690A4826298D77A8000C02B4 /* RootSessionViewController.swift */,
+			);
+			path = RootSession;
+			sourceTree = "<group>";
+		};
+		690A4828298D77BA000C02B4 /* Session */ = {
+			isa = PBXGroup;
+			children = (
+				690A4829298D77EA000C02B4 /* SessionViewController.swift */,
+			);
+			path = Session;
+			sourceTree = "<group>";
+		};
 		690F4120298D6E7700C5239F /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				690A4811298D73C4000C02B4 /* General */,
+				690A4812298D73CA000C02B4 /* Root */,
+				690A4814298D73DE000C02B4 /* Loading */,
+				690A4825298D7792000C02B4 /* RootSession */,
+				690A4828298D77BA000C02B4 /* Session */,
+				690A4813298D73D5000C02B4 /* Main */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -304,7 +390,9 @@
 			children = (
 				6986698729886E2100FA3CC6 /* _Old */,
 				690F4120298D6E7700C5239F /* Screens */,
+				690A481F298D7524000C02B4 /* Core */,
 				690F4121298D6E9300C5239F /* Models */,
+				690A4822298D7666000C02B4 /* Utils */,
 				69F06FFF26B6ADD10027E94D /* AppDelegate.swift */,
 				69F0700A26B6ADDD0027E94D /* LaunchScreen.storyboard */,
 				6919EB70298D1FC600F96016 /* Doors.entitlements */,
@@ -736,11 +824,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				690A4821298D754B000C02B4 /* Core.swift in Sources */,
 				69F070D826B6B9810027E94D /* Device.swift in Sources */,
+				690A481E298D74C4000C02B4 /* MainViewController.swift in Sources */,
 				69F0706C26B6B9280027E94D /* UIView+Extensions.swift in Sources */,
 				69F0700026B6ADD10027E94D /* AppDelegate.swift in Sources */,
+				690A482A298D77EA000C02B4 /* SessionViewController.swift in Sources */,
 				69F0708926B6B9310027E94D /* RefreshTokenOutput.swift in Sources */,
 				69F070B726B6B9410027E94D /* OldLoadingViewController.swift in Sources */,
+				690A4816298D73F0000C02B4 /* BaseViewController.swift in Sources */,
 				69F0707F26B6B9310027E94D /* RefreshTokenInput.swift in Sources */,
 				69F0700226B6ADD10027E94D /* SceneDelegate.swift in Sources */,
 				69F0706A26B6B9280027E94D /* UIViewController+Extensions.swift in Sources */,
@@ -750,19 +842,23 @@
 				69F0705D26B6B8EC0027E94D /* SceneManager.swift in Sources */,
 				69F0708D26B6B9310027E94D /* ListDTO.swift in Sources */,
 				69F070D226B6B9810027E94D /* InternetProtocol.swift in Sources */,
+				690A4824298D767F000C02B4 /* Color.swift in Sources */,
 				69F0705926B6B8EC0027E94D /* Constants.swift in Sources */,
 				69F0708126B6B9310027E94D /* ServerError.swift in Sources */,
 				69F0708526B6B9310027E94D /* UserPrivateInput.swift in Sources */,
 				69F0708326B6B9310027E94D /* LogInInput.swift in Sources */,
+				690A481A298D7492000C02B4 /* LoadingViewController.swift in Sources */,
 				69F0704B26B6B8DB0027E94D /* OldBaseViewController.swift in Sources */,
 				69F070A526B6B9410027E94D /* PlanViewController.swift in Sources */,
 				69F070C326B6B9410027E94D /* DoorServiceCell.swift in Sources */,
+				690A4818298D743B000C02B4 /* RootViewController.swift in Sources */,
 				69F0705B26B6B8EC0027E94D /* UserManager.swift in Sources */,
 				69F0708726B6B9310027E94D /* LoginOutput.swift in Sources */,
 				69F0707D26B6B9310027E94D /* PointDTO.swift in Sources */,
 				69F070DF26B6B98A0027E94D /* Colors.swift in Sources */,
 				69F0706526B6B90E0027E94D /* CustomButton.swift in Sources */,
 				69F0706126B6B8EC0027E94D /* AuthManager.swift in Sources */,
+				690A4827298D77A8000C02B4 /* RootSessionViewController.swift in Sources */,
 				69F0705F26B6B8EC0027E94D /* OldCore.swift in Sources */,
 				69F070BD26B6B9410027E94D /* ConstructorViewController+UICollectionView.swift in Sources */,
 				69F070AD26B6B9410027E94D /* RecoverPasswordViewController.swift in Sources */,
