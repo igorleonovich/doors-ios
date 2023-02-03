@@ -564,7 +564,7 @@
 			children = (
 				69F0709226B6B9410027E94D /* Plan */,
 				69F0709526B6B9410027E94D /* Start */,
-				69F0709E26B6B9410027E94D /* Console */,
+				69F0709E26B6B9410027E94D /* Constructor */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -593,7 +593,7 @@
 			path = Start;
 			sourceTree = "<group>";
 		};
-		69F0709E26B6B9410027E94D /* Console */ = {
+		69F0709E26B6B9410027E94D /* Constructor */ = {
 			isa = PBXGroup;
 			children = (
 				69F0709F26B6B9410027E94D /* ConstructorViewController.xib */,
@@ -603,7 +603,7 @@
 				69F070A326B6B9410027E94D /* ConstructorNavigationController.swift */,
 				69F070A426B6B9410027E94D /* DoorServiceCell.swift */,
 			);
-			path = Console;
+			path = Constructor;
 			sourceTree = "<group>";
 		};
 		69F070C526B6B9810027E94D /* Tools */ = {

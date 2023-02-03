@@ -2,7 +2,7 @@
 //  ConsoleViewController.swift
 //  Doors-iOS
 //
-//  Created by Igor Leonovich on 3.02.23.
+//  Created by Igor Leonovich on 5.09.20.
 //  Copyright © 2023 IL. All rights reserved.
 //
 
@@ -32,4 +32,3 @@ final class ConsoleViewController: BaseFeatureViewController {
         view.backgroundColor = .systemIndigo
     }
 }
-

@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class MainViewController: BaseViewController {
+final class MainViewController: BaseFeatureViewController {
     
     weak var core: Core!
     private var featuresViewControllers = [BaseFeatureViewController]()

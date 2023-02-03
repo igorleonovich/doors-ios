@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Feature: NSObject {
+final class Feature: NSObject {
     
     let name: String
     let dependencies: [Feature]

@@ -11,7 +11,7 @@ import UIKit
 final class SessionViewController: BaseViewController {
 
     weak var core: Core!
-    weak var mainViewController: MainViewController?
+    private var featuresViewControllers = [BaseFeatureViewController]()
     
     init(core: Core) {
         self.core = core
@@ -25,21 +25,29 @@ final class SessionViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        loadInitialFeature()
     }
     
     // MARK: - Setup
     
     private func setupUI() {
-        showMain()
+        
     }
     
     
     // MARK: Actions
     
-    private func showMain() {
-        let mainViewController = MainViewController(core: core)
-        add(child: mainViewController)
-        view.addSubview(mainViewController.view)
-        self.mainViewController = mainViewController
+    private func loadInitialFeature() {
+        let mainFeature = Feature(name: "main", dependencies: [])
+        loadFeature(mainFeature)
+    }
+    
+    private func loadFeature(_ feature: Feature) {
+        if feature.name == "main" {
+            let mainViewController = MainViewController(core: core)
+            add(child: mainViewController)
+            view.addSubview(mainViewController.view)
+            self.featuresViewControllers.append(mainViewController)
+        }
     }
 }
