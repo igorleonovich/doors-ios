@@ -5,7 +5,6 @@ use_frameworks!
 def pods
   pod 'MBProgressHUD'
   pod 'JWTDecode'
-  pod 'R.swift'
   pod 'SnapKit'
 end
 

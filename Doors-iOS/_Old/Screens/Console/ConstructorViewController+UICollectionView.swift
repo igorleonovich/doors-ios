@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Rswift
 
 extension ConstructorViewController: UICollectionViewDelegate {
     
@@ -67,7 +66,7 @@ extension ConstructorViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let user = core.userManager.user,
-              let cell = collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.doorsServiceCell, for: indexPath) else { return UICollectionViewCell() }
+              let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DoorsServiceCell", for: indexPath) as? DoorServiceCell else { return UICollectionViewCell() }
         if indexPath.section == 0 {
             cell.configure(with: user.doorsServicesActive[indexPath.row], isActive: true)
         } else {

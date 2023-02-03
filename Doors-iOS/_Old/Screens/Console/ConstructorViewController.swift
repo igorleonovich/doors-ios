@@ -6,11 +6,10 @@
 //  Copyright © 2020 FT. All rights reserved.
 //
 
-import UIKit
 import MBProgressHUD
-import Rswift
+import UIKit
 
-class ConstructorViewController: BaseNavigableViewController {
+final class ConstructorViewController: BaseNavigableViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -20,7 +19,7 @@ class ConstructorViewController: BaseNavigableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Constructor"
-        collectionView.register(R.nib.doorsServiceCell)
+        collectionView.register(UINib(nibName: "DoorsServiceCell", bundle: .main), forCellWithReuseIdentifier: "DoorsServiceCell")
         core.userManager.getUserProfile { error in
             if let error = error {
                 let alert = CustomAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)

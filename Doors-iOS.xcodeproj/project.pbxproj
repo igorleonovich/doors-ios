@@ -109,8 +109,6 @@
 		69F070DE26B6B98A0027E94D /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F070DB26B6B98A0027E94D /* Settings.swift */; };
 		69F070DF26B6B98A0027E94D /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F070DC26B6B98A0027E94D /* Colors.swift */; };
 		69F070E026B6B98A0027E94D /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F070DC26B6B98A0027E94D /* Colors.swift */; };
-		69F070E426B6BA7C0027E94D /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F070E326B6BA7C0027E94D /* R.generated.swift */; };
-		69F070E526B6BA7C0027E94D /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F070E326B6BA7C0027E94D /* R.generated.swift */; };
 		C4469644B390573650999F4A /* Pods_Doors_iOS_Uni.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A374D9DADD76B2D9520DD63 /* Pods_Doors_iOS_Uni.framework */; };
 		D5B7D3BDCD217E58EDF280AB /* Pods_Doors_iOS_Extra.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833EE7B3A2BE98682B63DCB0 /* Pods_Doors_iOS_Extra.framework */; };
 /* End PBXBuildFile section */
@@ -202,7 +200,6 @@
 		69F070CD26B6B9810027E94D /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		69F070DB26B6B98A0027E94D /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		69F070DC26B6B98A0027E94D /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
-		69F070E326B6BA7C0027E94D /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		7A45977E56CE7F70E3512ED8 /* Pods-Doors-iOS-Uni.release (stage).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doors-iOS-Uni.release (stage).xcconfig"; path = "Target Support Files/Pods-Doors-iOS-Uni/Pods-Doors-iOS-Uni.release (stage).xcconfig"; sourceTree = "<group>"; };
 		833EE7B3A2BE98682B63DCB0 /* Pods_Doors_iOS_Extra.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Doors_iOS_Extra.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8AA4B498681E479089C32EA /* Pods-Doors-iOS-Uni.release (prod).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doors-iOS-Uni.release (prod).xcconfig"; path = "Target Support Files/Pods-Doors-iOS-Uni/Pods-Doors-iOS-Uni.release (prod).xcconfig"; sourceTree = "<group>"; };
@@ -273,7 +270,6 @@
 			isa = PBXGroup;
 			children = (
 				69F06FFE26B6ADD10027E94D /* Doors-iOS */,
-				69F070E226B6BA7C0027E94D /* Supporting files */,
 				69F06FFD26B6ADD10027E94D /* Products */,
 				257197C4284B6FB92E2C7525 /* Pods */,
 				AAA6CA3C0FB364487DAD7A4C /* Frameworks */,
@@ -497,14 +493,6 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
-		69F070E226B6BA7C0027E94D /* Supporting files */ = {
-			isa = PBXGroup;
-			children = (
-				69F070E326B6BA7C0027E94D /* R.generated.swift */,
-			);
-			path = "Supporting files";
-			sourceTree = "<group>";
-		};
 		AAA6CA3C0FB364487DAD7A4C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -522,7 +510,6 @@
 			buildConfigurationList = 69F0701026B6ADDD0027E94D /* Build configuration list for PBXNativeTarget "Doors-iOS-Uni" */;
 			buildPhases = (
 				B70CD38BBD5B696F114E5F3C /* [CP] Check Pods Manifest.lock */,
-				69F070E126B6BA270027E94D /* R.swift */,
 				69F06FF826B6ADD10027E94D /* Sources */,
 				69F06FF926B6ADD10027E94D /* Frameworks */,
 				69F06FFA26B6ADD10027E94D /* Resources */,
@@ -628,26 +615,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		69F070E126B6BA270027E94D /* R.swift */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"$TEMP_DIR/rswift-lastrun",
-			);
-			name = R.swift;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$SRCROOT/Supporting files/R.generated.swift",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/Supporting files/R.generated.swift\"\n";
-		};
 		69F070E626B6BD1D0027E94D /* R.swift */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -782,7 +749,6 @@
 				69F0706126B6B8EC0027E94D /* AuthManager.swift in Sources */,
 				69F0705F26B6B8EC0027E94D /* Core.swift in Sources */,
 				69F070BD26B6B9410027E94D /* ConstructorViewController+UICollectionView.swift in Sources */,
-				69F070E426B6BA7C0027E94D /* R.generated.swift in Sources */,
 				69F070AD26B6B9410027E94D /* RecoverPasswordViewController.swift in Sources */,
 				69F070C126B6B9410027E94D /* ConstructorNavigationController.swift in Sources */,
 				69F070B126B6B9410027E94D /* LogInViewController.swift in Sources */,
@@ -831,7 +797,6 @@
 				69F0706226B6B8EC0027E94D /* AuthManager.swift in Sources */,
 				69F0706026B6B8EC0027E94D /* Core.swift in Sources */,
 				69F070BE26B6B9410027E94D /* ConstructorViewController+UICollectionView.swift in Sources */,
-				69F070E526B6BA7C0027E94D /* R.generated.swift in Sources */,
 				69F070AE26B6B9410027E94D /* RecoverPasswordViewController.swift in Sources */,
 				69F070C226B6B9410027E94D /* ConstructorNavigationController.swift in Sources */,
 				69F070B226B6B9410027E94D /* LogInViewController.swift in Sources */,
