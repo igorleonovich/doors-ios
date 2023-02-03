@@ -124,6 +124,7 @@
 		407A72E65612B5EADCC99679 /* Pods-Doors-iOS-Extra.release (dev).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doors-iOS-Extra.release (dev).xcconfig"; path = "Target Support Files/Pods-Doors-iOS-Extra/Pods-Doors-iOS-Extra.release (dev).xcconfig"; sourceTree = "<group>"; };
 		4478D04C27F2EC9B48435165 /* Pods-Doors-iOS-Uni.debug (stage).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doors-iOS-Uni.debug (stage).xcconfig"; path = "Target Support Files/Pods-Doors-iOS-Uni/Pods-Doors-iOS-Uni.debug (stage).xcconfig"; sourceTree = "<group>"; };
 		54E7E69C12EDC3EB6FCC107C /* Pods-Doors-iOS-Extra.release (prod).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doors-iOS-Extra.release (prod).xcconfig"; path = "Target Support Files/Pods-Doors-iOS-Extra/Pods-Doors-iOS-Extra.release (prod).xcconfig"; sourceTree = "<group>"; };
+		6919EB70298D1FC600F96016 /* Doors.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Doors.entitlements; sourceTree = "<group>"; };
 		69ED63FF272CF4F000153653 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		69ED6400272CF4F100153653 /* SignUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
 		69ED6405272CF96C00153653 /* RecoverPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecoverPasswordViewController.xib; sourceTree = "<group>"; };
@@ -296,6 +297,7 @@
 				69F0700A26B6ADDD0027E94D /* LaunchScreen.storyboard */,
 				69F0700D26B6ADDD0027E94D /* Doors-iOS-Uni-Info.plist */,
 				69F0702F26B6AF1C0027E94D /* Doors-iOS-Extra-Info.plist */,
+				6919EB70298D1FC600F96016 /* Doors.entitlements */,
 			);
 			path = "Doors-iOS";
 			sourceTree = "<group>";
@@ -991,6 +993,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "Doors-iOS";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Doors-iOS/Doors.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9TZZKGNZ6W;
 				INFOPLIST_FILE = "Doors-iOS/Doors-iOS-Uni-Info.plist";
@@ -1010,6 +1013,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "Doors-iOS";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Doors-iOS/Doors.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9TZZKGNZ6W;
 				INFOPLIST_FILE = "Doors-iOS/Doors-iOS-Uni-Info.plist";
@@ -1029,6 +1033,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "Doors-iOS";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Doors-iOS/Doors.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9TZZKGNZ6W;
 				INFOPLIST_FILE = "Doors-iOS/Doors-iOS-Extra-Info.plist";
@@ -1050,6 +1055,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "Doors-iOS";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Doors-iOS/Doors.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9TZZKGNZ6W;
 				INFOPLIST_FILE = "Doors-iOS/Doors-iOS-Extra-Info.plist";
@@ -1133,6 +1139,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "Doors-iOS";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Doors-iOS/Doors.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9TZZKGNZ6W;
 				INFOPLIST_FILE = "Doors-iOS/Doors-iOS-Uni-Info.plist";
@@ -1152,6 +1159,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "Doors-iOS";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Doors-iOS/Doors.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9TZZKGNZ6W;
 				INFOPLIST_FILE = "Doors-iOS/Doors-iOS-Extra-Info.plist";
@@ -1235,6 +1243,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "Doors-iOS";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Doors-iOS/Doors.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9TZZKGNZ6W;
 				INFOPLIST_FILE = "Doors-iOS/Doors-iOS-Uni-Info.plist";
@@ -1254,6 +1263,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "Doors-iOS";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Doors-iOS/Doors.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9TZZKGNZ6W;
 				INFOPLIST_FILE = "Doors-iOS/Doors-iOS-Extra-Info.plist";
@@ -1331,6 +1341,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "Doors-iOS";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Doors-iOS/Doors.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9TZZKGNZ6W;
 				INFOPLIST_FILE = "Doors-iOS/Doors-iOS-Uni-Info.plist";
@@ -1350,6 +1361,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "Doors-iOS";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Doors-iOS/Doors.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9TZZKGNZ6W;
 				INFOPLIST_FILE = "Doors-iOS/Doors-iOS-Extra-Info.plist";
@@ -1427,6 +1439,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "Doors-iOS";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Doors-iOS/Doors.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9TZZKGNZ6W;
 				INFOPLIST_FILE = "Doors-iOS/Doors-iOS-Uni-Info.plist";
@@ -1446,6 +1459,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "Doors-iOS";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Doors-iOS/Doors.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9TZZKGNZ6W;
 				INFOPLIST_FILE = "Doors-iOS/Doors-iOS-Extra-Info.plist";
