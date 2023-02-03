@@ -9,7 +9,7 @@
 import UIKit
 import MBProgressHUD
 
-class BaseViewController: UIViewController {
+class OldBaseViewController: UIViewController {
     
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint?
     @IBOutlet weak var containerHeightConstraint: NSLayoutConstraint?
@@ -97,11 +97,11 @@ class BaseViewController: UIViewController {
     }
 }
 
-class BaseNavigableViewController: BaseViewController {
+class BaseNavigableViewController: OldBaseViewController {
     
-    weak var core: Core!
+    weak var core: OldCore!
     
-    init(core: Core) {
+    init(core: OldCore) {
         self.core = core
         super.init()
     }
@@ -144,7 +144,7 @@ class BaseNavigableViewController: BaseViewController {
                     alert.addAction(okAction)
                     self.present(alert, animated: true, completion: nil)
                 } else {
-                    guard let rootViewController = self.navigationController?.parent as? RootViewController else { return }
+                    guard let rootViewController = self.navigationController?.parent as? OldRootViewController else { return }
                     rootViewController.removeConstructorNavigationController()
                     rootViewController.showAuthNavigationController()
                 }

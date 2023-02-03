@@ -18,9 +18,9 @@ class LogInViewController: EntryBaseViewController {
     @IBOutlet weak var signUpButton: CustomButton!
     @IBOutlet weak var recoverPasswordButton: CustomButton!
     
-    weak var core: Core!
+    weak var core: OldCore!
     
-    init(core: Core) {
+    init(core: OldCore) {
         self.core = core
         super.init()
     }
@@ -76,7 +76,7 @@ class LogInViewController: EntryBaseViewController {
                 alert.addAction(okAction)
                 self.present(alert, animated: true, completion: nil)
             } else {
-                guard let rootViewController = self.navigationController?.parent as? RootViewController else { return }
+                guard let rootViewController = self.navigationController?.parent as? OldRootViewController else { return }
                 rootViewController.showConstructorNavigationController()
             }
         }

@@ -9,15 +9,15 @@
 import UIKit
 import MBProgressHUD
 
-class SignUpViewController: BaseViewController {
+class SignUpViewController: OldBaseViewController {
     
-    let core: Core
+    let core: OldCore
     
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
-    init(core: Core) {
+    init(core: OldCore) {
         self.core = core
         super.init()
     }
@@ -58,7 +58,7 @@ class SignUpViewController: BaseViewController {
                 alert.addAction(okAction)
                 self.present(alert, animated: true, completion: nil)
             } else {
-                guard let rootViewController = self.navigationController?.parent as? RootViewController else { return }
+                guard let rootViewController = self.navigationController?.parent as? OldRootViewController else { return }
                 rootViewController.showConstructorNavigationController()
             }
         }

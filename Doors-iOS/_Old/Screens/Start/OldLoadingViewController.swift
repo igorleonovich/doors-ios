@@ -8,15 +8,15 @@
 
 import UIKit
 
-class LoadingViewController: UIViewController {
+class OldLoadingViewController: UIViewController {
 
-    weak var core: Core!
+    weak var core: OldCore!
     
     weak var delegate: LoadingViewControllerDelegate?
     
     var isInitialSetupPerformed = false
     
-    init(core: Core) {
+    init(core: OldCore) {
         self.core = core
         super.init(nibName: nil, bundle: nil)
     }

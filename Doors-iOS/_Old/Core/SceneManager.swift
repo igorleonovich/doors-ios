@@ -10,7 +10,7 @@ import Foundation
 
 class SceneManager {
     
-    weak var core: Core!
+    weak var core: OldCore!
     
     var readDataTask: URLSessionTask?
     var writeDataTask: URLSessionTask?

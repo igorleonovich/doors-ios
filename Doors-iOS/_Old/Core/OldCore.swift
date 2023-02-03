@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Core {
+class OldCore {
     
     let authManager = AuthManager()
     let userManager = UserManager()

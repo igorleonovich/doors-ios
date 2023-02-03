@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EntryBaseViewController: BaseViewController {
+class EntryBaseViewController: OldBaseViewController {
     
     @IBOutlet weak var appTitleLabel: UILabel!
     

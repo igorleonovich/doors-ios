@@ -8,15 +8,15 @@
 
 import UIKit
 
-class RecoverPasswordViewController: BaseViewController {
+class RecoverPasswordViewController: OldBaseViewController {
     
-    weak var core: Core!
+    weak var core: OldCore!
     
     @IBOutlet weak var recoverButton: CustomButton!
     @IBOutlet weak var backButton: CustomButton!
     
     
-    init(core: Core) {
+    init(core: OldCore) {
         self.core = core
         super.init()
     }

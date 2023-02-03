@@ -25,10 +25,10 @@
 		69F0701A26B6AE340027E94D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69F0700A26B6ADDD0027E94D /* LaunchScreen.storyboard */; };
 		69F0701B26B6AE340027E94D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69F0700826B6ADDD0027E94D /* Assets.xcassets */; };
 		69F0701C26B6AE340027E94D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69F0700526B6ADD10027E94D /* Main.storyboard */; };
-		69F0704B26B6B8DB0027E94D /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F0704726B6B8DB0027E94D /* BaseViewController.swift */; };
-		69F0704C26B6B8DB0027E94D /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F0704726B6B8DB0027E94D /* BaseViewController.swift */; };
-		69F0704D26B6B8DB0027E94D /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F0704826B6B8DB0027E94D /* RootViewController.swift */; };
-		69F0704E26B6B8DB0027E94D /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F0704826B6B8DB0027E94D /* RootViewController.swift */; };
+		69F0704B26B6B8DB0027E94D /* OldBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F0704726B6B8DB0027E94D /* OldBaseViewController.swift */; };
+		69F0704C26B6B8DB0027E94D /* OldBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F0704726B6B8DB0027E94D /* OldBaseViewController.swift */; };
+		69F0704D26B6B8DB0027E94D /* OldRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F0704826B6B8DB0027E94D /* OldRootViewController.swift */; };
+		69F0704E26B6B8DB0027E94D /* OldRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F0704826B6B8DB0027E94D /* OldRootViewController.swift */; };
 		69F0704F26B6B8DB0027E94D /* EntryBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F0704926B6B8DB0027E94D /* EntryBaseViewController.swift */; };
 		69F0705026B6B8DB0027E94D /* EntryBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F0704926B6B8DB0027E94D /* EntryBaseViewController.swift */; };
 		69F0705126B6B8DB0027E94D /* CustomAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F0704A26B6B8DB0027E94D /* CustomAlertController.swift */; };
@@ -39,8 +39,8 @@
 		69F0705C26B6B8EC0027E94D /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F0705526B6B8EC0027E94D /* UserManager.swift */; };
 		69F0705D26B6B8EC0027E94D /* SceneManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F0705626B6B8EC0027E94D /* SceneManager.swift */; };
 		69F0705E26B6B8EC0027E94D /* SceneManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F0705626B6B8EC0027E94D /* SceneManager.swift */; };
-		69F0705F26B6B8EC0027E94D /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F0705726B6B8EC0027E94D /* Core.swift */; };
-		69F0706026B6B8EC0027E94D /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F0705726B6B8EC0027E94D /* Core.swift */; };
+		69F0705F26B6B8EC0027E94D /* OldCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F0705726B6B8EC0027E94D /* OldCore.swift */; };
+		69F0706026B6B8EC0027E94D /* OldCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F0705726B6B8EC0027E94D /* OldCore.swift */; };
 		69F0706126B6B8EC0027E94D /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F0705826B6B8EC0027E94D /* AuthManager.swift */; };
 		69F0706226B6B8EC0027E94D /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F0705826B6B8EC0027E94D /* AuthManager.swift */; };
 		69F0706526B6B90E0027E94D /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F0706426B6B90E0027E94D /* CustomButton.swift */; };
@@ -79,8 +79,8 @@
 		69F070AE26B6B9410027E94D /* RecoverPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F0709826B6B9410027E94D /* RecoverPasswordViewController.swift */; };
 		69F070B126B6B9410027E94D /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F0709A26B6B9410027E94D /* LogInViewController.swift */; };
 		69F070B226B6B9410027E94D /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F0709A26B6B9410027E94D /* LogInViewController.swift */; };
-		69F070B726B6B9410027E94D /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F0709D26B6B9410027E94D /* LoadingViewController.swift */; };
-		69F070B826B6B9410027E94D /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F0709D26B6B9410027E94D /* LoadingViewController.swift */; };
+		69F070B726B6B9410027E94D /* OldLoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F0709D26B6B9410027E94D /* OldLoadingViewController.swift */; };
+		69F070B826B6B9410027E94D /* OldLoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F0709D26B6B9410027E94D /* OldLoadingViewController.swift */; };
 		69F070B926B6B9410027E94D /* ConstructorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69F0709F26B6B9410027E94D /* ConstructorViewController.xib */; };
 		69F070BA26B6B9410027E94D /* ConstructorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69F0709F26B6B9410027E94D /* ConstructorViewController.xib */; };
 		69F070BB26B6B9410027E94D /* DoorsServiceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69F070A026B6B9410027E94D /* DoorsServiceCell.xib */; };
@@ -157,14 +157,14 @@
 		69F0704326B6AF580027E94D /* Project-Debug-(Prod).xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Project-Debug-(Prod).xcconfig"; sourceTree = "<group>"; };
 		69F0704426B6AF580027E94D /* Project-Debug-(Stage).xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Project-Debug-(Stage).xcconfig"; sourceTree = "<group>"; };
 		69F0704526B6AF580027E94D /* Project-Release-(Dev).xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Project-Release-(Dev).xcconfig"; sourceTree = "<group>"; };
-		69F0704726B6B8DB0027E94D /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		69F0704826B6B8DB0027E94D /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		69F0704726B6B8DB0027E94D /* OldBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OldBaseViewController.swift; sourceTree = "<group>"; };
+		69F0704826B6B8DB0027E94D /* OldRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OldRootViewController.swift; sourceTree = "<group>"; };
 		69F0704926B6B8DB0027E94D /* EntryBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryBaseViewController.swift; sourceTree = "<group>"; };
 		69F0704A26B6B8DB0027E94D /* CustomAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAlertController.swift; sourceTree = "<group>"; };
 		69F0705426B6B8EC0027E94D /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		69F0705526B6B8EC0027E94D /* UserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		69F0705626B6B8EC0027E94D /* SceneManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneManager.swift; sourceTree = "<group>"; };
-		69F0705726B6B8EC0027E94D /* Core.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Core.swift; sourceTree = "<group>"; };
+		69F0705726B6B8EC0027E94D /* OldCore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OldCore.swift; sourceTree = "<group>"; };
 		69F0705826B6B8EC0027E94D /* AuthManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		69F0706426B6B90E0027E94D /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		69F0706826B6B9280027E94D /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
@@ -184,7 +184,7 @@
 		69F0709726B6B9410027E94D /* LoadingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingViewController.xib; sourceTree = "<group>"; };
 		69F0709826B6B9410027E94D /* RecoverPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecoverPasswordViewController.swift; sourceTree = "<group>"; };
 		69F0709A26B6B9410027E94D /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
-		69F0709D26B6B9410027E94D /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		69F0709D26B6B9410027E94D /* OldLoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OldLoadingViewController.swift; sourceTree = "<group>"; };
 		69F0709F26B6B9410027E94D /* ConstructorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConstructorViewController.xib; sourceTree = "<group>"; };
 		69F070A026B6B9410027E94D /* DoorsServiceCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DoorsServiceCell.xib; sourceTree = "<group>"; };
 		69F070A126B6B9410027E94D /* ConstructorViewController+UICollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ConstructorViewController+UICollectionView.swift"; sourceTree = "<group>"; };
@@ -345,8 +345,8 @@
 		69F0704626B6B8DB0027E94D /* BaseControllers */ = {
 			isa = PBXGroup;
 			children = (
-				69F0704726B6B8DB0027E94D /* BaseViewController.swift */,
-				69F0704826B6B8DB0027E94D /* RootViewController.swift */,
+				69F0704726B6B8DB0027E94D /* OldBaseViewController.swift */,
+				69F0704826B6B8DB0027E94D /* OldRootViewController.swift */,
 				69F0704926B6B8DB0027E94D /* EntryBaseViewController.swift */,
 				69F0704A26B6B8DB0027E94D /* CustomAlertController.swift */,
 			);
@@ -359,7 +359,7 @@
 				69F0705426B6B8EC0027E94D /* Constants.swift */,
 				69F0705526B6B8EC0027E94D /* UserManager.swift */,
 				69F0705626B6B8EC0027E94D /* SceneManager.swift */,
-				69F0705726B6B8EC0027E94D /* Core.swift */,
+				69F0705726B6B8EC0027E94D /* OldCore.swift */,
 				69F0705826B6B8EC0027E94D /* AuthManager.swift */,
 			);
 			path = Core;
@@ -453,7 +453,7 @@
 		69F0709526B6B9410027E94D /* Start */ = {
 			isa = PBXGroup;
 			children = (
-				69F0709D26B6B9410027E94D /* LoadingViewController.swift */,
+				69F0709D26B6B9410027E94D /* OldLoadingViewController.swift */,
 				69F0709726B6B9410027E94D /* LoadingViewController.xib */,
 				69F0709A26B6B9410027E94D /* LogInViewController.swift */,
 				69ED6406272CF96C00153653 /* LogInViewController.xib */,
@@ -740,11 +740,11 @@
 				69F0706C26B6B9280027E94D /* UIView+Extensions.swift in Sources */,
 				69F0700026B6ADD10027E94D /* AppDelegate.swift in Sources */,
 				69F0708926B6B9310027E94D /* RefreshTokenOutput.swift in Sources */,
-				69F070B726B6B9410027E94D /* LoadingViewController.swift in Sources */,
+				69F070B726B6B9410027E94D /* OldLoadingViewController.swift in Sources */,
 				69F0707F26B6B9310027E94D /* RefreshTokenInput.swift in Sources */,
 				69F0700226B6ADD10027E94D /* SceneDelegate.swift in Sources */,
 				69F0706A26B6B9280027E94D /* UIViewController+Extensions.swift in Sources */,
-				69F0704D26B6B8DB0027E94D /* RootViewController.swift in Sources */,
+				69F0704D26B6B8DB0027E94D /* OldRootViewController.swift in Sources */,
 				69F0705126B6B8DB0027E94D /* CustomAlertController.swift in Sources */,
 				69F0708B26B6B9310027E94D /* NewUserOutput.swift in Sources */,
 				69F0705D26B6B8EC0027E94D /* SceneManager.swift in Sources */,
@@ -754,7 +754,7 @@
 				69F0708126B6B9310027E94D /* ServerError.swift in Sources */,
 				69F0708526B6B9310027E94D /* UserPrivateInput.swift in Sources */,
 				69F0708326B6B9310027E94D /* LogInInput.swift in Sources */,
-				69F0704B26B6B8DB0027E94D /* BaseViewController.swift in Sources */,
+				69F0704B26B6B8DB0027E94D /* OldBaseViewController.swift in Sources */,
 				69F070A526B6B9410027E94D /* PlanViewController.swift in Sources */,
 				69F070C326B6B9410027E94D /* DoorServiceCell.swift in Sources */,
 				69F0705B26B6B8EC0027E94D /* UserManager.swift in Sources */,
@@ -763,7 +763,7 @@
 				69F070DF26B6B98A0027E94D /* Colors.swift in Sources */,
 				69F0706526B6B90E0027E94D /* CustomButton.swift in Sources */,
 				69F0706126B6B8EC0027E94D /* AuthManager.swift in Sources */,
-				69F0705F26B6B8EC0027E94D /* Core.swift in Sources */,
+				69F0705F26B6B8EC0027E94D /* OldCore.swift in Sources */,
 				69F070BD26B6B9410027E94D /* ConstructorViewController+UICollectionView.swift in Sources */,
 				69F070AD26B6B9410027E94D /* RecoverPasswordViewController.swift in Sources */,
 				69F070C126B6B9410027E94D /* ConstructorNavigationController.swift in Sources */,
@@ -788,11 +788,11 @@
 				69F0706D26B6B9280027E94D /* UIView+Extensions.swift in Sources */,
 				69F0701626B6AE340027E94D /* AppDelegate.swift in Sources */,
 				69F0708A26B6B9310027E94D /* RefreshTokenOutput.swift in Sources */,
-				69F070B826B6B9410027E94D /* LoadingViewController.swift in Sources */,
+				69F070B826B6B9410027E94D /* OldLoadingViewController.swift in Sources */,
 				69F0708026B6B9310027E94D /* RefreshTokenInput.swift in Sources */,
 				69F0701726B6AE340027E94D /* SceneDelegate.swift in Sources */,
 				69F0706B26B6B9280027E94D /* UIViewController+Extensions.swift in Sources */,
-				69F0704E26B6B8DB0027E94D /* RootViewController.swift in Sources */,
+				69F0704E26B6B8DB0027E94D /* OldRootViewController.swift in Sources */,
 				69F0705226B6B8DB0027E94D /* CustomAlertController.swift in Sources */,
 				69F0708C26B6B9310027E94D /* NewUserOutput.swift in Sources */,
 				69F0705E26B6B8EC0027E94D /* SceneManager.swift in Sources */,
@@ -802,7 +802,7 @@
 				69F0708226B6B9310027E94D /* ServerError.swift in Sources */,
 				69F0708626B6B9310027E94D /* UserPrivateInput.swift in Sources */,
 				69F0708426B6B9310027E94D /* LogInInput.swift in Sources */,
-				69F0704C26B6B8DB0027E94D /* BaseViewController.swift in Sources */,
+				69F0704C26B6B8DB0027E94D /* OldBaseViewController.swift in Sources */,
 				69F070A626B6B9410027E94D /* PlanViewController.swift in Sources */,
 				69F070C426B6B9410027E94D /* DoorServiceCell.swift in Sources */,
 				69F0705C26B6B8EC0027E94D /* UserManager.swift in Sources */,
@@ -811,7 +811,7 @@
 				69F070E026B6B98A0027E94D /* Colors.swift in Sources */,
 				69F0706626B6B90E0027E94D /* CustomButton.swift in Sources */,
 				69F0706226B6B8EC0027E94D /* AuthManager.swift in Sources */,
-				69F0706026B6B8EC0027E94D /* Core.swift in Sources */,
+				69F0706026B6B8EC0027E94D /* OldCore.swift in Sources */,
 				69F070BE26B6B9410027E94D /* ConstructorViewController+UICollectionView.swift in Sources */,
 				69F070AE26B6B9410027E94D /* RecoverPasswordViewController.swift in Sources */,
 				69F070C226B6B9410027E94D /* ConstructorNavigationController.swift in Sources */,

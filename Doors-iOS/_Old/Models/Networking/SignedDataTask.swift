@@ -11,7 +11,7 @@ import JWTDecode
 
 extension URLSessionTask {
     
-    func signedResume(core: Core) {
+    func signedResume(core: OldCore) {
         checkAndTryToRefreshAccessToken(core: core) { error in
             if let error = error {
                 print(error)
@@ -21,7 +21,7 @@ extension URLSessionTask {
         }
     }
     
-    func checkAndTryToRefreshAccessToken(core: Core, _ completion: @escaping (Swift.Error?) -> Void) {
+    func checkAndTryToRefreshAccessToken(core: OldCore, _ completion: @escaping (Swift.Error?) -> Void) {
         do {
             guard let accessToken = try core.authManager.secureStoreWithGenericPwd.getValue(for: "accessToken") else { return }
             let jwt = try decode(jwt: accessToken)

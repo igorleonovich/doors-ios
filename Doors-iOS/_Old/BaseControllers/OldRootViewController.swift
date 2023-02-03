@@ -8,17 +8,17 @@
 
 import UIKit
 
-class RootViewController: BaseViewController {
+class OldRootViewController: OldBaseViewController {
     
     let centerView = UIView()
     
-    weak var core: Core!
+    weak var core: OldCore!
     
     var loadingViewController: UIViewController?
     var authNavigationController: UINavigationController?
     var constructorNavigationController: UINavigationController?
     
-    init(core: Core) {
+    init(core: OldCore) {
         self.core = core
         super.init()
     }
@@ -52,7 +52,7 @@ class RootViewController: BaseViewController {
     }
     
     private func showLoadingViewController() {
-        let loadingViewController = LoadingViewController(core: core)
+        let loadingViewController = OldLoadingViewController(core: core)
         loadingViewController.delegate = self
         addChild(loadingViewController)
         
@@ -110,7 +110,7 @@ class RootViewController: BaseViewController {
     }
 }
 
-extension RootViewController: LoadingViewControllerDelegate {
+extension OldRootViewController: LoadingViewControllerDelegate {
     
     func showAuthNavigationController() {
         let logInViewController = LogInViewController(core: core)
