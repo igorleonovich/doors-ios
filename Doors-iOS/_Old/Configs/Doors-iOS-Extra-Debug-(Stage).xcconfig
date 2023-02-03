@@ -11,3 +11,5 @@
 //********************************************//
 //* Currently no build settings in this file *//
 //********************************************//
+
+PRODUCT_BUNDLE_IDENTIFIER = fm.doors.ios.extra.stage
