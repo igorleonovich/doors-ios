@@ -15,6 +15,11 @@
 		690A4824298D767F000C02B4 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690A4823298D767F000C02B4 /* Color.swift */; };
 		690A4827298D77A8000C02B4 /* RootSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690A4826298D77A8000C02B4 /* RootSessionViewController.swift */; };
 		690A482A298D77EA000C02B4 /* SessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690A4829298D77EA000C02B4 /* SessionViewController.swift */; };
+		69BE8D04298D7D94001EFDD2 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BE8D03298D7D94001EFDD2 /* UIViewController+Extensions.swift */; };
+		69BE8D06298D7E07001EFDD2 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BE8D05298D7E07001EFDD2 /* String+Extensions.swift */; };
+		69BE8D08298D7EF4001EFDD2 /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BE8D07298D7EF4001EFDD2 /* UIApplication+Extensions.swift */; };
+		69BE8D0D298D8382001EFDD2 /* OldLoadingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69BE8D0C298D8382001EFDD2 /* OldLoadingViewController.xib */; };
+		69BE8D0E298D8382001EFDD2 /* OldLoadingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69BE8D0C298D8382001EFDD2 /* OldLoadingViewController.xib */; };
 		69ED6401272CF4F100153653 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69ED63FF272CF4F000153653 /* SignUpViewController.swift */; };
 		69ED6402272CF4F100153653 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69ED63FF272CF4F000153653 /* SignUpViewController.swift */; };
 		69ED6403272CF4F100153653 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69ED6400272CF4F100153653 /* SignUpViewController.xib */; };
@@ -53,8 +58,8 @@
 		69F0706226B6B8EC0027E94D /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F0705826B6B8EC0027E94D /* AuthManager.swift */; };
 		69F0706526B6B90E0027E94D /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F0706426B6B90E0027E94D /* CustomButton.swift */; };
 		69F0706626B6B90E0027E94D /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F0706426B6B90E0027E94D /* CustomButton.swift */; };
-		69F0706A26B6B9280027E94D /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F0706826B6B9280027E94D /* UIViewController+Extensions.swift */; };
-		69F0706B26B6B9280027E94D /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F0706826B6B9280027E94D /* UIViewController+Extensions.swift */; };
+		69F0706A26B6B9280027E94D /* OldUIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F0706826B6B9280027E94D /* OldUIViewController+Extensions.swift */; };
+		69F0706B26B6B9280027E94D /* OldUIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F0706826B6B9280027E94D /* OldUIViewController+Extensions.swift */; };
 		69F0706C26B6B9280027E94D /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F0706926B6B9280027E94D /* UIView+Extensions.swift */; };
 		69F0706D26B6B9280027E94D /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F0706926B6B9280027E94D /* UIView+Extensions.swift */; };
 		69F0707D26B6B9310027E94D /* PointDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F0707026B6B9310027E94D /* PointDTO.swift */; };
@@ -81,8 +86,6 @@
 		69F070A626B6B9410027E94D /* PlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F0709326B6B9410027E94D /* PlanViewController.swift */; };
 		69F070A726B6B9410027E94D /* PlanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69F0709426B6B9410027E94D /* PlanViewController.xib */; };
 		69F070A826B6B9410027E94D /* PlanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69F0709426B6B9410027E94D /* PlanViewController.xib */; };
-		69F070AB26B6B9410027E94D /* LoadingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69F0709726B6B9410027E94D /* LoadingViewController.xib */; };
-		69F070AC26B6B9410027E94D /* LoadingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69F0709726B6B9410027E94D /* LoadingViewController.xib */; };
 		69F070AD26B6B9410027E94D /* RecoverPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F0709826B6B9410027E94D /* RecoverPasswordViewController.swift */; };
 		69F070AE26B6B9410027E94D /* RecoverPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F0709826B6B9410027E94D /* RecoverPasswordViewController.swift */; };
 		69F070B126B6B9410027E94D /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F0709A26B6B9410027E94D /* LogInViewController.swift */; };
@@ -139,6 +142,10 @@
 		690A4826298D77A8000C02B4 /* RootSessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootSessionViewController.swift; sourceTree = "<group>"; };
 		690A4829298D77EA000C02B4 /* SessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionViewController.swift; sourceTree = "<group>"; };
 		6919EB70298D1FC600F96016 /* Doors.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Doors.entitlements; sourceTree = "<group>"; };
+		69BE8D03298D7D94001EFDD2 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		69BE8D05298D7E07001EFDD2 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		69BE8D07298D7EF4001EFDD2 /* UIApplication+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extensions.swift"; sourceTree = "<group>"; };
+		69BE8D0C298D8382001EFDD2 /* OldLoadingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OldLoadingViewController.xib; sourceTree = "<group>"; };
 		69ED63FF272CF4F000153653 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		69ED6400272CF4F100153653 /* SignUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
 		69ED6405272CF96C00153653 /* RecoverPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecoverPasswordViewController.xib; sourceTree = "<group>"; };
@@ -183,7 +190,7 @@
 		69F0705726B6B8EC0027E94D /* OldCore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OldCore.swift; sourceTree = "<group>"; };
 		69F0705826B6B8EC0027E94D /* AuthManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		69F0706426B6B90E0027E94D /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
-		69F0706826B6B9280027E94D /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		69F0706826B6B9280027E94D /* OldUIViewController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "OldUIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		69F0706926B6B9280027E94D /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		69F0707026B6B9310027E94D /* PointDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointDTO.swift; sourceTree = "<group>"; };
 		69F0707226B6B9310027E94D /* RefreshTokenInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshTokenInput.swift; sourceTree = "<group>"; };
@@ -197,7 +204,6 @@
 		69F0707C26B6B9310027E94D /* SignedDataTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignedDataTask.swift; sourceTree = "<group>"; };
 		69F0709326B6B9410027E94D /* PlanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanViewController.swift; sourceTree = "<group>"; };
 		69F0709426B6B9410027E94D /* PlanViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlanViewController.xib; sourceTree = "<group>"; };
-		69F0709726B6B9410027E94D /* LoadingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingViewController.xib; sourceTree = "<group>"; };
 		69F0709826B6B9410027E94D /* RecoverPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecoverPasswordViewController.swift; sourceTree = "<group>"; };
 		69F0709A26B6B9410027E94D /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		69F0709D26B6B9410027E94D /* OldLoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OldLoadingViewController.swift; sourceTree = "<group>"; };
@@ -366,6 +372,16 @@
 			path = _Old;
 			sourceTree = "<group>";
 		};
+		69BE8D02298D7D7C001EFDD2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				69BE8D05298D7E07001EFDD2 /* String+Extensions.swift */,
+				69BE8D03298D7D94001EFDD2 /* UIViewController+Extensions.swift */,
+				69BE8D07298D7EF4001EFDD2 /* UIApplication+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		69F06FF326B6ADD10027E94D = {
 			isa = PBXGroup;
 			children = (
@@ -393,6 +409,7 @@
 				690A481F298D7524000C02B4 /* Core */,
 				690F4121298D6E9300C5239F /* Models */,
 				690A4822298D7666000C02B4 /* Utils */,
+				69BE8D02298D7D7C001EFDD2 /* Extensions */,
 				69F06FFF26B6ADD10027E94D /* AppDelegate.swift */,
 				69F0700A26B6ADDD0027E94D /* LaunchScreen.storyboard */,
 				6919EB70298D1FC600F96016 /* Doors.entitlements */,
@@ -464,7 +481,7 @@
 		69F0706726B6B9280027E94D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				69F0706826B6B9280027E94D /* UIViewController+Extensions.swift */,
+				69F0706826B6B9280027E94D /* OldUIViewController+Extensions.swift */,
 				69F0706926B6B9280027E94D /* UIView+Extensions.swift */,
 			);
 			path = Extensions;
@@ -542,7 +559,7 @@
 			isa = PBXGroup;
 			children = (
 				69F0709D26B6B9410027E94D /* OldLoadingViewController.swift */,
-				69F0709726B6B9410027E94D /* LoadingViewController.xib */,
+				69BE8D0C298D8382001EFDD2 /* OldLoadingViewController.xib */,
 				69F0709A26B6B9410027E94D /* LogInViewController.swift */,
 				69ED6406272CF96C00153653 /* LogInViewController.xib */,
 				69ED63FF272CF4F000153653 /* SignUpViewController.swift */,
@@ -689,12 +706,12 @@
 				69ED6403272CF4F100153653 /* SignUpViewController.xib in Resources */,
 				69F0700C26B6ADDD0027E94D /* LaunchScreen.storyboard in Resources */,
 				69F070A726B6B9410027E94D /* PlanViewController.xib in Resources */,
+				69BE8D0D298D8382001EFDD2 /* OldLoadingViewController.xib in Resources */,
 				69ED6407272CF96C00153653 /* RecoverPasswordViewController.xib in Resources */,
 				69ED6409272CF96C00153653 /* LogInViewController.xib in Resources */,
 				69F070BB26B6B9410027E94D /* DoorsServiceCell.xib in Resources */,
 				69F070B926B6B9410027E94D /* ConstructorViewController.xib in Resources */,
 				69F0700926B6ADDD0027E94D /* Assets.xcassets in Resources */,
-				69F070AB26B6B9410027E94D /* LoadingViewController.xib in Resources */,
 				69F0700726B6ADD10027E94D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -706,12 +723,12 @@
 				69ED6404272CF4F100153653 /* SignUpViewController.xib in Resources */,
 				69F0701A26B6AE340027E94D /* LaunchScreen.storyboard in Resources */,
 				69F070A826B6B9410027E94D /* PlanViewController.xib in Resources */,
+				69BE8D0E298D8382001EFDD2 /* OldLoadingViewController.xib in Resources */,
 				69ED6408272CF96C00153653 /* RecoverPasswordViewController.xib in Resources */,
 				69ED640A272CF96C00153653 /* LogInViewController.xib in Resources */,
 				69F070BC26B6B9410027E94D /* DoorsServiceCell.xib in Resources */,
 				69F070BA26B6B9410027E94D /* ConstructorViewController.xib in Resources */,
 				69F0701B26B6AE340027E94D /* Assets.xcassets in Resources */,
-				69F070AC26B6B9410027E94D /* LoadingViewController.xib in Resources */,
 				69F0701C26B6AE340027E94D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -835,7 +852,8 @@
 				690A4816298D73F0000C02B4 /* BaseViewController.swift in Sources */,
 				69F0707F26B6B9310027E94D /* RefreshTokenInput.swift in Sources */,
 				69F0700226B6ADD10027E94D /* SceneDelegate.swift in Sources */,
-				69F0706A26B6B9280027E94D /* UIViewController+Extensions.swift in Sources */,
+				69F0706A26B6B9280027E94D /* OldUIViewController+Extensions.swift in Sources */,
+				69BE8D04298D7D94001EFDD2 /* UIViewController+Extensions.swift in Sources */,
 				69F0704D26B6B8DB0027E94D /* OldRootViewController.swift in Sources */,
 				69F0705126B6B8DB0027E94D /* CustomAlertController.swift in Sources */,
 				69F0708B26B6B9310027E94D /* NewUserOutput.swift in Sources */,
@@ -853,6 +871,7 @@
 				69F070C326B6B9410027E94D /* DoorServiceCell.swift in Sources */,
 				690A4818298D743B000C02B4 /* RootViewController.swift in Sources */,
 				69F0705B26B6B8EC0027E94D /* UserManager.swift in Sources */,
+				69BE8D08298D7EF4001EFDD2 /* UIApplication+Extensions.swift in Sources */,
 				69F0708726B6B9310027E94D /* LoginOutput.swift in Sources */,
 				69F0707D26B6B9310027E94D /* PointDTO.swift in Sources */,
 				69F070DF26B6B98A0027E94D /* Colors.swift in Sources */,
@@ -869,6 +888,7 @@
 				69F070D426B6B9810027E94D /* InternetAuthenticationType.swift in Sources */,
 				69ED6401272CF4F100153653 /* SignUpViewController.swift in Sources */,
 				69F070DD26B6B98A0027E94D /* Settings.swift in Sources */,
+				69BE8D06298D7E07001EFDD2 /* String+Extensions.swift in Sources */,
 				69F0704F26B6B8DB0027E94D /* EntryBaseViewController.swift in Sources */,
 				69F070D626B6B9810027E94D /* SecureStoreQueryable.swift in Sources */,
 				69F070CE26B6B9810027E94D /* SecureStoreError.swift in Sources */,
@@ -887,7 +907,7 @@
 				69F070B826B6B9410027E94D /* OldLoadingViewController.swift in Sources */,
 				69F0708026B6B9310027E94D /* RefreshTokenInput.swift in Sources */,
 				69F0701726B6AE340027E94D /* SceneDelegate.swift in Sources */,
-				69F0706B26B6B9280027E94D /* UIViewController+Extensions.swift in Sources */,
+				69F0706B26B6B9280027E94D /* OldUIViewController+Extensions.swift in Sources */,
 				69F0704E26B6B8DB0027E94D /* OldRootViewController.swift in Sources */,
 				69F0705226B6B8DB0027E94D /* CustomAlertController.swift in Sources */,
 				69F0708C26B6B9310027E94D /* NewUserOutput.swift in Sources */,

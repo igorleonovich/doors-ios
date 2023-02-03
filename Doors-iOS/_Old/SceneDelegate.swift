@@ -6,6 +6,7 @@
 //  Copyright © 2020 IL. All rights reserved.
 //
 
+import SnapKit
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
