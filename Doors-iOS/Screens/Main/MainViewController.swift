@@ -2,7 +2,7 @@
 //  MainViewController.swift
 //  Doors-iOS
 //
-//  Created by Igor Leonovich on 5/9/20.
+//  Created by Igor Leonovich on 9.05.20.
 //  Copyright © 2020 IL. All rights reserved.
 //
 
@@ -11,6 +11,7 @@ import UIKit
 final class MainViewController: BaseViewController {
     
     weak var core: Core!
+    private var featuresViewControllers = [BaseFeatureViewController]()
     
     init(core: Core) {
         self.core = core
@@ -24,11 +25,30 @@ final class MainViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        run()
     }
     
     // MARK: - Setup
     
     private func setupUI() {
-        view.backgroundColor = .darkGray
+        
+    }
+    
+    private func run() {
+        loadInitialFeature()
+    }
+    
+    private func loadInitialFeature() {
+        let initialFeature = Feature(name: "console", dependencies: [])
+        loadFeature(initialFeature)
+    }
+    
+    private func loadFeature(_ feature: Feature) {
+        if feature.name == "console" {
+            let consoleViewController = ConsoleViewController(core: core)
+            add(child: consoleViewController)
+            view.addSubview(consoleViewController.view)
+            self.featuresViewControllers.append(consoleViewController)
+        }
     }
 }

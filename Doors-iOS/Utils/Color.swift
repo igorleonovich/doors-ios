@@ -2,7 +2,7 @@
 //  Color.swift
 //  Doors-iOS
 //
-//  Created by Igor Leonovich on 5/17/20.
+//  Created by Igor Leonovich on 17.05.20.
 //  Copyright © 2020 IL. All rights reserved.
 //
 

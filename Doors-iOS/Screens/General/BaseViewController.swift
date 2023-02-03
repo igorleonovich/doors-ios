@@ -2,7 +2,7 @@
 //  BaseViewController.swift
 //  Doors-iOS
 //
-//  Created by Igor Leonovich on 5/9/20.
+//  Created by Igor Leonovich on 9.05.20.
 //  Copyright © 2020 IL. All rights reserved.
 //
 
@@ -17,4 +17,8 @@ class BaseViewController: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+}
+
+class BaseFeatureViewController: BaseViewController {
+    
 }

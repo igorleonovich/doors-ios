@@ -1,8 +1,9 @@
 //
 //  RootSessionViewController.swift
-//  Doors-iOS-Uni
+//  Doors-iOS
 //
 //  Created by Igor Leonovich on 3.02.23.
+//  Copyright © 2023 IL. All rights reserved.
 //
 
 import UIKit
@@ -37,11 +38,8 @@ final class RootSessionViewController: BaseViewController {
     
     private func loadDefaultSession() {
         let sessionViewController = SessionViewController(core: core)
-        addChild(sessionViewController)
+        add(child: sessionViewController)
         view.addSubview(sessionViewController.view)
-        sessionViewController.view.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
-        }
         self.currentSessionViewController = sessionViewController
     }
 }

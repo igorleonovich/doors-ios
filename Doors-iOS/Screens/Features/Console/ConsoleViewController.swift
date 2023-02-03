@@ -1,5 +1,5 @@
 //
-//  SessionViewController.swift
+//  ConsoleViewController.swift
 //  Doors-iOS
 //
 //  Created by Igor Leonovich on 3.02.23.
@@ -8,10 +8,9 @@
 
 import UIKit
 
-final class SessionViewController: BaseViewController {
+final class ConsoleViewController: BaseFeatureViewController {
 
     weak var core: Core!
-    weak var mainViewController: MainViewController?
     
     init(core: Core) {
         self.core = core
@@ -30,16 +29,7 @@ final class SessionViewController: BaseViewController {
     // MARK: - Setup
     
     private func setupUI() {
-        showMain()
-    }
-    
-    
-    // MARK: Actions
-    
-    private func showMain() {
-        let mainViewController = MainViewController(core: core)
-        add(child: mainViewController)
-        view.addSubview(mainViewController.view)
-        self.mainViewController = mainViewController
+        view.backgroundColor = .systemIndigo
     }
 }
+

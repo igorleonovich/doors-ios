@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  Doors-iOS
 //
-//  Created by Igor Leonovich on 5/5/20.
+//  Created by Igor Leonovich on 5.05.20.
 //  Copyright © 2020 IL. All rights reserved.
 //
 
