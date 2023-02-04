@@ -12,7 +12,7 @@ final class RootViewController: BaseViewController {
     
     weak var rootCore: RootCore!
     weak var loadingViewController: LoadingViewController?
-    weak var rootSessionViewController: RootSessionViewController?
+//    weak var rootSessionViewController: RootSessionViewController?
     
     init(rootCore: RootCore) {
         self.rootCore = rootCore
@@ -63,7 +63,7 @@ final class RootViewController: BaseViewController {
         let core = Core()
         core.rootCore = rootCore
         let rootSessionViewController = RootSessionViewController(core: core, feature: Feature(name: "rootSession", dependencies: []))
-        self.rootSessionViewController = rootSessionViewController
+//        self.rootSessionViewController = rootSessionViewController
         add(child: rootSessionViewController)
     }
 }

@@ -48,6 +48,8 @@
 		69A0AFBB298EC877002E652E /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BE8D07298D7EF4001EFDD2 /* UIApplication+Extensions.swift */; };
 		69A0AFBE298ED47C002E652E /* SessionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A0AFBD298ED47C002E652E /* SessionsViewController.swift */; };
 		69A0AFBF298ED47C002E652E /* SessionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A0AFBD298ED47C002E652E /* SessionsViewController.swift */; };
+		69A0AFC1298EE391002E652E /* BorderSide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A0AFC0298EE391002E652E /* BorderSide.swift */; };
+		69A0AFC2298EE391002E652E /* BorderSide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A0AFC0298EE391002E652E /* BorderSide.swift */; };
 		69BE8D04298D7D94001EFDD2 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BE8D03298D7D94001EFDD2 /* UIViewController+Extensions.swift */; };
 		69BE8D06298D7E07001EFDD2 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BE8D05298D7E07001EFDD2 /* String+Extensions.swift */; };
 		69BE8D08298D7EF4001EFDD2 /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BE8D07298D7EF4001EFDD2 /* UIApplication+Extensions.swift */; };
@@ -184,6 +186,7 @@
 		69A0AFA5298EABAC002E652E /* TitleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleViewController.swift; sourceTree = "<group>"; };
 		69A0AFAD298EBBEA002E652E /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		69A0AFBD298ED47C002E652E /* SessionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionsViewController.swift; sourceTree = "<group>"; };
+		69A0AFC0298EE391002E652E /* BorderSide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderSide.swift; sourceTree = "<group>"; };
 		69BE8D03298D7D94001EFDD2 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		69BE8D05298D7E07001EFDD2 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		69BE8D07298D7EF4001EFDD2 /* UIApplication+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extensions.swift"; sourceTree = "<group>"; };
@@ -393,6 +396,7 @@
 			isa = PBXGroup;
 			children = (
 				69A0AF8B298D905D002E652E /* Feature.swift */,
+				69A0AFC0298EE391002E652E /* BorderSide.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -966,6 +970,7 @@
 				690A482A298D77EA000C02B4 /* SessionViewController.swift in Sources */,
 				69F0708926B6B9310027E94D /* RefreshTokenOutput.swift in Sources */,
 				69F070B726B6B9410027E94D /* OldLoadingViewController.swift in Sources */,
+				69A0AFC1298EE391002E652E /* BorderSide.swift in Sources */,
 				690A4816298D73F0000C02B4 /* BaseViewController.swift in Sources */,
 				69F0707F26B6B9310027E94D /* RefreshTokenInput.swift in Sources */,
 				69F0700226B6ADD10027E94D /* SceneDelegate.swift in Sources */,
@@ -1035,6 +1040,7 @@
 				69F0708026B6B9310027E94D /* RefreshTokenInput.swift in Sources */,
 				69A0AFB5298EC862002E652E /* SessionViewController.swift in Sources */,
 				69F0701726B6AE340027E94D /* SceneDelegate.swift in Sources */,
+				69A0AFC2298EE391002E652E /* BorderSide.swift in Sources */,
 				69F0706B26B6B9280027E94D /* OldUIViewController+Extensions.swift in Sources */,
 				69F0704E26B6B8DB0027E94D /* OldRootViewController.swift in Sources */,
 				69A0AFB2298EC850002E652E /* LoadingViewController.swift in Sources */,

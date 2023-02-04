@@ -35,11 +35,11 @@ final class MainViewController: BaseFeatureViewController {
     // MARK: - Setup
     
     private func setupUI() {
-//        let borderWidth: CGFloat = 1
-//        let borderColor = Color.foregroundActive
-//        view.addTopBorder(color: borderColor, width: borderWidth)
-//        view.addBottomBorder(color: borderColor, width: borderWidth)
-        view.backgroundColor = .lightGray
+        setupBorders()
+    }
+    
+    private func setupBorders() {
+        view.addBorder(color: Color.foregroundActive, width: 1, sides: [.up, .down])
     }
     
     private func loadInitialFeatures() {

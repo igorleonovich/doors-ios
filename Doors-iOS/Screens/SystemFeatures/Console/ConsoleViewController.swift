@@ -37,6 +37,6 @@ final class ConsoleViewController: BaseSystemFeatureViewController {
     // MARK: - Setup
     
     private func setupUI() {
-        view.backgroundColor = .darkGray
+
     }
 }

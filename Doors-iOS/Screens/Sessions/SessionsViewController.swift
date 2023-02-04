@@ -24,7 +24,6 @@ final class SessionsViewController: BaseSystemFeatureViewController {
             if let systemControlsSuperView = feature?.dependencies.first(where: { $0.name == "systemControls" })?.viewController?.view.superview {
                 make.top.equalTo(systemControlsSuperView.safeAreaLayoutGuide.snp.bottom)
             }
-//            make.top.equalToSuperview()
             make.bottom.equalToSuperview()
             make.left.equalToSuperview()
             make.right.equalToSuperview()
