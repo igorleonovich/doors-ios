@@ -11,11 +11,26 @@ import UIKit
 final class SystemControlsViewController: BaseSystemFeatureViewController {
     
     private var stackView: UIStackView!
+    private var isInitialSetupPerformed = false
+    private let height = 50
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         loadInitialFeatures()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if !isInitialSetupPerformed {
+            ((feature?.dependencies.first(where: { $0.name == "rootSession" })?.viewController as? BaseSystemFeatureViewController)?.featuresViewControllers.first(where: { $0.isKind(of: SessionsViewController.self) }) as? SessionsViewController)?.sessionViewControllersUpdateAction = { [weak self] isMoreThanOneSessionViewController in
+                guard let self = self else { return }
+                    self.view.superview?.snp.updateConstraints({ make in
+                        make.height.equalTo(isMoreThanOneSessionViewController ? self.height : 0)
+                    })
+            }
+            isInitialSetupPerformed = true
+        }
     }
     
     override func didMove(toParent parent: UIViewController?) {
@@ -26,7 +41,7 @@ final class SystemControlsViewController: BaseSystemFeatureViewController {
             }
             make.left.equalTo(20)
             make.right.equalTo(-20)
-            make.height.equalTo(50)
+            make.height.equalTo(feature?.dependencies.first(where: { $0.name == "rootSession" }) == nil ? 0 : height)
         }
     }
     

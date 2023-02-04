@@ -25,9 +25,11 @@ final class RootSessionViewController: BaseSystemFeatureViewController {
     // MARK: Actions
     
     private func loadInitialFeatures() {
-        let systemControlsFeature = Feature(name: "systemControls", dependencies: [])
-        let sessionsFeature = Feature(name: "sessions", dependencies: [systemControlsFeature])
-        [systemControlsFeature, sessionsFeature].forEach({ loadFeature($0) })
+        if let feature = feature {
+            let systemControlsFeature = Feature(name: "systemControls", dependencies: [feature])
+            let sessionsFeature = Feature(name: "sessions", dependencies: [systemControlsFeature])
+            [systemControlsFeature, sessionsFeature].forEach({ loadFeature($0) })
+        }
     }
     
     override func loadFeature(_ feature: Feature) {

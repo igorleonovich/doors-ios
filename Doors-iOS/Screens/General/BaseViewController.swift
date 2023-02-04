@@ -21,8 +21,8 @@ class BaseViewController: UIViewController {
 
 class BaseFeatureViewController: BaseViewController {
     
-    weak var core: Core!
-    weak var feature: Feature?
+    var core: Core!
+    var feature: Feature?
 
     init(core: Core, feature: Feature? = nil) {
         self.core = core
@@ -43,7 +43,7 @@ class BaseSystemFeatureViewController: BaseFeatureViewController {
         if feature.name == "systemControls" {
             let systemControlsView = UIView()
             view.addSubview(systemControlsView)
-            let systemControlsViewController = SystemControlsViewController(core: core)
+            let systemControlsViewController = SystemControlsViewController(core: core, feature: feature)
             feature.viewController = systemControlsViewController
             add(child: systemControlsViewController, containerView: systemControlsView)
             featuresViewControllers.append(systemControlsViewController)

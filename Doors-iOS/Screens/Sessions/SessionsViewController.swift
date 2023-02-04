@@ -10,7 +10,15 @@ import UIKit
 
 final class SessionsViewController: BaseSystemFeatureViewController {
 
-    private var sessionViewControllers = [SessionViewController]()
+    private var sessionViewControllers = [SessionViewController]() {
+        didSet {
+            sessionViewControllersUpdateAction?(isMoreThanOneSessionViewController)
+        }
+    }
+    var sessionViewControllersUpdateAction: ((Bool) -> Void)? = nil
+    var isMoreThanOneSessionViewController: Bool {
+        return sessionViewControllers.count > 1
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
