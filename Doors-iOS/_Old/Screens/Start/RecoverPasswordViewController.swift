@@ -42,10 +42,10 @@ class RecoverPasswordViewController: OldBaseViewController {
     }
     
     private func setupAppearance() {
-        recoverButton.backgroundColor = UIColor.backgroundActive
-        recoverButton.setTitleColor(UIColor.backgroundInactive , for: .normal)
-        backButton.backgroundColor = UIColor.backgroundInactive
-        backButton.setTitleColor(UIColor.foregroundActive, for: .normal)
+        recoverButton.backgroundColor = Color.backgroundActive
+        recoverButton.setTitleColor(Color.backgroundInactive , for: .normal)
+        backButton.backgroundColor = Color.backgroundInactive
+        backButton.setTitleColor(Color.foregroundActive, for: .normal)
     }
     
     @IBAction func recoverButtonTapped(_ sender: Any) {

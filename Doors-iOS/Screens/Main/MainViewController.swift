@@ -39,12 +39,25 @@ final class MainViewController: BaseFeatureViewController {
     }
     
     private func loadInitialFeature() {
-        let initialFeature = Feature(name: "console", dependencies: [])
+        let initialFeature = Feature(name: "settings", dependencies: [])
         loadFeature(initialFeature)
     }
     
     private func loadFeature(_ feature: Feature) {
-        if feature.name == "console" {
+        if feature.name == "settings" {
+            let settingsView = UIView()
+            view.addSubview(settingsView)
+            settingsView.snp.makeConstraints { make in
+                make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(20)
+                make.right.equalTo(20)
+                make.width.equalTo(50)
+                make.height.equalTo(50)
+            }
+            let settingsViewController = SettingsViewController(core: core)
+            add(child: settingsViewController)
+            view.addSubview(settingsViewController.view)
+            self.featuresViewControllers.append(settingsViewController)
+        } else if feature.name == "console" {
             let consoleViewController = ConsoleViewController(core: core)
             add(child: consoleViewController)
             view.addSubview(consoleViewController.view)

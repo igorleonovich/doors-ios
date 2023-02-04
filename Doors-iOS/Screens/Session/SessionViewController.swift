@@ -16,6 +16,7 @@ final class SessionViewController: BaseViewController {
     init(core: Core) {
         self.core = core
         super.init()
+        core.router = self
     }
     
     required init?(coder: NSCoder) {
@@ -34,7 +35,6 @@ final class SessionViewController: BaseViewController {
         
     }
     
-    
     // MARK: Actions
     
     private func loadInitialFeature() {
@@ -50,4 +50,12 @@ final class SessionViewController: BaseViewController {
             self.featuresViewControllers.append(mainViewController)
         }
     }
+}
+
+extension SessionViewController: Router {
+    
+}
+
+protocol Router: AnyObject {
+    
 }

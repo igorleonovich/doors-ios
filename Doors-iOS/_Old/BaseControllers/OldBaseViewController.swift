@@ -120,7 +120,7 @@ class BaseNavigableViewController: OldBaseViewController {
     }
     
     private func setupNavigationBar() {
-        navigationController?.navigationBar.tintColor = UIColor.foregroundActive
+        navigationController?.navigationBar.tintColor = Color.foregroundActive
 
         let image = UIImage(named: "BurgerMenu")?.withRenderingMode(.alwaysTemplate)
         let button = UIButton(type: .custom)

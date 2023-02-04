@@ -37,7 +37,7 @@ class OldRootViewController: OldBaseViewController {
     }
     
     private func setupUI() {
-        view.backgroundColor = UIColor.backgroundInactive
+        view.backgroundColor = Color.backgroundInactive
         setupCenterView()
         showLoadingViewController()
     }

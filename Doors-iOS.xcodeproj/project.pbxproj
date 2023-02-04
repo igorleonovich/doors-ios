@@ -18,6 +18,10 @@
 		69A0AF89298D8F6B002E652E /* ConsoleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A0AF88298D8F6B002E652E /* ConsoleViewController.swift */; };
 		69A0AF8A298D8F6D002E652E /* ConsoleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A0AF88298D8F6B002E652E /* ConsoleViewController.swift */; };
 		69A0AF8C298D905D002E652E /* Feature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A0AF8B298D905D002E652E /* Feature.swift */; };
+		69A0AF90298DA392002E652E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A0AF8F298DA392002E652E /* SettingsViewController.swift */; };
+		69A0AF91298DA392002E652E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A0AF8F298DA392002E652E /* SettingsViewController.swift */; };
+		69A0AF93298DA41C002E652E /* SettingsScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A0AF92298DA41C002E652E /* SettingsScreenViewController.swift */; };
+		69A0AF94298DA41C002E652E /* SettingsScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A0AF92298DA41C002E652E /* SettingsScreenViewController.swift */; };
 		69BE8D04298D7D94001EFDD2 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BE8D03298D7D94001EFDD2 /* UIViewController+Extensions.swift */; };
 		69BE8D06298D7E07001EFDD2 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BE8D05298D7E07001EFDD2 /* String+Extensions.swift */; };
 		69BE8D08298D7EF4001EFDD2 /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BE8D07298D7EF4001EFDD2 /* UIApplication+Extensions.swift */; };
@@ -121,8 +125,6 @@
 		69F070D926B6B9810027E94D /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F070CD26B6B9810027E94D /* Device.swift */; };
 		69F070DD26B6B98A0027E94D /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F070DB26B6B98A0027E94D /* Settings.swift */; };
 		69F070DE26B6B98A0027E94D /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F070DB26B6B98A0027E94D /* Settings.swift */; };
-		69F070DF26B6B98A0027E94D /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F070DC26B6B98A0027E94D /* Colors.swift */; };
-		69F070E026B6B98A0027E94D /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F070DC26B6B98A0027E94D /* Colors.swift */; };
 		C4469644B390573650999F4A /* Pods_Doors_iOS_Uni.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A374D9DADD76B2D9520DD63 /* Pods_Doors_iOS_Uni.framework */; };
 		D5B7D3BDCD217E58EDF280AB /* Pods_Doors_iOS_Extra.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833EE7B3A2BE98682B63DCB0 /* Pods_Doors_iOS_Extra.framework */; };
 /* End PBXBuildFile section */
@@ -147,6 +149,8 @@
 		6919EB70298D1FC600F96016 /* Doors.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Doors.entitlements; sourceTree = "<group>"; };
 		69A0AF88298D8F6B002E652E /* ConsoleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleViewController.swift; sourceTree = "<group>"; };
 		69A0AF8B298D905D002E652E /* Feature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feature.swift; sourceTree = "<group>"; };
+		69A0AF8F298DA392002E652E /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		69A0AF92298DA41C002E652E /* SettingsScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreenViewController.swift; sourceTree = "<group>"; };
 		69BE8D03298D7D94001EFDD2 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		69BE8D05298D7E07001EFDD2 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		69BE8D07298D7EF4001EFDD2 /* UIApplication+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extensions.swift"; sourceTree = "<group>"; };
@@ -226,7 +230,6 @@
 		69F070CC26B6B9810027E94D /* SecureStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecureStore.h; sourceTree = "<group>"; };
 		69F070CD26B6B9810027E94D /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		69F070DB26B6B98A0027E94D /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
-		69F070DC26B6B98A0027E94D /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		7A45977E56CE7F70E3512ED8 /* Pods-Doors-iOS-Uni.release (stage).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doors-iOS-Uni.release (stage).xcconfig"; path = "Target Support Files/Pods-Doors-iOS-Uni/Pods-Doors-iOS-Uni.release (stage).xcconfig"; sourceTree = "<group>"; };
 		833EE7B3A2BE98682B63DCB0 /* Pods_Doors_iOS_Extra.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Doors_iOS_Extra.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8AA4B498681E479089C32EA /* Pods-Doors-iOS-Uni.release (prod).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doors-iOS-Uni.release (prod).xcconfig"; path = "Target Support Files/Pods-Doors-iOS-Uni/Pods-Doors-iOS-Uni.release (prod).xcconfig"; sourceTree = "<group>"; };
@@ -348,6 +351,7 @@
 				690A4828298D77BA000C02B4 /* Session */,
 				690A4813298D73D5000C02B4 /* Main */,
 				69A0AF86298D8F4F002E652E /* Features */,
+				69A0AF8E298DA373002E652E /* SystemFeatures */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -393,6 +397,15 @@
 				69A0AF88298D8F6B002E652E /* ConsoleViewController.swift */,
 			);
 			path = Console;
+			sourceTree = "<group>";
+		};
+		69A0AF8E298DA373002E652E /* SystemFeatures */ = {
+			isa = PBXGroup;
+			children = (
+				69A0AF8F298DA392002E652E /* SettingsViewController.swift */,
+				69A0AF92298DA41C002E652E /* SettingsScreenViewController.swift */,
+			);
+			path = SystemFeatures;
 			sourceTree = "<group>";
 		};
 		69BE8D02298D7D7C001EFDD2 /* Extensions */ = {
@@ -632,7 +645,6 @@
 			isa = PBXGroup;
 			children = (
 				69F070DB26B6B98A0027E94D /* Settings.swift */,
-				69F070DC26B6B98A0027E94D /* Colors.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -877,6 +889,7 @@
 				690A4816298D73F0000C02B4 /* BaseViewController.swift in Sources */,
 				69F0707F26B6B9310027E94D /* RefreshTokenInput.swift in Sources */,
 				69F0700226B6ADD10027E94D /* SceneDelegate.swift in Sources */,
+				69A0AF90298DA392002E652E /* SettingsViewController.swift in Sources */,
 				69F0706A26B6B9280027E94D /* OldUIViewController+Extensions.swift in Sources */,
 				69BE8D04298D7D94001EFDD2 /* UIViewController+Extensions.swift in Sources */,
 				69F0704D26B6B8DB0027E94D /* OldRootViewController.swift in Sources */,
@@ -888,6 +901,7 @@
 				690A4824298D767F000C02B4 /* Color.swift in Sources */,
 				69F0705926B6B8EC0027E94D /* Constants.swift in Sources */,
 				69F0708126B6B9310027E94D /* ServerError.swift in Sources */,
+				69A0AF93298DA41C002E652E /* SettingsScreenViewController.swift in Sources */,
 				69F0708526B6B9310027E94D /* UserPrivateInput.swift in Sources */,
 				69F0708326B6B9310027E94D /* LogInInput.swift in Sources */,
 				690A481A298D7492000C02B4 /* LoadingViewController.swift in Sources */,
@@ -899,7 +913,6 @@
 				69BE8D08298D7EF4001EFDD2 /* UIApplication+Extensions.swift in Sources */,
 				69F0708726B6B9310027E94D /* LoginOutput.swift in Sources */,
 				69F0707D26B6B9310027E94D /* PointDTO.swift in Sources */,
-				69F070DF26B6B98A0027E94D /* Colors.swift in Sources */,
 				69F0706526B6B90E0027E94D /* CustomButton.swift in Sources */,
 				69F0706126B6B8EC0027E94D /* AuthManager.swift in Sources */,
 				690A4827298D77A8000C02B4 /* RootSessionViewController.swift in Sources */,
@@ -938,6 +951,7 @@
 				69F0708C26B6B9310027E94D /* NewUserOutput.swift in Sources */,
 				69F0705E26B6B8EC0027E94D /* SceneManager.swift in Sources */,
 				69F0708E26B6B9310027E94D /* ListDTO.swift in Sources */,
+				69A0AF94298DA41C002E652E /* SettingsScreenViewController.swift in Sources */,
 				69F070D326B6B9810027E94D /* InternetProtocol.swift in Sources */,
 				69F0705A26B6B8EC0027E94D /* Constants.swift in Sources */,
 				69F0708226B6B9310027E94D /* ServerError.swift in Sources */,
@@ -950,7 +964,6 @@
 				69F0705C26B6B8EC0027E94D /* UserManager.swift in Sources */,
 				69F0708826B6B9310027E94D /* LoginOutput.swift in Sources */,
 				69F0707E26B6B9310027E94D /* PointDTO.swift in Sources */,
-				69F070E026B6B98A0027E94D /* Colors.swift in Sources */,
 				69F0706626B6B90E0027E94D /* CustomButton.swift in Sources */,
 				69F0706226B6B8EC0027E94D /* AuthManager.swift in Sources */,
 				69F0706026B6B8EC0027E94D /* OldCore.swift in Sources */,
@@ -958,6 +971,7 @@
 				69F070AE26B6B9410027E94D /* RecoverPasswordViewController.swift in Sources */,
 				69F070C226B6B9410027E94D /* ConstructorNavigationController.swift in Sources */,
 				69F070B226B6B9410027E94D /* LogInViewController.swift in Sources */,
+				69A0AF91298DA392002E652E /* SettingsViewController.swift in Sources */,
 				69F070C026B6B9410027E94D /* ConstructorViewController.swift in Sources */,
 				69F0709026B6B9310027E94D /* SignedDataTask.swift in Sources */,
 				69F070D526B6B9810027E94D /* InternetAuthenticationType.swift in Sources */,

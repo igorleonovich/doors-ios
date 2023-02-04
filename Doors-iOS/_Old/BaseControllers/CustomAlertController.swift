@@ -12,7 +12,7 @@ class CustomAlertController: UIAlertController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.tintColor = UIColor.foregroundActive
+        view.tintColor = Color.foregroundActive
         
         let attributes = [
             NSAttributedString.Key.font: Constants.Skin.font
@@ -47,9 +47,9 @@ class CustomAlertAction: UIAlertAction {
     override var title: String? {
         switch style {
         case .default, .destructive:
-            setValue(UIColor.foregroundActive, forKey: "titleTextColor")
+            setValue(Color.foregroundActive, forKey: "titleTextColor")
         case .cancel:
-            setValue(UIColor.foregroundInactive, forKey: "titleTextColor")
+            setValue(Color.foregroundInactive, forKey: "titleTextColor")
         @unknown default:
             break
         }

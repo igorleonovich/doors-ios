@@ -22,3 +22,7 @@ class BaseViewController: UIViewController {
 class BaseFeatureViewController: BaseViewController {
     
 }
+
+class BaseSystemFeatureViewController: BaseFeatureViewController {
+    
+}

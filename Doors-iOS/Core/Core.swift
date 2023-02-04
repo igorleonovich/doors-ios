@@ -15,4 +15,5 @@ final class RootCore {
 final class Core {
 
     weak var rootCore: RootCore!
+    weak var router: Router!
 }

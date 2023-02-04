@@ -21,8 +21,8 @@ class DoorServiceCell: UICollectionViewCell {
     }
     
     func configure(with doorsService: DoorsService, isActive: Bool) {
-        contentView.layer.borderColor = isActive ? UIColor.foregroundActive.cgColor : UIColor.foregroundInactive.cgColor
-        titleLabel.textColor = isActive ? UIColor.foregroundActive : UIColor.foregroundInactive
+        contentView.layer.borderColor = isActive ? Color.foregroundActive.cgColor : Color.foregroundInactive.cgColor
+        titleLabel.textColor = isActive ? Color.foregroundActive : Color.foregroundInactive
         titleLabel.text = doorsService.humanReadableTitle()
     }
 }

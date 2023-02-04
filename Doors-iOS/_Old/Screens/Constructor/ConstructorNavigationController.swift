@@ -22,7 +22,7 @@ class ConstructorNavigationController: UINavigationController {
         ]
         
         let navigationBarAppearance = UINavigationBarAppearance()
-        navigationBarAppearance.backgroundColor = UIColor.backgroundInactive
+        navigationBarAppearance.backgroundColor = Color.backgroundInactive
         navigationBarAppearance.titleTextAttributes = [
             NSAttributedString.Key.font: Constants.Skin.font
         ]
