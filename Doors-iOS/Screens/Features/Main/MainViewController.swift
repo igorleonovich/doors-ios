@@ -24,9 +24,7 @@ final class MainViewController: BaseFeatureViewController {
             if let systemControlsSuperView = feature?.dependencies.first(where: { $0.name == "systemControls" })?.viewController?.view.superview {
                 make.top.equalTo(systemControlsSuperView.safeAreaLayoutGuide.snp.bottom)
             }
-            if let superSuperView = view.superview?.superview {
-                make.bottom.equalTo(superSuperView.safeAreaLayoutGuide.snp.bottom).offset(0)
-            }
+            make.bottom.equalToSuperview().offset(0)
             make.left.equalToSuperview()
             make.right.equalToSuperview()
         }
@@ -36,10 +34,11 @@ final class MainViewController: BaseFeatureViewController {
     
     private func setupUI() {
         setupBorders()
+        view.backgroundColor = UIColor.random()
     }
     
     private func setupBorders() {
-        view.addBorder(color: Color.foregroundActive, width: 1, sides: [.up, .down])
+        view.addBorder(color: Color.foregroundActive, width: 1, sides: [.up])
     }
     
     private func loadInitialFeatures() {

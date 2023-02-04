@@ -50,6 +50,8 @@
 		69A0AFBF298ED47C002E652E /* SessionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A0AFBD298ED47C002E652E /* SessionsViewController.swift */; };
 		69A0AFC1298EE391002E652E /* BorderSide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A0AFC0298EE391002E652E /* BorderSide.swift */; };
 		69A0AFC2298EE391002E652E /* BorderSide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A0AFC0298EE391002E652E /* BorderSide.swift */; };
+		69A0AFC4298F0693002E652E /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A0AFC3298F0693002E652E /* UIColor+Extensions.swift */; };
+		69A0AFC5298F0693002E652E /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A0AFC3298F0693002E652E /* UIColor+Extensions.swift */; };
 		69BE8D04298D7D94001EFDD2 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BE8D03298D7D94001EFDD2 /* UIViewController+Extensions.swift */; };
 		69BE8D06298D7E07001EFDD2 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BE8D05298D7E07001EFDD2 /* String+Extensions.swift */; };
 		69BE8D08298D7EF4001EFDD2 /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BE8D07298D7EF4001EFDD2 /* UIApplication+Extensions.swift */; };
@@ -187,6 +189,7 @@
 		69A0AFAD298EBBEA002E652E /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		69A0AFBD298ED47C002E652E /* SessionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionsViewController.swift; sourceTree = "<group>"; };
 		69A0AFC0298EE391002E652E /* BorderSide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderSide.swift; sourceTree = "<group>"; };
+		69A0AFC3298F0693002E652E /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		69BE8D03298D7D94001EFDD2 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		69BE8D05298D7E07001EFDD2 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		69BE8D07298D7EF4001EFDD2 /* UIApplication+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extensions.swift"; sourceTree = "<group>"; };
@@ -498,6 +501,7 @@
 				69A0AFAD298EBBEA002E652E /* UIView+Extensions.swift */,
 				69BE8D03298D7D94001EFDD2 /* UIViewController+Extensions.swift */,
 				69BE8D07298D7EF4001EFDD2 /* UIApplication+Extensions.swift */,
+				69A0AFC3298F0693002E652E /* UIColor+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1003,6 +1007,7 @@
 				69BE8D08298D7EF4001EFDD2 /* UIApplication+Extensions.swift in Sources */,
 				69F0708726B6B9310027E94D /* LoginOutput.swift in Sources */,
 				69F0707D26B6B9310027E94D /* PointDTO.swift in Sources */,
+				69A0AFC4298F0693002E652E /* UIColor+Extensions.swift in Sources */,
 				69F0706526B6B90E0027E94D /* CustomButton.swift in Sources */,
 				69F0706126B6B8EC0027E94D /* AuthManager.swift in Sources */,
 				690A4827298D77A8000C02B4 /* RootSessionViewController.swift in Sources */,
@@ -1073,6 +1078,7 @@
 				69F0706026B6B8EC0027E94D /* OldCore.swift in Sources */,
 				69F070BE26B6B9410027E94D /* ConstructorViewController+UICollectionView.swift in Sources */,
 				69A0AFB1298EC84E002E652E /* RootViewController.swift in Sources */,
+				69A0AFC5298F0693002E652E /* UIColor+Extensions.swift in Sources */,
 				69A0AFB6298EC868002E652E /* Core.swift in Sources */,
 				69F070AE26B6B9410027E94D /* RecoverPasswordViewController.swift in Sources */,
 				69F070C226B6B9410027E94D /* ConstructorNavigationController.swift in Sources */,

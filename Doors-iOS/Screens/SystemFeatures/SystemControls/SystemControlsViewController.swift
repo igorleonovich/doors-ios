@@ -23,11 +23,13 @@ final class SystemControlsViewController: BaseSystemFeatureViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if !isInitialSetupPerformed {
-            ((feature?.dependencies.first(where: { $0.name == "rootSession" })?.viewController as? BaseSystemFeatureViewController)?.featuresViewControllers.first(where: { $0.isKind(of: SessionsViewController.self) }) as? SessionsViewController)?.sessionViewControllersUpdateAction = { [weak self] isMoreThanOneSessionViewController in
-                guard let self = self else { return }
-                    self.view.superview?.snp.updateConstraints({ make in
-                        make.height.equalTo(isMoreThanOneSessionViewController ? self.height : 0)
-                    })
+            ((feature?.dependencies.first(where: { $0.name == "session" })?.viewController as? BaseSystemFeatureViewController)?.feature?.dependencies.first(where: { $0.name == "sessions" })?.viewController as? SessionsViewController)?.sessionViewControllersUpdateAction = { isMoreThanOneSessionViewController in
+                    updateHeight(isMoreThanOneSessionViewController)
+            }
+            func updateHeight(_ isMoreThanOneSessionViewController: Bool) {
+                self.view.superview?.snp.updateConstraints({ make in
+                    make.height.equalTo(isMoreThanOneSessionViewController ? height : 0)
+                })
             }
             isInitialSetupPerformed = true
         }

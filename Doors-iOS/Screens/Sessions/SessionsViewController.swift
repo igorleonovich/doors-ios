@@ -15,10 +15,15 @@ final class SessionsViewController: BaseSystemFeatureViewController {
             sessionViewControllersUpdateAction?(isMoreThanOneSessionViewController)
         }
     }
-    var sessionViewControllersUpdateAction: ((Bool) -> Void)? = nil
+    var sessionViewControllersUpdateAction: ((Bool) -> Void)? = nil {
+        didSet {
+            sessionViewControllersUpdateAction?(isMoreThanOneSessionViewController)
+        }
+    }
     var isMoreThanOneSessionViewController: Bool {
         return sessionViewControllers.count > 1
     }
+    private var verticalStackView: UIStackView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,23 +46,49 @@ final class SessionsViewController: BaseSystemFeatureViewController {
     // MARK: - Setup
     
     private func setupUI() {
-        
+        verticalStackView = UIStackView()
+        view.addSubview(verticalStackView)
+        verticalStackView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+        verticalStackView.axis = .vertical
+        verticalStackView.distribution = .fillEqually
     }
     
     // MARK: Actions
     
     private func loadInitialFeatures() {
-        let sessionFeature = Feature(name: "session", dependencies: [])
-        loadFeature(sessionFeature)
+        if let feature = feature {
+            let sessionFeature = Feature(name: "session", dependencies: [feature])
+            loadFeature(sessionFeature)
+            let sessionFeature2 = Feature(name: "session", dependencies: [feature])
+            loadFeature(sessionFeature2)
+            let sessionFeature3 = Feature(name: "session", dependencies: [feature])
+            loadFeature(sessionFeature3)
+        }
     }
     
     override func loadFeature(_ feature: Feature) {
         super.loadFeature(feature)
         if feature.name == "session" {
-            let sessionViewController = SessionViewController(core: core)
-            add(child: sessionViewController)
-            view.addSubview(sessionViewController.view)
+            let sessionView = UIView()
+            addSessionView(sessionView)
+            let sessionViewController = SessionViewController(core: core, feature: feature)
+            feature.viewController = sessionViewController
+            add(child: sessionViewController, containerView: sessionView)
             self.sessionViewControllers.append(sessionViewController)
+        }
+    }
+    
+    private func addSessionView(_ sessionView: UIView) {
+        if let count = (verticalStackView.arrangedSubviews.last as? UIStackView)?.arrangedSubviews.count, count % 2 != 0 {
+            (verticalStackView.arrangedSubviews.last as? UIStackView)?.addArrangedSubview(sessionView)
+        } else {
+            let horizontalStackView = UIStackView()
+            verticalStackView.addArrangedSubview(horizontalStackView)
+            horizontalStackView.axis = .horizontal
+            horizontalStackView.distribution = .fillEqually
+            horizontalStackView.addArrangedSubview(sessionView)
         }
     }
 }

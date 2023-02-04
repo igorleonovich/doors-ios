@@ -38,10 +38,12 @@ final class SessionViewController: BaseSystemFeatureViewController {
     // MARK: Actions
     
     private func loadInitialFeatures() {
-        let systemControlsFeature = Feature(name: "systemControls", dependencies: [])
-        let mainFeature = Feature(name: "main", dependencies: [systemControlsFeature])
-        let consoleFeature = Feature(name: "console", dependencies: [mainFeature])
-        [systemControlsFeature, mainFeature, consoleFeature].forEach({ loadFeature($0) })
+        if let feature = feature {
+            let systemControlsFeature = Feature(name: "systemControls", dependencies: [feature])
+            let mainFeature = Feature(name: "main", dependencies: [systemControlsFeature])
+            let consoleFeature = Feature(name: "console", dependencies: [mainFeature])
+            [systemControlsFeature, mainFeature, consoleFeature].forEach({ loadFeature($0) })
+        }
     }
     
     override func loadFeature(_ feature: Feature) {

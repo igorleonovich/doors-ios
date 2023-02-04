@@ -10,7 +10,7 @@ import UIKit
 
 final class ConsoleViewController: BaseSystemFeatureViewController {
 
-    private var height = 100
+    private var height = 50
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,11 +25,9 @@ final class ConsoleViewController: BaseSystemFeatureViewController {
             make.right.equalToSuperview()
             make.height.equalTo(height)
         }
-        if let mainSuperView = feature?.dependencies.first(where: { $0.name == "main" })?.viewController?.view.superview {
-            mainSuperView.snp.updateConstraints { make in
-                if let mainSuperSuperview = mainSuperView.superview {
-                    make.bottom.equalTo(mainSuperSuperview.safeAreaLayoutGuide.snp.bottom).offset(-height)
-                }
+        if let otherFeatureSuperView = feature?.dependencies.first(where: { ["sessions", "main"].contains($0.name) })?.viewController?.view.superview {
+            otherFeatureSuperView.snp.updateConstraints { make in
+                make.bottom.equalToSuperview().offset(-height)
             }
         }
     }
@@ -37,6 +35,11 @@ final class ConsoleViewController: BaseSystemFeatureViewController {
     // MARK: - Setup
     
     private func setupUI() {
-
+        setupBorders()
+        view.backgroundColor = .darkGray
+    }
+    
+    private func setupBorders() {
+        view.addBorder(color: Color.foregroundActive, width: 1, sides: [.up])
     }
 }
