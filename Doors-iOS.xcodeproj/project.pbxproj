@@ -52,6 +52,7 @@
 		69A0AFC2298EE391002E652E /* BorderSide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A0AFC0298EE391002E652E /* BorderSide.swift */; };
 		69A0AFC4298F0693002E652E /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A0AFC3298F0693002E652E /* UIColor+Extensions.swift */; };
 		69A0AFC5298F0693002E652E /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A0AFC3298F0693002E652E /* UIColor+Extensions.swift */; };
+		69A0AFC8298F1ACC002E652E /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A0AFC7298F1ACC002E652E /* TableViewCell.swift */; };
 		69BE8D04298D7D94001EFDD2 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BE8D03298D7D94001EFDD2 /* UIViewController+Extensions.swift */; };
 		69BE8D06298D7E07001EFDD2 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BE8D05298D7E07001EFDD2 /* String+Extensions.swift */; };
 		69BE8D08298D7EF4001EFDD2 /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BE8D07298D7EF4001EFDD2 /* UIApplication+Extensions.swift */; };
@@ -190,6 +191,7 @@
 		69A0AFBD298ED47C002E652E /* SessionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionsViewController.swift; sourceTree = "<group>"; };
 		69A0AFC0298EE391002E652E /* BorderSide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderSide.swift; sourceTree = "<group>"; };
 		69A0AFC3298F0693002E652E /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		69A0AFC7298F1ACC002E652E /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		69BE8D03298D7D94001EFDD2 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		69BE8D05298D7E07001EFDD2 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		69BE8D07298D7EF4001EFDD2 /* UIApplication+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extensions.swift"; sourceTree = "<group>"; };
@@ -494,6 +496,14 @@
 			path = Sessions;
 			sourceTree = "<group>";
 		};
+		69A0AFC6298F1ABD002E652E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				69A0AFC7298F1ACC002E652E /* TableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		69BE8D02298D7D7C001EFDD2 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -530,6 +540,7 @@
 			children = (
 				6986698729886E2100FA3CC6 /* _Old */,
 				690F4120298D6E7700C5239F /* Screens */,
+				69A0AFC6298F1ABD002E652E /* Views */,
 				690A481F298D7524000C02B4 /* Core */,
 				690F4121298D6E9300C5239F /* Models */,
 				690A4822298D7666000C02B4 /* Utils */,
@@ -964,6 +975,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69A0AFC8298F1ACC002E652E /* TableViewCell.swift in Sources */,
 				690A4821298D754B000C02B4 /* Core.swift in Sources */,
 				69F070D826B6B9810027E94D /* Device.swift in Sources */,
 				690A481E298D74C4000C02B4 /* MainViewController.swift in Sources */,
