@@ -1,5 +1,5 @@
 //
-//  SettingsViewController.swift
+//  MagicButtonViewController.swift
 //  Doors-iOS
 //
 //  Created by Igor Leonovich on 4.02.23.
@@ -8,9 +8,9 @@
 
 import UIKit
 
-final class SettingsViewController: BaseSystemFeatureViewController {
+final class StartViewController: BaseSystemFeatureViewController {
 
-    weak var core: Core!
+    private weak var core: Core!
     
     init(core: Core) {
         self.core = core
@@ -34,19 +34,21 @@ final class SettingsViewController: BaseSystemFeatureViewController {
         button.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
-        button.setImage(UIImage(named: "BurgerMenu"), for: .normal)
+        button.setImage(UIImage(named: "Start")?.withRenderingMode(.alwaysOriginal).withTintColor(Color.foregroundActive), for: .normal)
+        button.imageView?.contentMode = .scaleAspectFit
         button.addTarget(self, action: #selector(onTap), for: .touchUpInside)
     }
     
     // MARK: - Actions
     
     @objc private func onTap() {
-        print("💥")
-        showSettings()
+        showScreen()
     }
     
-    private func showSettings() {
-        let settingsScreenViewController = SettingsScreenViewController(core: core)
-        (core.router as? SessionViewController)?.present(settingsScreenViewController, animated: true)
+    private func showScreen() {
+        let startScreenViewController = StartScreenViewController(core: core)
+        startScreenViewController.modalTransitionStyle = .crossDissolve
+        startScreenViewController.modalPresentationStyle = .overFullScreen
+        (core.router as? SessionViewController)?.present(startScreenViewController, animated: true)
     }
 }

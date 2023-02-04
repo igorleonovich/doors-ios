@@ -8,9 +8,9 @@
 
 import UIKit
 
-final class ConsoleViewController: BaseFeatureViewController {
+final class ConsoleViewController: BaseSystemFeatureViewController {
 
-    weak var core: Core!
+    private weak var core: Core!
     
     init(core: Core) {
         self.core = core

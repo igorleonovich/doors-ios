@@ -22,6 +22,16 @@
 		69A0AF91298DA392002E652E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A0AF8F298DA392002E652E /* SettingsViewController.swift */; };
 		69A0AF93298DA41C002E652E /* SettingsScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A0AF92298DA41C002E652E /* SettingsScreenViewController.swift */; };
 		69A0AF94298DA41C002E652E /* SettingsScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A0AF92298DA41C002E652E /* SettingsScreenViewController.swift */; };
+		69A0AF98298E5292002E652E /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A0AF97298E5292002E652E /* Router.swift */; };
+		69A0AF99298E5292002E652E /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A0AF97298E5292002E652E /* Router.swift */; };
+		69A0AF9B298E6B09002E652E /* SystemControlsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A0AF9A298E6B09002E652E /* SystemControlsViewController.swift */; };
+		69A0AF9C298E6B09002E652E /* SystemControlsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A0AF9A298E6B09002E652E /* SystemControlsViewController.swift */; };
+		69A0AF9F298E6BCD002E652E /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A0AF9E298E6BCD002E652E /* StartViewController.swift */; };
+		69A0AFA0298E6BCD002E652E /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A0AF9E298E6BCD002E652E /* StartViewController.swift */; };
+		69A0AFA2298EA415002E652E /* StartScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A0AFA1298EA415002E652E /* StartScreenViewController.swift */; };
+		69A0AFA3298EA415002E652E /* StartScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A0AFA1298EA415002E652E /* StartScreenViewController.swift */; };
+		69A0AFA6298EABAC002E652E /* TitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A0AFA5298EABAC002E652E /* TitleViewController.swift */; };
+		69A0AFA7298EABAC002E652E /* TitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A0AFA5298EABAC002E652E /* TitleViewController.swift */; };
 		69BE8D04298D7D94001EFDD2 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BE8D03298D7D94001EFDD2 /* UIViewController+Extensions.swift */; };
 		69BE8D06298D7E07001EFDD2 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BE8D05298D7E07001EFDD2 /* String+Extensions.swift */; };
 		69BE8D08298D7EF4001EFDD2 /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BE8D07298D7EF4001EFDD2 /* UIApplication+Extensions.swift */; };
@@ -151,6 +161,11 @@
 		69A0AF8B298D905D002E652E /* Feature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feature.swift; sourceTree = "<group>"; };
 		69A0AF8F298DA392002E652E /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		69A0AF92298DA41C002E652E /* SettingsScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreenViewController.swift; sourceTree = "<group>"; };
+		69A0AF97298E5292002E652E /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		69A0AF9A298E6B09002E652E /* SystemControlsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemControlsViewController.swift; sourceTree = "<group>"; };
+		69A0AF9E298E6BCD002E652E /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		69A0AFA1298EA415002E652E /* StartScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScreenViewController.swift; sourceTree = "<group>"; };
+		69A0AFA5298EABAC002E652E /* TitleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleViewController.swift; sourceTree = "<group>"; };
 		69BE8D03298D7D94001EFDD2 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		69BE8D05298D7E07001EFDD2 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		69BE8D07298D7EF4001EFDD2 /* UIApplication+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extensions.swift"; sourceTree = "<group>"; };
@@ -313,6 +328,7 @@
 			isa = PBXGroup;
 			children = (
 				690A4820298D754B000C02B4 /* Core.swift */,
+				69A0AF97298E5292002E652E /* Router.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -348,8 +364,6 @@
 				690A4812298D73CA000C02B4 /* Root */,
 				690A4814298D73DE000C02B4 /* Loading */,
 				690A4825298D7792000C02B4 /* RootSession */,
-				690A4828298D77BA000C02B4 /* Session */,
-				690A4813298D73D5000C02B4 /* Main */,
 				69A0AF86298D8F4F002E652E /* Features */,
 				69A0AF8E298DA373002E652E /* SystemFeatures */,
 			);
@@ -386,7 +400,7 @@
 		69A0AF86298D8F4F002E652E /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				69A0AF87298D8F5E002E652E /* Console */,
+				690A4813298D73D5000C02B4 /* Main */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -402,10 +416,48 @@
 		69A0AF8E298DA373002E652E /* SystemFeatures */ = {
 			isa = PBXGroup;
 			children = (
+				69A0AF96298E4EE0002E652E /* SystemControls */,
+				690A4828298D77BA000C02B4 /* Session */,
+				69A0AF87298D8F5E002E652E /* Console */,
+			);
+			path = SystemFeatures;
+			sourceTree = "<group>";
+		};
+		69A0AF95298E4AB6002E652E /* Settings */ = {
+			isa = PBXGroup;
+			children = (
 				69A0AF8F298DA392002E652E /* SettingsViewController.swift */,
 				69A0AF92298DA41C002E652E /* SettingsScreenViewController.swift */,
 			);
-			path = SystemFeatures;
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		69A0AF96298E4EE0002E652E /* SystemControls */ = {
+			isa = PBXGroup;
+			children = (
+				69A0AF9A298E6B09002E652E /* SystemControlsViewController.swift */,
+				69A0AF9D298E6BBE002E652E /* Start */,
+				69A0AFA4298EAB96002E652E /* Title */,
+				69A0AF95298E4AB6002E652E /* Settings */,
+			);
+			path = SystemControls;
+			sourceTree = "<group>";
+		};
+		69A0AF9D298E6BBE002E652E /* Start */ = {
+			isa = PBXGroup;
+			children = (
+				69A0AF9E298E6BCD002E652E /* StartViewController.swift */,
+				69A0AFA1298EA415002E652E /* StartScreenViewController.swift */,
+			);
+			path = Start;
+			sourceTree = "<group>";
+		};
+		69A0AFA4298EAB96002E652E /* Title */ = {
+			isa = PBXGroup;
+			children = (
+				69A0AFA5298EABAC002E652E /* TitleViewController.swift */,
+			);
+			path = Title;
 			sourceTree = "<group>";
 		};
 		69BE8D02298D7D7C001EFDD2 /* Extensions */ = {
@@ -898,10 +950,14 @@
 				69F0705D26B6B8EC0027E94D /* SceneManager.swift in Sources */,
 				69F0708D26B6B9310027E94D /* ListDTO.swift in Sources */,
 				69F070D226B6B9810027E94D /* InternetProtocol.swift in Sources */,
+				69A0AF9F298E6BCD002E652E /* StartViewController.swift in Sources */,
 				690A4824298D767F000C02B4 /* Color.swift in Sources */,
 				69F0705926B6B8EC0027E94D /* Constants.swift in Sources */,
+				69A0AF98298E5292002E652E /* Router.swift in Sources */,
 				69F0708126B6B9310027E94D /* ServerError.swift in Sources */,
+				69A0AF9B298E6B09002E652E /* SystemControlsViewController.swift in Sources */,
 				69A0AF93298DA41C002E652E /* SettingsScreenViewController.swift in Sources */,
+				69A0AFA6298EABAC002E652E /* TitleViewController.swift in Sources */,
 				69F0708526B6B9310027E94D /* UserPrivateInput.swift in Sources */,
 				69F0708326B6B9310027E94D /* LogInInput.swift in Sources */,
 				690A481A298D7492000C02B4 /* LoadingViewController.swift in Sources */,
@@ -928,6 +984,7 @@
 				69F070DD26B6B98A0027E94D /* Settings.swift in Sources */,
 				69BE8D06298D7E07001EFDD2 /* String+Extensions.swift in Sources */,
 				69F0704F26B6B8DB0027E94D /* EntryBaseViewController.swift in Sources */,
+				69A0AFA2298EA415002E652E /* StartScreenViewController.swift in Sources */,
 				69F070D626B6B9810027E94D /* SecureStoreQueryable.swift in Sources */,
 				69F070CE26B6B9810027E94D /* SecureStoreError.swift in Sources */,
 				69F070D026B6B9810027E94D /* SecureStore.swift in Sources */,
@@ -938,10 +995,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69A0AF99298E5292002E652E /* Router.swift in Sources */,
 				69F070D926B6B9810027E94D /* Device.swift in Sources */,
 				69F0706D26B6B9280027E94D /* UIView+Extensions.swift in Sources */,
 				69F0701626B6AE340027E94D /* AppDelegate.swift in Sources */,
 				69F0708A26B6B9310027E94D /* RefreshTokenOutput.swift in Sources */,
+				69A0AFA7298EABAC002E652E /* TitleViewController.swift in Sources */,
 				69F070B826B6B9410027E94D /* OldLoadingViewController.swift in Sources */,
 				69F0708026B6B9310027E94D /* RefreshTokenInput.swift in Sources */,
 				69F0701726B6AE340027E94D /* SceneDelegate.swift in Sources */,
@@ -949,8 +1008,10 @@
 				69F0704E26B6B8DB0027E94D /* OldRootViewController.swift in Sources */,
 				69F0705226B6B8DB0027E94D /* CustomAlertController.swift in Sources */,
 				69F0708C26B6B9310027E94D /* NewUserOutput.swift in Sources */,
+				69A0AFA0298E6BCD002E652E /* StartViewController.swift in Sources */,
 				69F0705E26B6B8EC0027E94D /* SceneManager.swift in Sources */,
 				69F0708E26B6B9310027E94D /* ListDTO.swift in Sources */,
+				69A0AFA3298EA415002E652E /* StartScreenViewController.swift in Sources */,
 				69A0AF94298DA41C002E652E /* SettingsScreenViewController.swift in Sources */,
 				69F070D326B6B9810027E94D /* InternetProtocol.swift in Sources */,
 				69F0705A26B6B8EC0027E94D /* Constants.swift in Sources */,
@@ -978,6 +1039,7 @@
 				69ED6402272CF4F100153653 /* SignUpViewController.swift in Sources */,
 				69F070DE26B6B98A0027E94D /* Settings.swift in Sources */,
 				69F0705026B6B8DB0027E94D /* EntryBaseViewController.swift in Sources */,
+				69A0AF9C298E6B09002E652E /* SystemControlsViewController.swift in Sources */,
 				69F070D726B6B9810027E94D /* SecureStoreQueryable.swift in Sources */,
 				69F070CF26B6B9810027E94D /* SecureStoreError.swift in Sources */,
 				69F070D126B6B9810027E94D /* SecureStore.swift in Sources */,

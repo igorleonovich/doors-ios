@@ -10,8 +10,8 @@ import UIKit
 
 final class RootSessionViewController: BaseViewController {
 
-    var core: Core!
-    weak var currentSessionViewController: SessionViewController!
+    private var core: Core!
+    private var sessionViewControllers = [SessionViewController]()
     
     init(core: Core) {
         self.core = core
@@ -25,7 +25,7 @@ final class RootSessionViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        loadDefaultSession()
+        loadInitialFeatures()
     }
     
     // MARK: - Setup
@@ -36,10 +36,23 @@ final class RootSessionViewController: BaseViewController {
     
     // MARK: Actions
     
-    private func loadDefaultSession() {
-        let sessionViewController = SessionViewController(core: core)
-        add(child: sessionViewController)
-        view.addSubview(sessionViewController.view)
-        self.currentSessionViewController = sessionViewController
+    private func loadInitialFeatures() {
+        let sessionsFeature = Feature(name: "sessions", dependencies: [])
+        loadFeature(sessionsFeature)
+    }
+    
+    private func loadFeature(_ feature: Feature) {
+        if feature.name == "sessions" {
+            loadDefaultSession()
+            func loadDefaultSession() {
+                let sessionFeature = Feature(name: "session", dependencies: [])
+                loadFeature(sessionFeature)
+            }
+        } else if feature.name == "session" {
+            let sessionViewController = SessionViewController(core: core)
+            add(child: sessionViewController)
+            view.addSubview(sessionViewController.view)
+            self.sessionViewControllers.append(sessionViewController)
+        }
     }
 }

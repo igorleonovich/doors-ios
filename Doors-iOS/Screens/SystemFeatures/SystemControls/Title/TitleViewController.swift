@@ -1,5 +1,5 @@
 //
-//  SettingsScreenViewController.swift
+//  TitleViewController.swift
 //  Doors-iOS
 //
 //  Created by Igor Leonovich on 4.02.23.
@@ -8,9 +8,9 @@
 
 import UIKit
 
-final class SettingsScreenViewController: BaseSystemFeatureViewController {
+final class TitleViewController: BaseSystemFeatureViewController {
 
-    weak var core: Core!
+    private weak var core: Core!
     
     init(core: Core) {
         self.core = core
@@ -29,6 +29,12 @@ final class SettingsScreenViewController: BaseSystemFeatureViewController {
     // MARK: - Setup
     
     private func setupUI() {
-        view.backgroundColor = .red
+        let titleLabel = UILabel()
+        view.addSubview(titleLabel)
+        titleLabel.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+        titleLabel.textAlignment = .center
+        titleLabel.text = "D O O R S"
     }
 }
