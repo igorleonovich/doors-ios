@@ -30,6 +30,18 @@ final class SystemControlsViewController: BaseSystemFeatureViewController {
         loadInitialFeatures()
     }
     
+    override func didMove(toParent parent: UIViewController?) {
+        super.didMove(toParent: parent)
+        view.superview?.snp.remakeConstraints { make in
+            if let superSuperView = view.superview?.superview {
+                make.top.equalTo(superSuperView.safeAreaLayoutGuide.snp.top)
+            }
+            make.left.equalTo(20)
+            make.right.equalTo(-20)
+            make.height.equalTo(50)
+        }
+    }
+    
     // MARK: - Setup
     
     private func setupUI() {
@@ -55,9 +67,6 @@ final class SystemControlsViewController: BaseSystemFeatureViewController {
     private func loadFeature(_ feature: Feature) {
         if feature.name == "start" {
             let startView = UIView()
-            startView.snp.makeConstraints { make in
-                make.width.equalTo(30)
-            }
             stackView.addArrangedSubview(startView)
             let startViewController = StartViewController(core: core)
             add(child: startViewController, containerView: startView)
@@ -70,9 +79,6 @@ final class SystemControlsViewController: BaseSystemFeatureViewController {
             self.featuresViewControllers.append(titleViewController)
         } else if feature.name == "settings" {
             let settingsView = UIView()
-            settingsView.snp.makeConstraints { make in
-                make.width.equalTo(30)
-            }
             stackView.addArrangedSubview(settingsView)
             let settingsViewController = SettingsViewController(core: core)
             add(child: settingsViewController, containerView: settingsView)

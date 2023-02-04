@@ -32,6 +32,20 @@
 		69A0AFA3298EA415002E652E /* StartScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A0AFA1298EA415002E652E /* StartScreenViewController.swift */; };
 		69A0AFA6298EABAC002E652E /* TitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A0AFA5298EABAC002E652E /* TitleViewController.swift */; };
 		69A0AFA7298EABAC002E652E /* TitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A0AFA5298EABAC002E652E /* TitleViewController.swift */; };
+		69A0AFAE298EBBEA002E652E /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A0AFAD298EBBEA002E652E /* UIView+Extensions.swift */; };
+		69A0AFAF298EBBEA002E652E /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A0AFAD298EBBEA002E652E /* UIView+Extensions.swift */; };
+		69A0AFB0298EC84C002E652E /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690A4815298D73F0000C02B4 /* BaseViewController.swift */; };
+		69A0AFB1298EC84E002E652E /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690A4817298D743B000C02B4 /* RootViewController.swift */; };
+		69A0AFB2298EC850002E652E /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690A4819298D7492000C02B4 /* LoadingViewController.swift */; };
+		69A0AFB3298EC853002E652E /* RootSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690A4826298D77A8000C02B4 /* RootSessionViewController.swift */; };
+		69A0AFB4298EC857002E652E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690A481D298D74C4000C02B4 /* MainViewController.swift */; };
+		69A0AFB5298EC862002E652E /* SessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690A4829298D77EA000C02B4 /* SessionViewController.swift */; };
+		69A0AFB6298EC868002E652E /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690A4820298D754B000C02B4 /* Core.swift */; };
+		69A0AFB7298EC86C002E652E /* Feature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A0AF8B298D905D002E652E /* Feature.swift */; };
+		69A0AFB8298EC86F002E652E /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690A4823298D767F000C02B4 /* Color.swift */; };
+		69A0AFB9298EC871002E652E /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BE8D05298D7E07001EFDD2 /* String+Extensions.swift */; };
+		69A0AFBA298EC875002E652E /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BE8D03298D7D94001EFDD2 /* UIViewController+Extensions.swift */; };
+		69A0AFBB298EC877002E652E /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BE8D07298D7EF4001EFDD2 /* UIApplication+Extensions.swift */; };
 		69BE8D04298D7D94001EFDD2 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BE8D03298D7D94001EFDD2 /* UIViewController+Extensions.swift */; };
 		69BE8D06298D7E07001EFDD2 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BE8D05298D7E07001EFDD2 /* String+Extensions.swift */; };
 		69BE8D08298D7EF4001EFDD2 /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BE8D07298D7EF4001EFDD2 /* UIApplication+Extensions.swift */; };
@@ -77,8 +91,8 @@
 		69F0706626B6B90E0027E94D /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F0706426B6B90E0027E94D /* CustomButton.swift */; };
 		69F0706A26B6B9280027E94D /* OldUIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F0706826B6B9280027E94D /* OldUIViewController+Extensions.swift */; };
 		69F0706B26B6B9280027E94D /* OldUIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F0706826B6B9280027E94D /* OldUIViewController+Extensions.swift */; };
-		69F0706C26B6B9280027E94D /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F0706926B6B9280027E94D /* UIView+Extensions.swift */; };
-		69F0706D26B6B9280027E94D /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F0706926B6B9280027E94D /* UIView+Extensions.swift */; };
+		69F0706C26B6B9280027E94D /* OldUIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F0706926B6B9280027E94D /* OldUIView+Extensions.swift */; };
+		69F0706D26B6B9280027E94D /* OldUIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F0706926B6B9280027E94D /* OldUIView+Extensions.swift */; };
 		69F0707D26B6B9310027E94D /* PointDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F0707026B6B9310027E94D /* PointDTO.swift */; };
 		69F0707E26B6B9310027E94D /* PointDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F0707026B6B9310027E94D /* PointDTO.swift */; };
 		69F0707F26B6B9310027E94D /* RefreshTokenInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F0707226B6B9310027E94D /* RefreshTokenInput.swift */; };
@@ -166,6 +180,7 @@
 		69A0AF9E298E6BCD002E652E /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		69A0AFA1298EA415002E652E /* StartScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScreenViewController.swift; sourceTree = "<group>"; };
 		69A0AFA5298EABAC002E652E /* TitleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleViewController.swift; sourceTree = "<group>"; };
+		69A0AFAD298EBBEA002E652E /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		69BE8D03298D7D94001EFDD2 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		69BE8D05298D7E07001EFDD2 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		69BE8D07298D7EF4001EFDD2 /* UIApplication+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extensions.swift"; sourceTree = "<group>"; };
@@ -215,7 +230,7 @@
 		69F0705826B6B8EC0027E94D /* AuthManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		69F0706426B6B90E0027E94D /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		69F0706826B6B9280027E94D /* OldUIViewController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "OldUIViewController+Extensions.swift"; sourceTree = "<group>"; };
-		69F0706926B6B9280027E94D /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		69F0706926B6B9280027E94D /* OldUIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "OldUIView+Extensions.swift"; sourceTree = "<group>"; };
 		69F0707026B6B9310027E94D /* PointDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointDTO.swift; sourceTree = "<group>"; };
 		69F0707226B6B9310027E94D /* RefreshTokenInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshTokenInput.swift; sourceTree = "<group>"; };
 		69F0707326B6B9310027E94D /* ServerError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerError.swift; sourceTree = "<group>"; };
@@ -464,6 +479,7 @@
 			isa = PBXGroup;
 			children = (
 				69BE8D05298D7E07001EFDD2 /* String+Extensions.swift */,
+				69A0AFAD298EBBEA002E652E /* UIView+Extensions.swift */,
 				69BE8D03298D7D94001EFDD2 /* UIViewController+Extensions.swift */,
 				69BE8D07298D7EF4001EFDD2 /* UIApplication+Extensions.swift */,
 			);
@@ -570,7 +586,7 @@
 			isa = PBXGroup;
 			children = (
 				69F0706826B6B9280027E94D /* OldUIViewController+Extensions.swift */,
-				69F0706926B6B9280027E94D /* UIView+Extensions.swift */,
+				69F0706926B6B9280027E94D /* OldUIView+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -932,7 +948,7 @@
 				69F070D826B6B9810027E94D /* Device.swift in Sources */,
 				690A481E298D74C4000C02B4 /* MainViewController.swift in Sources */,
 				69A0AF89298D8F6B002E652E /* ConsoleViewController.swift in Sources */,
-				69F0706C26B6B9280027E94D /* UIView+Extensions.swift in Sources */,
+				69F0706C26B6B9280027E94D /* OldUIView+Extensions.swift in Sources */,
 				69F0700026B6ADD10027E94D /* AppDelegate.swift in Sources */,
 				69A0AF8C298D905D002E652E /* Feature.swift in Sources */,
 				690A482A298D77EA000C02B4 /* SessionViewController.swift in Sources */,
@@ -944,6 +960,7 @@
 				69A0AF90298DA392002E652E /* SettingsViewController.swift in Sources */,
 				69F0706A26B6B9280027E94D /* OldUIViewController+Extensions.swift in Sources */,
 				69BE8D04298D7D94001EFDD2 /* UIViewController+Extensions.swift in Sources */,
+				69A0AFAE298EBBEA002E652E /* UIView+Extensions.swift in Sources */,
 				69F0704D26B6B8DB0027E94D /* OldRootViewController.swift in Sources */,
 				69F0705126B6B8DB0027E94D /* CustomAlertController.swift in Sources */,
 				69F0708B26B6B9310027E94D /* NewUserOutput.swift in Sources */,
@@ -997,27 +1014,33 @@
 			files = (
 				69A0AF99298E5292002E652E /* Router.swift in Sources */,
 				69F070D926B6B9810027E94D /* Device.swift in Sources */,
-				69F0706D26B6B9280027E94D /* UIView+Extensions.swift in Sources */,
+				69F0706D26B6B9280027E94D /* OldUIView+Extensions.swift in Sources */,
 				69F0701626B6AE340027E94D /* AppDelegate.swift in Sources */,
 				69F0708A26B6B9310027E94D /* RefreshTokenOutput.swift in Sources */,
 				69A0AFA7298EABAC002E652E /* TitleViewController.swift in Sources */,
 				69F070B826B6B9410027E94D /* OldLoadingViewController.swift in Sources */,
 				69F0708026B6B9310027E94D /* RefreshTokenInput.swift in Sources */,
+				69A0AFB5298EC862002E652E /* SessionViewController.swift in Sources */,
 				69F0701726B6AE340027E94D /* SceneDelegate.swift in Sources */,
 				69F0706B26B6B9280027E94D /* OldUIViewController+Extensions.swift in Sources */,
 				69F0704E26B6B8DB0027E94D /* OldRootViewController.swift in Sources */,
+				69A0AFB2298EC850002E652E /* LoadingViewController.swift in Sources */,
 				69F0705226B6B8DB0027E94D /* CustomAlertController.swift in Sources */,
 				69F0708C26B6B9310027E94D /* NewUserOutput.swift in Sources */,
 				69A0AFA0298E6BCD002E652E /* StartViewController.swift in Sources */,
 				69F0705E26B6B8EC0027E94D /* SceneManager.swift in Sources */,
+				69A0AFB8298EC86F002E652E /* Color.swift in Sources */,
 				69F0708E26B6B9310027E94D /* ListDTO.swift in Sources */,
+				69A0AFB7298EC86C002E652E /* Feature.swift in Sources */,
 				69A0AFA3298EA415002E652E /* StartScreenViewController.swift in Sources */,
 				69A0AF94298DA41C002E652E /* SettingsScreenViewController.swift in Sources */,
 				69F070D326B6B9810027E94D /* InternetProtocol.swift in Sources */,
 				69F0705A26B6B8EC0027E94D /* Constants.swift in Sources */,
 				69F0708226B6B9310027E94D /* ServerError.swift in Sources */,
+				69A0AFAF298EBBEA002E652E /* UIView+Extensions.swift in Sources */,
 				69F0708626B6B9310027E94D /* UserPrivateInput.swift in Sources */,
 				69F0708426B6B9310027E94D /* LogInInput.swift in Sources */,
+				69A0AFBB298EC877002E652E /* UIApplication+Extensions.swift in Sources */,
 				69A0AF8A298D8F6D002E652E /* ConsoleViewController.swift in Sources */,
 				69F0704C26B6B8DB0027E94D /* OldBaseViewController.swift in Sources */,
 				69F070A626B6B9410027E94D /* PlanViewController.swift in Sources */,
@@ -1026,9 +1049,12 @@
 				69F0708826B6B9310027E94D /* LoginOutput.swift in Sources */,
 				69F0707E26B6B9310027E94D /* PointDTO.swift in Sources */,
 				69F0706626B6B90E0027E94D /* CustomButton.swift in Sources */,
+				69A0AFB9298EC871002E652E /* String+Extensions.swift in Sources */,
 				69F0706226B6B8EC0027E94D /* AuthManager.swift in Sources */,
 				69F0706026B6B8EC0027E94D /* OldCore.swift in Sources */,
 				69F070BE26B6B9410027E94D /* ConstructorViewController+UICollectionView.swift in Sources */,
+				69A0AFB1298EC84E002E652E /* RootViewController.swift in Sources */,
+				69A0AFB6298EC868002E652E /* Core.swift in Sources */,
 				69F070AE26B6B9410027E94D /* RecoverPasswordViewController.swift in Sources */,
 				69F070C226B6B9410027E94D /* ConstructorNavigationController.swift in Sources */,
 				69F070B226B6B9410027E94D /* LogInViewController.swift in Sources */,
@@ -1037,10 +1063,14 @@
 				69F0709026B6B9310027E94D /* SignedDataTask.swift in Sources */,
 				69F070D526B6B9810027E94D /* InternetAuthenticationType.swift in Sources */,
 				69ED6402272CF4F100153653 /* SignUpViewController.swift in Sources */,
+				69A0AFB3298EC853002E652E /* RootSessionViewController.swift in Sources */,
 				69F070DE26B6B98A0027E94D /* Settings.swift in Sources */,
+				69A0AFBA298EC875002E652E /* UIViewController+Extensions.swift in Sources */,
 				69F0705026B6B8DB0027E94D /* EntryBaseViewController.swift in Sources */,
+				69A0AFB0298EC84C002E652E /* BaseViewController.swift in Sources */,
 				69A0AF9C298E6B09002E652E /* SystemControlsViewController.swift in Sources */,
 				69F070D726B6B9810027E94D /* SecureStoreQueryable.swift in Sources */,
+				69A0AFB4298EC857002E652E /* MainViewController.swift in Sources */,
 				69F070CF26B6B9810027E94D /* SecureStoreError.swift in Sources */,
 				69F070D126B6B9810027E94D /* SecureStore.swift in Sources */,
 			);

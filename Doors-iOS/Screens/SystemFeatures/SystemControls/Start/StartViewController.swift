@@ -26,6 +26,13 @@ final class StartViewController: BaseSystemFeatureViewController {
         setupUI()
     }
     
+    override func didMove(toParent parent: UIViewController?) {
+        super.didMove(toParent: parent)
+        view.superview?.snp.makeConstraints { make in
+            make.width.equalTo(30)
+        }
+    }
+    
     // MARK: - Setup
     
     private func setupUI() {

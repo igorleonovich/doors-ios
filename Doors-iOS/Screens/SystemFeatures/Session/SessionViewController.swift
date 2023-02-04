@@ -13,6 +13,10 @@ final class SessionViewController: BaseSystemFeatureViewController {
     private weak var core: Core!
     private var featuresViewControllers = [BaseFeatureViewController]()
     
+    private var systemControlsView: UIView?
+    private var mainView: UIView?
+    private var consoleView: UIView?
+    
     init(core: Core) {
         self.core = core
         super.init()
@@ -39,36 +43,36 @@ final class SessionViewController: BaseSystemFeatureViewController {
     
     private func loadInitialFeatures() {
         let systemControlsFeature = Feature(name: "systemControls", dependencies: [])
-        loadFeature(systemControlsFeature)
-//        let mainFeature = Feature(name: "main", dependencies: [])
-//        [systemControlsFeature, mainFeature].forEach({ loadFeature($0) })
+        let mainFeature = Feature(name: "main", dependencies: [systemControlsFeature])
+        let consoleFeature = Feature(name: "console", dependencies: [mainFeature])
+        [systemControlsFeature, mainFeature, consoleFeature].forEach({ loadFeature($0) })
     }
     
     private func loadFeature(_ feature: Feature) {
         if feature.name == "systemControls" {
             let systemControlsView = UIView()
+            self.systemControlsView = systemControlsView
             view.addSubview(systemControlsView)
-            systemControlsView.snp.makeConstraints { make in
-                make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(20)
-                make.left.equalTo(20)
-                make.right.equalTo(-20)
-                make.height.equalTo(50)
-            }
             let systemControlsViewController = SystemControlsViewController(core: core)
+            feature.viewController = systemControlsViewController
             add(child: systemControlsViewController, containerView: systemControlsView)
             self.featuresViewControllers.append(systemControlsViewController)
         } else if feature.name == "main" {
-            let mainViewController = MainViewController(core: core)
-            add(child: mainViewController)
-            view.addSubview(mainViewController.view)
+            let mainView = UIView()
+            self.mainView = mainView
+            view.addSubview(mainView)
+            let mainViewController = MainViewController(core: core, feature: feature)
+            feature.viewController = mainViewController
+            add(child: mainViewController, containerView: mainView)
             self.featuresViewControllers.append(mainViewController)
-        }
-//        else if feature.name == "console" {
-//           let consoleViewController = ConsoleViewController(core: core)
-//           add(child: consoleViewController)
-//           view.addSubview(consoleViewController.view)
-//           self.featuresViewControllers.append(consoleViewController)
-//       }
+        } else if feature.name == "console" {
+            let consoleView = UIView()
+            self.consoleView = consoleView
+            view.addSubview(consoleView)
+            let consoleViewController = ConsoleViewController(core: core, feature: feature)
+            add(child: consoleViewController, containerView: consoleView)
+            self.featuresViewControllers.append(consoleViewController)
+       }
     }
 }
 

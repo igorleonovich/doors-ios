@@ -11,10 +11,12 @@ import UIKit
 final class MainViewController: BaseFeatureViewController {
     
     private weak var core: Core!
+    private weak var feature: Feature!
     private var featuresViewControllers = [BaseFeatureViewController]()
     
-    init(core: Core) {
+    init(core: Core, feature: Feature) {
         self.core = core
+        self.feature = feature
         super.init()
     }
     
@@ -28,15 +30,32 @@ final class MainViewController: BaseFeatureViewController {
         loadInitialFeatures()
     }
     
+    override func didMove(toParent parent: UIViewController?) {
+        super.didMove(toParent: parent)
+        view.superview?.snp.remakeConstraints { make in
+            if let systemControlsSuperView = feature.dependencies.first(where: { $0.name == "systemControls" })?.viewController?.view.superview {
+                make.top.equalTo(systemControlsSuperView.safeAreaLayoutGuide.snp.bottom)
+            }
+            if let superSuperView = view.superview?.superview {
+                make.bottom.equalTo(superSuperView.safeAreaLayoutGuide.snp.bottom).offset(0)
+            }
+            make.left.equalToSuperview()
+            make.right.equalToSuperview()
+        }
+    }
+    
     // MARK: - Setup
     
     private func setupUI() {
-        
+//        let borderWidth: CGFloat = 1
+//        let borderColor = Color.foregroundActive
+//        view.addTopBorder(color: borderColor, width: borderWidth)
+//        view.addBottomBorder(color: borderColor, width: borderWidth)
+        view.backgroundColor = .lightGray
     }
     
     private func loadInitialFeatures() {
-        let initialFeature = Feature(name: "settings", dependencies: [])
-        loadFeature(initialFeature)
+        
     }
     
     private func loadFeature(_ feature: Feature) {
