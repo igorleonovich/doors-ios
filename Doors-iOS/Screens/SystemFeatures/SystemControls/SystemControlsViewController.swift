@@ -9,20 +9,8 @@
 import UIKit
 
 final class SystemControlsViewController: BaseSystemFeatureViewController {
-
-    private weak var core: Core!
-    private var featuresViewControllers = [BaseSystemFeatureViewController]()
     
     private var stackView: UIStackView!
-    
-    init(core: Core) {
-        self.core = core
-        super.init()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,7 +52,7 @@ final class SystemControlsViewController: BaseSystemFeatureViewController {
         [startFeature, titleFeature, settingsFeature].forEach({ loadFeature($0) })
     }
     
-    private func loadFeature(_ feature: Feature) {
+    override func loadFeature(_ feature: Feature) {
         if feature.name == "start" {
             let startView = UIView()
             stackView.addArrangedSubview(startView)
@@ -84,12 +72,5 @@ final class SystemControlsViewController: BaseSystemFeatureViewController {
             add(child: settingsViewController, containerView: settingsView)
             self.featuresViewControllers.append(settingsViewController)
         }
-//        else if feature.name == "console" {
-//            let consoleView = UIView()
-//            stackView.addArrangedSubview(consoleView)
-//            let consoleViewController = ConsoleViewController(core: core)
-//            add(child: consoleViewController, containerView: consoleView)
-//            self.featuresViewControllers.append(consoleViewController)
-//        }
     }
 }

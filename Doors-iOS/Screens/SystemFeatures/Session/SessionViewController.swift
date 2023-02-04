@@ -9,17 +9,13 @@
 import UIKit
 
 final class SessionViewController: BaseSystemFeatureViewController {
-
-    private weak var core: Core!
-    private var featuresViewControllers = [BaseFeatureViewController]()
     
     private var systemControlsView: UIView?
     private var mainView: UIView?
     private var consoleView: UIView?
     
-    init(core: Core) {
-        self.core = core
-        super.init()
+    override init(core: Core, feature: Feature? = nil) {
+        super.init(core: core, feature: feature)
         core.router = self
     }
     
@@ -48,16 +44,9 @@ final class SessionViewController: BaseSystemFeatureViewController {
         [systemControlsFeature, mainFeature, consoleFeature].forEach({ loadFeature($0) })
     }
     
-    private func loadFeature(_ feature: Feature) {
-        if feature.name == "systemControls" {
-            let systemControlsView = UIView()
-            self.systemControlsView = systemControlsView
-            view.addSubview(systemControlsView)
-            let systemControlsViewController = SystemControlsViewController(core: core)
-            feature.viewController = systemControlsViewController
-            add(child: systemControlsViewController, containerView: systemControlsView)
-            self.featuresViewControllers.append(systemControlsViewController)
-        } else if feature.name == "main" {
+    override func loadFeature(_ feature: Feature) {
+        super.loadFeature(feature)
+        if feature.name == "main" {
             let mainView = UIView()
             self.mainView = mainView
             view.addSubview(mainView)
@@ -65,14 +54,7 @@ final class SessionViewController: BaseSystemFeatureViewController {
             feature.viewController = mainViewController
             add(child: mainViewController, containerView: mainView)
             self.featuresViewControllers.append(mainViewController)
-        } else if feature.name == "console" {
-            let consoleView = UIView()
-            self.consoleView = consoleView
-            view.addSubview(consoleView)
-            let consoleViewController = ConsoleViewController(core: core, feature: feature)
-            add(child: consoleViewController, containerView: consoleView)
-            self.featuresViewControllers.append(consoleViewController)
-       }
+        }
     }
 }
 

@@ -10,19 +10,7 @@ import UIKit
 
 final class ConsoleViewController: BaseSystemFeatureViewController {
 
-    private weak var core: Core!
-    private weak var feature: Feature!
     private var height = 100
-    
-    init(core: Core, feature: Feature) {
-        self.core = core
-        self.feature = feature
-        super.init()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +25,7 @@ final class ConsoleViewController: BaseSystemFeatureViewController {
             make.right.equalToSuperview()
             make.height.equalTo(height)
         }
-        if let mainSuperView = feature.dependencies.first(where: { $0.name == "main" })?.viewController?.view.superview {
+        if let mainSuperView = feature?.dependencies.first(where: { $0.name == "main" })?.viewController?.view.superview {
             mainSuperView.snp.updateConstraints { make in
                 if let mainSuperSuperview = mainSuperView.superview {
                     make.bottom.equalTo(mainSuperSuperview.safeAreaLayoutGuide.snp.bottom).offset(-height)

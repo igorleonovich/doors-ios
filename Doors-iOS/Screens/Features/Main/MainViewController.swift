@@ -10,19 +10,7 @@ import UIKit
 
 final class MainViewController: BaseFeatureViewController {
     
-    private weak var core: Core!
-    private weak var feature: Feature!
     private var featuresViewControllers = [BaseFeatureViewController]()
-    
-    init(core: Core, feature: Feature) {
-        self.core = core
-        self.feature = feature
-        super.init()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +21,7 @@ final class MainViewController: BaseFeatureViewController {
     override func didMove(toParent parent: UIViewController?) {
         super.didMove(toParent: parent)
         view.superview?.snp.remakeConstraints { make in
-            if let systemControlsSuperView = feature.dependencies.first(where: { $0.name == "systemControls" })?.viewController?.view.superview {
+            if let systemControlsSuperView = feature?.dependencies.first(where: { $0.name == "systemControls" })?.viewController?.view.superview {
                 make.top.equalTo(systemControlsSuperView.safeAreaLayoutGuide.snp.bottom)
             }
             if let superSuperView = view.superview?.superview {
