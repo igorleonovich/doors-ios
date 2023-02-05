@@ -45,6 +45,6 @@ final class StartViewController: BaseSystemFeatureViewController {
         let startScreenViewController = StartScreenViewController(core: core)
         startScreenViewController.modalTransitionStyle = .crossDissolve
         startScreenViewController.modalPresentationStyle = .overFullScreen
-        (core.router as? SessionViewController)?.present(startScreenViewController, animated: true)
+        present(startScreenViewController, animated: true)
     }
 }
