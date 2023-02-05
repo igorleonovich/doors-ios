@@ -42,9 +42,13 @@ final class SettingsViewController: BaseSystemFeatureViewController {
     }
     
     private func showScreen() {
-        let settingsScreenViewController = SettingsScreenViewController(core: core)
-        settingsScreenViewController.modalTransitionStyle = .crossDissolve
-        settingsScreenViewController.modalPresentationStyle = .overFullScreen
-        (core.router as? SessionViewController)?.present(settingsScreenViewController, animated: true)
+        if let feature = feature {
+            let settingsScreenFeature = Feature(name: "settingsScreen", dependencies: [feature])
+            let settingsScreenViewController = SettingsScreenViewController(core: core, feature: settingsScreenFeature)
+            settingsScreenFeature.viewController = settingsScreenViewController
+            settingsScreenViewController.modalTransitionStyle = .crossDissolve
+            settingsScreenViewController.modalPresentationStyle = .overFullScreen
+            present(settingsScreenViewController, animated: true)
+        }
     }
 }

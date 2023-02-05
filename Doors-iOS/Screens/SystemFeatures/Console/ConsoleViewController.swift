@@ -10,11 +10,30 @@ import UIKit
 
 final class ConsoleViewController: BaseSystemFeatureViewController {
 
+    private var isInitialSetupPerformed = false
     private var height = 50
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if !isInitialSetupPerformed {
+            ((feature?.dependencies.first(where: { $0.name == "session" })?.viewController as? BaseSystemFeatureViewController)?.feature?.dependencies.first(where: { $0.name == "sessions" })?.viewController as? SessionsViewController)?.sessionViewControllersUpdateActions.append { [weak self] isMoreThanOneSessionViewController in
+                guard let self = self else { return }
+                self.view.superview?.snp.updateConstraints({ make in
+                    make.height.equalTo(isMoreThanOneSessionViewController ? self.height : 0)
+                })
+                if let otherFeatureSuperView = self.feature?.dependencies.first(where: { ["sessions", "main"].contains($0.name) })?.viewController?.view.superview {
+                    otherFeatureSuperView.snp.updateConstraints { make in
+                        make.bottom.equalToSuperview().offset(isMoreThanOneSessionViewController ? -self.height : 0)
+                    }
+                }
+            }
+            isInitialSetupPerformed = true
+        }
     }
     
     override func didMove(toParent parent: UIViewController?) {
@@ -23,11 +42,11 @@ final class ConsoleViewController: BaseSystemFeatureViewController {
             make.bottom.equalToSuperview()
             make.left.equalToSuperview()
             make.right.equalToSuperview()
-            make.height.equalTo(height)
+            make.height.equalTo(feature?.dependencies.first(where: { $0.name == "rootSession" }) == nil ? height : 0)
         }
         if let otherFeatureSuperView = feature?.dependencies.first(where: { ["sessions", "main"].contains($0.name) })?.viewController?.view.superview {
             otherFeatureSuperView.snp.updateConstraints { make in
-                make.bottom.equalToSuperview().offset(-height)
+                make.bottom.equalToSuperview().offset(feature?.dependencies.first(where: { $0.name == "rootSession" }) == nil ? 0 : -height)
             }
         }
     }
@@ -36,7 +55,7 @@ final class ConsoleViewController: BaseSystemFeatureViewController {
     
     private func setupUI() {
         setupBorders()
-        view.backgroundColor = .darkGray
+        view.backgroundColor = UIColor.random()
     }
     
     private func setupBorders() {

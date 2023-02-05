@@ -8,27 +8,26 @@
 
 import UIKit
 
-final class SettingsScreenViewController: BaseViewController {
+final class SettingsScreenViewController: BaseSystemFeatureViewController {
 
-    private weak var core: Core!
     private var tableView: UITableView!
-    
-    init(core: Core) {
-        self.core = core
-        super.init()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    private var settings = [Setting]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupData()
         setupUI()
         setupGesture()
     }
     
     // MARK: - Setup
+    
+    private func setupData() {
+        settings.append(.addSession)
+        if feature?.dependencies.first(where: { $0.name == "settings" })?.dependencies.first(where: { $0.name == "systemControls" })?.dependencies.first(where: { $0.name == "session" }) != nil {
+            settings.append(.dropSession)
+        }
+    }
     
     private func setupUI() {
         view.backgroundColor = .black.withAlphaComponent(0.7)
@@ -49,11 +48,25 @@ final class SettingsScreenViewController: BaseViewController {
     
     private func setupGesture() {
         let gesture = UITapGestureRecognizer(target: self, action: #selector(onTap))
+        gesture.delegate = self
         view.addGestureRecognizer(gesture)
     }
     
+    // MARK: Actions
+    
     @objc private func onTap() {
+        onClose()
+    }
+    
+    private func onClose() {
         dismiss(animated: true)
+    }
+}
+
+extension SettingsScreenViewController: UIGestureRecognizerDelegate {
+    
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        return !tableView.point(inside: touch.location(in: tableView), with: nil)
     }
 }
 
@@ -64,19 +77,28 @@ extension SettingsScreenViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        Setting.allCases[indexPath.row]
+        switch Setting.allCases[indexPath.row] {
+        case .addSession:
+            if let rootSessionFeature = feature?.dependencies.first(where: { $0.name == "settings" })?.dependencies.first(where: { $0.name == "systemControls" })?.dependencies.first(where: { $0.name == "rootSession" }) {
+                (rootSessionFeature.viewController?.childFeatures.first(where: { $0.name == "sessions" })?.viewController as? SessionsViewController)?.addSession()
+            }
+            (feature?.dependencies.first(where: { $0.name == "settings" })?.dependencies.first(where: { $0.name == "systemControls" })?.dependencies.first(where: { $0.name == "session" })?.dependencies.first(where: { $0.name == "sessions" })?.viewController as? SessionsViewController)?.addSession()
+        case .dropSession:
+            (feature?.dependencies.first(where: { $0.name == "settings" })?.dependencies.first(where: { $0.name == "systemControls" })?.dependencies.first(where: { $0.name == "session" })?.viewController as? SessionViewController)?.dropSession()
+        }
+        onClose()
     }
 }
 
 extension SettingsScreenViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Setting.allCases.count
+        return settings.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "SettingCell", for: indexPath) as? SettingCell {
-            cell.configure(setting: Setting.allCases[indexPath.row])
+            cell.configure(setting: settings[indexPath.row])
             return cell
         }
         return UITableViewCell()
@@ -91,7 +113,7 @@ final class SettingCell: TableViewCell {
         textLabel?.textAlignment = .center
         textLabel?.textColor = .white
         textLabel?.font = UIFont.systemFont(ofSize: 20, weight: .thin)
-        textLabel?.text = setting.title
+        textLabel?.text = setting.title.localized
     }
 }
 

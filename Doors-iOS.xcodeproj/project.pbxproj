@@ -15,6 +15,7 @@
 		690A4824298D767F000C02B4 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690A4823298D767F000C02B4 /* Color.swift */; };
 		690A4827298D77A8000C02B4 /* RootSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690A4826298D77A8000C02B4 /* RootSessionViewController.swift */; };
 		690A482A298D77EA000C02B4 /* SessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690A4829298D77EA000C02B4 /* SessionViewController.swift */; };
+		69399461298F2E8E006B92C3 /* AutoReducingStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69399460298F2E8E006B92C3 /* AutoReducingStackView.swift */; };
 		69A0AF89298D8F6B002E652E /* ConsoleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A0AF88298D8F6B002E652E /* ConsoleViewController.swift */; };
 		69A0AF8A298D8F6D002E652E /* ConsoleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A0AF88298D8F6B002E652E /* ConsoleViewController.swift */; };
 		69A0AF8C298D905D002E652E /* Feature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A0AF8B298D905D002E652E /* Feature.swift */; };
@@ -178,6 +179,7 @@
 		690A4826298D77A8000C02B4 /* RootSessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootSessionViewController.swift; sourceTree = "<group>"; };
 		690A4829298D77EA000C02B4 /* SessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionViewController.swift; sourceTree = "<group>"; };
 		6919EB70298D1FC600F96016 /* Doors.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Doors.entitlements; sourceTree = "<group>"; };
+		69399460298F2E8E006B92C3 /* AutoReducingStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoReducingStackView.swift; sourceTree = "<group>"; };
 		69A0AF88298D8F6B002E652E /* ConsoleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleViewController.swift; sourceTree = "<group>"; };
 		69A0AF8B298D905D002E652E /* Feature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feature.swift; sourceTree = "<group>"; };
 		69A0AF8F298DA392002E652E /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -500,6 +502,7 @@
 			isa = PBXGroup;
 			children = (
 				69A0AFC7298F1ACC002E652E /* TableViewCell.swift */,
+				69399460298F2E8E006B92C3 /* AutoReducingStackView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -992,6 +995,7 @@
 				69F0700226B6ADD10027E94D /* SceneDelegate.swift in Sources */,
 				69A0AF90298DA392002E652E /* SettingsViewController.swift in Sources */,
 				69F0706A26B6B9280027E94D /* OldUIViewController+Extensions.swift in Sources */,
+				69399461298F2E8E006B92C3 /* AutoReducingStackView.swift in Sources */,
 				69BE8D04298D7D94001EFDD2 /* UIViewController+Extensions.swift in Sources */,
 				69A0AFAE298EBBEA002E652E /* UIView+Extensions.swift in Sources */,
 				69F0704D26B6B8DB0027E94D /* OldRootViewController.swift in Sources */,

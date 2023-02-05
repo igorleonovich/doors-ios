@@ -23,12 +23,10 @@ final class SystemControlsViewController: BaseSystemFeatureViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if !isInitialSetupPerformed {
-            ((feature?.dependencies.first(where: { $0.name == "session" })?.viewController as? BaseSystemFeatureViewController)?.feature?.dependencies.first(where: { $0.name == "sessions" })?.viewController as? SessionsViewController)?.sessionViewControllersUpdateAction = { isMoreThanOneSessionViewController in
-                    updateHeight(isMoreThanOneSessionViewController)
-            }
-            func updateHeight(_ isMoreThanOneSessionViewController: Bool) {
+            ((feature?.dependencies.first(where: { $0.name == "session" })?.viewController as? BaseSystemFeatureViewController)?.feature?.dependencies.first(where: { $0.name == "sessions" })?.viewController as? SessionsViewController)?.sessionViewControllersUpdateActions.append { [weak self] isMoreThanOneSessionViewController in
+                guard let self = self else { return }
                 self.view.superview?.snp.updateConstraints({ make in
-                    make.height.equalTo(isMoreThanOneSessionViewController ? height : 0)
+                    make.height.equalTo(isMoreThanOneSessionViewController ? self.height : 0)
                 })
             }
             isInitialSetupPerformed = true
@@ -63,10 +61,12 @@ final class SystemControlsViewController: BaseSystemFeatureViewController {
     // MARK: Actions
     
     private func loadInitialFeatures() {
-        let startFeature = Feature(name: "start", dependencies: [])
-        let titleFeature = Feature(name: "title", dependencies: [])
-        let settingsFeature = Feature(name: "settings", dependencies: [])
-        [startFeature, titleFeature, settingsFeature].forEach({ loadFeature($0) })
+        if let feature = feature {
+            let startFeature = Feature(name: "start", dependencies: [])
+            let titleFeature = Feature(name: "title", dependencies: [])
+            let settingsFeature = Feature(name: "settings", dependencies: [feature])
+            [startFeature, titleFeature, settingsFeature].forEach({ loadFeature($0) })
+        }
     }
     
     override func loadFeature(_ feature: Feature) {
@@ -75,19 +75,17 @@ final class SystemControlsViewController: BaseSystemFeatureViewController {
             stackView.addArrangedSubview(startView)
             let startViewController = StartViewController(core: core)
             add(child: startViewController, containerView: startView)
-            self.featuresViewControllers.append(startViewController)
         } else if feature.name == "title" {
             let titleView = UIView()
             stackView.addArrangedSubview(titleView)
             let titleViewController = TitleViewController(core: core)
             add(child: titleViewController, containerView: titleView)
-            self.featuresViewControllers.append(titleViewController)
         } else if feature.name == "settings" {
             let settingsView = UIView()
             stackView.addArrangedSubview(settingsView)
-            let settingsViewController = SettingsViewController(core: core)
+            let settingsViewController = SettingsViewController(core: core, feature: feature)
             add(child: settingsViewController, containerView: settingsView)
-            self.featuresViewControllers.append(settingsViewController)
         }
+        childFeatures.append(feature)
     }
 }

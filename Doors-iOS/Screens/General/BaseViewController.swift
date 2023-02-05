@@ -23,6 +23,7 @@ class BaseFeatureViewController: BaseViewController {
     
     var core: Core!
     var feature: Feature?
+    var childFeatures = [Feature]()
 
     init(core: Core, feature: Feature? = nil) {
         self.core = core
@@ -37,8 +38,6 @@ class BaseFeatureViewController: BaseViewController {
 
 class BaseSystemFeatureViewController: BaseFeatureViewController {
     
-    var featuresViewControllers = [BaseFeatureViewController]()
-    
     func loadFeature(_ feature: Feature) {
         if feature.name == "systemControls" {
             let systemControlsView = UIView()
@@ -46,13 +45,12 @@ class BaseSystemFeatureViewController: BaseFeatureViewController {
             let systemControlsViewController = SystemControlsViewController(core: core, feature: feature)
             feature.viewController = systemControlsViewController
             add(child: systemControlsViewController, containerView: systemControlsView)
-            featuresViewControllers.append(systemControlsViewController)
         } else if feature.name == "console" {
             let consoleView = UIView()
             view.addSubview(consoleView)
             let consoleViewController = ConsoleViewController(core: core, feature: feature)
             add(child: consoleViewController, containerView: consoleView)
-            featuresViewControllers.append(consoleViewController)
-       }
+        }
+        childFeatures.append(feature)
     }
 }

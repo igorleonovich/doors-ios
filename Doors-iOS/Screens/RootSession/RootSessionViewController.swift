@@ -41,7 +41,7 @@ final class RootSessionViewController: BaseSystemFeatureViewController {
             let sessionsViewController = SessionsViewController(core: core, feature: feature)
             feature.viewController = sessionsViewController
             add(child: sessionsViewController, containerView: sessionsView)
-            featuresViewControllers.append(sessionsViewController)
         }
+        childFeatures.append(feature)
     }
 }

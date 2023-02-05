@@ -10,16 +10,14 @@ import UIKit
 
 final class SessionsViewController: BaseSystemFeatureViewController {
 
-    private var sessionViewControllers = [SessionViewController]() {
+    var sessionViewControllers = [SessionViewController]() {
         didSet {
-            sessionViewControllersUpdateAction?(isMoreThanOneSessionViewController)
+            sessionViewControllersUpdateActions.forEach { action in
+                action?(isMoreThanOneSessionViewController)
+            }
         }
     }
-    var sessionViewControllersUpdateAction: ((Bool) -> Void)? = nil {
-        didSet {
-            sessionViewControllersUpdateAction?(isMoreThanOneSessionViewController)
-        }
-    }
+    var sessionViewControllersUpdateActions = [((Bool) -> Void)?]()
     var isMoreThanOneSessionViewController: Bool {
         return sessionViewControllers.count > 1
     }
@@ -58,14 +56,7 @@ final class SessionsViewController: BaseSystemFeatureViewController {
     // MARK: Actions
     
     private func loadInitialFeatures() {
-        if let feature = feature {
-            let sessionFeature = Feature(name: "session", dependencies: [feature])
-            loadFeature(sessionFeature)
-            let sessionFeature2 = Feature(name: "session", dependencies: [feature])
-            loadFeature(sessionFeature2)
-            let sessionFeature3 = Feature(name: "session", dependencies: [feature])
-            loadFeature(sessionFeature3)
-        }
+        addSession()
     }
     
     override func loadFeature(_ feature: Feature) {
@@ -80,11 +71,18 @@ final class SessionsViewController: BaseSystemFeatureViewController {
         }
     }
     
+    func addSession() {
+        if let feature = feature {
+            let sessionFeature = Feature(name: "session", dependencies: [feature])
+            loadFeature(sessionFeature)
+        }
+    }
+    
     private func addSessionView(_ sessionView: UIView) {
         if let count = (verticalStackView.arrangedSubviews.last as? UIStackView)?.arrangedSubviews.count, count % 2 != 0 {
             (verticalStackView.arrangedSubviews.last as? UIStackView)?.addArrangedSubview(sessionView)
         } else {
-            let horizontalStackView = UIStackView()
+            let horizontalStackView = AutoReducingStackView()
             verticalStackView.addArrangedSubview(horizontalStackView)
             horizontalStackView.axis = .horizontal
             horizontalStackView.distribution = .fillEqually

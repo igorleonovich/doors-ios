@@ -41,7 +41,7 @@ final class SessionViewController: BaseSystemFeatureViewController {
         if let feature = feature {
             let systemControlsFeature = Feature(name: "systemControls", dependencies: [feature])
             let mainFeature = Feature(name: "main", dependencies: [systemControlsFeature])
-            let consoleFeature = Feature(name: "console", dependencies: [mainFeature])
+            let consoleFeature = Feature(name: "console", dependencies: [feature, mainFeature])
             [systemControlsFeature, mainFeature, consoleFeature].forEach({ loadFeature($0) })
         }
     }
@@ -55,8 +55,22 @@ final class SessionViewController: BaseSystemFeatureViewController {
             let mainViewController = MainViewController(core: core, feature: feature)
             feature.viewController = mainViewController
             add(child: mainViewController, containerView: mainView)
-            self.featuresViewControllers.append(mainViewController)
         }
+        childFeatures.append(feature)
+    }
+    
+    func dropSession() {
+        if let index = (parent as? SessionsViewController)?.sessionViewControllers.firstIndex(of: self) {
+            (parent as? SessionsViewController)?.sessionViewControllers.remove(at: index)
+        }
+        onClose()
+    }
+    
+    @objc private func onClose() {
+        if let superview = view.superview {
+            (superview.superview as? UIStackView)?.removeArrangedSubview(superview)
+        }
+        remove()
     }
 }
 
