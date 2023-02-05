@@ -15,6 +15,12 @@
 		690A4824298D767F000C02B4 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690A4823298D767F000C02B4 /* Color.swift */; };
 		690A4827298D77A8000C02B4 /* RootSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690A4826298D77A8000C02B4 /* RootSessionViewController.swift */; };
 		690A482A298D77EA000C02B4 /* SessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690A4829298D77EA000C02B4 /* SessionViewController.swift */; };
+		690DAC0D298FE3EC00FB8C7B /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690DAC0C298FE3EC00FB8C7B /* Label.swift */; };
+		690DAC0F298FE60300FB8C7B /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690DAC0E298FE60300FB8C7B /* TableView.swift */; };
+		690DAC10298FE60500FB8C7B /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690DAC0E298FE60300FB8C7B /* TableView.swift */; };
+		690DAC11298FE60A00FB8C7B /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690DAC0C298FE3EC00FB8C7B /* Label.swift */; };
+		690DAC12298FE60D00FB8C7B /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A0AFC7298F1ACC002E652E /* TableViewCell.swift */; };
+		690DAC13298FE60F00FB8C7B /* AutoReducingStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69399460298F2E8E006B92C3 /* AutoReducingStackView.swift */; };
 		69399461298F2E8E006B92C3 /* AutoReducingStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69399460298F2E8E006B92C3 /* AutoReducingStackView.swift */; };
 		69A0AF89298D8F6B002E652E /* ConsoleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A0AF88298D8F6B002E652E /* ConsoleViewController.swift */; };
 		69A0AF8A298D8F6D002E652E /* ConsoleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A0AF88298D8F6B002E652E /* ConsoleViewController.swift */; };
@@ -178,6 +184,8 @@
 		690A4823298D767F000C02B4 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		690A4826298D77A8000C02B4 /* RootSessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootSessionViewController.swift; sourceTree = "<group>"; };
 		690A4829298D77EA000C02B4 /* SessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionViewController.swift; sourceTree = "<group>"; };
+		690DAC0C298FE3EC00FB8C7B /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
+		690DAC0E298FE60300FB8C7B /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
 		6919EB70298D1FC600F96016 /* Doors.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Doors.entitlements; sourceTree = "<group>"; };
 		69399460298F2E8E006B92C3 /* AutoReducingStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoReducingStackView.swift; sourceTree = "<group>"; };
 		69A0AF88298D8F6B002E652E /* ConsoleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleViewController.swift; sourceTree = "<group>"; };
@@ -501,6 +509,8 @@
 		69A0AFC6298F1ABD002E652E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				690DAC0C298FE3EC00FB8C7B /* Label.swift */,
+				690DAC0E298FE60300FB8C7B /* TableView.swift */,
 				69A0AFC7298F1ACC002E652E /* TableViewCell.swift */,
 				69399460298F2E8E006B92C3 /* AutoReducingStackView.swift */,
 			);
@@ -1007,6 +1017,7 @@
 				69A0AF9F298E6BCD002E652E /* StartViewController.swift in Sources */,
 				690A4824298D767F000C02B4 /* Color.swift in Sources */,
 				69F0705926B6B8EC0027E94D /* Constants.swift in Sources */,
+				690DAC0F298FE60300FB8C7B /* TableView.swift in Sources */,
 				69A0AF98298E5292002E652E /* Router.swift in Sources */,
 				69F0708126B6B9310027E94D /* ServerError.swift in Sources */,
 				69A0AF9B298E6B09002E652E /* SystemControlsViewController.swift in Sources */,
@@ -1044,6 +1055,7 @@
 				69F070D626B6B9810027E94D /* SecureStoreQueryable.swift in Sources */,
 				69F070CE26B6B9810027E94D /* SecureStoreError.swift in Sources */,
 				69F070D026B6B9810027E94D /* SecureStore.swift in Sources */,
+				690DAC0D298FE3EC00FB8C7B /* Label.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1072,15 +1084,19 @@
 				69A0AFB8298EC86F002E652E /* Color.swift in Sources */,
 				69F0708E26B6B9310027E94D /* ListDTO.swift in Sources */,
 				69A0AFB7298EC86C002E652E /* Feature.swift in Sources */,
+				690DAC10298FE60500FB8C7B /* TableView.swift in Sources */,
 				69A0AFA3298EA415002E652E /* StartScreenViewController.swift in Sources */,
 				69A0AF94298DA41C002E652E /* SettingsScreenViewController.swift in Sources */,
 				69F070D326B6B9810027E94D /* InternetProtocol.swift in Sources */,
 				69F0705A26B6B8EC0027E94D /* Constants.swift in Sources */,
+				690DAC11298FE60A00FB8C7B /* Label.swift in Sources */,
 				69F0708226B6B9310027E94D /* ServerError.swift in Sources */,
+				690DAC12298FE60D00FB8C7B /* TableViewCell.swift in Sources */,
 				69A0AFAF298EBBEA002E652E /* UIView+Extensions.swift in Sources */,
 				69F0708626B6B9310027E94D /* UserPrivateInput.swift in Sources */,
 				69F0708426B6B9310027E94D /* LogInInput.swift in Sources */,
 				69A0AFBB298EC877002E652E /* UIApplication+Extensions.swift in Sources */,
+				690DAC13298FE60F00FB8C7B /* AutoReducingStackView.swift in Sources */,
 				69A0AF8A298D8F6D002E652E /* ConsoleViewController.swift in Sources */,
 				69F0704C26B6B8DB0027E94D /* OldBaseViewController.swift in Sources */,
 				69F070A626B6B9410027E94D /* PlanViewController.swift in Sources */,

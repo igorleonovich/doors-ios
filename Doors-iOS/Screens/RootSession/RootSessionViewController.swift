@@ -28,8 +28,8 @@ final class RootSessionViewController: BaseSystemFeatureViewController {
         if let feature = feature {
             let systemControlsFeature = Feature(name: "systemControls", dependencies: [feature])
             let sessionsFeature = Feature(name: "sessions", dependencies: [systemControlsFeature])
-            let consoleFeature = Feature(name: "console", dependencies: [sessionsFeature])
-            [systemControlsFeature, sessionsFeature, consoleFeature].forEach({ loadFeature($0) })
+//            let consoleFeature = Feature(name: "console", dependencies: [sessionsFeature])
+            [systemControlsFeature, sessionsFeature].forEach({ loadFeature($0) })
         }
     }
     

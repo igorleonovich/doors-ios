@@ -18,7 +18,7 @@ final class TitleViewController: BaseSystemFeatureViewController {
     // MARK: - Setup
     
     private func setupUI() {
-        let titleLabel = UILabel()
+        let titleLabel = Label()
         view.addSubview(titleLabel)
         titleLabel.snp.makeConstraints { make in
             make.edges.equalToSuperview()

@@ -10,11 +10,13 @@ import UIKit
 
 final class SessionViewController: BaseSystemFeatureViewController {
     
+    private let borderSide: BorderSide?
     private var systemControlsView: UIView?
     private var mainView: UIView?
     private var consoleView: UIView?
     
-    override init(core: Core, feature: Feature? = nil) {
+    init(core: Core, feature: Feature? = nil, borderSide: BorderSide? = nil) {
+        self.borderSide = borderSide
         super.init(core: core, feature: feature)
         core.router = self
     }
@@ -32,7 +34,16 @@ final class SessionViewController: BaseSystemFeatureViewController {
     // MARK: - Setup
     
     private func setupUI() {
-        
+        setupBorders()
+    }
+    
+    private func setupBorders() {
+        if let borderSide = borderSide {
+            let borders = view.addBorders(color: Color.foregroundActive, width: 1, sides: [borderSide])
+            borders.first?.snp.updateConstraints({ make in
+                make.top.equalToSuperview().offset(SystemControlsViewController.height)
+            })
+        }
     }
     
     // MARK: Actions

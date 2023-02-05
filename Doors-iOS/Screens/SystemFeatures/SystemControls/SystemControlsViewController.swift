@@ -12,7 +12,7 @@ final class SystemControlsViewController: BaseSystemFeatureViewController {
     
     private var stackView: UIStackView!
     private var isInitialSetupPerformed = false
-    private let height = 50
+    static let height = 50
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +26,7 @@ final class SystemControlsViewController: BaseSystemFeatureViewController {
             ((feature?.dependencies.first(where: { $0.name == "session" })?.viewController as? BaseSystemFeatureViewController)?.feature?.dependencies.first(where: { $0.name == "sessions" })?.viewController as? SessionsViewController)?.sessionViewControllersUpdateActions.append { [weak self] isMoreThanOneSessionViewController in
                 guard let self = self else { return }
                 self.view.superview?.snp.updateConstraints({ make in
-                    make.height.equalTo(isMoreThanOneSessionViewController ? self.height : 0)
+                    make.height.equalTo(isMoreThanOneSessionViewController ? SystemControlsViewController.height : 0)
                 })
             }
             isInitialSetupPerformed = true
@@ -41,7 +41,7 @@ final class SystemControlsViewController: BaseSystemFeatureViewController {
             }
             make.left.equalTo(20)
             make.right.equalTo(-20)
-            make.height.equalTo(feature?.dependencies.first(where: { $0.name == "rootSession" }) == nil ? 0 : height)
+            make.height.equalTo(feature?.dependencies.first(where: { $0.name == "rootSession" }) == nil ? 0 : SystemControlsViewController.height)
         }
     }
     
@@ -55,7 +55,7 @@ final class SystemControlsViewController: BaseSystemFeatureViewController {
         }
         stackView.axis = .horizontal
         stackView.alignment = .center
-        stackView.spacing = 20
+        stackView.spacing = 10
     }
     
     // MARK: Actions

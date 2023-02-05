@@ -31,7 +31,7 @@ final class SettingsScreenViewController: BaseSystemFeatureViewController {
     
     private func setupUI() {
         view.backgroundColor = .black.withAlphaComponent(0.7)
-        tableView = UITableView()
+        tableView = TableView()
         view.addSubview(tableView)
         tableView.snp.makeConstraints { make in
             make.height.equalTo((Setting.allCases.count * Int(SettingCell.height)))
@@ -42,7 +42,6 @@ final class SettingsScreenViewController: BaseSystemFeatureViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(SettingCell.self, forCellReuseIdentifier: "SettingCell")
-        tableView.backgroundColor = .clear
         tableView.bounces = false
     }
     

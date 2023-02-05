@@ -23,6 +23,12 @@ final class SessionsViewController: BaseSystemFeatureViewController {
     }
     private var verticalStackView: UIStackView!
     
+    // MARK: Constants
+    
+    private let maxSessions = 6
+    
+    // MARK: Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -63,8 +69,8 @@ final class SessionsViewController: BaseSystemFeatureViewController {
         super.loadFeature(feature)
         if feature.name == "session" {
             let sessionView = UIView()
-            addSessionView(sessionView)
-            let sessionViewController = SessionViewController(core: core, feature: feature)
+            let borderSide = addSessionView(sessionView)
+            let sessionViewController = SessionViewController(core: core, feature: feature, borderSide: borderSide)
             feature.viewController = sessionViewController
             add(child: sessionViewController, containerView: sessionView)
             self.sessionViewControllers.append(sessionViewController)
@@ -72,21 +78,25 @@ final class SessionsViewController: BaseSystemFeatureViewController {
     }
     
     func addSession() {
-        if let feature = feature {
-            let sessionFeature = Feature(name: "session", dependencies: [feature])
-            loadFeature(sessionFeature)
+        if sessionViewControllers.count < maxSessions {
+            if let feature = feature {
+                let sessionFeature = Feature(name: "session", dependencies: [feature])
+                loadFeature(sessionFeature)
+            }
         }
     }
     
-    private func addSessionView(_ sessionView: UIView) {
+    private func addSessionView(_ sessionView: UIView) -> BorderSide? {
         if let count = (verticalStackView.arrangedSubviews.last as? UIStackView)?.arrangedSubviews.count, count % 2 != 0 {
             (verticalStackView.arrangedSubviews.last as? UIStackView)?.addArrangedSubview(sessionView)
+            return .left
         } else {
             let horizontalStackView = AutoReducingStackView()
             verticalStackView.addArrangedSubview(horizontalStackView)
             horizontalStackView.axis = .horizontal
             horizontalStackView.distribution = .fillEqually
             horizontalStackView.addArrangedSubview(sessionView)
+            return nil
         }
     }
 }

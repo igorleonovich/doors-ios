@@ -34,11 +34,11 @@ final class MainViewController: BaseFeatureViewController {
     
     private func setupUI() {
         setupBorders()
-        view.backgroundColor = UIColor.random()
+        view.backgroundColor = UIColor.random().withAlphaComponent(0.2)
     }
     
     private func setupBorders() {
-        view.addBorder(color: Color.foregroundActive, width: 1, sides: [.up])
+        view.addBorders(color: Color.foregroundActive, width: 1, sides: [.up])
     }
     
     private func loadInitialFeatures() {
