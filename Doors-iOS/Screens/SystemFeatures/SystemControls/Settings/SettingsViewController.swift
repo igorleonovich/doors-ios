@@ -25,7 +25,7 @@ final class SettingsViewController: BaseSystemFeatureViewController {
     // MARK: - Setup
     
     private func setupUI() {
-        let button = UIButton()
+        let button = Button()
         view.addSubview(button)
         button.snp.makeConstraints { make in
             make.edges.equalToSuperview()
