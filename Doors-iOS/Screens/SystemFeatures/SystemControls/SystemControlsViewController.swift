@@ -23,12 +23,7 @@ final class SystemControlsViewController: BaseSystemFeatureViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if !isInitialSetupPerformed {
-            ((feature?.dependencies.first(where: { $0.name == "session" })?.viewController as? BaseSystemFeatureViewController)?.feature?.dependencies.first(where: { $0.name == "sessions" })?.viewController as? SessionsViewController)?.sessionViewControllersUpdateActions.append { [weak self] isMoreThanOneSessionViewController in
-                guard let self = self else { return }
-                self.view.superview?.snp.updateConstraints({ make in
-                    make.height.equalTo(isMoreThanOneSessionViewController ? SystemControlsViewController.height : 0)
-                })
-            }
+            setupHeightRefreshing()
             isInitialSetupPerformed = true
         }
     }
@@ -56,6 +51,15 @@ final class SystemControlsViewController: BaseSystemFeatureViewController {
         stackView.axis = .horizontal
         stackView.alignment = .center
         stackView.spacing = 10
+    }
+    
+    private func setupHeightRefreshing() {
+        ((feature?.dependencies.first(where: { $0.name == "session" })?.viewController as? BaseSystemFeatureViewController)?.feature?.dependencies.first(where: { $0.name == "sessions" })?.viewController as? SessionsViewController)?.sessionViewControllersUpdateActions.append { [weak self] isMoreThanOneSessionViewController in
+            guard let self = self else { return }
+            self.view.superview?.snp.updateConstraints({ make in
+                make.height.equalTo(isMoreThanOneSessionViewController ? SystemControlsViewController.height : 0)
+            })
+        }
     }
     
     // MARK: Actions
