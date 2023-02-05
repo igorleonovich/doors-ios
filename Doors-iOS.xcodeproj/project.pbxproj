@@ -163,8 +163,6 @@
 		69F070D726B6B9810027E94D /* SecureStoreQueryable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F070CB26B6B9810027E94D /* SecureStoreQueryable.swift */; };
 		69F070D826B6B9810027E94D /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F070CD26B6B9810027E94D /* Device.swift */; };
 		69F070D926B6B9810027E94D /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F070CD26B6B9810027E94D /* Device.swift */; };
-		69F070DD26B6B98A0027E94D /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F070DB26B6B98A0027E94D /* Settings.swift */; };
-		69F070DE26B6B98A0027E94D /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F070DB26B6B98A0027E94D /* Settings.swift */; };
 		C4469644B390573650999F4A /* Pods_Doors_iOS_Uni.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A374D9DADD76B2D9520DD63 /* Pods_Doors_iOS_Uni.framework */; };
 		D5B7D3BDCD217E58EDF280AB /* Pods_Doors_iOS_Extra.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833EE7B3A2BE98682B63DCB0 /* Pods_Doors_iOS_Extra.framework */; };
 /* End PBXBuildFile section */
@@ -283,7 +281,6 @@
 		69F070CB26B6B9810027E94D /* SecureStoreQueryable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecureStoreQueryable.swift; sourceTree = "<group>"; };
 		69F070CC26B6B9810027E94D /* SecureStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecureStore.h; sourceTree = "<group>"; };
 		69F070CD26B6B9810027E94D /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
-		69F070DB26B6B98A0027E94D /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		7A45977E56CE7F70E3512ED8 /* Pods-Doors-iOS-Uni.release (stage).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doors-iOS-Uni.release (stage).xcconfig"; path = "Target Support Files/Pods-Doors-iOS-Uni/Pods-Doors-iOS-Uni.release (stage).xcconfig"; sourceTree = "<group>"; };
 		833EE7B3A2BE98682B63DCB0 /* Pods_Doors_iOS_Extra.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Doors_iOS_Extra.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8AA4B498681E479089C32EA /* Pods-Doors-iOS-Uni.release (prod).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doors-iOS-Uni.release (prod).xcconfig"; path = "Target Support Files/Pods-Doors-iOS-Uni/Pods-Doors-iOS-Uni.release (prod).xcconfig"; sourceTree = "<group>"; };
@@ -425,13 +422,10 @@
 				69F0704626B6B8DB0027E94D /* BaseControllers */,
 				69F0706326B6B90E0027E94D /* BaseViews */,
 				69F0709126B6B9410027E94D /* Screens */,
-				69F070DA26B6B98A0027E94D /* Utils */,
 				69F0706726B6B9280027E94D /* Extensions */,
 				69F070C526B6B9810027E94D /* Tools */,
-				69F0703026B6AF4F0027E94D /* Configs */,
 				69F0700126B6ADD10027E94D /* SceneDelegate.swift */,
 				69F0700526B6ADD10027E94D /* Main.storyboard */,
-				69F0700826B6ADDD0027E94D /* Assets.xcassets */,
 			);
 			path = _Old;
 			sourceTree = "<group>";
@@ -560,9 +554,11 @@
 				69A0AFC6298F1ABD002E652E /* Views */,
 				690A481F298D7524000C02B4 /* Core */,
 				690F4121298D6E9300C5239F /* Models */,
-				690A4822298D7666000C02B4 /* Utils */,
 				69BE8D02298D7D7C001EFDD2 /* Extensions */,
+				690A4822298D7666000C02B4 /* Utils */,
+				69F0703026B6AF4F0027E94D /* Configs */,
 				69F06FFF26B6ADD10027E94D /* AppDelegate.swift */,
+				69F0700826B6ADDD0027E94D /* Assets.xcassets */,
 				69F0700A26B6ADDD0027E94D /* LaunchScreen.storyboard */,
 				6919EB70298D1FC600F96016 /* Doors.entitlements */,
 				69F0700D26B6ADDD0027E94D /* Doors-iOS-Uni-Info.plist */,
@@ -755,14 +751,6 @@
 				69F070CC26B6B9810027E94D /* SecureStore.h */,
 			);
 			path = SecureStore;
-			sourceTree = "<group>";
-		};
-		69F070DA26B6B98A0027E94D /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				69F070DB26B6B98A0027E94D /* Settings.swift */,
-			);
-			path = Utils;
 			sourceTree = "<group>";
 		};
 		AAA6CA3C0FB364487DAD7A4C /* Frameworks */ = {
@@ -1052,7 +1040,6 @@
 				69F0708F26B6B9310027E94D /* SignedDataTask.swift in Sources */,
 				69F070D426B6B9810027E94D /* InternetAuthenticationType.swift in Sources */,
 				69ED6401272CF4F100153653 /* SignUpViewController.swift in Sources */,
-				69F070DD26B6B98A0027E94D /* Settings.swift in Sources */,
 				69A0AFBE298ED47C002E652E /* SessionsViewController.swift in Sources */,
 				69BE8D06298D7E07001EFDD2 /* String+Extensions.swift in Sources */,
 				69F0704F26B6B8DB0027E94D /* EntryBaseViewController.swift in Sources */,
@@ -1127,7 +1114,6 @@
 				69F070D526B6B9810027E94D /* InternetAuthenticationType.swift in Sources */,
 				69ED6402272CF4F100153653 /* SignUpViewController.swift in Sources */,
 				69A0AFB3298EC853002E652E /* RootSessionViewController.swift in Sources */,
-				69F070DE26B6B98A0027E94D /* Settings.swift in Sources */,
 				69A0AFBA298EC875002E652E /* UIViewController+Extensions.swift in Sources */,
 				69F0705026B6B8DB0027E94D /* EntryBaseViewController.swift in Sources */,
 				69A0AFBF298ED47C002E652E /* SessionsViewController.swift in Sources */,
