@@ -1270,7 +1270,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 69F0703C26B6AF580027E94D /* Doors-iOS-Uni-Debug-(Dev).xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "Doors-iOS";
+				ASSETCATALOG_COMPILER_ALTERNATE_APPICON_NAMES = "Doors-iOS-Dark";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "Doors-iOS-Dark";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Doors-iOS/Doors.entitlements";
 				CODE_SIGN_STYLE = Automatic;
@@ -1292,7 +1293,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 69F0703526B6AF570027E94D /* Doors-iOS-Uni-Release-(Dev).xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "Doors-iOS";
+				ASSETCATALOG_COMPILER_ALTERNATE_APPICON_NAMES = "Doors-iOS-Dark";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "Doors-iOS-Dark";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Doors-iOS/Doors.entitlements";
 				CODE_SIGN_STYLE = Automatic;
@@ -1314,7 +1316,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 69F0703826B6AF570027E94D /* Doors-iOS-Extra-Debug-(Dev).xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "Doors-iOS";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "Doors-iOS-Dark";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Doors-iOS/Doors.entitlements";
 				CODE_SIGN_STYLE = Automatic;
@@ -1339,7 +1341,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 69F0703326B6AF570027E94D /* Doors-iOS-Extra-Release-(Dev).xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "Doors-iOS";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "Doors-iOS-Dark";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Doors-iOS/Doors.entitlements";
 				CODE_SIGN_STYLE = Automatic;
@@ -1426,7 +1428,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 69F0704126B6AF580027E94D /* Doors-iOS-Uni-Debug-(Stage).xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "Doors-iOS";
+				ASSETCATALOG_COMPILER_ALTERNATE_APPICON_NAMES = "Doors-iOS-Dark";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "Doors-iOS-Dark";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Doors-iOS/Doors.entitlements";
 				CODE_SIGN_STYLE = Automatic;
@@ -1448,7 +1451,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 69F0703226B6AF570027E94D /* Doors-iOS-Extra-Debug-(Stage).xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "Doors-iOS";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "Doors-iOS-Dark";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Doors-iOS/Doors.entitlements";
 				CODE_SIGN_STYLE = Automatic;
@@ -1535,7 +1538,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 69F0703A26B6AF580027E94D /* Doors-iOS-Uni-Debug-(Prod).xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "Doors-iOS";
+				ASSETCATALOG_COMPILER_ALTERNATE_APPICON_NAMES = "Doors-iOS-Dark";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "Doors-iOS-Dark";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Doors-iOS/Doors.entitlements";
 				CODE_SIGN_STYLE = Automatic;
@@ -1557,7 +1561,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 69F0703E26B6AF580027E94D /* Doors-iOS-Extra-Debug-(Prod).xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "Doors-iOS";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "Doors-iOS-Dark";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Doors-iOS/Doors.entitlements";
 				CODE_SIGN_STYLE = Automatic;
@@ -1638,7 +1642,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 69F0703F26B6AF580027E94D /* Doors-iOS-Uni-Release-(Stage).xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "Doors-iOS";
+				ASSETCATALOG_COMPILER_ALTERNATE_APPICON_NAMES = "Doors-iOS-Dark";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "Doors-iOS-Dark";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Doors-iOS/Doors.entitlements";
 				CODE_SIGN_STYLE = Automatic;
@@ -1660,7 +1665,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 69F0703B26B6AF580027E94D /* Doors-iOS-Extra-Release-(Stage).xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "Doors-iOS";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "Doors-iOS-Dark";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Doors-iOS/Doors.entitlements";
 				CODE_SIGN_STYLE = Automatic;
@@ -1741,7 +1746,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 69F0703426B6AF570027E94D /* Doors-iOS-Uni-Release-(Prod).xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "Doors-iOS";
+				ASSETCATALOG_COMPILER_ALTERNATE_APPICON_NAMES = "Doors-iOS-Dark";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "Doors-iOS-Dark";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Doors-iOS/Doors.entitlements";
 				CODE_SIGN_STYLE = Automatic;
@@ -1763,7 +1769,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 69F0703126B6AF570027E94D /* Doors-iOS-Extra-Release-(Prod).xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "Doors-iOS";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "Doors-iOS-Dark";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Doors-iOS/Doors.entitlements";
 				CODE_SIGN_STYLE = Automatic;
