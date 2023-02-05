@@ -28,7 +28,7 @@ final class SessionsViewController: BaseSystemFeatureViewController {
     
     // MARK: Constants
     
-    private let maxSessions = 6
+    static let maxSessions = 6
     
     // MARK: Life Cycle
     
@@ -81,11 +81,9 @@ final class SessionsViewController: BaseSystemFeatureViewController {
     }
     
     func addSession() {
-        if sessionViewControllers.count < maxSessions {
-            if let feature = feature {
-                let sessionFeature = Feature(name: "session", dependencies: [feature])
-                loadFeature(sessionFeature)
-            }
+        if let feature = feature {
+            let sessionFeature = Feature(name: "session", dependencies: [feature])
+            loadFeature(sessionFeature)
         }
     }
     
