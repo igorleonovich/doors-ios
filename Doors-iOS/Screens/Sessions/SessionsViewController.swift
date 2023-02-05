@@ -18,6 +18,9 @@ final class SessionsViewController: BaseSystemFeatureViewController {
         }
     }
     var sessionViewControllersUpdateActions = [((Bool) -> Void)?]()
+    var isNoOneSessionViewController: Bool {
+        return sessionViewControllers.count <= 0
+    }
     var isMoreThanOneSessionViewController: Bool {
         return sessionViewControllers.count > 1
     }
