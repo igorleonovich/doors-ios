@@ -67,7 +67,7 @@ final class SessionViewController: BaseSystemFeatureViewController {
             feature.viewController = mainViewController
             add(child: mainViewController, containerView: mainView)
         }
-        childFeatures.append(feature)
+        self.feature?.childFeatures.append(feature)
     }
     
     func dropSession() {

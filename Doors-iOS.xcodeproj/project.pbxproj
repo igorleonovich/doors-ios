@@ -508,9 +508,9 @@
 			children = (
 				690DAC0C298FE3EC00FB8C7B /* Label.swift */,
 				690DAC1429901B1D00FB8C7B /* Button.swift */,
+				69399460298F2E8E006B92C3 /* AutoReducingStackView.swift */,
 				690DAC0E298FE60300FB8C7B /* TableView.swift */,
 				69A0AFC7298F1ACC002E652E /* TableViewCell.swift */,
-				69399460298F2E8E006B92C3 /* AutoReducingStackView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";

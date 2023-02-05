@@ -90,6 +90,6 @@ final class SystemControlsViewController: BaseSystemFeatureViewController {
             let settingsViewController = SettingsViewController(core: core, feature: feature)
             add(child: settingsViewController, containerView: settingsView)
         }
-        childFeatures.append(feature)
+        self.feature?.childFeatures.append(feature)
     }
 }

@@ -23,7 +23,6 @@ class BaseFeatureViewController: BaseViewController {
     
     var core: Core!
     var feature: Feature?
-    var childFeatures = [Feature]()
 
     init(core: Core, feature: Feature? = nil) {
         self.core = core
@@ -51,6 +50,6 @@ class BaseSystemFeatureViewController: BaseFeatureViewController {
             let consoleViewController = ConsoleViewController(core: core, feature: feature)
             add(child: consoleViewController, containerView: consoleView)
         }
-        childFeatures.append(feature)
+        self.feature?.childFeatures.append(feature)
     }
 }
