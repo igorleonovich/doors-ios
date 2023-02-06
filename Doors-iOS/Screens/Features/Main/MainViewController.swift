@@ -46,6 +46,6 @@ final class MainViewController: BaseFeatureViewController {
     }
     
     private func loadFeature(_ feature: Feature) {
-
+        
     }
 }

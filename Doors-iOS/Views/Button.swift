@@ -38,7 +38,7 @@ class Button: UIButton {
         }
     }
     
-    func setupUI() {
+    private func setupUI() {
         titleLabel?.adjustsFontSizeToFitWidth = true
         titleLabel?.minimumScaleFactor = 0.5
     }
