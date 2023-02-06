@@ -26,10 +26,11 @@ final class RootSessionViewController: BaseSystemFeatureViewController {
     
     private func loadInitialFeatures() {
         if let feature = feature {
+            let userFeature = Feature(name: "user", dependencies: [feature])
             let systemControlsFeature = Feature(name: "systemControls", dependencies: [feature])
-            let sessionsFeature = Feature(name: "sessions", dependencies: [systemControlsFeature])
+            let sessionsFeature = Feature(name: "sessions", dependencies: [feature, systemControlsFeature])
             let consoleFeature = Feature(name: "console", dependencies: [feature, sessionsFeature])
-            [systemControlsFeature, sessionsFeature, consoleFeature].forEach({ loadFeature($0) })
+            [userFeature, systemControlsFeature, sessionsFeature, consoleFeature].forEach({ loadFeature($0) })
         }
     }
     
@@ -41,6 +42,10 @@ final class RootSessionViewController: BaseSystemFeatureViewController {
             let sessionsViewController = SessionsViewController(core: core, feature: feature)
             feature.viewController = sessionsViewController
             add(child: sessionsViewController, containerView: sessionsView)
+        } else if feature.name == "user" {
+            let userViewController = UserViewController(core: core)
+            feature.viewController = userViewController
+            userViewController.run()
         }
         self.feature?.childFeatures.append(feature)
     }

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		690A296529913F2A009FC0B9 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690A296429913F2A009FC0B9 /* UserViewController.swift */; };
+		690A296629913F2A009FC0B9 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690A296429913F2A009FC0B9 /* UserViewController.swift */; };
+		690A296829914265009FC0B9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690A296729914265009FC0B9 /* User.swift */; };
+		690A296929914265009FC0B9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690A296729914265009FC0B9 /* User.swift */; };
 		690A4816298D73F0000C02B4 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690A4815298D73F0000C02B4 /* BaseViewController.swift */; };
 		690A4818298D743B000C02B4 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690A4817298D743B000C02B4 /* RootViewController.swift */; };
 		690A481A298D7492000C02B4 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690A4819298D7492000C02B4 /* LoadingViewController.swift */; };
@@ -24,6 +28,8 @@
 		690DAC1529901B1D00FB8C7B /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690DAC1429901B1D00FB8C7B /* Button.swift */; };
 		690DAC1629901B1D00FB8C7B /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690DAC1429901B1D00FB8C7B /* Button.swift */; };
 		69399461298F2E8E006B92C3 /* AutoReducingStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69399460298F2E8E006B92C3 /* AutoReducingStackView.swift */; };
+		698F26812990F5240097D3B0 /* FileSystemManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698F26802990F5240097D3B0 /* FileSystemManager.swift */; };
+		698F26822990F5240097D3B0 /* FileSystemManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698F26802990F5240097D3B0 /* FileSystemManager.swift */; };
 		69A0AF89298D8F6B002E652E /* ConsoleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A0AF88298D8F6B002E652E /* ConsoleViewController.swift */; };
 		69A0AF8A298D8F6D002E652E /* ConsoleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A0AF88298D8F6B002E652E /* ConsoleViewController.swift */; };
 		69A0AF8C298D905D002E652E /* Feature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A0AF8B298D905D002E652E /* Feature.swift */; };
@@ -176,6 +182,8 @@
 		407A72E65612B5EADCC99679 /* Pods-Doors-iOS-Extra.release (dev).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doors-iOS-Extra.release (dev).xcconfig"; path = "Target Support Files/Pods-Doors-iOS-Extra/Pods-Doors-iOS-Extra.release (dev).xcconfig"; sourceTree = "<group>"; };
 		4478D04C27F2EC9B48435165 /* Pods-Doors-iOS-Uni.debug (stage).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doors-iOS-Uni.debug (stage).xcconfig"; path = "Target Support Files/Pods-Doors-iOS-Uni/Pods-Doors-iOS-Uni.debug (stage).xcconfig"; sourceTree = "<group>"; };
 		54E7E69C12EDC3EB6FCC107C /* Pods-Doors-iOS-Extra.release (prod).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doors-iOS-Extra.release (prod).xcconfig"; path = "Target Support Files/Pods-Doors-iOS-Extra/Pods-Doors-iOS-Extra.release (prod).xcconfig"; sourceTree = "<group>"; };
+		690A296429913F2A009FC0B9 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		690A296729914265009FC0B9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		690A4815298D73F0000C02B4 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		690A4817298D743B000C02B4 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		690A4819298D7492000C02B4 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
@@ -189,6 +197,7 @@
 		690DAC1429901B1D00FB8C7B /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		6919EB70298D1FC600F96016 /* Doors.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Doors.entitlements; sourceTree = "<group>"; };
 		69399460298F2E8E006B92C3 /* AutoReducingStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoReducingStackView.swift; sourceTree = "<group>"; };
+		698F26802990F5240097D3B0 /* FileSystemManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSystemManager.swift; sourceTree = "<group>"; };
 		69A0AF88298D8F6B002E652E /* ConsoleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleViewController.swift; sourceTree = "<group>"; };
 		69A0AF8B298D905D002E652E /* Feature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feature.swift; sourceTree = "<group>"; };
 		69A0AF8F298DA392002E652E /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -328,6 +337,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		690A296329913F14009FC0B9 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				690A296429913F2A009FC0B9 /* UserViewController.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
 		690A4811298D73C4000C02B4 /* General */ = {
 			isa = PBXGroup;
 			children = (
@@ -373,6 +390,7 @@
 			isa = PBXGroup;
 			children = (
 				690A4823298D767F000C02B4 /* Color.swift */,
+				698F26802990F5240097D3B0 /* FileSystemManager.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -409,6 +427,7 @@
 			isa = PBXGroup;
 			children = (
 				69A0AF8B298D905D002E652E /* Feature.swift */,
+				690A296729914265009FC0B9 /* User.swift */,
 				69A0AFC0298EE391002E652E /* BorderSide.swift */,
 			);
 			path = Models;
@@ -424,7 +443,6 @@
 				69F0709126B6B9410027E94D /* Screens */,
 				69F0706726B6B9280027E94D /* Extensions */,
 				69F070C526B6B9810027E94D /* Tools */,
-				69F0700126B6ADD10027E94D /* SceneDelegate.swift */,
 				69F0700526B6ADD10027E94D /* Main.storyboard */,
 			);
 			path = _Old;
@@ -451,6 +469,7 @@
 			children = (
 				690A4825298D7792000C02B4 /* RootSession */,
 				69A0AFBC298ED468002E652E /* Sessions */,
+				690A296329913F14009FC0B9 /* User */,
 				69A0AF96298E4EE0002E652E /* SystemControls */,
 				690A4828298D77BA000C02B4 /* Session */,
 				69A0AF87298D8F5E002E652E /* Console */,
@@ -558,6 +577,7 @@
 				690A4822298D7666000C02B4 /* Utils */,
 				69F0703026B6AF4F0027E94D /* Configs */,
 				69F06FFF26B6ADD10027E94D /* AppDelegate.swift */,
+				69F0700126B6ADD10027E94D /* SceneDelegate.swift */,
 				69F0700826B6ADDD0027E94D /* Assets.xcassets */,
 				69F0700A26B6ADDD0027E94D /* LaunchScreen.storyboard */,
 				6919EB70298D1FC600F96016 /* Doors.entitlements */,
@@ -1001,6 +1021,8 @@
 				69399461298F2E8E006B92C3 /* AutoReducingStackView.swift in Sources */,
 				69BE8D04298D7D94001EFDD2 /* UIViewController+Extensions.swift in Sources */,
 				69A0AFAE298EBBEA002E652E /* UIView+Extensions.swift in Sources */,
+				690A296829914265009FC0B9 /* User.swift in Sources */,
+				690A296529913F2A009FC0B9 /* UserViewController.swift in Sources */,
 				69F0704D26B6B8DB0027E94D /* OldRootViewController.swift in Sources */,
 				69F0705126B6B8DB0027E94D /* CustomAlertController.swift in Sources */,
 				69F0708B26B6B9310027E94D /* NewUserOutput.swift in Sources */,
@@ -1039,6 +1061,7 @@
 				69F070BF26B6B9410027E94D /* ConstructorViewController.swift in Sources */,
 				69F0708F26B6B9310027E94D /* SignedDataTask.swift in Sources */,
 				69F070D426B6B9810027E94D /* InternetAuthenticationType.swift in Sources */,
+				698F26812990F5240097D3B0 /* FileSystemManager.swift in Sources */,
 				69ED6401272CF4F100153653 /* SignUpViewController.swift in Sources */,
 				69A0AFBE298ED47C002E652E /* SessionsViewController.swift in Sources */,
 				69BE8D06298D7E07001EFDD2 /* String+Extensions.swift in Sources */,
@@ -1076,6 +1099,8 @@
 				69F0705E26B6B8EC0027E94D /* SceneManager.swift in Sources */,
 				69A0AFB8298EC86F002E652E /* Color.swift in Sources */,
 				69F0708E26B6B9310027E94D /* ListDTO.swift in Sources */,
+				690A296929914265009FC0B9 /* User.swift in Sources */,
+				690A296629913F2A009FC0B9 /* UserViewController.swift in Sources */,
 				69A0AFB7298EC86C002E652E /* Feature.swift in Sources */,
 				690DAC10298FE60500FB8C7B /* TableView.swift in Sources */,
 				69A0AFA3298EA415002E652E /* StartScreenViewController.swift in Sources */,
@@ -1114,6 +1139,7 @@
 				69F070D526B6B9810027E94D /* InternetAuthenticationType.swift in Sources */,
 				69ED6402272CF4F100153653 /* SignUpViewController.swift in Sources */,
 				69A0AFB3298EC853002E652E /* RootSessionViewController.swift in Sources */,
+				698F26822990F5240097D3B0 /* FileSystemManager.swift in Sources */,
 				69A0AFBA298EC875002E652E /* UIViewController+Extensions.swift in Sources */,
 				69F0705026B6B8DB0027E94D /* EntryBaseViewController.swift in Sources */,
 				69A0AFBF298ED47C002E652E /* SessionsViewController.swift in Sources */,

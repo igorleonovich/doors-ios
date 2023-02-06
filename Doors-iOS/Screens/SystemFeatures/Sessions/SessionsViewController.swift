@@ -73,6 +73,7 @@ final class SessionsViewController: BaseSystemFeatureViewController {
         if feature.name == "session" {
             let sessionView = UIView()
             let borderSide = addSessionView(sessionView)
+            let core = Core()
             let sessionViewController = SessionViewController(core: core, feature: feature, borderSide: borderSide)
             feature.viewController = sessionViewController
             add(child: sessionViewController, containerView: sessionView)

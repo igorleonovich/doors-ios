@@ -9,7 +9,10 @@
 import Foundation
 
 final class RootCore {
-
+    
+    lazy var fileSystemManager: FileSystemManager = {
+       return FileSystemManager()
+    }()
 }
 
 final class Core {
