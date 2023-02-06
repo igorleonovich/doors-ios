@@ -25,7 +25,7 @@ final class FileSystemManager {
     }
     
     func createFolder(folderName: String) {
-        if let fileURL = self.fileURL(fileName: folderName, fileFormat: "") {
+        if let fileURL = self.fileURL(fileName: folderName, isDirectory: true) {
             do {
                 try FileManager.default.createDirectory(atPath: fileURL.path, withIntermediateDirectories: true, attributes: nil)
             } catch {
@@ -92,8 +92,8 @@ final class FileSystemManager {
         }
     }
 
-    func fileURL(fileName: String, fileFormat: String) -> URL? {
-        return self.defaultFileDirectory()?.appendingPathComponent(fileName).appendingPathExtension(fileFormat)
+    func fileURL(fileName: String, fileFormat: String? = nil, isDirectory: Bool = false) -> URL? {
+        return self.defaultFileDirectory()?.appendingPathComponent(fileName, isDirectory: isDirectory).appendingPathExtension(fileFormat ?? "")
     }
 
     func defaultFileDirectory() -> URL? {

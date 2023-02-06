@@ -14,7 +14,7 @@ final class UserViewController: BaseSystemFeatureViewController {
     
     // MARK: Constants
     
-    private let doorsFolderName = "Doors"
+    private let doorsFolderName = "Doors/Guest/.doors"
     private let userFileName = "User"
     
     // MARK: Setup
@@ -42,11 +42,10 @@ final class UserViewController: BaseSystemFeatureViewController {
     override func loadFeature(_ feature: Feature) {
         super.loadFeature(feature)
         if feature.name == "checkDoorsFolder" {
-            let folderName = "Doors"
-            if core.rootCore.fileSystemManager.isFileExists(fileName: folderName, fileFormat: "") == false {
-                core.rootCore.fileSystemManager.createFolder(folderName: folderName)
+            if core.rootCore.fileSystemManager.isFileExists(fileName: doorsFolderName, fileFormat: "") == false {
+                core.rootCore.fileSystemManager.createFolder(folderName: doorsFolderName)
             }
-            if let path = core.rootCore.fileSystemManager.fileURL(fileName: folderName, fileFormat: "")?.path {
+            if let path = core.rootCore.fileSystemManager.fileURL(fileName: doorsFolderName, fileFormat: "")?.path {
                 print("[FILE SYSTEM] Doors path:\n\(path)")
             }
         } else if feature.name == "setupUser" {
