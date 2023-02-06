@@ -12,18 +12,25 @@ final class UserViewController: BaseSystemFeatureViewController {
     
     var user: User!
     
-    override init(core: Core, feature: Feature? = nil) {
-        super.init(core: core, feature: feature)
-    }
+    // MARK: Constants
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    private let doorsFolderName = "Doors"
+    private let userFileName = "User"
+    
+    // MARK: Setup
+    
+    private func setupNotifications() {
+        NotificationCenter.default.addObserver(self,
+            selector: #selector(didUpdateUser),
+            name: Notification.Name("DidUpdateUser"),
+            object: nil)
     }
     
     // MARK: Actions
     
     func run() {
         loadInitialFeatures()
+        setupNotifications()
     }
     
     private func loadInitialFeatures() {
@@ -43,23 +50,40 @@ final class UserViewController: BaseSystemFeatureViewController {
                 print("[FILE SYSTEM] Doors path:\n\(path)")
             }
         } else if feature.name == "setupUser" {
-            if core.rootCore.fileSystemManager.isFileExists(fileName: "Doors/User", fileFormat: "json") {
-                if let data = try? core.rootCore.fileSystemManager.getFileData(fileName: "Doors/User", fileFormat: "json") {
+            if core.rootCore.fileSystemManager.isFileExists(fileName: "\(doorsFolderName)/\(userFileName)", fileFormat: "json") {
+                if let data = try? core.rootCore.fileSystemManager.getFileData(fileName: "\(doorsFolderName)/\(userFileName)", fileFormat: "json") {
                     if let user = try? JSONDecoder().decode(User.self, from: data) {
-                        print(user)
-                        self.user = user
+                        print("[USER] User detected:\n\(user)")
+                        if AppManager.shared.isNotFirstLaunch {
+                            self.user = user
+                        } else {
+                            print("[TODO] User detected in local file system. Do you want to load (import) it?")
+                            //  self.user = user
+                            createNewUser()
+                        }
                     }
                 }
             } else {
-                let sessionConfiguration = SessionConfiguration()
+                createNewUser()
+            }
+            func createNewUser() {
+                let sessionConfiguration = SessionConfiguration(id: UUID().uuidString)
                 let rootSessionConfiguration = RootSessionConfiguration(sessionConfigurations: [sessionConfiguration])
                 user = User(rootSessionConfiguration: rootSessionConfiguration)
-                if let data = try? JSONEncoder().encode(user) {
-                    if let url = try? core.rootCore.fileSystemManager.saveFileData(fileName: "Doors/User", fileFormat: "json", data: data) {
-                        print(url)
-                    }
-                }
+                saveUser()
             }
         }
+    }
+    
+    private func saveUser() {
+        if let data = try? JSONEncoder().encode(user) {
+            if let url = try? core.rootCore.fileSystemManager.saveFileData(fileName: "\(doorsFolderName)/\(userFileName)", fileFormat: "json", data: data) {
+                print("[USER] File saved at:\(url.path)")
+            }
+        }
+    }
+    
+    @objc private func didUpdateUser() {
+        saveUser()
     }
 }

@@ -11,6 +11,8 @@
 		690A296629913F2A009FC0B9 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690A296429913F2A009FC0B9 /* UserViewController.swift */; };
 		690A296829914265009FC0B9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690A296729914265009FC0B9 /* User.swift */; };
 		690A296929914265009FC0B9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690A296729914265009FC0B9 /* User.swift */; };
+		690A296E299173AE009FC0B9 /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690A296D299173AE009FC0B9 /* AppManager.swift */; };
+		690A296F299173AE009FC0B9 /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690A296D299173AE009FC0B9 /* AppManager.swift */; };
 		690A4816298D73F0000C02B4 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690A4815298D73F0000C02B4 /* BaseViewController.swift */; };
 		690A4818298D743B000C02B4 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690A4817298D743B000C02B4 /* RootViewController.swift */; };
 		690A481A298D7492000C02B4 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690A4819298D7492000C02B4 /* LoadingViewController.swift */; };
@@ -184,6 +186,7 @@
 		54E7E69C12EDC3EB6FCC107C /* Pods-Doors-iOS-Extra.release (prod).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doors-iOS-Extra.release (prod).xcconfig"; path = "Target Support Files/Pods-Doors-iOS-Extra/Pods-Doors-iOS-Extra.release (prod).xcconfig"; sourceTree = "<group>"; };
 		690A296429913F2A009FC0B9 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		690A296729914265009FC0B9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		690A296D299173AE009FC0B9 /* AppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
 		690A4815298D73F0000C02B4 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		690A4817298D743B000C02B4 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		690A4819298D7492000C02B4 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
@@ -343,6 +346,14 @@
 				690A296429913F2A009FC0B9 /* UserViewController.swift */,
 			);
 			path = User;
+			sourceTree = "<group>";
+		};
+		690A296C2991738A009FC0B9 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				690A296D299173AE009FC0B9 /* AppManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		690A4811298D73C4000C02B4 /* General */ = {
@@ -572,6 +583,7 @@
 				690F4120298D6E7700C5239F /* Screens */,
 				69A0AFC6298F1ABD002E652E /* Views */,
 				690A481F298D7524000C02B4 /* Core */,
+				690A296C2991738A009FC0B9 /* Managers */,
 				690F4121298D6E9300C5239F /* Models */,
 				69BE8D02298D7D7C001EFDD2 /* Extensions */,
 				690A4822298D7666000C02B4 /* Utils */,
@@ -1015,6 +1027,7 @@
 				69A0AFC1298EE391002E652E /* BorderSide.swift in Sources */,
 				690A4816298D73F0000C02B4 /* BaseViewController.swift in Sources */,
 				69F0707F26B6B9310027E94D /* RefreshTokenInput.swift in Sources */,
+				690A296E299173AE009FC0B9 /* AppManager.swift in Sources */,
 				69F0700226B6ADD10027E94D /* SceneDelegate.swift in Sources */,
 				69A0AF90298DA392002E652E /* SettingsViewController.swift in Sources */,
 				69F0706A26B6B9280027E94D /* OldUIViewController+Extensions.swift in Sources */,
@@ -1093,6 +1106,7 @@
 				69F0706B26B6B9280027E94D /* OldUIViewController+Extensions.swift in Sources */,
 				69F0704E26B6B8DB0027E94D /* OldRootViewController.swift in Sources */,
 				69A0AFB2298EC850002E652E /* LoadingViewController.swift in Sources */,
+				690A296F299173AE009FC0B9 /* AppManager.swift in Sources */,
 				69F0705226B6B8DB0027E94D /* CustomAlertController.swift in Sources */,
 				69F0708C26B6B9310027E94D /* NewUserOutput.swift in Sources */,
 				69A0AFA0298E6BCD002E652E /* StartViewController.swift in Sources */,

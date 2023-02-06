@@ -8,12 +8,12 @@
 
 import Foundation
 
-final class Feature: NSObject {
+class Feature: NSObject {
     
     let name: String
     let dependencies: [Feature]
     var childFeatures = [Feature]()
-    weak var viewController: BaseFeatureViewController?
+    var viewController: BaseFeatureViewController?
     
     init(name: String, dependencies: [Feature]) {
         self.name = name

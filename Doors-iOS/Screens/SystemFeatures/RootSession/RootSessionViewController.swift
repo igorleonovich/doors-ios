@@ -43,7 +43,7 @@ final class RootSessionViewController: BaseSystemFeatureViewController {
             feature.viewController = sessionsViewController
             add(child: sessionsViewController, containerView: sessionsView)
         } else if feature.name == "user" {
-            let userViewController = UserViewController(core: core)
+            let userViewController = UserViewController(core: core, feature: feature)
             feature.viewController = userViewController
             userViewController.run()
         }

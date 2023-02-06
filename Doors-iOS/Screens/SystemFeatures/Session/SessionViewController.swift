@@ -74,6 +74,14 @@ final class SessionViewController: BaseSystemFeatureViewController {
         if let index = (parent as? SessionsViewController)?.sessionViewControllers.firstIndex(of: self) {
             (parent as? SessionsViewController)?.sessionViewControllers.remove(at: index)
         }
+        if let sessionId = (feature as? SessionFeature)?.sessionId {
+            if let userViewController = feature?.dependencies.first(where: { $0.name == "sessions" })?.dependencies.first(where: { $0.name == "rootSession" })?.childFeatures.first(where: { $0.name == "user" })?.viewController as? UserViewController {
+                if let sessionConfiguration = userViewController.user.rootSessionConfiguration.sessionConfigurations.first(where: { $0.id == sessionId }), let index = userViewController.user.rootSessionConfiguration.sessionConfigurations.firstIndex(of: sessionConfiguration) {
+                    userViewController.user.rootSessionConfiguration.sessionConfigurations.remove(at: index)
+                }
+                NotificationCenter.default.post(name: Notification.Name("DidUpdateUser"), object: nil)
+            }
+        }
         onClose()
     }
     

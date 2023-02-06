@@ -10,17 +10,32 @@ import Foundation
 
 struct User: Codable {
     
-    let rootSessionConfiguration: RootSessionConfiguration
+    var rootSessionConfiguration: RootSessionConfiguration
 }
 
 struct RootSessionConfiguration: Codable {
     
-    let sessionConfigurations: [SessionConfiguration]
+    var sessionConfigurations: [SessionConfiguration]
 }
 
 struct SessionConfiguration: Codable {
     
+    var id: String
     var features = [FeatureModel]()
+}
+
+extension SessionConfiguration: Equatable {
+    
+    static func == (lhs: SessionConfiguration, rhs: SessionConfiguration) -> Bool {
+        return lhs.id == rhs.id
+    }
+}
+
+extension SessionConfiguration: Hashable {
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
 }
 
 struct FeatureModel: Codable {

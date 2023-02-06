@@ -65,7 +65,11 @@ final class SessionsViewController: BaseSystemFeatureViewController {
     // MARK: Actions
     
     private func loadInitialFeatures() {
-        addSession()
+        if let sessionIds = (feature?.dependencies.first(where: { $0.name == "rootSession" })?.childFeatures.first(where: { $0.name == "user" })?.viewController as? UserViewController)?.user.rootSessionConfiguration.sessionConfigurations.map({ $0.id }) {
+            sessionIds.forEach { sessionId in
+                addSession(sessionId: sessionId)
+            }
+        }
     }
     
     override func loadFeature(_ feature: Feature) {
@@ -81,9 +85,19 @@ final class SessionsViewController: BaseSystemFeatureViewController {
         }
     }
     
-    func addSession() {
-        if let feature = feature {
-            let sessionFeature = Feature(name: "session", dependencies: [feature])
+    func addSession(sessionId: String? = nil, isLoaded: Bool = false) {
+        guard let feature = feature else { return }
+        if let sessionId = sessionId {
+            loadSessionFeature(with: sessionId)
+        } else {
+            let sessionId = UUID().uuidString
+            loadSessionFeature(with: sessionId)
+            let sessionConfiguration = SessionConfiguration(id: sessionId)
+            (feature.dependencies.first(where: { $0.name == "rootSession" })?.childFeatures.first(where: { $0.name == "user" })?.viewController as? UserViewController)?.user.rootSessionConfiguration.sessionConfigurations.append(sessionConfiguration)
+                NotificationCenter.default.post(name: Notification.Name("DidUpdateUser"), object: nil)
+        }
+        func loadSessionFeature(with sessionId: String) {
+            let sessionFeature = SessionFeature(name: "session", dependencies: [feature], sessionId: sessionId)
             loadFeature(sessionFeature)
         }
     }
@@ -100,5 +114,15 @@ final class SessionsViewController: BaseSystemFeatureViewController {
             horizontalStackView.addArrangedSubview(sessionView)
             return nil
         }
+    }
+}
+
+final class SessionFeature: Feature {
+    
+    let sessionId: String
+    
+    init(name: String, dependencies: [Feature], sessionId: String) {
+        self.sessionId = sessionId
+        super.init(name: name, dependencies: dependencies)
     }
 }
