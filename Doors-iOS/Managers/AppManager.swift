@@ -10,27 +10,10 @@ import Foundation
 
 final class AppManager {
     
-    static let shared = AppManager()
-    
-    var isNotFirstLaunch: Bool {
+    var isUserInitiallyLoaded: Bool {
         get {
-            return Defaults.store?.bool(forKey: AppKeys.isFirstLaunch.rawValue) ?? false
+            return Defaults.store?.bool(forKey: AppKeys.isUserInitiallyLoaded.rawValue) ?? false
         }
-        set { Defaults.set(newValue, forKey: AppKeys.isFirstLaunch.rawValue) }
+        set { Defaults.set(newValue, forKey: AppKeys.isUserInitiallyLoaded.rawValue) }
     }
-}
-
-struct Defaults {
-    
-    static let store = UserDefaults(suiteName: "\(Bundle.main.object(forInfoDictionaryKey: "PRODUCT_BUNDLE_IDENTIFIER") ?? "").store")
-    
-    static func set(_ value: Any?, forKey: String) {
-        store?.set(value, forKey: forKey)
-        store?.synchronize()
-    }
-}
-
-enum AppKeys: String {
-    
-    case isFirstLaunch
 }

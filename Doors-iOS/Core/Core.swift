@@ -13,6 +13,9 @@ final class RootCore {
     lazy var fileSystemManager: FileSystemManager = {
        return FileSystemManager()
     }()
+    lazy var appManager: AppManager = {
+        return AppManager()
+    }()
 }
 
 final class Core {

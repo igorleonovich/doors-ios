@@ -54,13 +54,14 @@ final class UserViewController: BaseSystemFeatureViewController {
                 if let data = try? core.rootCore.fileSystemManager.getFileData(fileName: "\(doorsFolderName)/\(userFileName)", fileFormat: "json") {
                     if let user = try? JSONDecoder().decode(User.self, from: data) {
                         print("[USER] User detected:\n\(user)")
-                        if AppManager.shared.isNotFirstLaunch {
+                        if core.rootCore.appManager.isUserInitiallyLoaded {
                             self.user = user
                         } else {
                             print("[TODO] User detected in local file system. Do you want to load (import) it?")
-                            //  self.user = user
-                            createNewUser()
+                              self.user = user
+//                            createNewUser()
                         }
+                        core.rootCore.appManager.isUserInitiallyLoaded = true
                     }
                 }
             } else {

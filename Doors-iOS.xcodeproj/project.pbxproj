@@ -30,6 +30,8 @@
 		690DAC1529901B1D00FB8C7B /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690DAC1429901B1D00FB8C7B /* Button.swift */; };
 		690DAC1629901B1D00FB8C7B /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690DAC1429901B1D00FB8C7B /* Button.swift */; };
 		69399461298F2E8E006B92C3 /* AutoReducingStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69399460298F2E8E006B92C3 /* AutoReducingStackView.swift */; };
+		694227082991932D0074D2A0 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694227072991932D0074D2A0 /* Defaults.swift */; };
+		694227092991932D0074D2A0 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694227072991932D0074D2A0 /* Defaults.swift */; };
 		698F26812990F5240097D3B0 /* FileSystemManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698F26802990F5240097D3B0 /* FileSystemManager.swift */; };
 		698F26822990F5240097D3B0 /* FileSystemManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698F26802990F5240097D3B0 /* FileSystemManager.swift */; };
 		69A0AF89298D8F6B002E652E /* ConsoleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A0AF88298D8F6B002E652E /* ConsoleViewController.swift */; };
@@ -200,6 +202,7 @@
 		690DAC1429901B1D00FB8C7B /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		6919EB70298D1FC600F96016 /* Doors.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Doors.entitlements; sourceTree = "<group>"; };
 		69399460298F2E8E006B92C3 /* AutoReducingStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoReducingStackView.swift; sourceTree = "<group>"; };
+		694227072991932D0074D2A0 /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
 		698F26802990F5240097D3B0 /* FileSystemManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSystemManager.swift; sourceTree = "<group>"; };
 		69A0AF88298D8F6B002E652E /* ConsoleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleViewController.swift; sourceTree = "<group>"; };
 		69A0AF8B298D905D002E652E /* Feature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feature.swift; sourceTree = "<group>"; };
@@ -401,6 +404,7 @@
 			isa = PBXGroup;
 			children = (
 				690A4823298D767F000C02B4 /* Color.swift */,
+				694227072991932D0074D2A0 /* Defaults.swift */,
 				698F26802990F5240097D3B0 /* FileSystemManager.swift */,
 			);
 			path = Utils;
@@ -428,8 +432,8 @@
 				690A4811298D73C4000C02B4 /* General */,
 				690A4812298D73CA000C02B4 /* Root */,
 				690A4814298D73DE000C02B4 /* Loading */,
-				69A0AF86298D8F4F002E652E /* Features */,
 				69A0AF8E298DA373002E652E /* SystemFeatures */,
+				69A0AF86298D8F4F002E652E /* Features */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -478,9 +482,9 @@
 		69A0AF8E298DA373002E652E /* SystemFeatures */ = {
 			isa = PBXGroup;
 			children = (
+				690A296329913F14009FC0B9 /* User */,
 				690A4825298D7792000C02B4 /* RootSession */,
 				69A0AFBC298ED468002E652E /* Sessions */,
-				690A296329913F14009FC0B9 /* User */,
 				69A0AF96298E4EE0002E652E /* SystemControls */,
 				690A4828298D77BA000C02B4 /* Session */,
 				69A0AF87298D8F5E002E652E /* Console */,
@@ -1071,6 +1075,7 @@
 				69F070AD26B6B9410027E94D /* RecoverPasswordViewController.swift in Sources */,
 				69F070C126B6B9410027E94D /* ConstructorNavigationController.swift in Sources */,
 				69F070B126B6B9410027E94D /* LogInViewController.swift in Sources */,
+				694227082991932D0074D2A0 /* Defaults.swift in Sources */,
 				69F070BF26B6B9410027E94D /* ConstructorViewController.swift in Sources */,
 				69F0708F26B6B9310027E94D /* SignedDataTask.swift in Sources */,
 				69F070D426B6B9810027E94D /* InternetAuthenticationType.swift in Sources */,
@@ -1150,6 +1155,7 @@
 				69A0AF91298DA392002E652E /* SettingsViewController.swift in Sources */,
 				69F070C026B6B9410027E94D /* ConstructorViewController.swift in Sources */,
 				69F0709026B6B9310027E94D /* SignedDataTask.swift in Sources */,
+				694227092991932D0074D2A0 /* Defaults.swift in Sources */,
 				69F070D526B6B9810027E94D /* InternetAuthenticationType.swift in Sources */,
 				69ED6402272CF4F100153653 /* SignUpViewController.swift in Sources */,
 				69A0AFB3298EC853002E652E /* RootSessionViewController.swift in Sources */,
