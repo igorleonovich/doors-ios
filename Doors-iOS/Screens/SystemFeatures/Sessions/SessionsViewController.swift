@@ -93,7 +93,7 @@ final class SessionsViewController: BaseSystemFeatureViewController {
         if let sessionId = sessionId {
             loadSessionFeature(with: sessionId)
         } else {
-            let sessionId = UUID().uuidString
+            let sessionId = UUID.new
             loadSessionFeature(with: sessionId)
             let sessionConfiguration = SessionConfiguration(id: sessionId)
             (feature.dependencies.first(where: { $0.name == "rootSession" })?.childFeatures.first(where: { $0.name == "user" })?.viewController as? UserViewController)?.user.rootSessionConfiguration.sessionConfigurations.append(sessionConfiguration)

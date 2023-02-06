@@ -68,7 +68,7 @@ final class UserViewController: BaseSystemFeatureViewController {
                 createNewUser()
             }
             func createNewUser() {
-                let sessionConfiguration = SessionConfiguration(id: UUID().uuidString)
+                let sessionConfiguration = SessionConfiguration(id: UUID.new)
                 let rootSessionConfiguration = RootSessionConfiguration(sessionConfigurations: [sessionConfiguration])
                 user = User(rootSessionConfiguration: rootSessionConfiguration)
                 saveUser()
