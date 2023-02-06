@@ -36,16 +36,16 @@ final class RootSessionViewController: BaseSystemFeatureViewController {
     
     override func loadFeature(_ feature: Feature) {
         super.loadFeature(feature)
-        if feature.name == "sessions" {
+        if feature.name == "user" {
+            let userViewController = UserViewController(core: core, feature: feature)
+            feature.viewController = userViewController
+            userViewController.run()
+        } else if feature.name == "sessions" {
             let sessionsView = UIView()
             view.addSubview(sessionsView)
             let sessionsViewController = SessionsViewController(core: core, feature: feature)
             feature.viewController = sessionsViewController
             add(child: sessionsViewController, containerView: sessionsView)
-        } else if feature.name == "user" {
-            let userViewController = UserViewController(core: core, feature: feature)
-            feature.viewController = userViewController
-            userViewController.run()
         }
         self.feature?.childFeatures.append(feature)
     }

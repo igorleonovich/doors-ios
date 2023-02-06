@@ -75,13 +75,16 @@ final class SessionsViewController: BaseSystemFeatureViewController {
     override func loadFeature(_ feature: Feature) {
         super.loadFeature(feature)
         if feature.name == "session" {
-            let sessionView = UIView()
-            let borderSide = addSessionView(sessionView)
-            let core = Core()
-            let sessionViewController = SessionViewController(core: core, feature: feature, borderSide: borderSide)
-            feature.viewController = sessionViewController
-            add(child: sessionViewController, containerView: sessionView)
-            self.sessionViewControllers.append(sessionViewController)
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else { return }
+                let sessionView = UIView()
+                let borderSide = self.addSessionView(sessionView)
+                let core = Core()
+                let sessionViewController = SessionViewController(core: core, feature: feature, borderSide: borderSide)
+                feature.viewController = sessionViewController
+                self.add(child: sessionViewController, containerView: sessionView)
+                self.sessionViewControllers.append(sessionViewController)
+            }
         }
     }
     
