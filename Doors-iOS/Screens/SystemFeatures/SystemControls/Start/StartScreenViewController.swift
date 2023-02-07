@@ -17,7 +17,13 @@ final class StartScreenViewController: BaseSystemFeatureMenuViewController {
     override func setupData() {
         super.setupData()
         if let features = core.rootCore.appManager.featureMap?.features.first(where: { $0.name == "main" })?.childFeatures {
-            self.features = features
+            if let systemControlsFeature = feature?.dependencies.first(where: { $0.name == "start" })?.dependencies.first(where: { $0.name == "systemControls" }) {
+                if systemControlsFeature.dependencies.first(where: { $0.name == "rootSession" }) != nil {
+                    self.features = features
+                } else if systemControlsFeature.dependencies.first(where: { $0.name == "session" }) != nil {
+                    self.features = features.filter({ $0.name != "export" })
+                }
+            }
         }
     }
     
