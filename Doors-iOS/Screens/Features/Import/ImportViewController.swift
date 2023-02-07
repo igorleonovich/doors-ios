@@ -47,32 +47,6 @@ final class ImportViewController: BaseSystemFeatureViewController {
                     UIApplication.rootViewController?.present(pickerViewController, animated: true, completion: nil)
                 }
             }
-            
-            
-            do {
-//                let exportFolderName = "Export"
-//                let exportFileName = "\(exportFolderName)/Export"
-//                if core.rootCore.fileSystemManager.isFileExists(fileName: exportFolderName, fileFormat: "") == false {
-//                    core.rootCore.fileSystemManager.createFolder(folderName: exportFolderName)
-//                }
-//                let doorsFolderName = "Doors"
-//                if let doorsPath = core.rootCore.fileSystemManager.fileURL(fileName: doorsFolderName),
-//                   let zipFilePath = core.rootCore.fileSystemManager.fileURL(fileName: exportFileName, fileFormat: "zip") {
-//                    try Zip.zipFiles(paths: [doorsPath], zipFilePath: zipFilePath, password: nil, progress: { [weak self] (progress) -> () in
-//                        print("[EXPORT] Progress: \(progress)")
-//                        if progress == 1 {
-//                            print("[EXPORT] Exported into path:\n\(zipFilePath)")
-//                            self?.closeAction = {
-//                                let activityViewController = UIActivityViewController(activityItems: [zipFilePath], applicationActivities: nil)
-//                                UIApplication.rootViewController?.present(activityViewController, animated: true, completion: nil)
-//                            }
-//                        }
-//                    })
-//                }
-            }
-            catch {
-              print(error)
-            }
         }
     }
 }
@@ -81,9 +55,19 @@ extension ImportViewController: UIDocumentPickerDelegate {
     
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
         do {
-            if let zipFile = urls.first, let destination = core.rootCore.fileSystemManager.fileURL(fileName: "Import") {
-                try Zip.unzipFile(zipFile, destination: destination, overwrite: true, password: "password", progress: { (progress) -> () in
-                    print(progress)
+            if let zipFile = urls.first, let destination = core.rootCore.fileSystemManager.fileURL(fileName: "Import"), let doorsURL = core.rootCore.fileSystemManager.fileURL(fileName: "Doors") {
+                try Zip.unzipFile(zipFile, destination: destination, overwrite: true, password: nil, progress: { [weak self] progress -> () in
+                    print("[IMPORT] Progress: \(progress)")
+                    if progress == 1 {
+                        print("[IMPORT] Imported into path:\n\(destination)")
+                        print("[TODO] Verify imported data")
+                        print("[TODO] Do you really want to overwrite current user?")
+                        try? self?.core.rootCore.fileSystemManager.removeFile(fileName: "Doors", fileFormat: "")
+                        let importedDoorsURL = destination.appendingPathComponent("Doors")
+                        try? self?.core.rootCore.fileSystemManager.copyFiles(pathFrom: importedDoorsURL, pathTo: doorsURL)
+                        UIApplication.rootViewController?.reloadRootSesion()
+                        try? self?.core.rootCore.fileSystemManager.removeFile(fileName: "Import", fileFormat: "")
+                    }
                 })
             }
         } catch {

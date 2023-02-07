@@ -46,6 +46,18 @@ final class FileSystemManager {
         }
         return nil
     }
+    
+    func copyFiles(pathFrom: URL, pathTo: URL) throws {
+        do {
+            let filelist = try FileManager.default.contentsOfDirectory(at: pathFrom, includingPropertiesForKeys: nil)
+            try? FileManager.default.copyItem(at: pathFrom, to: pathTo)
+            for filename in filelist {
+                try? FileManager.default.copyItem(at: pathFrom.appendingPathExtension("/\(filename)"), to: pathTo.appendingPathExtension("/\(filename)"))
+            }
+        } catch {
+            throw error
+        }
+    }
 
     func removeFile(fileName: String, fileFormat: String) throws {
         guard self.isFileExists(fileName: fileName, fileFormat: fileFormat) else {

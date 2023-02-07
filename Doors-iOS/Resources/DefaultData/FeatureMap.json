@@ -9,12 +9,12 @@
                     "title": "Console",
                 },
                 {
-                    "name": "export",
-                    "title": "Export",
-                },
-                {
                     "name": "import",
                     "title": "Import",
+                },
+                {
+                    "name": "export",
+                    "title": "Export",
                 }
             ]
         }

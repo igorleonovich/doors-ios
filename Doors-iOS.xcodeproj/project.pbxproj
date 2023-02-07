@@ -520,8 +520,8 @@
 			isa = PBXGroup;
 			children = (
 				690A4813298D73D5000C02B4 /* Main */,
-				69EB41B52991DC1900101279 /* Export */,
 				69CC047A2992A902001295EB /* Import */,
+				69EB41B52991DC1900101279 /* Export */,
 			);
 			path = Features;
 			sourceTree = "<group>";
