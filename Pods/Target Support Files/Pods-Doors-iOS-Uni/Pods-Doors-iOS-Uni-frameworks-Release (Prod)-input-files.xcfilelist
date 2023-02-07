@@ -2,3 +2,4 @@ ${PODS_ROOT}/Target Support Files/Pods-Doors-iOS-Uni/Pods-Doors-iOS-Uni-framewor
 ${BUILT_PRODUCTS_DIR}/JWTDecode/JWTDecode.framework
 ${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework
 ${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework
+${BUILT_PRODUCTS_DIR}/Zip/Zip.framework

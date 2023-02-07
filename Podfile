@@ -6,6 +6,7 @@ def pods
   pod 'MBProgressHUD'
   pod 'JWTDecode'
   pod 'SnapKit'
+  pod 'Zip'
 end
 
 target 'Doors-iOS-Uni' do
