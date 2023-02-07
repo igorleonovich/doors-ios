@@ -50,7 +50,6 @@ final class FileSystemManager {
     func copyFiles(pathFrom: URL, pathTo: URL) throws {
         do {
             let filelist = try FileManager.default.contentsOfDirectory(at: pathFrom, includingPropertiesForKeys: nil)
-            try? FileManager.default.copyItem(at: pathFrom, to: pathTo)
             for filename in filelist {
                 try? FileManager.default.copyItem(at: pathFrom.appendingPathExtension("/\(filename)"), to: pathTo.appendingPathExtension("/\(filename)"))
             }

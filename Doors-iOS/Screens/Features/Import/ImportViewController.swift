@@ -55,15 +55,16 @@ extension ImportViewController: UIDocumentPickerDelegate {
     
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
         do {
-            if let zipFile = urls.first, let destination = core.rootCore.fileSystemManager.fileURL(fileName: "Import"), let doorsURL = core.rootCore.fileSystemManager.fileURL(fileName: "Doors") {
-                try Zip.unzipFile(zipFile, destination: destination, overwrite: true, password: nil, progress: { [weak self] progress -> () in
+            if let zipFileURL = urls.first, let importFolderURL = core.rootCore.fileSystemManager.fileURL(fileName: "Import"),
+                let doorsURL = core.rootCore.fileSystemManager.fileURL(fileName: "Doors") {
+                try Zip.unzipFile(zipFileURL, destination: importFolderURL, overwrite: true, password: nil, progress: { [weak self] progress -> () in
                     print("[IMPORT] Progress: \(progress)")
                     if progress == 1 {
-                        print("[IMPORT] Imported into path:\n\(destination)")
+                        print("[IMPORT] Imported into path:\n\(importFolderURL.absoluteString)")
                         print("[TODO] [IMPORT] Verify imported data")
                         print("[TODO] [IMPORT] Do you really want to overwrite current user?")
                         try? self?.core.rootCore.fileSystemManager.removeFile(fileName: "Doors", fileFormat: "")
-                        let importedDoorsURL = destination.appendingPathComponent("Doors")
+                        let importedDoorsURL = importFolderURL.appendingPathComponent("Doors")
                         try? self?.core.rootCore.fileSystemManager.copyFiles(pathFrom: importedDoorsURL, pathTo: doorsURL)
                         UIApplication.rootViewController?.reloadRootSesion()
                         try? self?.core.rootCore.fileSystemManager.removeFile(fileName: "Import", fileFormat: "")
