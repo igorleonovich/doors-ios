@@ -105,8 +105,8 @@ class BaseSystemFeatureMenuViewController: BaseSystemFeatureViewController {
         onClose()
     }
     
-    func onClose() {
-        dismiss(animated: true)
+    func onClose(_ completion: (() -> Void)? = nil) {
+        dismiss(animated: true, completion: completion)
     }
 }
 

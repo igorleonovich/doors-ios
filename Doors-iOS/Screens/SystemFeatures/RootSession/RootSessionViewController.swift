@@ -57,7 +57,7 @@ final class RootSessionViewController: BaseSystemFeatureViewController {
         }
     }
     
-    func loadFeature(name: String) {
+    func loadFeature(name: String) -> Feature? {
         if let feature = feature {
             var dependencies = [Feature]()
             if name == "console", let sessionsFeature = feature.childFeatures.first(where: { $0.name == "sessions" }) {
@@ -67,6 +67,8 @@ final class RootSessionViewController: BaseSystemFeatureViewController {
             }
             let feature = Feature(name: name, dependencies: dependencies)
             loadFeature(feature)
+            return feature
         }
+        return nil
     }
 }
