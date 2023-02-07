@@ -94,10 +94,20 @@ extension StartScreenViewController: UITableViewDelegate {
                 }
                 tableView.reloadData()
             }
+        case "export":
+            if let systemControlsFeature = feature?.dependencies.first(where: { $0.name == "start" })?.dependencies.first(where: { $0.name == "systemControls" }) {
+                var rootSessionFeature: Feature?
+                if let feature = systemControlsFeature.dependencies.first(where: { $0.name == "rootSession" }) {
+                    rootSessionFeature = feature
+                } else if let feature = systemControlsFeature.dependencies.first(where: { $0.name == "session" })?.dependencies.first(where: { $0.name == "sessions" })?.dependencies.first(where: { $0.name == "rootSession" }) {
+                    rootSessionFeature = feature
+                }
+                (rootSessionFeature?.viewController as? RootSessionViewController)?.loadFeature(name: "export")
+                onClose()
+            }
         default:
             break
         }
-//        onClose()
     }
 }
 

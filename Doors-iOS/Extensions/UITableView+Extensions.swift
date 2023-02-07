@@ -6,10 +6,10 @@
 //  Copyright © 2023 IL. All rights reserved.
 //
 
-import UIKit
-
-extension UITableView {
-    
+//import UIKit
+//
+//extension UITableView {
+//    
 //    func indexPath(for cellNumber: Int) -> IndexPath {
 //        var cellIndex = 0
 //        var sectionIndex = 0
@@ -25,4 +25,4 @@ extension UITableView {
 //        }
 //        return IndexPath(row: rowIndex, section: sectionIndex - 1)
 //    }
-}
+//}

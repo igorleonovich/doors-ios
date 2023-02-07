@@ -85,6 +85,8 @@
 		69BE8D0E298D8382001EFDD2 /* OldLoadingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69BE8D0C298D8382001EFDD2 /* OldLoadingViewController.xib */; };
 		69EB41B32991CEC400101279 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69EB41B22991CEC400101279 /* UITableView+Extensions.swift */; };
 		69EB41B42991CEC400101279 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69EB41B22991CEC400101279 /* UITableView+Extensions.swift */; };
+		69EB41B72991DC2900101279 /* ExportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69EB41B62991DC2900101279 /* ExportViewController.swift */; };
+		69EB41B82991DC2900101279 /* ExportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69EB41B62991DC2900101279 /* ExportViewController.swift */; };
 		69ED6401272CF4F100153653 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69ED63FF272CF4F000153653 /* SignUpViewController.swift */; };
 		69ED6402272CF4F100153653 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69ED63FF272CF4F000153653 /* SignUpViewController.swift */; };
 		69ED6403272CF4F100153653 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69ED6400272CF4F100153653 /* SignUpViewController.xib */; };
@@ -234,6 +236,7 @@
 		69BE8D07298D7EF4001EFDD2 /* UIApplication+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extensions.swift"; sourceTree = "<group>"; };
 		69BE8D0C298D8382001EFDD2 /* OldLoadingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OldLoadingViewController.xib; sourceTree = "<group>"; };
 		69EB41B22991CEC400101279 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
+		69EB41B62991DC2900101279 /* ExportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportViewController.swift; sourceTree = "<group>"; };
 		69ED63FF272CF4F000153653 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		69ED6400272CF4F100153653 /* SignUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
 		69ED6405272CF96C00153653 /* RecoverPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecoverPasswordViewController.xib; sourceTree = "<group>"; };
@@ -496,6 +499,7 @@
 			isa = PBXGroup;
 			children = (
 				690A4813298D73D5000C02B4 /* Main */,
+				69EB41B52991DC1900101279 /* Export */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -590,6 +594,14 @@
 				6942270A299194EF0074D2A0 /* UUID+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		69EB41B52991DC1900101279 /* Export */ = {
+			isa = PBXGroup;
+			children = (
+				69EB41B62991DC2900101279 /* ExportViewController.swift */,
+			);
+			path = Export;
 			sourceTree = "<group>";
 		};
 		69F06FF326B6ADD10027E94D = {
@@ -1075,6 +1087,7 @@
 				69A0AFAE298EBBEA002E652E /* UIView+Extensions.swift in Sources */,
 				690A296829914265009FC0B9 /* User.swift in Sources */,
 				690A296529913F2A009FC0B9 /* UserViewController.swift in Sources */,
+				69EB41B72991DC2900101279 /* ExportViewController.swift in Sources */,
 				69F0704D26B6B8DB0027E94D /* OldRootViewController.swift in Sources */,
 				69F0705126B6B8DB0027E94D /* CustomAlertController.swift in Sources */,
 				69F0708B26B6B9310027E94D /* NewUserOutput.swift in Sources */,
@@ -1158,6 +1171,7 @@
 				69F0708E26B6B9310027E94D /* ListDTO.swift in Sources */,
 				690A296929914265009FC0B9 /* User.swift in Sources */,
 				690A296629913F2A009FC0B9 /* UserViewController.swift in Sources */,
+				69EB41B82991DC2900101279 /* ExportViewController.swift in Sources */,
 				69A0AFB7298EC86C002E652E /* Feature.swift in Sources */,
 				690DAC10298FE60500FB8C7B /* TableView.swift in Sources */,
 				69A0AFA3298EA415002E652E /* StartScreenViewController.swift in Sources */,

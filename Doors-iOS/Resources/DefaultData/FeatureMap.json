@@ -7,6 +7,10 @@
                 {
                     "name": "console",
                     "title": "Console",
+                },
+                {
+                    "name": "export",
+                    "title": "Export",
                 }
             ]
         }
