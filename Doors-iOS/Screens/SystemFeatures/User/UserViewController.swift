@@ -46,7 +46,7 @@ final class UserViewController: BaseSystemFeatureViewController {
                 core.rootCore.fileSystemManager.createFolder(folderName: doorsFolderName)
             }
             if let path = core.rootCore.fileSystemManager.fileURL(fileName: doorsFolderName, fileFormat: "")?.path {
-                print("[FILE SYSTEM] Doors path:\n\(path)")
+                print("[USER] Doors path:\n\(path)")
             }
         } else if feature.name == "setupUser" {
             if core.rootCore.fileSystemManager.isFileExists(fileName: "\(doorsFolderName)/\(userFileName)", fileFormat: "json") {
