@@ -122,7 +122,7 @@ extension StartScreenViewController: UITableViewDelegate {
                 }
             }
         case "reset":
-            print("[TODO] [RESET] Do you really want to reset current user?")
+            print("\n[TODO] [RESET] Do you really want to reset current user?")
             try? core.rootCore.fileSystemManager.removeFile(fileName: "Doors", fileFormat: "")
             UIApplication.rootViewController?.reloadRootSesion()
         default:

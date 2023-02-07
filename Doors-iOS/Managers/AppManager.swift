@@ -24,7 +24,7 @@ final class AppManager {
             do {
                 let featureMap = try JSONDecoder().decode(FeatureMap.self, from: data)
                 self.featureMap = featureMap
-                print("[USER] [APP MANAGER] Feature Map:\n\(featureMap)")
+                print("\n[USER] [APP MANAGER] Feature Map:\n\(featureMap)")
             } catch {
                 print(error)
             }
