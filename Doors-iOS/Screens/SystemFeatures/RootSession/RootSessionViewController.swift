@@ -54,6 +54,10 @@ final class RootSessionViewController: BaseSystemFeatureViewController {
             let exportViewController = ExportViewController(core: core, feature: feature)
             feature.viewController = exportViewController
             exportViewController.run()
+        } else if feature.name == "import" {
+            let importViewController = ImportViewController(core: core, feature: feature)
+            feature.viewController = importViewController
+            importViewController.run()
         }
     }
     
@@ -62,7 +66,7 @@ final class RootSessionViewController: BaseSystemFeatureViewController {
             var dependencies = [Feature]()
             if name == "console", let sessionsFeature = feature.childFeatures.first(where: { $0.name == "sessions" }) {
                 dependencies.append(contentsOf: [feature, sessionsFeature])
-            } else if name == "export" {
+            } else if ["export", "import"].contains(name) {
                 dependencies.append(contentsOf: [feature])
             }
             let feature = Feature(name: name, dependencies: dependencies)

@@ -11,6 +11,10 @@
                 {
                     "name": "export",
                     "title": "Export",
+                },
+                {
+                    "name": "import",
+                    "title": "Import",
                 }
             ]
         }

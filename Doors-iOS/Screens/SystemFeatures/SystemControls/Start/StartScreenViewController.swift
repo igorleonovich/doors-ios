@@ -21,7 +21,7 @@ final class StartScreenViewController: BaseSystemFeatureMenuViewController {
                 if systemControlsFeature.dependencies.first(where: { $0.name == "rootSession" }) != nil {
                     self.features = features
                 } else if systemControlsFeature.dependencies.first(where: { $0.name == "session" }) != nil {
-                    self.features = features.filter({ $0.name != "export" })
+                    self.features = features.filter({ ["export", "import"].contains($0.name) == false })
                 }
             }
         }
@@ -107,6 +107,16 @@ extension StartScreenViewController: UITableViewDelegate {
                     if let feature = (rootSessionFeature.viewController as? RootSessionViewController)?.loadFeature(name: "export") {
                         onClose() {
                             (feature.viewController as? ExportViewController)?.closeAction?()
+                        }
+                    }
+                }
+            }
+        case "import":
+            if let systemControlsFeature = feature?.dependencies.first(where: { $0.name == "start" })?.dependencies.first(where: { $0.name == "systemControls" }) {
+                if let rootSessionFeature = systemControlsFeature.dependencies.first(where: { $0.name == "rootSession" }) {
+                    if let feature = (rootSessionFeature.viewController as? RootSessionViewController)?.loadFeature(name: "import") {
+                        onClose() {
+                            (feature.viewController as? ImportViewController)?.closeAction?()
                         }
                     }
                 }

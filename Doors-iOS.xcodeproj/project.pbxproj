@@ -93,6 +93,10 @@
 		69CC046E2992A123001295EB /* Feature.strings in Resources */ = {isa = PBXBuildFile; fileRef = 69CC04702992A123001295EB /* Feature.strings */; };
 		69CC04752992A674001295EB /* Title.strings in Resources */ = {isa = PBXBuildFile; fileRef = 69CC04782992A674001295EB /* Title.strings */; };
 		69CC04762992A674001295EB /* Title.strings in Resources */ = {isa = PBXBuildFile; fileRef = 69CC04782992A674001295EB /* Title.strings */; };
+		69CC047C2992A912001295EB /* ImportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CC047B2992A912001295EB /* ImportViewController.swift */; };
+		69CC047D2992A912001295EB /* ImportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CC047B2992A912001295EB /* ImportViewController.swift */; };
+		69CC04812992A960001295EB /* Import.strings in Resources */ = {isa = PBXBuildFile; fileRef = 69CC04842992A960001295EB /* Import.strings */; };
+		69CC04822992A960001295EB /* Import.strings in Resources */ = {isa = PBXBuildFile; fileRef = 69CC04842992A960001295EB /* Import.strings */; };
 		69EB41B32991CEC400101279 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69EB41B22991CEC400101279 /* UITableView+Extensions.swift */; };
 		69EB41B42991CEC400101279 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69EB41B22991CEC400101279 /* UITableView+Extensions.swift */; };
 		69EB41B72991DC2900101279 /* ExportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69EB41B62991DC2900101279 /* ExportViewController.swift */; };
@@ -251,6 +255,9 @@
 		69CC04712992A130001295EB /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Feature.strings; sourceTree = "<group>"; };
 		69CC04772992A674001295EB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Title.strings; sourceTree = "<group>"; };
 		69CC04792992A676001295EB /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Title.strings; sourceTree = "<group>"; };
+		69CC047B2992A912001295EB /* ImportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportViewController.swift; sourceTree = "<group>"; };
+		69CC04832992A960001295EB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Import.strings; sourceTree = "<group>"; };
+		69CC04852992A962001295EB /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Import.strings; sourceTree = "<group>"; };
 		69EB41B22991CEC400101279 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
 		69EB41B62991DC2900101279 /* ExportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportViewController.swift; sourceTree = "<group>"; };
 		69ED63FF272CF4F000153653 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -514,6 +521,7 @@
 			children = (
 				690A4813298D73D5000C02B4 /* Main */,
 				69EB41B52991DC1900101279 /* Export */,
+				69CC047A2992A902001295EB /* Import */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -611,6 +619,15 @@
 				6942270A299194EF0074D2A0 /* UUID+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		69CC047A2992A902001295EB /* Import */ = {
+			isa = PBXGroup;
+			children = (
+				69CC047B2992A912001295EB /* ImportViewController.swift */,
+				69CC04842992A960001295EB /* Import.strings */,
+			);
+			path = Import;
 			sourceTree = "<group>";
 		};
 		69EB41B52991DC1900101279 /* Export */ = {
@@ -941,6 +958,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				69CC046429929E52001295EB /* Export.strings in Resources */,
+				69CC04812992A960001295EB /* Import.strings in Resources */,
 				69CC045C29929DDA001295EB /* Settings.strings in Resources */,
 				69ED6403272CF4F100153653 /* SignUpViewController.xib in Resources */,
 				69F070A726B6B9410027E94D /* PlanViewController.xib in Resources */,
@@ -962,6 +980,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				69CC046529929E52001295EB /* Export.strings in Resources */,
+				69CC04822992A960001295EB /* Import.strings in Resources */,
 				69CC045D29929DDA001295EB /* Settings.strings in Resources */,
 				69ED6404272CF4F100153653 /* SignUpViewController.xib in Resources */,
 				69F070A826B6B9410027E94D /* PlanViewController.xib in Resources */,
@@ -1089,6 +1108,7 @@
 				69A0AFC8298F1ACC002E652E /* TableViewCell.swift in Sources */,
 				690DAC1529901B1D00FB8C7B /* Button.swift in Sources */,
 				690A4821298D754B000C02B4 /* Core.swift in Sources */,
+				69CC047C2992A912001295EB /* ImportViewController.swift in Sources */,
 				69F070D826B6B9810027E94D /* Device.swift in Sources */,
 				690A481E298D74C4000C02B4 /* MainViewController.swift in Sources */,
 				69A0AF89298D8F6B002E652E /* ConsoleViewController.swift in Sources */,
@@ -1173,6 +1193,7 @@
 				69A0AF99298E5292002E652E /* Router.swift in Sources */,
 				690DAC1629901B1D00FB8C7B /* Button.swift in Sources */,
 				69F070D926B6B9810027E94D /* Device.swift in Sources */,
+				69CC047D2992A912001295EB /* ImportViewController.swift in Sources */,
 				69F0706D26B6B9280027E94D /* OldUIView+Extensions.swift in Sources */,
 				69F0701626B6AE340027E94D /* AppDelegate.swift in Sources */,
 				69F0708A26B6B9310027E94D /* RefreshTokenOutput.swift in Sources */,
@@ -1296,6 +1317,15 @@
 				69CC04792992A676001295EB /* ru */,
 			);
 			name = Title.strings;
+			sourceTree = "<group>";
+		};
+		69CC04842992A960001295EB /* Import.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				69CC04832992A960001295EB /* en */,
+				69CC04852992A962001295EB /* ru */,
+			);
+			name = Import.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
