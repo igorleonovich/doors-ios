@@ -11,8 +11,6 @@ import Zip
 
 final class ImportViewController: BaseSystemFeatureViewController {
     
-    var closeAction: (() -> Void)? = nil
-    
     // MARK: Setup
     
     override func viewDidLoad() {
@@ -38,14 +36,12 @@ final class ImportViewController: BaseSystemFeatureViewController {
     override func loadFeature(_ feature: Feature) {
         super.loadFeature(feature)
         if feature.name == "doImport" {
-            closeAction = {
-                if #available(iOS 14.0, *) {
-                    let pickerViewController = UIDocumentPickerViewController(documentTypes: ["com.pkware.zip-archive"], in: .import)
-                    pickerViewController.delegate = self
-                    pickerViewController.allowsMultipleSelection = true
-                    pickerViewController.shouldShowFileExtensions = true
-                    UIApplication.rootViewController?.present(pickerViewController, animated: true, completion: nil)
-                }
+            if #available(iOS 14.0, *) {
+                let pickerViewController = UIDocumentPickerViewController(documentTypes: ["com.pkware.zip-archive"], in: .import)
+                pickerViewController.delegate = self
+                pickerViewController.allowsMultipleSelection = true
+                pickerViewController.shouldShowFileExtensions = true
+                UIApplication.rootViewController?.present(pickerViewController, animated: true, completion: nil)
             }
         }
     }

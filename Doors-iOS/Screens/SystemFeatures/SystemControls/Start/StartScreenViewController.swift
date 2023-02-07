@@ -106,7 +106,7 @@ extension StartScreenViewController: UITableViewDelegate {
                 if let rootSessionFeature = systemControlsFeature.dependencies.first(where: { $0.name == "rootSession" }) {
                     if let feature = (rootSessionFeature.viewController as? RootSessionViewController)?.loadFeature(name: "import") {
                         onClose() {
-                            (feature.viewController as? ImportViewController)?.closeAction?()
+                            (feature.viewController as? ImportViewController)?.run()
                         }
                     }
                 }
@@ -116,7 +116,7 @@ extension StartScreenViewController: UITableViewDelegate {
                 if let rootSessionFeature = systemControlsFeature.dependencies.first(where: { $0.name == "rootSession" }) {
                     if let feature = (rootSessionFeature.viewController as? RootSessionViewController)?.loadFeature(name: "export") {
                         onClose() {
-                            (feature.viewController as? ExportViewController)?.closeAction?()
+                            (feature.viewController as? ExportViewController)?.run()
                         }
                     }
                 }

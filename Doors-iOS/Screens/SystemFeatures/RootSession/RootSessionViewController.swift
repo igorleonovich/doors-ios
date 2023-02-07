@@ -53,11 +53,9 @@ final class RootSessionViewController: BaseSystemFeatureViewController {
         } else if feature.name == "import" {
             let importViewController = ImportViewController(core: core, feature: feature)
             feature.viewController = importViewController
-            importViewController.run()
         } else if feature.name == "export" {
             let exportViewController = ExportViewController(core: core, feature: feature)
             feature.viewController = exportViewController
-            exportViewController.run()
         }
     }
     
