@@ -12,8 +12,8 @@ final class SessionViewController: BaseSystemFeatureViewController {
     
     private let borderSide: BorderSide?
     private var systemControlsView: UIView?
-    private var mainView: UIView?
-    private var consoleView: UIView?
+    private weak var mainView: UIView?
+    private weak var consoleView: UIView?
     
     init(core: Core, feature: Feature? = nil, borderSide: BorderSide? = nil) {
         self.borderSide = borderSide
@@ -80,10 +80,6 @@ final class SessionViewController: BaseSystemFeatureViewController {
             let consoleFeature = Feature(name: "console", dependencies: [feature, mainFeature])
             loadFeature(consoleFeature)
         }
-    }
-    
-    func unloadConsoleFeature() {
-        feature?.childFeatures.first(where: { $0.name == "console" })?.viewController?.remove()
     }
     
     func dropSession() {

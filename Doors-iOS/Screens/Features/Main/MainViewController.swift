@@ -34,7 +34,7 @@ final class MainViewController: BaseFeatureViewController {
     
     private func setupUI() {
         setupBorders()
-        view.backgroundColor = UIColor.random().withAlphaComponent(0.5)
+        view.backgroundColor = .random().withAlphaComponent(0.5)
     }
     
     private func setupBorders() {

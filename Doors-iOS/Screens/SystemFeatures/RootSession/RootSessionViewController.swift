@@ -59,8 +59,4 @@ final class RootSessionViewController: BaseSystemFeatureViewController {
             loadFeature(consoleFeature)
         }
     }
-    
-    func unloadConsoleFeature() {
-        feature?.childFeatures.first(where: { $0.name == "console" })?.viewController?.remove()
-    }
 }
