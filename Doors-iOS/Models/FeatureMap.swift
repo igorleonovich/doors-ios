@@ -10,5 +10,5 @@ import Foundation
 
 struct FeatureMap: Codable {
     
-    let features: [FeatureModel]
+    let features: [UserFeature]
 }

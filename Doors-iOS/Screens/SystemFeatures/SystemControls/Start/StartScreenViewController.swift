@@ -10,7 +10,7 @@ import UIKit
 
 final class StartScreenViewController: BaseSystemFeatureMenuViewController {
 
-    private var features = [FeatureModel]()
+    private var features = [UserFeature]()
     
     // MARK: - Setup
     
@@ -130,7 +130,7 @@ final class StartFeatureCell: TableViewCell {
     
     static let height: CGFloat = 50
     
-    func configure(feature: FeatureModel) {
+    func configure(feature: UserFeature) {
         textLabel?.textAlignment = .center
         textLabel?.textColor = .white
         textLabel?.font = UIFont.systemFont(ofSize: 20, weight: .thin)

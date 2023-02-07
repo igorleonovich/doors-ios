@@ -16,13 +16,13 @@ struct User: Codable {
 struct RootSessionConfiguration: Codable {
     
     var sessionConfigurations: [SessionConfiguration]
-    var features = [FeatureModel]()
+    var features = [UserFeature]()
 }
 
 struct SessionConfiguration: Codable {
     
     var id: String
-    var features = [FeatureModel]()
+    var features = [UserFeature]()
 }
 
 extension SessionConfiguration: Equatable {
@@ -39,13 +39,13 @@ extension SessionConfiguration: Hashable {
     }
 }
 
-struct FeatureModel: Codable {
+struct UserFeature: Codable {
     
     let name: String
     let title: String?
-    let childFeatures: [FeatureModel]?
+    let childFeatures: [UserFeature]?
     
-    var simple: FeatureModel {
-        return FeatureModel(name: self.name, title: nil, childFeatures: childFeatures)
+    var simple: UserFeature {
+        return UserFeature(name: self.name, title: nil, childFeatures: childFeatures)
     }
 }
