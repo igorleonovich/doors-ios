@@ -83,6 +83,16 @@
 		69BE8D08298D7EF4001EFDD2 /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BE8D07298D7EF4001EFDD2 /* UIApplication+Extensions.swift */; };
 		69BE8D0D298D8382001EFDD2 /* OldLoadingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69BE8D0C298D8382001EFDD2 /* OldLoadingViewController.xib */; };
 		69BE8D0E298D8382001EFDD2 /* OldLoadingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69BE8D0C298D8382001EFDD2 /* OldLoadingViewController.xib */; };
+		69CC045429929D48001295EB /* Console.strings in Resources */ = {isa = PBXBuildFile; fileRef = 69CC045729929D48001295EB /* Console.strings */; };
+		69CC045529929D48001295EB /* Console.strings in Resources */ = {isa = PBXBuildFile; fileRef = 69CC045729929D48001295EB /* Console.strings */; };
+		69CC045C29929DDA001295EB /* Settings.strings in Resources */ = {isa = PBXBuildFile; fileRef = 69CC045F29929DDA001295EB /* Settings.strings */; };
+		69CC045D29929DDA001295EB /* Settings.strings in Resources */ = {isa = PBXBuildFile; fileRef = 69CC045F29929DDA001295EB /* Settings.strings */; };
+		69CC046429929E52001295EB /* Export.strings in Resources */ = {isa = PBXBuildFile; fileRef = 69CC046729929E52001295EB /* Export.strings */; };
+		69CC046529929E52001295EB /* Export.strings in Resources */ = {isa = PBXBuildFile; fileRef = 69CC046729929E52001295EB /* Export.strings */; };
+		69CC046D2992A123001295EB /* Feature.strings in Resources */ = {isa = PBXBuildFile; fileRef = 69CC04702992A123001295EB /* Feature.strings */; };
+		69CC046E2992A123001295EB /* Feature.strings in Resources */ = {isa = PBXBuildFile; fileRef = 69CC04702992A123001295EB /* Feature.strings */; };
+		69CC04752992A674001295EB /* Title.strings in Resources */ = {isa = PBXBuildFile; fileRef = 69CC04782992A674001295EB /* Title.strings */; };
+		69CC04762992A674001295EB /* Title.strings in Resources */ = {isa = PBXBuildFile; fileRef = 69CC04782992A674001295EB /* Title.strings */; };
 		69EB41B32991CEC400101279 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69EB41B22991CEC400101279 /* UITableView+Extensions.swift */; };
 		69EB41B42991CEC400101279 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69EB41B22991CEC400101279 /* UITableView+Extensions.swift */; };
 		69EB41B72991DC2900101279 /* ExportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69EB41B62991DC2900101279 /* ExportViewController.swift */; };
@@ -97,14 +107,10 @@
 		69ED640A272CF96C00153653 /* LogInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69ED6406272CF96C00153653 /* LogInViewController.xib */; };
 		69F0700026B6ADD10027E94D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F06FFF26B6ADD10027E94D /* AppDelegate.swift */; };
 		69F0700226B6ADD10027E94D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F0700126B6ADD10027E94D /* SceneDelegate.swift */; };
-		69F0700726B6ADD10027E94D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69F0700526B6ADD10027E94D /* Main.storyboard */; };
 		69F0700926B6ADDD0027E94D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69F0700826B6ADDD0027E94D /* Assets.xcassets */; };
-		69F0700C26B6ADDD0027E94D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69F0700A26B6ADDD0027E94D /* LaunchScreen.storyboard */; };
 		69F0701626B6AE340027E94D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F06FFF26B6ADD10027E94D /* AppDelegate.swift */; };
 		69F0701726B6AE340027E94D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F0700126B6ADD10027E94D /* SceneDelegate.swift */; };
-		69F0701A26B6AE340027E94D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69F0700A26B6ADDD0027E94D /* LaunchScreen.storyboard */; };
 		69F0701B26B6AE340027E94D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69F0700826B6ADDD0027E94D /* Assets.xcassets */; };
-		69F0701C26B6AE340027E94D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69F0700526B6ADD10027E94D /* Main.storyboard */; };
 		69F0704B26B6B8DB0027E94D /* OldBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F0704726B6B8DB0027E94D /* OldBaseViewController.swift */; };
 		69F0704C26B6B8DB0027E94D /* OldBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F0704726B6B8DB0027E94D /* OldBaseViewController.swift */; };
 		69F0704D26B6B8DB0027E94D /* OldRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F0704826B6B8DB0027E94D /* OldRootViewController.swift */; };
@@ -235,6 +241,16 @@
 		69BE8D05298D7E07001EFDD2 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		69BE8D07298D7EF4001EFDD2 /* UIApplication+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extensions.swift"; sourceTree = "<group>"; };
 		69BE8D0C298D8382001EFDD2 /* OldLoadingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OldLoadingViewController.xib; sourceTree = "<group>"; };
+		69CC045629929D48001295EB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Console.strings; sourceTree = "<group>"; };
+		69CC045829929D5A001295EB /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Console.strings; sourceTree = "<group>"; };
+		69CC045E29929DDA001295EB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Settings.strings; sourceTree = "<group>"; };
+		69CC046029929DDC001295EB /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Settings.strings; sourceTree = "<group>"; };
+		69CC046629929E52001295EB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Export.strings; sourceTree = "<group>"; };
+		69CC046829929E56001295EB /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Export.strings; sourceTree = "<group>"; };
+		69CC046F2992A123001295EB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Feature.strings; sourceTree = "<group>"; };
+		69CC04712992A130001295EB /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Feature.strings; sourceTree = "<group>"; };
+		69CC04772992A674001295EB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Title.strings; sourceTree = "<group>"; };
+		69CC04792992A676001295EB /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Title.strings; sourceTree = "<group>"; };
 		69EB41B22991CEC400101279 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
 		69EB41B62991DC2900101279 /* ExportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportViewController.swift; sourceTree = "<group>"; };
 		69ED63FF272CF4F000153653 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -244,9 +260,7 @@
 		69F06FFC26B6ADD10027E94D /* Doors-Dev-Debug-Uni.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Doors-Dev-Debug-Uni.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		69F06FFF26B6ADD10027E94D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		69F0700126B6ADD10027E94D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		69F0700626B6ADD10027E94D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		69F0700826B6ADDD0027E94D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		69F0700B26B6ADDD0027E94D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		69F0700D26B6ADDD0027E94D /* Doors-iOS-Uni-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Doors-iOS-Uni-Info.plist"; sourceTree = "<group>"; };
 		69F0702026B6AE340027E94D /* Doors-iOS-Extra.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Doors-iOS-Extra.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		69F0702F26B6AF1C0027E94D /* Doors-iOS-Extra-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Doors-iOS-Extra-Info.plist"; path = "../../doors-ios/Doors-iOS/Doors-iOS-Extra-Info.plist"; sourceTree = "<group>"; };
@@ -457,6 +471,7 @@
 			isa = PBXGroup;
 			children = (
 				69A0AF8B298D905D002E652E /* Feature.swift */,
+				69CC04702992A123001295EB /* Feature.strings */,
 				694227122991A0020074D2A0 /* FeatureMap.swift */,
 				690A296729914265009FC0B9 /* User.swift */,
 				69A0AFC0298EE391002E652E /* BorderSide.swift */,
@@ -490,7 +505,6 @@
 				69F0709126B6B9410027E94D /* Screens */,
 				69F0706726B6B9280027E94D /* Extensions */,
 				69F070C526B6B9810027E94D /* Tools */,
-				69F0700526B6ADD10027E94D /* Main.storyboard */,
 			);
 			path = _Old;
 			sourceTree = "<group>";
@@ -508,6 +522,7 @@
 			isa = PBXGroup;
 			children = (
 				69A0AF88298D8F6B002E652E /* ConsoleViewController.swift */,
+				69CC045729929D48001295EB /* Console.strings */,
 			);
 			path = Console;
 			sourceTree = "<group>";
@@ -530,6 +545,7 @@
 			children = (
 				69A0AF8F298DA392002E652E /* SettingsViewController.swift */,
 				69A0AF92298DA41C002E652E /* SettingsScreenViewController.swift */,
+				69CC045F29929DDA001295EB /* Settings.strings */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -558,6 +574,7 @@
 			isa = PBXGroup;
 			children = (
 				69A0AFA5298EABAC002E652E /* TitleViewController.swift */,
+				69CC04782992A674001295EB /* Title.strings */,
 			);
 			path = Title;
 			sourceTree = "<group>";
@@ -600,6 +617,7 @@
 			isa = PBXGroup;
 			children = (
 				69EB41B62991DC2900101279 /* ExportViewController.swift */,
+				69CC046729929E52001295EB /* Export.strings */,
 			);
 			path = Export;
 			sourceTree = "<group>";
@@ -639,7 +657,6 @@
 				69F06FFF26B6ADD10027E94D /* AppDelegate.swift */,
 				69F0700126B6ADD10027E94D /* SceneDelegate.swift */,
 				69F0700826B6ADDD0027E94D /* Assets.xcassets */,
-				69F0700A26B6ADDD0027E94D /* LaunchScreen.storyboard */,
 				6919EB70298D1FC600F96016 /* Doors.entitlements */,
 				69F0700D26B6ADDD0027E94D /* Doors-iOS-Uni-Info.plist */,
 				69F0702F26B6AF1C0027E94D /* Doors-iOS-Extra-Info.plist */,
@@ -905,6 +922,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = 69F06FF326B6ADD10027E94D;
 			productRefGroup = 69F06FFD26B6ADD10027E94D /* Products */;
@@ -922,17 +940,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69CC046429929E52001295EB /* Export.strings in Resources */,
+				69CC045C29929DDA001295EB /* Settings.strings in Resources */,
 				69ED6403272CF4F100153653 /* SignUpViewController.xib in Resources */,
-				69F0700C26B6ADDD0027E94D /* LaunchScreen.storyboard in Resources */,
 				69F070A726B6B9410027E94D /* PlanViewController.xib in Resources */,
 				69BE8D0D298D8382001EFDD2 /* OldLoadingViewController.xib in Resources */,
 				69ED6407272CF96C00153653 /* RecoverPasswordViewController.xib in Resources */,
 				69ED6409272CF96C00153653 /* LogInViewController.xib in Resources */,
+				69CC045429929D48001295EB /* Console.strings in Resources */,
 				69F070BB26B6B9410027E94D /* DoorsServiceCell.xib in Resources */,
+				69CC04752992A674001295EB /* Title.strings in Resources */,
 				69F070B926B6B9410027E94D /* ConstructorViewController.xib in Resources */,
 				69F0700926B6ADDD0027E94D /* Assets.xcassets in Resources */,
 				6942270F29919DED0074D2A0 /* FeatureMap.json in Resources */,
-				69F0700726B6ADD10027E94D /* Main.storyboard in Resources */,
+				69CC046D2992A123001295EB /* Feature.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -940,17 +961,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69CC046529929E52001295EB /* Export.strings in Resources */,
+				69CC045D29929DDA001295EB /* Settings.strings in Resources */,
 				69ED6404272CF4F100153653 /* SignUpViewController.xib in Resources */,
-				69F0701A26B6AE340027E94D /* LaunchScreen.storyboard in Resources */,
 				69F070A826B6B9410027E94D /* PlanViewController.xib in Resources */,
 				69BE8D0E298D8382001EFDD2 /* OldLoadingViewController.xib in Resources */,
 				69ED6408272CF96C00153653 /* RecoverPasswordViewController.xib in Resources */,
 				69ED640A272CF96C00153653 /* LogInViewController.xib in Resources */,
+				69CC045529929D48001295EB /* Console.strings in Resources */,
 				69F070BC26B6B9410027E94D /* DoorsServiceCell.xib in Resources */,
+				69CC04762992A674001295EB /* Title.strings in Resources */,
 				69F070BA26B6B9410027E94D /* ConstructorViewController.xib in Resources */,
 				69F0701B26B6AE340027E94D /* Assets.xcassets in Resources */,
 				6942271029919DED0074D2A0 /* FeatureMap.json in Resources */,
-				69F0701C26B6AE340027E94D /* Main.storyboard in Resources */,
+				69CC046E2992A123001295EB /* Feature.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1229,20 +1253,49 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		69F0700526B6ADD10027E94D /* Main.storyboard */ = {
+		69CC045729929D48001295EB /* Console.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				69F0700626B6ADD10027E94D /* Base */,
+				69CC045629929D48001295EB /* en */,
+				69CC045829929D5A001295EB /* ru */,
 			);
-			name = Main.storyboard;
+			name = Console.strings;
 			sourceTree = "<group>";
 		};
-		69F0700A26B6ADDD0027E94D /* LaunchScreen.storyboard */ = {
+		69CC045F29929DDA001295EB /* Settings.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				69F0700B26B6ADDD0027E94D /* Base */,
+				69CC045E29929DDA001295EB /* en */,
+				69CC046029929DDC001295EB /* ru */,
 			);
-			name = LaunchScreen.storyboard;
+			name = Settings.strings;
+			sourceTree = "<group>";
+		};
+		69CC046729929E52001295EB /* Export.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				69CC046629929E52001295EB /* en */,
+				69CC046829929E56001295EB /* ru */,
+			);
+			name = Export.strings;
+			sourceTree = "<group>";
+		};
+		69CC04702992A123001295EB /* Feature.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				69CC046F2992A123001295EB /* en */,
+				69CC04712992A130001295EB /* ru */,
+			);
+			name = Feature.strings;
+			sourceTree = "<group>";
+		};
+		69CC04782992A674001295EB /* Title.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				69CC04772992A674001295EB /* en */,
+				69CC04792992A676001295EB /* ru */,
+			);
+			name = Title.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1253,6 +1306,7 @@
 			baseConfigurationReference = 69F0704226B6AF580027E94D /* Project-Debug-(Dev).xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1315,6 +1369,7 @@
 			baseConfigurationReference = 69F0704526B6AF580027E94D /* Project-Release-(Dev).xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1467,6 +1522,7 @@
 			baseConfigurationReference = 69F0704426B6AF580027E94D /* Project-Debug-(Stage).xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1577,6 +1633,7 @@
 			baseConfigurationReference = 69F0704326B6AF580027E94D /* Project-Debug-(Prod).xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1687,6 +1744,7 @@
 			baseConfigurationReference = 69F0703626B6AF570027E94D /* Project-Release-(Stage).xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1791,6 +1849,7 @@
 			baseConfigurationReference = 69F0703926B6AF570027E94D /* Project-Release-(Prod).xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

@@ -137,7 +137,7 @@ final class StartFeatureCell: TableViewCell {
         textLabel?.textAlignment = .center
         textLabel?.textColor = .white
         textLabel?.font = UIFont.systemFont(ofSize: 20, weight: .thin)
-        textLabel?.text = feature.title?.localized
+        textLabel?.text = feature.title?.localized(tableName: "Feature")
     }
 }
 

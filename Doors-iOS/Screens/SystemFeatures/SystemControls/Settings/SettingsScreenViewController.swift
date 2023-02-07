@@ -78,7 +78,7 @@ final class SettingCell: TableViewCell {
         textLabel?.textAlignment = .center
         textLabel?.textColor = .white
         textLabel?.font = UIFont.systemFont(ofSize: 20, weight: .thin)
-        textLabel?.text = setting.title.localized
+        textLabel?.text = setting.title.localized(tableName: "Settings")
     }
 }
 

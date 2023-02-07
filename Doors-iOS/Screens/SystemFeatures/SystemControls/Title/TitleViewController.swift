@@ -24,6 +24,6 @@ final class TitleViewController: BaseSystemFeatureViewController {
             make.edges.equalToSuperview()
         }
         titleLabel.textAlignment = .center
-        titleLabel.text = "D O O R S"
+        titleLabel.text = "Doors".localized(tableName: "Title").uppercased().gapped()
     }
 }
