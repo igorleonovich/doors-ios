@@ -18,7 +18,7 @@ final class FileSystemManager {
             do {
                 return try Data(contentsOf: fileURL)
             } catch {
-                throw NSErrorDomain.init(string: "Unable to read data!") as! Error
+                throw error
             }
         }
         return nil
@@ -67,7 +67,7 @@ final class FileSystemManager {
             do {
                 try FileManager.default.removeItem(at: fileURL)
             } catch {
-                throw NSErrorDomain.init(string: "Unable to remove data!") as! Error
+                throw error
             }
         }
     }
@@ -84,14 +84,11 @@ final class FileSystemManager {
                         try FileManager.default.removeItem(at: fileURL)
                     }
                 } catch {
-                    throw NSErrorDomain.init(string: errorText()) as! Error
+                    throw error
                 }
             }
         } catch {
-            throw NSErrorDomain.init(string: errorText()) as! Error
-        }
-        func errorText() -> String {
-            return "Unable to remove all data!"
+            throw error
         }
     }
 
@@ -109,7 +106,6 @@ final class FileSystemManager {
     }
 
     func defaultFileDirectory() -> URL? {
-        let url = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.fm.doors")
-        return url
+        return FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.fm.doors")
     }
 }
