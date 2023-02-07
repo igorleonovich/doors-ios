@@ -82,12 +82,11 @@ class BaseSystemFeatureMenuViewController: BaseSystemFeatureViewController {
         tableView = TableView()
         view.addSubview(tableView)
         tableView.snp.makeConstraints { make in
-            make.height.equalTo((Setting.allCases.count * Int(SettingCell.height)))
+            make.height.equalTo(0)
             make.centerY.equalToSuperview()
             make.left.equalToSuperview()
             make.right.equalToSuperview()
         }
-        tableView.bounces = false
     }
     
     private func setupGesture() {
@@ -98,6 +97,25 @@ class BaseSystemFeatureMenuViewController: BaseSystemFeatureViewController {
     
     func setupData() {}
     
+    
+    // MARK: Update
+    
+    func updateHeight(contentHeight: CGFloat) {
+        view.layoutIfNeeded()
+        var offset: CGFloat = 0
+        if contentHeight > view.bounds.height {
+            offset = view.bounds.height
+            tableView.contentInset = .init(top: 100, left: 0, bottom: 100, right: 0)
+            tableView.contentOffset = CGPoint(x: 0, y: -100)
+        } else {
+            offset = contentHeight
+            tableView.contentInset = .zero
+            tableView.contentOffset = .zero
+        }
+        tableView.snp.updateConstraints { make in
+            make.height.equalTo((offset))
+        }
+    }
     
     // MARK: Actions
     

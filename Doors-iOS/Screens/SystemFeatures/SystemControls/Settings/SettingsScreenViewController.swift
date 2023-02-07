@@ -29,6 +29,7 @@ final class SettingsScreenViewController: BaseSystemFeatureMenuViewController {
     
     override func setupUI() {
         super.setupUI()
+        updateHeight(contentHeight: CGFloat(settings.count * Int(SettingCell.height)))
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(SettingCell.self, forCellReuseIdentifier: "SettingCell")

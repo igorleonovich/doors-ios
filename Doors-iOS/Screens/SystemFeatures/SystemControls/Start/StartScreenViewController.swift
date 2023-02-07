@@ -29,6 +29,7 @@ final class StartScreenViewController: BaseSystemFeatureMenuViewController {
     
     override func setupUI() {
         super.setupUI()
+        updateHeight(contentHeight: CGFloat(features.count * Int(StartFeatureCell.height)))
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(StartFeatureCell.self, forCellReuseIdentifier: "StartFeatureCell")
