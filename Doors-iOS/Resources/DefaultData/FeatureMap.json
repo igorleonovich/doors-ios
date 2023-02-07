@@ -15,6 +15,10 @@
                 {
                     "name": "export",
                     "title": "Export",
+                },
+                {
+                    "name": "reset",
+                    "title": "Reset",
                 }
             ]
         }

@@ -56,7 +56,7 @@ final class UserViewController: BaseSystemFeatureViewController {
                         if core.rootCore.appManager.isUserInitiallyLoaded {
                             self.user = user
                         } else {
-                            print("[TODO] User detected in local file system. Do you want to load (import) it?")
+                            print("[TODO] [USER] User detected in local file system. Do you want to load (import) it?")
                               self.user = user
 //                            createNewUser()
                         }

@@ -60,8 +60,8 @@ extension ImportViewController: UIDocumentPickerDelegate {
                     print("[IMPORT] Progress: \(progress)")
                     if progress == 1 {
                         print("[IMPORT] Imported into path:\n\(destination)")
-                        print("[TODO] Verify imported data")
-                        print("[TODO] Do you really want to overwrite current user?")
+                        print("[TODO] [IMPORT] Verify imported data")
+                        print("[TODO] [IMPORT] Do you really want to overwrite current user?")
                         try? self?.core.rootCore.fileSystemManager.removeFile(fileName: "Doors", fileFormat: "")
                         let importedDoorsURL = destination.appendingPathComponent("Doors")
                         try? self?.core.rootCore.fileSystemManager.copyFiles(pathFrom: importedDoorsURL, pathTo: doorsURL)

@@ -61,6 +61,7 @@ final class RootSessionViewController: BaseSystemFeatureViewController {
         }
     }
     
+    @discardableResult
     func loadFeature(name: String) -> Feature? {
         if let feature = feature {
             var dependencies = [Feature]()

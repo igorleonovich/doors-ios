@@ -21,7 +21,7 @@ final class StartScreenViewController: BaseSystemFeatureMenuViewController {
                 if systemControlsFeature.dependencies.first(where: { $0.name == "rootSession" }) != nil {
                     self.features = features
                 } else if systemControlsFeature.dependencies.first(where: { $0.name == "session" }) != nil {
-                    self.features = features.filter({ ["import", "export"].contains($0.name) == false })
+                    self.features = features.filter({ ["import", "export", "reset"].contains($0.name) == false })
                 }
             }
         }
@@ -121,6 +121,10 @@ extension StartScreenViewController: UITableViewDelegate {
                     }
                 }
             }
+        case "reset":
+            print("[TODO] [RESET] Do you really want to reset current user?")
+            try? core.rootCore.fileSystemManager.removeFile(fileName: "Doors", fileFormat: "")
+            UIApplication.rootViewController?.reloadRootSesion()
         default:
             break
         }
