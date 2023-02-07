@@ -14,7 +14,7 @@ final class UserViewController: BaseSystemFeatureViewController {
     
     // MARK: Constants
     
-    private let doorsFolderName = "Doors/Guest/.doors"
+    private let doorsServiceFolderName = "Doors/Guest/.doors"
     private let userFileName = "User"
     
     // MARK: Setup
@@ -42,22 +42,22 @@ final class UserViewController: BaseSystemFeatureViewController {
     override func loadFeature(_ feature: Feature) {
         super.loadFeature(feature)
         if feature.name == "checkDoorsFolder" {
-            if core.rootCore.fileSystemManager.isFileExists(fileName: doorsFolderName, fileFormat: "") == false {
-                core.rootCore.fileSystemManager.createFolder(folderName: doorsFolderName)
+            if core.rootCore.fileSystemManager.isFileExists(fileName: doorsServiceFolderName, fileFormat: "") == false {
+                core.rootCore.fileSystemManager.createFolder(folderName: doorsServiceFolderName)
             }
-            if let path = core.rootCore.fileSystemManager.fileURL(fileName: doorsFolderName, fileFormat: "")?.path {
-                print("\n[USER] Doors path:\n\(path)")
+            if let path = core.rootCore.fileSystemManager.fileURL(fileName: doorsServiceFolderName, fileFormat: "")?.path {
+                print("\n[USER] Doors service folder:\n\(path)")
             }
         } else if feature.name == "setupUser" {
-            if core.rootCore.fileSystemManager.isFileExists(fileName: "\(doorsFolderName)/\(userFileName)", fileFormat: "json") {
-                if let data = try? core.rootCore.fileSystemManager.getFileData(fileName: "\(doorsFolderName)/\(userFileName)", fileFormat: "json") {
+            if core.rootCore.fileSystemManager.isFileExists(fileName: "\(doorsServiceFolderName)/\(userFileName)", fileFormat: "json") {
+                if let data = try? core.rootCore.fileSystemManager.getFileData(fileName: "\(doorsServiceFolderName)/\(userFileName)", fileFormat: "json") {
                     if let user = try? JSONDecoder().decode(User.self, from: data) {
                         print("\n[USER] User detected:\n\(user)")
                         if core.rootCore.appManager.isUserInitiallyLoaded {
                             self.user = user
                         } else {
                             print("\n[TODO] [USER] User detected in local file system. Do you want to load (import) it?")
-                              self.user = user
+                            self.user = user
 //                            createNewUser()
                         }
                     } else {
@@ -79,7 +79,7 @@ final class UserViewController: BaseSystemFeatureViewController {
     
     func saveUser() {
         if let data = try? JSONEncoder().encode(user) {
-            if let url = try? core.rootCore.fileSystemManager.saveFileData(fileName: "\(doorsFolderName)/\(userFileName)", fileFormat: "json", data: data) {
+            if let url = try? core.rootCore.fileSystemManager.saveFileData(fileName: "\(doorsServiceFolderName)/\(userFileName)", fileFormat: "json", data: data) {
                 print("\n[USER] File saved at:\(url.path)")
             }
         }
