@@ -29,8 +29,12 @@ final class RootSessionViewController: BaseSystemFeatureViewController {
             let userFeature = Feature(name: "user", dependencies: [feature])
             let systemControlsFeature = Feature(name: "systemControls", dependencies: [feature])
             let sessionsFeature = Feature(name: "sessions", dependencies: [feature, systemControlsFeature])
-            let consoleFeature = Feature(name: "console", dependencies: [feature, sessionsFeature])
-            [userFeature, systemControlsFeature, sessionsFeature, consoleFeature].forEach({ loadFeature($0) })
+            [userFeature, systemControlsFeature, sessionsFeature].forEach({ loadFeature($0) })
+            (userFeature.viewController as? UserViewController)?.user.rootSessionConfiguration.features.forEach { feature in
+                if feature.name == "console" {
+                    loadConsoleFeature()
+                }
+            }
         }
     }
     
@@ -47,6 +51,16 @@ final class RootSessionViewController: BaseSystemFeatureViewController {
             feature.viewController = sessionsViewController
             add(child: sessionsViewController, containerView: sessionsView)
         }
-        self.feature?.childFeatures.append(feature)
+    }
+    
+    func loadConsoleFeature() {
+        if let feature = feature, let sessionsFeature = feature.childFeatures.first(where: { $0.name == "sessions" }) {
+            let consoleFeature = Feature(name: "console", dependencies: [feature, sessionsFeature])
+            loadFeature(consoleFeature)
+        }
+    }
+    
+    func unloadConsoleFeature() {
+        feature?.childFeatures.first(where: { $0.name == "console" })?.viewController?.remove()
     }
 }

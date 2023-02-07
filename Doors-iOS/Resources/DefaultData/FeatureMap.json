@@ -1,0 +1,14 @@
+{
+    "features": [
+        {
+            "name": "main",
+            "title": "Main",
+            "childFeatures": [
+                {
+                    "name": "console",
+                    "title": "Console",
+                }
+            ]
+        }
+    ]
+}

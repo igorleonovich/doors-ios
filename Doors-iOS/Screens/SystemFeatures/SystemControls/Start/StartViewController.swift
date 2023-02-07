@@ -42,9 +42,13 @@ final class StartViewController: BaseSystemFeatureViewController {
     }
     
     private func showScreen() {
-        let startScreenViewController = StartScreenViewController(core: core)
-        startScreenViewController.modalTransitionStyle = .crossDissolve
-        startScreenViewController.modalPresentationStyle = .overFullScreen
-        present(startScreenViewController, animated: true)
+        if let feature = feature {
+            let startScreenFeature = Feature(name: "startScreen", dependencies: [feature])
+            let startScreenViewController = StartScreenViewController(core: core, feature: startScreenFeature)
+            startScreenFeature.viewController = startScreenViewController
+            startScreenViewController.modalTransitionStyle = .crossDissolve
+            startScreenViewController.modalPresentationStyle = .overFullScreen
+            present(startScreenViewController, animated: true)
+        }
     }
 }

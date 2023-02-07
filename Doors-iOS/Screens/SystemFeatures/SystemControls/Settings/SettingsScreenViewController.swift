@@ -8,22 +8,13 @@
 
 import UIKit
 
-final class SettingsScreenViewController: BaseSystemFeatureViewController {
-
-    private var tableView: UITableView!
-    private var settings = [Setting]()
+final class SettingsScreenViewController: BaseSystemFeatureMenuViewController {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupData()
-        setupUI()
-        setupGesture()
-    }
+    private var settings = [Setting]()
     
     // MARK: - Setup
     
-    private func setupData() {
-        
+    override func setupData() {
         if let rootSessionFeature = feature?.dependencies.first(where: { $0.name == "settings" })?.dependencies.first(where: { $0.name == "systemControls" })?.dependencies.first(where: { $0.name == "rootSession" }) {
             if let sessionsCount = (rootSessionFeature.childFeatures.first(where: { $0.name == "sessions" })?.viewController as? SessionsViewController)?.sessionViewControllers.count, sessionsCount < SessionsViewController.maxSessions {
                 settings.append(.addSession)
@@ -36,43 +27,11 @@ final class SettingsScreenViewController: BaseSystemFeatureViewController {
         }
     }
     
-    private func setupUI() {
-        view.backgroundColor = .black.withAlphaComponent(0.7)
-        tableView = TableView()
-        view.addSubview(tableView)
-        tableView.snp.makeConstraints { make in
-            make.height.equalTo((Setting.allCases.count * Int(SettingCell.height)))
-            make.centerY.equalToSuperview()
-            make.left.equalToSuperview()
-            make.right.equalToSuperview()
-        }
+    override func setupUI() {
+        super.setupUI()
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(SettingCell.self, forCellReuseIdentifier: "SettingCell")
-        tableView.bounces = false
-    }
-    
-    private func setupGesture() {
-        let gesture = UITapGestureRecognizer(target: self, action: #selector(onTap))
-        gesture.delegate = self
-        view.addGestureRecognizer(gesture)
-    }
-    
-    // MARK: Actions
-    
-    @objc private func onTap() {
-        onClose()
-    }
-    
-    private func onClose() {
-        dismiss(animated: true)
-    }
-}
-
-extension SettingsScreenViewController: UIGestureRecognizerDelegate {
-    
-    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
-        return !tableView.point(inside: touch.location(in: tableView), with: nil)
     }
 }
 

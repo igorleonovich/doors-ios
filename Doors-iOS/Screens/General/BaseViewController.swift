@@ -48,8 +48,62 @@ class BaseSystemFeatureViewController: BaseFeatureViewController {
             let consoleView = UIView()
             view.addSubview(consoleView)
             let consoleViewController = ConsoleViewController(core: core, feature: feature)
+            feature.viewController = consoleViewController
             add(child: consoleViewController, containerView: consoleView)
         }
         self.feature?.childFeatures.append(feature)
+    }
+}
+
+class BaseSystemFeatureMenuViewController: BaseSystemFeatureViewController {
+    
+    var tableView: UITableView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupData()
+        setupUI()
+        setupGesture()
+    }
+    
+    // MARK: - Setup
+    
+    func setupUI() {
+        view.backgroundColor = .black.withAlphaComponent(0.7)
+        tableView = TableView()
+        view.addSubview(tableView)
+        tableView.snp.makeConstraints { make in
+            make.height.equalTo((Setting.allCases.count * Int(SettingCell.height)))
+            make.centerY.equalToSuperview()
+            make.left.equalToSuperview()
+            make.right.equalToSuperview()
+        }
+        tableView.bounces = false
+    }
+    
+    private func setupGesture() {
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(onTap))
+        gesture.delegate = self
+        view.addGestureRecognizer(gesture)
+    }
+    
+    func setupData() {}
+    
+    
+    // MARK: Actions
+    
+    @objc private func onTap() {
+        onClose()
+    }
+    
+    func onClose() {
+        dismiss(animated: true)
+    }
+}
+
+extension BaseSystemFeatureMenuViewController: UIGestureRecognizerDelegate {
+    
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        return !tableView.point(inside: touch.location(in: tableView), with: nil)
     }
 }

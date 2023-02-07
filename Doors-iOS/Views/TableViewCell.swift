@@ -11,6 +11,11 @@ import UIKit
 class TableViewCell: UITableViewCell {
     
     var isSelectable = true
+    var isDisabled: Bool = false {
+        didSet {
+            refreshAlpha()
+        }
+    }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -35,5 +40,11 @@ class TableViewCell: UITableViewCell {
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
         if isSelectable { alpha = 1 }
         super.touchesCancelled(touches, with: event)
+    }
+    
+    // MARK: - Actions
+    
+    private func refreshAlpha() {
+        alpha = isDisabled ? 0.5 : 1
     }
 }

@@ -52,8 +52,14 @@ final class SessionViewController: BaseSystemFeatureViewController {
         if let feature = feature {
             let systemControlsFeature = Feature(name: "systemControls", dependencies: [feature])
             let mainFeature = Feature(name: "main", dependencies: [systemControlsFeature])
-            let consoleFeature = Feature(name: "console", dependencies: [feature, mainFeature])
-            [systemControlsFeature, mainFeature, consoleFeature].forEach({ loadFeature($0) })
+            [systemControlsFeature, mainFeature].forEach({ loadFeature($0) })
+            if let sessionId = (feature as? SessionFeature)?.sessionId {
+                (feature.dependencies.first(where: { $0.name == "sessions" })?.dependencies.first(where: { $0.name == "rootSession" })?.childFeatures.first(where: { $0.name == "user" })?.viewController as? UserViewController)?.user.rootSessionConfiguration.sessionConfigurations.first(where: { $0.id == sessionId })?.features.forEach { feature in
+                    if feature.name == "console" {
+                        loadConsoleFeature()
+                    }
+                }
+            }
         }
     }
     
@@ -67,7 +73,17 @@ final class SessionViewController: BaseSystemFeatureViewController {
             feature.viewController = mainViewController
             add(child: mainViewController, containerView: mainView)
         }
-        self.feature?.childFeatures.append(feature)
+    }
+    
+    func loadConsoleFeature() {
+        if let feature = feature, let mainFeature = feature.childFeatures.first(where: { $0.name == "main" }) {
+            let consoleFeature = Feature(name: "console", dependencies: [feature, mainFeature])
+            loadFeature(consoleFeature)
+        }
+    }
+    
+    func unloadConsoleFeature() {
+        feature?.childFeatures.first(where: { $0.name == "console" })?.viewController?.remove()
     }
     
     func dropSession() {

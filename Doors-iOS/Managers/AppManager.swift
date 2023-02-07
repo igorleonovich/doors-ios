@@ -16,4 +16,18 @@ final class AppManager {
         }
         set { Defaults.set(newValue, forKey: AppKeys.isUserInitiallyLoaded.rawValue) }
     }
+    
+    var featureMap: FeatureMap?
+    
+    init() {
+        if let url = Bundle.main.url(forResource: "FeatureMap", withExtension: "json"), let data = try? Data(contentsOf: url) {
+            do {
+                let featureMap = try JSONDecoder().decode(FeatureMap.self, from: data)
+                self.featureMap = featureMap
+                print("[START] Feature Map:\n\(featureMap)")
+            } catch {
+                print(error)
+            }
+        }
+    }
 }

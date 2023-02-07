@@ -8,37 +8,127 @@
 
 import UIKit
 
-final class StartScreenViewController: BaseViewController {
+final class StartScreenViewController: BaseSystemFeatureMenuViewController {
 
-    private weak var core: Core!
-    
-    init(core: Core) {
-        self.core = core
-        super.init()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupUI()
-        setupGesture()
-    }
+    private var features = [FeatureModel]()
     
     // MARK: - Setup
     
-    private func setupUI() {
-        view.backgroundColor = .black.withAlphaComponent(0.7)
+    override func setupData() {
+        super.setupData()
+        if let features = core.rootCore.appManager.featureMap?.features.first(where: { $0.name == "main" })?.childFeatures {
+            self.features = features
+        }
     }
     
-    private func setupGesture() {
-        let gesture = UITapGestureRecognizer(target: self, action: #selector(onTap))
-        view.addGestureRecognizer(gesture)
-    }
-    
-    @objc private func onTap() {
-        dismiss(animated: true)
+    override func setupUI() {
+        super.setupUI()
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(StartFeatureCell.self, forCellReuseIdentifier: "StartFeatureCell")
     }
 }
+
+extension StartScreenViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return StartFeatureCell.height
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if let systemControlsFeature = feature?.dependencies.first(where: { $0.name == "start" })?.dependencies.first(where: { $0.name == "systemControls" }) {
+            if let rootSessionFeature = systemControlsFeature.dependencies.first(where: { $0.name == "rootSession" }) {
+                if let userViewController = rootSessionFeature.childFeatures.first(where: { $0.name == "user" })?.viewController as? UserViewController {
+                    if userViewController.user.rootSessionConfiguration.features.firstIndex(where: { $0.name == features[indexPath.row].name }) != nil {
+                        (cell as? StartFeatureCell)?.isDisabled = true
+                    } else {
+                        (cell as? StartFeatureCell)?.isDisabled = false
+                    }
+                }
+            } else if let sessionFeature = systemControlsFeature.dependencies.first(where: { $0.name == "session" }) {
+                if let userViewController = sessionFeature.dependencies.first(where: { $0.name == "sessions" })?.dependencies.first(where: { $0.name == "rootSession" })?.childFeatures.first(where: { $0.name == "user" })?.viewController as? UserViewController {
+                    if let sessionId = (sessionFeature as? SessionFeature)?.sessionId {
+                        if userViewController.user.rootSessionConfiguration.sessionConfigurations.firstIndex(where: { $0.id == sessionId }) != nil {
+                            if userViewController.user.rootSessionConfiguration.sessionConfigurations.first(where: { $0.id == sessionId })?.features.firstIndex(where: { $0.name == features[indexPath.row].name }) != nil {
+                                (cell as? StartFeatureCell)?.isDisabled = true
+                            } else {
+                                (cell as? StartFeatureCell)?.isDisabled = false
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch features[indexPath.row].name {
+        case "console":
+            if let systemControlsFeature = feature?.dependencies.first(where: { $0.name == "start" })?.dependencies.first(where: { $0.name == "systemControls" }) {
+                if let rootSessionFeature = systemControlsFeature.dependencies.first(where: { $0.name == "rootSession" }) {
+                    if let userViewController = rootSessionFeature.childFeatures.first(where: { $0.name == "user" })?.viewController as? UserViewController {
+                        if let index = userViewController.user.rootSessionConfiguration.features.firstIndex(where: { $0.name == features[indexPath.row].name }) {
+                            userViewController.user.rootSessionConfiguration.features.remove(at: index)
+                            (rootSessionFeature.viewController as? RootSessionViewController)?.unloadConsoleFeature()
+                            (tableView.cellForRow(at: indexPath) as? StartFeatureCell)?.isDisabled = true
+                        } else {
+                            userViewController.user.rootSessionConfiguration.features.append(features[indexPath.row].simple)
+                            (rootSessionFeature.viewController as? RootSessionViewController)?.loadConsoleFeature()
+                            (tableView.cellForRow(at: indexPath) as? StartFeatureCell)?.isDisabled = false
+                        }
+                        userViewController.saveUser()
+                    }
+                } else if let sessionFeature = systemControlsFeature.dependencies.first(where: { $0.name == "session" }) {
+                    if let userViewController = sessionFeature.dependencies.first(where: { $0.name == "sessions" })?.dependencies.first(where: { $0.name == "rootSession" })?.childFeatures.first(where: { $0.name == "user" })?.viewController as? UserViewController {
+                        if let sessionId = (sessionFeature as? SessionFeature)?.sessionId {
+                            if let sessionIndex = userViewController.user.rootSessionConfiguration.sessionConfigurations.firstIndex(where: { $0.id == sessionId }) {
+                                if let indexToRemove = userViewController.user.rootSessionConfiguration.sessionConfigurations.first(where: { $0.id == sessionId })?.features.firstIndex(where: { $0.name == features[indexPath.row].name }) {
+                                    userViewController.user.rootSessionConfiguration.sessionConfigurations[sessionIndex].features.remove(at: indexToRemove)
+                                    (sessionFeature.viewController as? SessionViewController)?.unloadConsoleFeature()
+                                    (tableView.cellForRow(at: indexPath) as? StartFeatureCell)?.isDisabled = true
+                                } else {
+                                    userViewController.user.rootSessionConfiguration.sessionConfigurations[sessionIndex].features.append(features[indexPath.row].simple)
+                                    (sessionFeature.viewController as? SessionViewController)?.loadConsoleFeature()
+                                    (tableView.cellForRow(at: indexPath) as? StartFeatureCell)?.isDisabled = false
+                                }
+                                userViewController.saveUser()
+                                tableView.reloadData()
+                            }
+                        }
+                    }
+                }
+            }
+        default:
+            break
+        }
+//        onClose()
+    }
+}
+
+extension StartScreenViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return features.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "StartFeatureCell", for: indexPath) as? StartFeatureCell {
+            cell.configure(feature: features[indexPath.row])
+            return cell
+        }
+        return UITableViewCell()
+    }
+}
+
+final class StartFeatureCell: TableViewCell {
+    
+    static let height: CGFloat = 50
+    
+    func configure(feature: FeatureModel) {
+        textLabel?.textAlignment = .center
+        textLabel?.textColor = .white
+        textLabel?.font = UIFont.systemFont(ofSize: 20, weight: .thin)
+        textLabel?.text = feature.title?.localized
+    }
+}
+

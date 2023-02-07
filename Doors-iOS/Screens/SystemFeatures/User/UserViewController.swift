@@ -75,7 +75,7 @@ final class UserViewController: BaseSystemFeatureViewController {
         }
     }
     
-    private func saveUser() {
+    func saveUser() {
         if let data = try? JSONEncoder().encode(user) {
             if let url = try? core.rootCore.fileSystemManager.saveFileData(fileName: "\(doorsFolderName)/\(userFileName)", fileFormat: "json", data: data) {
                 print("[USER] File saved at:\(url.path)")

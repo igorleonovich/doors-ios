@@ -16,6 +16,7 @@ struct User: Codable {
 struct RootSessionConfiguration: Codable {
     
     var sessionConfigurations: [SessionConfiguration]
+    var features = [FeatureModel]()
 }
 
 struct SessionConfiguration: Codable {
@@ -40,5 +41,11 @@ extension SessionConfiguration: Hashable {
 
 struct FeatureModel: Codable {
     
-    let childFeatures: [FeatureModel]
+    let name: String
+    let title: String?
+    let childFeatures: [FeatureModel]?
+    
+    var simple: FeatureModel {
+        return FeatureModel(name: self.name, title: nil, childFeatures: childFeatures)
+    }
 }
