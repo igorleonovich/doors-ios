@@ -43,9 +43,10 @@ struct UserFeature: Codable {
     
     let name: String
     let title: String?
+    let dependencies: [UserFeature]?
     let childFeatures: [UserFeature]?
     
     var simple: UserFeature {
-        return UserFeature(name: self.name, title: nil, childFeatures: childFeatures)
+        return UserFeature(name: self.name, title: nil, dependencies: dependencies, childFeatures: childFeatures)
     }
 }
