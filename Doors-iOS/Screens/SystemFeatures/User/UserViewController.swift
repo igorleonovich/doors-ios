@@ -60,12 +60,14 @@ final class UserViewController: BaseSystemFeatureViewController {
                               self.user = user
 //                            createNewUser()
                         }
-                        core.rootCore.appManager.isUserInitiallyLoaded = true
+                    } else {
+                        createNewUser()
                     }
                 }
             } else {
                 createNewUser()
             }
+            core.rootCore.appManager.isUserInitiallyLoaded = true
             func createNewUser() {
                 let sessionConfiguration = SessionConfiguration(id: UUID.new)
                 let rootSessionConfiguration = RootSessionConfiguration(sessionConfigurations: [sessionConfiguration])
