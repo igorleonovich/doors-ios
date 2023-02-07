@@ -54,10 +54,12 @@ class BaseSystemFeatureViewController: BaseFeatureViewController {
         self.feature?.childFeatures.append(feature)
     }
     
-    func unloadConsoleFeature() {
-        feature?.childFeatures.first(where: { $0.name == "console" })?.viewController?.remove()
-        if let indexToRemove = feature?.childFeatures.firstIndex(where: { $0.name == "console" }) {
-            feature?.childFeatures.remove(at: indexToRemove)
+    func unloadFeature(name: String) {
+        if name == "console" {
+            feature?.childFeatures.first(where: { $0.name == "console" })?.viewController?.remove()
+            if let indexToRemove = feature?.childFeatures.firstIndex(where: { $0.name == "console" }) {
+                feature?.childFeatures.remove(at: indexToRemove)
+            }
         }
     }
 }

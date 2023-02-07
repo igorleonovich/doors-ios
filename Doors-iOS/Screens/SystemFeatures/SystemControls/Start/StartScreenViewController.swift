@@ -69,12 +69,10 @@ extension StartScreenViewController: UITableViewDelegate {
                     if let userViewController = rootSessionFeature.childFeatures.first(where: { $0.name == "user" })?.viewController as? UserViewController {
                         if let index = userViewController.user.rootSessionConfiguration.features.firstIndex(where: { $0.name == features[indexPath.row].name }) {
                             userViewController.user.rootSessionConfiguration.features.remove(at: index)
-                            (rootSessionFeature.viewController as? RootSessionViewController)?.unloadConsoleFeature()
-                            (tableView.cellForRow(at: indexPath) as? StartFeatureCell)?.isDisabled = true
+                            (rootSessionFeature.viewController as? RootSessionViewController)?.unloadFeature(name: "console")
                         } else {
                             userViewController.user.rootSessionConfiguration.features.append(features[indexPath.row].simple)
-                            (rootSessionFeature.viewController as? RootSessionViewController)?.loadConsoleFeature()
-                            (tableView.cellForRow(at: indexPath) as? StartFeatureCell)?.isDisabled = false
+                            (rootSessionFeature.viewController as? RootSessionViewController)?.loadFeature(name: "console")
                         }
                         userViewController.saveUser()
                     }
@@ -84,19 +82,17 @@ extension StartScreenViewController: UITableViewDelegate {
                             if let sessionIndex = userViewController.user.rootSessionConfiguration.sessionConfigurations.firstIndex(where: { $0.id == sessionId }) {
                                 if let indexToRemove = userViewController.user.rootSessionConfiguration.sessionConfigurations.first(where: { $0.id == sessionId })?.features.firstIndex(where: { $0.name == features[indexPath.row].name }) {
                                     userViewController.user.rootSessionConfiguration.sessionConfigurations[sessionIndex].features.remove(at: indexToRemove)
-                                    (sessionFeature.viewController as? SessionViewController)?.unloadConsoleFeature()
-                                    (tableView.cellForRow(at: indexPath) as? StartFeatureCell)?.isDisabled = true
+                                    (sessionFeature.viewController as? SessionViewController)?.unloadFeature(name: "console")
                                 } else {
                                     userViewController.user.rootSessionConfiguration.sessionConfigurations[sessionIndex].features.append(features[indexPath.row].simple)
-                                    (sessionFeature.viewController as? SessionViewController)?.loadConsoleFeature()
-                                    (tableView.cellForRow(at: indexPath) as? StartFeatureCell)?.isDisabled = false
+                                    (sessionFeature.viewController as? SessionViewController)?.loadFeature(name: "console")
                                 }
                                 userViewController.saveUser()
-                                tableView.reloadData()
                             }
                         }
                     }
                 }
+                tableView.reloadData()
             }
         default:
             break
