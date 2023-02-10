@@ -67,6 +67,7 @@ class BaseSystemFeatureViewController: BaseFeatureViewController {
 class BaseSystemFeatureMenuViewController: BaseSystemFeatureViewController {
     
     var tableView: TableView!
+    fileprivate var isNeedToSkipTap = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -87,6 +88,17 @@ class BaseSystemFeatureMenuViewController: BaseSystemFeatureViewController {
             make.left.equalToSuperview()
             make.right.equalToSuperview()
         }
+        
+        let bottomButton = UIButton()
+        view.addSubview(bottomButton)
+        bottomButton.snp.makeConstraints { make in
+            // [WARNING] Workaround. Logically it should be make.edges.equalToSuperview()
+            make.top.equalTo(tableView.snp.bottom)
+            make.bottom.equalToSuperview()
+            make.left.equalToSuperview()
+            make.right.equalToSuperview()
+        }
+        bottomButton.addTarget(self, action: #selector(onTap), for: .touchUpInside)
     }
     
     private func setupGesture() {
@@ -120,7 +132,11 @@ class BaseSystemFeatureMenuViewController: BaseSystemFeatureViewController {
     // MARK: Actions
     
     @objc private func onTap() {
-        onClose()
+        if !isNeedToSkipTap {
+            onClose()
+        } else {
+            isNeedToSkipTap = false
+        }
     }
     
     func onClose(_ completion: (() -> Void)? = nil) {
@@ -140,6 +156,7 @@ extension BaseSystemFeatureMenuViewController: UIGestureRecognizerDelegate {
                 }
             }
         }
+        isNeedToSkipTap = true
         return result
     }
 }
