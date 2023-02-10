@@ -66,7 +66,7 @@ class BaseSystemFeatureViewController: BaseFeatureViewController {
 
 class BaseSystemFeatureMenuViewController: BaseSystemFeatureViewController {
     
-    var tableView: UITableView!
+    var tableView: TableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -92,7 +92,7 @@ class BaseSystemFeatureMenuViewController: BaseSystemFeatureViewController {
     private func setupGesture() {
         let gesture = UITapGestureRecognizer(target: self, action: #selector(onTap))
         gesture.delegate = self
-        view.addGestureRecognizer(gesture)
+        tableView.addGestureRecognizer(gesture)
     }
     
     func setupData() {}
@@ -131,6 +131,15 @@ class BaseSystemFeatureMenuViewController: BaseSystemFeatureViewController {
 extension BaseSystemFeatureMenuViewController: UIGestureRecognizerDelegate {
     
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
-        return !tableView.point(inside: touch.location(in: tableView), with: nil)
+        var result = true
+        tableView.subviews.forEach { subview in
+            if let subview = subview as? BaseTableViewCell {
+                let value = subview.titleLabel.point(inside: touch.location(in: subview.titleLabel), with: nil)
+                if value {
+                    result = false
+                }
+            }
+        }
+        return result
     }
 }

@@ -146,15 +146,14 @@ extension StartScreenViewController: UITableViewDataSource {
     }
 }
 
-final class StartFeatureCell: TableViewCell {
+final class StartFeatureCell: BaseTableViewCell {
     
     static let height: CGFloat = 50
     
     func configure(feature: UserFeature) {
-        textLabel?.textAlignment = .center
-        textLabel?.textColor = .white
-        textLabel?.font = UIFont.systemFont(ofSize: 20, weight: .thin)
-        textLabel?.text = feature.title?.localized(tableName: "Feature")
+        titleLabel.textAlignment = .center
+        titleLabel.textColor = .white
+        titleLabel.font = UIFont.systemFont(ofSize: 20, weight: .thin)
+        titleLabel.text = feature.title?.localized(tableName: "Feature")
     }
 }
-

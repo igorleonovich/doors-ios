@@ -15,6 +15,6 @@ extension String {
     }
     
     func gapped() -> String {
-        self.map({ String($0) + " " }).joined()
+        map({ String($0) + " " }).joined()
     }
 }
