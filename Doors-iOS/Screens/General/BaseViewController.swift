@@ -89,15 +89,18 @@ class BaseSystemFeatureMenuViewController: BaseSystemFeatureViewController {
             make.right.equalToSuperview()
         }
         
-        let topButton = UIButton()
-        view.addSubview(topButton)
-        topButton.snp.makeConstraints { make in
-            make.bottom.equalTo(tableView.snp.top)
-            make.top.equalToSuperview()
-            make.left.equalToSuperview()
-            make.right.equalToSuperview()
+        // [TODO] BaseSystemFeatureMenuViewController: Fix tap action workaround
+        if !UIScreen.isScreenSmall {
+            let topButton = UIButton()
+            view.addSubview(topButton)
+            topButton.snp.makeConstraints { make in
+                make.bottom.equalTo(tableView.snp.top)
+                make.top.equalToSuperview()
+                make.left.equalToSuperview()
+                make.right.equalToSuperview()
+            }
+            topButton.addTarget(self, action: #selector(onTap), for: .touchUpInside)
         }
-        topButton.addTarget(self, action: #selector(onTap), for: .touchUpInside)
         
         let bottomButton = UIButton()
         view.addSubview(bottomButton)
@@ -141,7 +144,16 @@ class BaseSystemFeatureMenuViewController: BaseSystemFeatureViewController {
     // MARK: Actions
     
     @objc private func onTap() {
-        onClose()
+        // [TODO] BaseSystemFeatureMenuViewController: Fix tap action workaround
+        if !UIScreen.isScreenSmall {
+            onClose()
+        } else {
+            if !isNeedToSkipTap {
+                onClose()
+            } else {
+                isNeedToSkipTap = false
+            }
+        }
     }
     
     func onClose(_ completion: (() -> Void)? = nil) {
@@ -161,18 +173,10 @@ extension BaseSystemFeatureMenuViewController: UIGestureRecognizerDelegate {
                 }
             }
         }
+        // [TODO] BaseSystemFeatureMenuViewController: Fix tap action workaround
+        if UIScreen.isScreenSmall {
+            isNeedToSkipTap = true
+        }
         return result
     }
 }
-
-extension UIScreen {
-    
-    static var isScreenSmall: Bool {
-        return UIScreen.main.bounds.height < 800
-    }
-    
-    static var isScreenBig: Bool {
-        return UIScreen.main.bounds.height > 844
-    }
-}
-
