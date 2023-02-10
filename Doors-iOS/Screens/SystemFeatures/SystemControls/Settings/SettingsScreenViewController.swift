@@ -71,15 +71,15 @@ extension SettingsScreenViewController: UITableViewDataSource {
     }
 }
 
-final class SettingCell: TableViewCell {
+final class SettingCell: BaseTableViewCell {
     
     static let height: CGFloat = 50
     
     func configure(setting: Setting) {
-        textLabel?.textAlignment = .center
-        textLabel?.textColor = .white
-        textLabel?.font = UIFont.systemFont(ofSize: 20, weight: .thin)
-        textLabel?.text = setting.title.localized(tableName: "Settings")
+        titleLabel.textAlignment = .center
+        titleLabel.textColor = .white
+        titleLabel.font = UIFont.systemFont(ofSize: 20, weight: .thin)
+        titleLabel.text = setting.title.localized(tableName: "Settings")
     }
 }
 
