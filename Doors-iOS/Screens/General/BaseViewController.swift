@@ -89,10 +89,19 @@ class BaseSystemFeatureMenuViewController: BaseSystemFeatureViewController {
             make.right.equalToSuperview()
         }
         
+        let topButton = UIButton()
+        view.addSubview(topButton)
+        topButton.snp.makeConstraints { make in
+            make.bottom.equalTo(tableView.snp.top)
+            make.top.equalToSuperview()
+            make.left.equalToSuperview()
+            make.right.equalToSuperview()
+        }
+        topButton.addTarget(self, action: #selector(onTap), for: .touchUpInside)
+        
         let bottomButton = UIButton()
         view.addSubview(bottomButton)
         bottomButton.snp.makeConstraints { make in
-            // [WARNING] Workaround. Logically it should be make.edges.equalToSuperview()
             make.top.equalTo(tableView.snp.bottom)
             make.bottom.equalToSuperview()
             make.left.equalToSuperview()
@@ -132,11 +141,7 @@ class BaseSystemFeatureMenuViewController: BaseSystemFeatureViewController {
     // MARK: Actions
     
     @objc private func onTap() {
-        if !isNeedToSkipTap {
-            onClose()
-        } else {
-            isNeedToSkipTap = false
-        }
+        onClose()
     }
     
     func onClose(_ completion: (() -> Void)? = nil) {
@@ -156,7 +161,18 @@ extension BaseSystemFeatureMenuViewController: UIGestureRecognizerDelegate {
                 }
             }
         }
-        isNeedToSkipTap = true
         return result
     }
 }
+
+extension UIScreen {
+    
+    static var isScreenSmall: Bool {
+        return UIScreen.main.bounds.height < 800
+    }
+    
+    static var isScreenBig: Bool {
+        return UIScreen.main.bounds.height > 844
+    }
+}
+
