@@ -31,6 +31,8 @@
 		690DAC1629901B1D00FB8C7B /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690DAC1429901B1D00FB8C7B /* Button.swift */; };
 		6928594F2996C47800ED7AFA /* UIScreen+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6928594E2996C47800ED7AFA /* UIScreen+Extensions.swift */; };
 		692859502996C47800ED7AFA /* UIScreen+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6928594E2996C47800ED7AFA /* UIScreen+Extensions.swift */; };
+		692859522997B58D00ED7AFA /* UINavigationController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692859512997B58D00ED7AFA /* UINavigationController+Extensions.swift */; };
+		692859532997B58D00ED7AFA /* UINavigationController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692859512997B58D00ED7AFA /* UINavigationController+Extensions.swift */; };
 		69399461298F2E8E006B92C3 /* AutoReducingStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69399460298F2E8E006B92C3 /* AutoReducingStackView.swift */; };
 		694227082991932D0074D2A0 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694227072991932D0074D2A0 /* Defaults.swift */; };
 		694227092991932D0074D2A0 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694227072991932D0074D2A0 /* Defaults.swift */; };
@@ -224,6 +226,7 @@
 		690DAC1429901B1D00FB8C7B /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		6919EB70298D1FC600F96016 /* Doors.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Doors.entitlements; sourceTree = "<group>"; };
 		6928594E2996C47800ED7AFA /* UIScreen+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+Extensions.swift"; sourceTree = "<group>"; };
+		692859512997B58D00ED7AFA /* UINavigationController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extensions.swift"; sourceTree = "<group>"; };
 		69399460298F2E8E006B92C3 /* AutoReducingStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoReducingStackView.swift; sourceTree = "<group>"; };
 		694227072991932D0074D2A0 /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
 		6942270A299194EF0074D2A0 /* UUID+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UUID+Extensions.swift"; sourceTree = "<group>"; };
@@ -522,7 +525,9 @@
 		69A0AF86298D8F4F002E652E /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				690A4813298D73D5000C02B4 /* Main */,
+				69A0AF87298D8F5E002E652E /* Console */,
+				69CC047A2992A902001295EB /* Import */,
+				69EB41B52991DC1900101279 /* Export */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -542,11 +547,9 @@
 				690A296329913F14009FC0B9 /* User */,
 				690A4825298D7792000C02B4 /* RootSession */,
 				69A0AFBC298ED468002E652E /* Sessions */,
-				690A4828298D77BA000C02B4 /* Session */,
 				69A0AF96298E4EE0002E652E /* SystemControls */,
-				69A0AF87298D8F5E002E652E /* Console */,
-				69CC047A2992A902001295EB /* Import */,
-				69EB41B52991DC1900101279 /* Export */,
+				690A4828298D77BA000C02B4 /* Session */,
+				690A4813298D73D5000C02B4 /* Main */,
 			);
 			path = SystemFeatures;
 			sourceTree = "<group>";
@@ -616,6 +619,7 @@
 				69BE8D05298D7E07001EFDD2 /* String+Extensions.swift */,
 				69A0AFAD298EBBEA002E652E /* UIView+Extensions.swift */,
 				69EB41B22991CEC400101279 /* UITableView+Extensions.swift */,
+				692859512997B58D00ED7AFA /* UINavigationController+Extensions.swift */,
 				69BE8D03298D7D94001EFDD2 /* UIViewController+Extensions.swift */,
 				69BE8D07298D7EF4001EFDD2 /* UIApplication+Extensions.swift */,
 				6928594E2996C47800ED7AFA /* UIScreen+Extensions.swift */,
@@ -1172,6 +1176,7 @@
 				69F070BD26B6B9410027E94D /* ConstructorViewController+UICollectionView.swift in Sources */,
 				69F070AD26B6B9410027E94D /* RecoverPasswordViewController.swift in Sources */,
 				69F070C126B6B9410027E94D /* ConstructorNavigationController.swift in Sources */,
+				692859522997B58D00ED7AFA /* UINavigationController+Extensions.swift in Sources */,
 				6942270B299194EF0074D2A0 /* UUID+Extensions.swift in Sources */,
 				69F070B126B6B9410027E94D /* LogInViewController.swift in Sources */,
 				694227082991932D0074D2A0 /* Defaults.swift in Sources */,
@@ -1258,6 +1263,7 @@
 				69F070B226B6B9410027E94D /* LogInViewController.swift in Sources */,
 				69A0AF91298DA392002E652E /* SettingsViewController.swift in Sources */,
 				69F070C026B6B9410027E94D /* ConstructorViewController.swift in Sources */,
+				692859532997B58D00ED7AFA /* UINavigationController+Extensions.swift in Sources */,
 				6942270C299194EF0074D2A0 /* UUID+Extensions.swift in Sources */,
 				69F0709026B6B9310027E94D /* SignedDataTask.swift in Sources */,
 				694227092991932D0074D2A0 /* Defaults.swift in Sources */,

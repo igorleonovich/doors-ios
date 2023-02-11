@@ -9,7 +9,7 @@
 import UIKit
 import Zip
 
-final class ImportViewController: BaseSystemFeatureViewController {
+final class ImportViewController: BaseFeatureViewController {
     
     // MARK: Setup
     

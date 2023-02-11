@@ -33,26 +33,6 @@ class BaseFeatureViewController: BaseViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-}
-
-class BaseSystemFeatureViewController: BaseFeatureViewController {
-    
-    func loadFeature(_ feature: Feature) {
-        if feature.name == "systemControls" {
-            let systemControlsView = UIView()
-            view.addSubview(systemControlsView)
-            let systemControlsViewController = SystemControlsViewController(core: core, feature: feature)
-            feature.viewController = systemControlsViewController
-            add(child: systemControlsViewController, containerView: systemControlsView)
-        } else if feature.name == "console" {
-            let consoleView = UIView()
-            view.addSubview(consoleView)
-            let consoleViewController = ConsoleViewController(core: core, feature: feature)
-            feature.viewController = consoleViewController
-            add(child: consoleViewController, containerView: consoleView)
-        }
-        self.feature?.childFeatures.append(feature)
-    }
     
     func unloadFeature(name: String) {
         if name == "console" {
@@ -61,6 +41,32 @@ class BaseSystemFeatureViewController: BaseFeatureViewController {
                 feature?.childFeatures.remove(at: indexToRemove)
             }
         }
+    }
+    
+    func loadFeature(_ feature: Feature) {
+        if feature.name == "console" {
+            let consoleView = UIView()
+            view.addSubview(consoleView)
+            let consoleViewController = ConsoleViewController(core: core, feature: feature)
+            feature.viewController = consoleViewController
+            add(child: consoleViewController, containerView: consoleView)
+        }
+        self.feature?.childFeatures.append(feature)
+    }
+}
+
+class BaseSystemFeatureViewController: BaseFeatureViewController {
+    
+    override func loadFeature(_ feature: Feature) {
+        super.loadFeature(feature)
+        if feature.name == "systemControls" {
+            let systemControlsView = UIView()
+            view.addSubview(systemControlsView)
+            let systemControlsViewController = SystemControlsViewController(core: core, feature: feature)
+            feature.viewController = systemControlsViewController
+            add(child: systemControlsViewController, containerView: systemControlsView)
+        }
+        self.feature?.childFeatures.append(feature)
     }
 }
 

@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class ConsoleViewController: BaseSystemFeatureViewController {
+final class ConsoleViewController: BaseFeatureViewController {
 
     private var isInitialSetupPerformed = false
     static var height = 50

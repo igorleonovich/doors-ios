@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class MainViewController: BaseFeatureViewController {
+final class MainViewController: BaseSystemFeatureViewController {
     
     private var featuresViewControllers = [BaseFeatureViewController]()
     
@@ -45,7 +45,7 @@ final class MainViewController: BaseFeatureViewController {
         
     }
     
-    private func loadFeature(_ feature: Feature) {
+    override func loadFeature(_ feature: Feature) {
         
     }
 }
