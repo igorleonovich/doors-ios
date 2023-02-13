@@ -43,7 +43,11 @@ final class UserViewController: BaseSystemFeatureViewController {
         super.loadFeature(feature)
         if feature.name == "checkDoorsFolder" {
             if core.rootCore.fileSystemManager.isFileExists(fileName: doorsServiceFolderName, fileFormat: "") == false {
-                core.rootCore.fileSystemManager.createFolder(folderName: doorsServiceFolderName)
+                do {
+                    try core.rootCore.fileSystemManager.createFolder(folderName: doorsServiceFolderName)
+                } catch {
+                    print(error)
+                }
             }
             if let path = core.rootCore.fileSystemManager.fileURL(fileName: doorsServiceFolderName, fileFormat: "")?.path {
                 print("\n[USER] Doors service folder:\n\(path)")

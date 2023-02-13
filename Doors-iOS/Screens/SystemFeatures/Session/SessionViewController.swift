@@ -11,9 +11,7 @@ import UIKit
 final class SessionViewController: BaseSystemFeatureViewController {
     
     private let borderSide: BorderSide?
-    private var systemControlsView: UIView?
     private weak var mainView: UIView?
-    private weak var consoleView: UIView?
     
     init(core: Core, feature: Feature? = nil, borderSide: BorderSide? = nil) {
         self.borderSide = borderSide
