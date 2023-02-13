@@ -33,6 +33,19 @@ final class StartViewController: BaseSystemFeatureViewController {
         button.setImage(UIImage(named: "Start")?.withRenderingMode(.alwaysOriginal).withTintColor(Color.foregroundActive), for: .normal)
         button.imageView?.contentMode = .scaleAspectFit
         button.addTarget(self, action: #selector(onTap), for: .touchUpInside)
+        
+        //  let circle = UIView()
+        //  button.addSubview(circle)
+        //  circle.snp.makeConstraints { make in
+        //      make.top.equalTo(2)
+        //      make.bottom.equalTo(-2)
+        //      make.left.equalToSuperview()
+        //      make.right.equalToSuperview()
+        //  }
+        //  circle.backgroundColor = Color.foregroundActive
+        //  circle.clipsToBounds = true
+        //  circle.layer.cornerRadius = 15
+        //  circle.isUserInteractionEnabled = false
     }
     
     // MARK: - Actions

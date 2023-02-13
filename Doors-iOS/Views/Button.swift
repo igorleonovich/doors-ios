@@ -32,7 +32,6 @@ class Button: UIButton {
                 alpha = 0.8
             default:
                 refreshAlpha()
-                break
             }
             return super.state
         }

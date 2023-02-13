@@ -59,11 +59,15 @@ extension ImportViewController: UIDocumentPickerDelegate {
                         print("\n[IMPORT] Imported into path:\n\(importFolderURL.absoluteString)")
                         print("\n[TODO] [IMPORT] Verify imported data")
                         print("\n[TODO] [IMPORT] Do you really want to overwrite current user?")
-                        try? self?.core.rootCore.fileSystemManager.removeFile(fileName: "Doors", fileFormat: "")
-                        let importedDoorsURL = importFolderURL.appendingPathComponent("Doors")
-                        try? self?.core.rootCore.fileSystemManager.copyFiles(pathFrom: importedDoorsURL, pathTo: doorsURL)
-                        UIApplication.rootViewController?.reloadRootSesion()
-                        try? self?.core.rootCore.fileSystemManager.removeFile(fileName: "Import", fileFormat: "")
+                        do {
+                            try self?.core.rootCore.fileSystemManager.removeFile(fileName: "Doors", fileFormat: "")
+                            let importedDoorsURL = importFolderURL.appendingPathComponent("Doors")
+                            try self?.core.rootCore.fileSystemManager.copyFiles(pathFrom: importedDoorsURL, pathTo: doorsURL)
+                            UIApplication.rootViewController?.reloadRootSesion()
+                            try self?.core.rootCore.fileSystemManager.removeFile(fileName: "Import", fileFormat: "")
+                        } catch {
+                            print(error)
+                        }
                     }
                 })
             }

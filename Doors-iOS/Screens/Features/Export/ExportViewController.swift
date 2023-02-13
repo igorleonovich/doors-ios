@@ -40,12 +40,12 @@ final class ExportViewController: BaseFeatureViewController {
                 let exportFolderName = "Export"
                 let exportFileName = "\(exportFolderName)/Doors"
                 if core.rootCore.fileSystemManager.isFileExists(fileName: exportFolderName, fileFormat: "") == false {
-                    core.rootCore.fileSystemManager.createFolder(folderName: exportFolderName)
+                    try core.rootCore.fileSystemManager.createFolder(folderName: exportFolderName)
                 }
                 let doorsFolderName = "Doors"
                 if let doorsFolderURL = core.rootCore.fileSystemManager.fileURL(fileName: doorsFolderName),
                    let zipFileURL = core.rootCore.fileSystemManager.fileURL(fileName: exportFileName, fileFormat: "zip") {
-                    try Zip.zipFiles(paths: [doorsFolderURL], zipFilePath: zipFileURL, password: nil, progress: { [weak self] progress -> () in
+                    try Zip.zipFiles(paths: [doorsFolderURL], zipFilePath: zipFileURL, password: nil, progress: { progress -> () in
                         print("\n[EXPORT] Progress: \(progress)")
                         if progress == 1 {
                             print("\n[EXPORT] Exported into path:\n\(zipFileURL.absoluteString)")

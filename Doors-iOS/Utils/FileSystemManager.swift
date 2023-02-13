@@ -11,10 +11,10 @@ import Foundation
 final class FileSystemManager {
     
     func getFileData(fileName: String, fileFormat: String) throws -> Data? {
-        guard self.isFileExists(fileName: fileName, fileFormat: fileFormat) else {
+        guard isFileExists(fileName: fileName, fileFormat: fileFormat) else {
             throw NSErrorDomain.init(string: "Not found") as! Error
         }
-        if let fileURL = self.fileURL(fileName: fileName, fileFormat: fileFormat) {
+        if let fileURL = fileURL(fileName: fileName, fileFormat: fileFormat) {
             do {
                 return try Data(contentsOf: fileURL)
             } catch {
@@ -24,18 +24,18 @@ final class FileSystemManager {
         return nil
     }
     
-    func createFolder(folderName: String) {
-        if let fileURL = self.fileURL(fileName: folderName, isDirectory: true) {
+    func createFolder(folderName: String) throws {
+        if let fileURL = fileURL(fileName: folderName, isDirectory: true) {
             do {
                 try FileManager.default.createDirectory(atPath: fileURL.path, withIntermediateDirectories: true, attributes: nil)
             } catch {
-                print(error.localizedDescription)
+                throw error
             }
         }
     }
 
     func saveFileData(fileName: String, fileFormat: String, data: Data) throws -> URL? {
-        if let fileURL = self.fileURL(fileName: fileName, fileFormat: fileFormat) {
+        if let fileURL = fileURL(fileName: fileName, fileFormat: fileFormat) {
             guard FileManager.default.createFile(atPath: fileURL.path,
                                                  contents: data,
                                                  attributes: [FileAttributeKey.protectionKey:
@@ -49,9 +49,9 @@ final class FileSystemManager {
     
     func copyFiles(pathFrom: URL, pathTo: URL) throws {
         do {
-            let filelist = try FileManager.default.contentsOfDirectory(at: pathFrom, includingPropertiesForKeys: nil)
-            for filename in filelist {
-                try? FileManager.default.copyItem(at: pathFrom.appendingPathExtension("/\(filename)"), to: pathTo.appendingPathExtension("/\(filename)"))
+            let fileList = try FileManager.default.contentsOfDirectory(at: pathFrom, includingPropertiesForKeys: nil)
+            for fileName in fileList {
+                try FileManager.default.copyItem(at: pathFrom.appendingPathExtension("/\(fileName)"), to: pathTo.appendingPathExtension("/\(fileName)"))
             }
         } catch {
             throw error
@@ -59,10 +59,10 @@ final class FileSystemManager {
     }
 
     func removeFile(fileName: String, fileFormat: String) throws {
-        guard self.isFileExists(fileName: fileName, fileFormat: fileFormat) else {
+        guard isFileExists(fileName: fileName, fileFormat: fileFormat) else {
             return
         }
-        if let fileURL = self.fileURL(fileName: fileName, fileFormat: fileFormat) {
+        if let fileURL = fileURL(fileName: fileName, fileFormat: fileFormat) {
             do {
                 try FileManager.default.removeItem(at: fileURL)
             } catch {
@@ -92,16 +92,15 @@ final class FileSystemManager {
     }
 
     func isFileExists(fileName: String, fileFormat: String) -> Bool {
-        if let fileURL = self.fileURL(fileName: fileName, fileFormat: fileFormat) {
-            let exists = FileManager.default.fileExists(atPath: fileURL.path)
-            return exists
+        if let fileURL = fileURL(fileName: fileName, fileFormat: fileFormat) {
+            return FileManager.default.fileExists(atPath: fileURL.path)
         } else {
             return false
         }
     }
 
     func fileURL(fileName: String, fileFormat: String? = nil, isDirectory: Bool = false) -> URL? {
-        return self.defaultFileDirectory()?.appendingPathComponent(fileName, isDirectory: isDirectory).appendingPathExtension(fileFormat ?? "")
+        return defaultFileDirectory()?.appendingPathComponent(fileName, isDirectory: isDirectory).appendingPathExtension(fileFormat ?? "")
     }
 
     func defaultFileDirectory() -> URL? {
