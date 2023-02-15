@@ -29,7 +29,7 @@ final class RootViewController: BaseViewController {
         showLoading()
     }
     
-    // MARK: - Setup
+    // MARK: Setup
     
     private func setupUI() {
         setupBackground()

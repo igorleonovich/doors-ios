@@ -16,7 +16,7 @@ final class RootSessionViewController: BaseSystemFeatureViewController {
         loadInitialFeatures()
     }
     
-    // MARK: - Setup
+    // MARK: Setup
     
     private func setupUI() {
         

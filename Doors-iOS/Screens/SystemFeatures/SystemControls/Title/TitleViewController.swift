@@ -15,7 +15,7 @@ final class TitleViewController: BaseSystemFeatureViewController {
         setupUI()
     }
     
-    // MARK: - Setup
+    // MARK: Setup
     
     private func setupUI() {
         let titleLabel = Label()

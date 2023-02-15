@@ -22,7 +22,7 @@ final class SettingsViewController: BaseSystemFeatureViewController {
         }
     }
     
-    // MARK: - Setup
+    // MARK: Setup
     
     private func setupUI() {
         let button = Button()
@@ -35,7 +35,7 @@ final class SettingsViewController: BaseSystemFeatureViewController {
         button.addTarget(self, action: #selector(onTap), for: .touchUpInside)
     }
     
-    // MARK: - Actions
+    // MARK: Actions
     
     @objc private func onTap() {
         showScreen()

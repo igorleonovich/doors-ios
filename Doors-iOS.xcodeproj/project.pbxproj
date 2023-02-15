@@ -33,6 +33,10 @@
 		692859502996C47800ED7AFA /* UIScreen+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6928594E2996C47800ED7AFA /* UIScreen+Extensions.swift */; };
 		692859522997B58D00ED7AFA /* UINavigationController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692859512997B58D00ED7AFA /* UINavigationController+Extensions.swift */; };
 		692859532997B58D00ED7AFA /* UINavigationController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692859512997B58D00ED7AFA /* UINavigationController+Extensions.swift */; };
+		69285955299CF45600ED7AFA /* UIVisualEffectView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69285954299CF45600ED7AFA /* UIVisualEffectView+Extensions.swift */; };
+		69285956299CF45600ED7AFA /* UIVisualEffectView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69285954299CF45600ED7AFA /* UIVisualEffectView+Extensions.swift */; };
+		69285958299CF48700ED7AFA /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69285957299CF48700ED7AFA /* BlurView.swift */; };
+		69285959299CF48700ED7AFA /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69285957299CF48700ED7AFA /* BlurView.swift */; };
 		69399461298F2E8E006B92C3 /* AutoReducingStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69399460298F2E8E006B92C3 /* AutoReducingStackView.swift */; };
 		694227082991932D0074D2A0 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694227072991932D0074D2A0 /* Defaults.swift */; };
 		694227092991932D0074D2A0 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694227072991932D0074D2A0 /* Defaults.swift */; };
@@ -227,6 +231,8 @@
 		6919EB70298D1FC600F96016 /* Doors.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Doors.entitlements; sourceTree = "<group>"; };
 		6928594E2996C47800ED7AFA /* UIScreen+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+Extensions.swift"; sourceTree = "<group>"; };
 		692859512997B58D00ED7AFA /* UINavigationController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extensions.swift"; sourceTree = "<group>"; };
+		69285954299CF45600ED7AFA /* UIVisualEffectView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIVisualEffectView+Extensions.swift"; sourceTree = "<group>"; };
+		69285957299CF48700ED7AFA /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		69399460298F2E8E006B92C3 /* AutoReducingStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoReducingStackView.swift; sourceTree = "<group>"; };
 		694227072991932D0074D2A0 /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
 		6942270A299194EF0074D2A0 /* UUID+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UUID+Extensions.swift"; sourceTree = "<group>"; };
@@ -609,6 +615,7 @@
 				69399460298F2E8E006B92C3 /* AutoReducingStackView.swift */,
 				690DAC0E298FE60300FB8C7B /* TableView.swift */,
 				69A0AFC7298F1ACC002E652E /* TableViewCell.swift */,
+				69285957299CF48700ED7AFA /* BlurView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -624,6 +631,7 @@
 				69BE8D07298D7EF4001EFDD2 /* UIApplication+Extensions.swift */,
 				6928594E2996C47800ED7AFA /* UIScreen+Extensions.swift */,
 				69A0AFC3298F0693002E652E /* UIColor+Extensions.swift */,
+				69285954299CF45600ED7AFA /* UIVisualEffectView+Extensions.swift */,
 				6942270A299194EF0074D2A0 /* UUID+Extensions.swift */,
 			);
 			path = Extensions;
@@ -1115,6 +1123,7 @@
 			files = (
 				69A0AFC8298F1ACC002E652E /* TableViewCell.swift in Sources */,
 				690DAC1529901B1D00FB8C7B /* Button.swift in Sources */,
+				69285955299CF45600ED7AFA /* UIVisualEffectView+Extensions.swift in Sources */,
 				690A4821298D754B000C02B4 /* Core.swift in Sources */,
 				69CC047C2992A912001295EB /* ImportViewController.swift in Sources */,
 				69F070D826B6B9810027E94D /* Device.swift in Sources */,
@@ -1123,6 +1132,7 @@
 				69F0706C26B6B9280027E94D /* OldUIView+Extensions.swift in Sources */,
 				69F0700026B6ADD10027E94D /* AppDelegate.swift in Sources */,
 				69A0AF8C298D905D002E652E /* Feature.swift in Sources */,
+				69285958299CF48700ED7AFA /* BlurView.swift in Sources */,
 				690A482A298D77EA000C02B4 /* SessionViewController.swift in Sources */,
 				69F0708926B6B9310027E94D /* RefreshTokenOutput.swift in Sources */,
 				69F070B726B6B9410027E94D /* OldLoadingViewController.swift in Sources */,
@@ -1202,6 +1212,7 @@
 			files = (
 				69A0AF99298E5292002E652E /* Router.swift in Sources */,
 				690DAC1629901B1D00FB8C7B /* Button.swift in Sources */,
+				69285956299CF45600ED7AFA /* UIVisualEffectView+Extensions.swift in Sources */,
 				69F070D926B6B9810027E94D /* Device.swift in Sources */,
 				69CC047D2992A912001295EB /* ImportViewController.swift in Sources */,
 				69F0706D26B6B9280027E94D /* OldUIView+Extensions.swift in Sources */,
@@ -1210,6 +1221,7 @@
 				69A0AFA7298EABAC002E652E /* TitleViewController.swift in Sources */,
 				69F070B826B6B9410027E94D /* OldLoadingViewController.swift in Sources */,
 				69F0708026B6B9310027E94D /* RefreshTokenInput.swift in Sources */,
+				69285959299CF48700ED7AFA /* BlurView.swift in Sources */,
 				69A0AFB5298EC862002E652E /* SessionViewController.swift in Sources */,
 				69F0701726B6AE340027E94D /* SceneDelegate.swift in Sources */,
 				69A0AFC2298EE391002E652E /* BorderSide.swift in Sources */,

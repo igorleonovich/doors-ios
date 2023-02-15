@@ -29,7 +29,7 @@ final class SessionViewController: BaseSystemFeatureViewController {
         loadInitialFeatures()
     }
     
-    // MARK: - Setup
+    // MARK: Setup
     
     private func setupUI() {
         setupBorders()

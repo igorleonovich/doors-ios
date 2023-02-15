@@ -77,15 +77,21 @@ class BaseSystemFeatureMenuViewController: BaseSystemFeatureViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let backgroundView = BlurView()
+        view.addSubview(backgroundView)
+        backgroundView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+        backgroundView.addBlur()
         setupData()
         setupUI()
         setupGesture()
     }
     
-    // MARK: - Setup
+    // MARK: Setup
     
     func setupUI() {
-        view.backgroundColor = .black.withAlphaComponent(0.7)
+        view.backgroundColor = .black.withAlphaComponent(0.5)
         tableView = TableView()
         view.addSubview(tableView)
         tableView.snp.makeConstraints { make in

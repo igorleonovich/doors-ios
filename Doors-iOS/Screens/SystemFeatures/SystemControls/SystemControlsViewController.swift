@@ -40,7 +40,7 @@ final class SystemControlsViewController: BaseSystemFeatureViewController {
         }
     }
     
-    // MARK: - Setup
+    // MARK: Setup
     
     private func setupUI() {
         stackView = UIStackView()

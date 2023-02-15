@@ -12,7 +12,7 @@ final class SettingsScreenViewController: BaseSystemFeatureMenuViewController {
     
     private var settings = [Setting]()
     
-    // MARK: - Setup
+    // MARK: Setup
     
     override func setupData() {
         if let rootSessionFeature = feature?.dependencies.first(where: { $0.name == "settings" })?.dependencies.first(where: { $0.name == "systemControls" })?.dependencies.first(where: { $0.name == "rootSession" }) {

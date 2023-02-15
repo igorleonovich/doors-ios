@@ -22,7 +22,7 @@ final class StartViewController: BaseSystemFeatureViewController {
         }
     }
     
-    // MARK: - Setup
+    // MARK: Setup
     
     private func setupUI() {
         let button = Button()
@@ -48,7 +48,7 @@ final class StartViewController: BaseSystemFeatureViewController {
         //  circle.isUserInteractionEnabled = false
     }
     
-    // MARK: - Actions
+    // MARK: Actions
     
     @objc private func onTap() {
         showScreen()

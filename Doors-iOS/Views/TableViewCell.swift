@@ -28,7 +28,7 @@ class TableViewCell: UITableViewCell {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if isSelectable { alpha = 0.8 }
+        if isSelectable { alpha = 0.9 }
         super.touchesBegan(touches, with: event)
     }
     
@@ -42,7 +42,7 @@ class TableViewCell: UITableViewCell {
         super.touchesCancelled(touches, with: event)
     }
     
-    // MARK: - Actions
+    // MARK: Actions
     
     private func refreshAlpha() {
         alpha = isDisabled ? 0.5 : 1
@@ -62,7 +62,7 @@ class BaseTableViewCell: TableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: - Setup
+    // MARK: Setup
     
     private func setupUI() {
         let stackView = UIStackView()

@@ -29,7 +29,7 @@ class Button: UIButton {
         get {
             switch super.state {
             case .highlighted:
-                alpha = 0.8
+                alpha = 0.9
             default:
                 refreshAlpha()
             }

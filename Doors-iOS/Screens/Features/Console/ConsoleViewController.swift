@@ -52,7 +52,7 @@ final class ConsoleViewController: BaseFeatureViewController {
         }
     }
     
-    // MARK: - Setup
+    // MARK: Setup
     
     private func setupUI() {
         setupBorders()

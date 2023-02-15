@@ -12,7 +12,7 @@ final class StartScreenViewController: BaseSystemFeatureMenuViewController {
 
     private var features = [UserFeature]()
     
-    // MARK: - Setup
+    // MARK: Setup
     
     override func setupData() {
         super.setupData()

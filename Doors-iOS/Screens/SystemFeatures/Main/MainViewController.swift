@@ -30,7 +30,7 @@ final class MainViewController: BaseSystemFeatureViewController {
         }
     }
     
-    // MARK: - Setup
+    // MARK: Setup
     
     private func setupUI() {
         setupBorders()

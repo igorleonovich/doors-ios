@@ -50,7 +50,7 @@ final class SessionsViewController: BaseSystemFeatureViewController {
         }
     }
     
-    // MARK: - Setup
+    // MARK: Setup
     
     private func setupUI() {
         verticalStackView = UIStackView()
