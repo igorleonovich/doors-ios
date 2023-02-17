@@ -20,8 +20,9 @@ final class AppManager {
     var featureMap: FeatureMap?
     
     init() {
-        if let url = Bundle.main.url(forResource: "FeatureMap", withExtension: "json"), let data = try? Data(contentsOf: url) {
+        if let url = Bundle.main.url(forResource: "FeatureMap", withExtension: "json") {
             do {
+                let data = try Data(contentsOf: url)
                 let featureMap = try JSONDecoder().decode(FeatureMap.self, from: data)
                 self.featureMap = featureMap
                 print("\n[USER] [APP MANAGER] Feature Map:\n\(featureMap)")
