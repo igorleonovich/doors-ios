@@ -11,15 +11,12 @@ import Foundation
 final class FileSystemManager {
     
     func getFileData(fileName: String, fileFormat: String) throws -> Data? {
-        guard isFileExists(fileName: fileName, fileFormat: fileFormat) else {
-            throw NSErrorDomain.init(string: "Not found") as! Error
-        }
-        if let fileURL = fileURL(fileName: fileName, fileFormat: fileFormat) {
-            do {
-                return try Data(contentsOf: fileURL)
-            } catch {
-                throw error
-            }
+        if isFileExists(fileName: fileName, fileFormat: fileFormat),
+           let fileURL = fileURL(fileName: fileName, fileFormat: fileFormat) {
+            return try Data(contentsOf: fileURL)
+        } else if let error = NSErrorDomain.init(string: "[FILE SYSTEM MANAGER] Get: File not found") as? Error {
+            print(error)
+            throw error
         }
         return nil
     }
@@ -29,20 +26,30 @@ final class FileSystemManager {
             do {
                 try FileManager.default.createDirectory(atPath: fileURL.path, withIntermediateDirectories: true, attributes: nil)
             } catch {
+                print("[FILE SYSTEM MANAGER]\n\(error)")
                 throw error
             }
+        } else if let error = NSErrorDomain.init(string: "[FILE SYSTEM MANAGER] Create Folder: Can't create URL") as? Error {
+            print(error)
+            throw error
         }
     }
 
-    func saveFileData(fileName: String, fileFormat: String, data: Data) throws -> URL? {
+    func saveFile(fileName: String, fileFormat: String, data: Data) throws -> URL? {
         if let fileURL = fileURL(fileName: fileName, fileFormat: fileFormat) {
-            guard FileManager.default.createFile(atPath: fileURL.path,
-                                                 contents: data,
-                                                 attributes: [FileAttributeKey.protectionKey:
-                                                                FileProtectionType.complete ]) else {
-                throw NSErrorDomain.init(string: "Unable to write data!") as! Error
+            if FileManager.default.createFile(atPath: fileURL.path, contents: data,
+                                              attributes: [FileAttributeKey.protectionKey: FileProtectionType.complete]) {
+                return fileURL
+            } else {
+                if let error = NSErrorDomain.init(string: "[FILE SYSTEM MANAGER] Unable to save file at:\n\(fileURL.absoluteString)") as? Error {
+                    print(error)
+                    throw error
+                }
+                return nil
             }
-            return fileURL
+        } else if let error = NSErrorDomain.init(string: "[FILE SYSTEM MANAGER] Save File: Can't create URL") as? Error {
+            print(error)
+            throw error
         }
         return nil
     }
@@ -54,39 +61,36 @@ final class FileSystemManager {
                 try FileManager.default.copyItem(at: pathFrom.appendingPathExtension("/\(fileName)"), to: pathTo.appendingPathExtension("/\(fileName)"))
             }
         } catch {
+            print("[FILE SYSTEM MANAGER]\n\(error)")
             throw error
         }
     }
 
     func removeFile(fileName: String, fileFormat: String) throws {
-        guard isFileExists(fileName: fileName, fileFormat: fileFormat) else {
-            return
-        }
-        if let fileURL = fileURL(fileName: fileName, fileFormat: fileFormat) {
+        if isFileExists(fileName: fileName, fileFormat: fileFormat),
+           let fileURL = fileURL(fileName: fileName, fileFormat: fileFormat) {
             do {
                 try FileManager.default.removeItem(at: fileURL)
             } catch {
-                throw error
+                print("[FILE SYSTEM MANAGER]\n\(error)")
+                throw(error)
             }
+        } else if let error = NSErrorDomain.init(string: "[FILE SYSTEM MANAGER] Remove: File not found") as? Error {
+            print(error)
+            throw error
         }
     }
     
     func removeAllFiles() throws {
         do {
             try [defaultFileDirectory()].compactMap({$0}).forEach { url in
-                do {
-                    let fileURLs = try FileManager.default.contentsOfDirectory(at: url,
-                                                                               includingPropertiesForKeys: nil,
-                                                                               options: [.skipsHiddenFiles,
-                                                                                         .skipsSubdirectoryDescendants])
-                    for fileURL in fileURLs {
-                        try FileManager.default.removeItem(at: fileURL)
-                    }
-                } catch {
-                    throw error
-                }
+                let fileURLs = try FileManager.default.contentsOfDirectory(at: url,
+                                                                           includingPropertiesForKeys: nil,
+                                                                           options: [])
+                try fileURLs.forEach({ try FileManager.default.removeItem(at: $0) })
             }
         } catch {
+            print("[FILE SYSTEM MANAGER]\n\(error)")
             throw error
         }
     }

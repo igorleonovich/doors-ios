@@ -40,7 +40,7 @@ final class ExportViewController: BaseFeatureViewController {
                 let exportFolderName = "Export"
                 let exportFileName = "\(exportFolderName)/Doors"
                 if core.rootCore.fileSystemManager.isFileExists(fileName: exportFolderName, fileFormat: "") == false {
-                    try core.rootCore.fileSystemManager.createFolder(folderName: exportFolderName)
+                    try? core.rootCore.fileSystemManager.createFolder(folderName: exportFolderName)
                 }
                 let doorsFolderName = "Doors"
                 if let doorsFolderURL = core.rootCore.fileSystemManager.fileURL(fileName: doorsFolderName),
