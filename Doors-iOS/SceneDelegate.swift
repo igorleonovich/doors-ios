@@ -23,6 +23,7 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let rootCore = RootCore()
         self.rootCore = rootCore
         let viewController = RootViewController(rootCore: rootCore)
+//        let viewController = UINavigationController(rootViewController: PlanViewController(core: OldCore()))
         window?.rootViewController = viewController
         window?.makeKeyAndVisible()
         window?.windowScene = windowScene
