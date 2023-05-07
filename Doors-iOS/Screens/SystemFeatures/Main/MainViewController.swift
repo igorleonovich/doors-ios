@@ -21,8 +21,8 @@ final class MainViewController: BaseSystemFeatureViewController {
     override func didMove(toParent parent: UIViewController?) {
         super.didMove(toParent: parent)
         view.superview?.snp.remakeConstraints { make in
-            if let systemControlsSuperView = feature?.dependencies.first(where: { $0.name == "systemControls" })?.viewController?.view.superview {
-                make.top.equalTo(systemControlsSuperView.safeAreaLayoutGuide.snp.bottom)
+            if let systemControlsSuperview = feature?.dependencies.first(where: { $0.name == "systemControls" })?.viewController?.view.superview {
+                make.top.equalTo(systemControlsSuperview.safeAreaLayoutGuide.snp.bottom)
             }
             make.bottom.equalToSuperview().offset(0)
             make.left.equalToSuperview()

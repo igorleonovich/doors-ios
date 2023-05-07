@@ -45,8 +45,8 @@ final class ConsoleViewController: BaseFeatureViewController {
             make.height.equalTo(height)
         }
         
-        if let otherFeatureSuperView = feature?.dependencies.first(where: { ["sessions", "main"].contains($0.name) })?.viewController?.view.superview {
-            otherFeatureSuperView.snp.updateConstraints { make in
+        if let otherFeatureSuperview = feature?.dependencies.first(where: { ["sessions", "main"].contains($0.name) })?.viewController?.view.superview {
+            otherFeatureSuperview.snp.updateConstraints { make in
                 make.bottom.equalToSuperview().offset(-height)
             }
         }
@@ -71,8 +71,8 @@ final class ConsoleViewController: BaseFeatureViewController {
             self.view.superview?.snp.updateConstraints({ make in
                 make.height.equalTo(height)
             })
-            if let otherFeatureSuperView = self.feature?.dependencies.first(where: { ["main"].contains($0.name) })?.viewController?.view.superview {
-                otherFeatureSuperView.snp.updateConstraints { make in
+            if let otherFeatureSuperview = self.feature?.dependencies.first(where: { ["main"].contains($0.name) })?.viewController?.view.superview {
+                otherFeatureSuperview.snp.updateConstraints { make in
                     make.bottom.equalToSuperview().offset(-height)
                 }
             }
