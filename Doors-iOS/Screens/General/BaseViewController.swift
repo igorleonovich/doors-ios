@@ -101,7 +101,7 @@ class BaseSystemFeatureMenuViewController: BaseSystemFeatureViewController {
             make.right.equalToSuperview()
         }
         
-        // [TODO] BaseSystemFeatureMenuViewController: Fix tap action workaround
+        // [WORKAROUND] BaseSystemFeatureMenuViewController: Tap action
         if !UIScreen.isScreenSmall {
             let topButton = UIButton()
             view.addSubview(topButton)
@@ -156,7 +156,7 @@ class BaseSystemFeatureMenuViewController: BaseSystemFeatureViewController {
     // MARK: Actions
     
     @objc private func onTap() {
-        // [TODO] BaseSystemFeatureMenuViewController: Fix tap action workaround
+        // [WORKAROUND] BaseSystemFeatureMenuViewController: Tap action
         if !UIScreen.isScreenSmall {
             onClose()
         } else {
@@ -185,7 +185,7 @@ extension BaseSystemFeatureMenuViewController: UIGestureRecognizerDelegate {
                 }
             }
         }
-        // [TODO] BaseSystemFeatureMenuViewController: Fix tap action workaround
+        // [WORKAROUND] BaseSystemFeatureMenuViewController: Tap action
         if UIScreen.isScreenSmall {
             isNeedToSkipTap = true
         }

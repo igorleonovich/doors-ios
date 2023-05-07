@@ -1,26 +1,26 @@
 {
-    "features": [
-        {
-            "name": "main",
-            "title": "Main",
-            "childFeatures": [
-                {
-                    "name": "console",
-                    "title": "Console",
-                },
-                {
-                    "name": "import",
-                    "title": "Import",
-                },
-                {
-                    "name": "export",
-                    "title": "Export",
-                },
-                {
-                    "name": "reset",
-                    "title": "Reset",
-                }
-            ]
-        }
-    ]
+  "features": [
+    {
+        "name": "router",
+        "title": "Router",
+    }
+  ],
+  "sessionFeatures": [
+    {
+        "name": "console",
+        "title": "Console",
+    },
+    {
+        "name": "multiSession",
+        "title": "Multi Session",
+    },
+    {
+        "name": "importExport",
+        "title": "Import / Export",
+    },
+    {
+        "name": "reset",
+        "title": "Reset",
+    }
+  ]
 }
