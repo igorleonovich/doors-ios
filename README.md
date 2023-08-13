@@ -1,3 +1,3 @@
-# Doors (iOS)
+# Doors (iOS) (Concept)
 
-iOS multi-app container (concept)
+An iOS multi-app container
