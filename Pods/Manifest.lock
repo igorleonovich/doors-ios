@@ -1,7 +1,7 @@
 PODS:
-  - JWTDecode (3.0.1)
+  - JWTDecode (3.1.0)
   - MBProgressHUD (1.2.0)
-  - SnapKit (5.6.0)
+  - SnapKit (5.7.1)
   - Zip (2.1.2)
 
 DEPENDENCIES:
@@ -18,11 +18,11 @@ SPEC REPOS:
     - Zip
 
 SPEC CHECKSUMS:
-  JWTDecode: 2eed97c2fa46ccaf3049a787004eedf0be474a87
+  JWTDecode: 3eaab1e06b6f4dcbdd6716aff09ba4c2104ca8b7
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
-  SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
+  SnapKit: d612e99e678a2d3b95bf60b0705ed0a35c03484a
   Zip: b3fef584b147b6e582b2256a9815c897d60ddc67
 
-PODFILE CHECKSUM: 89f16d733c69f3756d312543f35e123e60e822a8
+PODFILE CHECKSUM: c987326538e9704059bfc7189524de13370b7a0b
 
-COCOAPODS: 1.11.3
+COCOAPODS: 1.15.2
