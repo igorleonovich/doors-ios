@@ -12,6 +12,6 @@ class CustomButton: UIButton {
     
     override func draw(_ rect: CGRect) {
         super.draw(rect)
-        cornerRadius = Constants.Skin.buttonCornerRadius
+        cornerRadius = OldConstants.Skin.buttonCornerRadius
     }
 }

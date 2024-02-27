@@ -15,7 +15,7 @@ class CustomAlertController: UIAlertController {
         view.tintColor = Color.foregroundActive
         
         let attributes = [
-            NSAttributedString.Key.font: Constants.Skin.font
+            NSAttributedString.Key.font: OldConstants.Skin.font
         ]
         if let title = title {
             let titleAttributedString = NSMutableAttributedString(string: title, attributes: attributes)
@@ -35,7 +35,7 @@ class CustomAlertController: UIAlertController {
                   let labelText = label.text else { return }
             let titleAttributedString = NSMutableAttributedString(string: labelText)
             let range = NSRange(location: 0, length: titleAttributedString.length)
-            titleAttributedString.addAttribute(NSAttributedString.Key.font, value: Constants.Skin.font, range: range)
+            titleAttributedString.addAttribute(NSAttributedString.Key.font, value: OldConstants.Skin.font, range: range)
             label.text = nil
             label.attributedText = titleAttributedString
         }

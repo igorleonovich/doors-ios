@@ -54,7 +54,7 @@ class UserManager {
         let sessionDelegate = SessionDelegate()
         let session = URLSession(configuration: core.signedSessionConfiguration, delegate: sessionDelegate, delegateQueue: OperationQueue.main)
         
-        guard let url = URL(string: "\(Constants.baseURL)/users/me") else {
+        guard let url = URL(string: "\(OldConstants.baseURL)/users/me") else {
             return
         }
         var request = URLRequest(url: url)
@@ -87,7 +87,7 @@ class UserManager {
         let sessionDelegate = SessionDelegate()
         let session = URLSession(configuration: core.signedSessionConfiguration, delegate: sessionDelegate, delegateQueue: OperationQueue.main)
         
-        guard let url = URL(string: "\(Constants.baseURL)/doors-services/\(doorsService.rawValue)/activate") else {
+        guard let url = URL(string: "\(OldConstants.baseURL)/doors-services/\(doorsService.rawValue)/activate") else {
             return
         }
         var request = URLRequest(url: url)

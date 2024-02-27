@@ -34,7 +34,7 @@ class AuthManager {
         let sessionDelegate = SessionDelegate()
         let session = URLSession(configuration: sessionConfiguration, delegate: sessionDelegate, delegateQueue: OperationQueue.main)
         
-        guard let url = URL(string: "\(Constants.baseURL)/auth/register") else {
+        guard let url = URL(string: "\(OldConstants.baseURL)/auth/register") else {
             return
         }
         var request = URLRequest(url: url)
@@ -89,7 +89,7 @@ class AuthManager {
         let session = URLSession(configuration: sessionConfiguration, delegate: sessionDelegate, delegateQueue: OperationQueue.main)
 
         
-        guard let url = URL(string: "\(Constants.baseURL)/auth/login") else {
+        guard let url = URL(string: "\(OldConstants.baseURL)/auth/login") else {
             return
         }
         var request = URLRequest(url: url)
@@ -153,7 +153,7 @@ class AuthManager {
         let sessionDelegate = SessionDelegate()
         let session = URLSession(configuration: sessionConfiguration, delegate: sessionDelegate, delegateQueue: OperationQueue.main)
         
-        guard let url = URL(string: "\(Constants.baseURL)/auth/accessToken") else {
+        guard let url = URL(string: "\(OldConstants.baseURL)/auth/accessToken") else {
             return
         }
         var request = URLRequest(url: url)

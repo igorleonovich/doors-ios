@@ -18,13 +18,13 @@ class ConstructorNavigationController: UINavigationController {
     private func setupAppearance() {
         let buttonAppearance = UIBarButtonItemAppearance()
         buttonAppearance.normal.titleTextAttributes = [
-            NSAttributedString.Key.font: Constants.Skin.font
+            NSAttributedString.Key.font: OldConstants.Skin.font
         ]
         
         let navigationBarAppearance = UINavigationBarAppearance()
         navigationBarAppearance.backgroundColor = Color.backgroundInactive
         navigationBarAppearance.titleTextAttributes = [
-            NSAttributedString.Key.font: Constants.Skin.font
+            NSAttributedString.Key.font: OldConstants.Skin.font
         ]
         navigationBarAppearance.shadowColor = .clear
         navigationBarAppearance.buttonAppearance = buttonAppearance

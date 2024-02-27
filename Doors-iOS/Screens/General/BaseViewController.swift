@@ -51,6 +51,7 @@ class BaseFeatureViewController: BaseViewController {
             feature.viewController = consoleViewController
             add(child: consoleViewController, containerView: consoleView)
         }
+        // [CHECK FOR BUG]
         self.feature?.childFeatures.append(feature)
     }
 }
@@ -66,6 +67,7 @@ class BaseSystemFeatureViewController: BaseFeatureViewController {
             feature.viewController = systemControlsViewController
             add(child: systemControlsViewController, containerView: systemControlsView)
         }
+        // [CHECK FOR BUG]
         self.feature?.childFeatures.append(feature)
     }
 }

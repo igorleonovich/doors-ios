@@ -21,7 +21,7 @@ class SceneManager {
         let sessionDelegate = SessionDelegate()
         let session = URLSession(configuration: core.signedSessionConfiguration, delegate: sessionDelegate, delegateQueue: OperationQueue.main)
         
-        guard let url = URL(string: "\(Constants.baseURL)/lists/read") else {
+        guard let url = URL(string: "\(OldConstants.baseURL)/lists/read") else {
             return
         }
         var request = URLRequest(url: url)

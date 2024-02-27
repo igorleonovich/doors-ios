@@ -108,6 +108,6 @@ final class FileSystemManager {
     }
 
     func defaultFileDirectory() -> URL? {
-        return FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.fm.doors")
+        return FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: Constants.appGroup)
     }
 }

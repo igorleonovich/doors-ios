@@ -37,6 +37,8 @@
 		69285956299CF45600ED7AFA /* UIVisualEffectView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69285954299CF45600ED7AFA /* UIVisualEffectView+Extensions.swift */; };
 		69285958299CF48700ED7AFA /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69285957299CF48700ED7AFA /* BlurView.swift */; };
 		69285959299CF48700ED7AFA /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69285957299CF48700ED7AFA /* BlurView.swift */; };
+		692A5D2D2B8EAA4600718BD4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692A5D2C2B8EAA1000718BD4 /* Constants.swift */; };
+		692A5D2E2B8EAA4700718BD4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692A5D2C2B8EAA1000718BD4 /* Constants.swift */; };
 		69399461298F2E8E006B92C3 /* AutoReducingStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69399460298F2E8E006B92C3 /* AutoReducingStackView.swift */; };
 		694227082991932D0074D2A0 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694227072991932D0074D2A0 /* Defaults.swift */; };
 		694227092991932D0074D2A0 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694227072991932D0074D2A0 /* Defaults.swift */; };
@@ -131,8 +133,8 @@
 		69F0705026B6B8DB0027E94D /* EntryBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F0704926B6B8DB0027E94D /* EntryBaseViewController.swift */; };
 		69F0705126B6B8DB0027E94D /* CustomAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F0704A26B6B8DB0027E94D /* CustomAlertController.swift */; };
 		69F0705226B6B8DB0027E94D /* CustomAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F0704A26B6B8DB0027E94D /* CustomAlertController.swift */; };
-		69F0705926B6B8EC0027E94D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F0705426B6B8EC0027E94D /* Constants.swift */; };
-		69F0705A26B6B8EC0027E94D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F0705426B6B8EC0027E94D /* Constants.swift */; };
+		69F0705926B6B8EC0027E94D /* OldConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F0705426B6B8EC0027E94D /* OldConstants.swift */; };
+		69F0705A26B6B8EC0027E94D /* OldConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F0705426B6B8EC0027E94D /* OldConstants.swift */; };
 		69F0705B26B6B8EC0027E94D /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F0705526B6B8EC0027E94D /* UserManager.swift */; };
 		69F0705C26B6B8EC0027E94D /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F0705526B6B8EC0027E94D /* UserManager.swift */; };
 		69F0705D26B6B8EC0027E94D /* SceneManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F0705626B6B8EC0027E94D /* SceneManager.swift */; };
@@ -233,6 +235,7 @@
 		692859512997B58D00ED7AFA /* UINavigationController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extensions.swift"; sourceTree = "<group>"; };
 		69285954299CF45600ED7AFA /* UIVisualEffectView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIVisualEffectView+Extensions.swift"; sourceTree = "<group>"; };
 		69285957299CF48700ED7AFA /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
+		692A5D2C2B8EAA1000718BD4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		69399460298F2E8E006B92C3 /* AutoReducingStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoReducingStackView.swift; sourceTree = "<group>"; };
 		694227072991932D0074D2A0 /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
 		6942270A299194EF0074D2A0 /* UUID+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UUID+Extensions.swift"; sourceTree = "<group>"; };
@@ -308,7 +311,7 @@
 		69F0704826B6B8DB0027E94D /* OldRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OldRootViewController.swift; sourceTree = "<group>"; };
 		69F0704926B6B8DB0027E94D /* EntryBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryBaseViewController.swift; sourceTree = "<group>"; };
 		69F0704A26B6B8DB0027E94D /* CustomAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAlertController.swift; sourceTree = "<group>"; };
-		69F0705426B6B8EC0027E94D /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		69F0705426B6B8EC0027E94D /* OldConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OldConstants.swift; sourceTree = "<group>"; };
 		69F0705526B6B8EC0027E94D /* UserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		69F0705626B6B8EC0027E94D /* SceneManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneManager.swift; sourceTree = "<group>"; };
 		69F0705726B6B8EC0027E94D /* OldCore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OldCore.swift; sourceTree = "<group>"; };
@@ -689,6 +692,7 @@
 				6942270D29919DC40074D2A0 /* Resources */,
 				69F06FFF26B6ADD10027E94D /* AppDelegate.swift */,
 				69F0700126B6ADD10027E94D /* SceneDelegate.swift */,
+				692A5D2C2B8EAA1000718BD4 /* Constants.swift */,
 				69F0700826B6ADDD0027E94D /* Assets.xcassets */,
 				6919EB70298D1FC600F96016 /* Doors.entitlements */,
 				69F0700D26B6ADDD0027E94D /* Doors-iOS-Uni-Info.plist */,
@@ -739,7 +743,7 @@
 		69F0705326B6B8EC0027E94D /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				69F0705426B6B8EC0027E94D /* Constants.swift */,
+				69F0705426B6B8EC0027E94D /* OldConstants.swift */,
 				69F0705526B6B8EC0027E94D /* UserManager.swift */,
 				69F0705626B6B8EC0027E94D /* SceneManager.swift */,
 				69F0705726B6B8EC0027E94D /* OldCore.swift */,
@@ -919,7 +923,6 @@
 			buildConfigurationList = 69F0701D26B6AE340027E94D /* Build configuration list for PBXNativeTarget "Doors-iOS-Extra" */;
 			buildPhases = (
 				E924D68FE71F5E3933BE057E /* [CP] Check Pods Manifest.lock */,
-				69F070E626B6BD1D0027E94D /* R.swift */,
 				69F0701426B6AE340027E94D /* Sources */,
 				69F0701826B6AE340027E94D /* Frameworks */,
 				69F0701926B6AE340027E94D /* Resources */,
@@ -1016,26 +1019,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		69F070E626B6BD1D0027E94D /* R.swift */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"$TEMP_DIR/rswift-lastrun",
-			);
-			name = R.swift;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$SRCROOT/Supporting files/R.generated.swift",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/Supporting files/R.generated.swift\"\n";
-		};
 		B70CD38BBD5B696F114E5F3C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1156,10 +1139,11 @@
 				69F0708B26B6B9310027E94D /* NewUserOutput.swift in Sources */,
 				69F0705D26B6B8EC0027E94D /* SceneManager.swift in Sources */,
 				69F0708D26B6B9310027E94D /* ListDTO.swift in Sources */,
+				692A5D2D2B8EAA4600718BD4 /* Constants.swift in Sources */,
 				69F070D226B6B9810027E94D /* InternetProtocol.swift in Sources */,
 				69A0AF9F298E6BCD002E652E /* StartViewController.swift in Sources */,
 				690A4824298D767F000C02B4 /* Color.swift in Sources */,
-				69F0705926B6B8EC0027E94D /* Constants.swift in Sources */,
+				69F0705926B6B8EC0027E94D /* OldConstants.swift in Sources */,
 				690DAC0F298FE60300FB8C7B /* TableView.swift in Sources */,
 				69A0AF98298E5292002E652E /* Router.swift in Sources */,
 				69F0708126B6B9310027E94D /* ServerError.swift in Sources */,
@@ -1245,7 +1229,8 @@
 				69A0AFA3298EA415002E652E /* StartScreenViewController.swift in Sources */,
 				69A0AF94298DA41C002E652E /* SettingsScreenViewController.swift in Sources */,
 				69F070D326B6B9810027E94D /* InternetProtocol.swift in Sources */,
-				69F0705A26B6B8EC0027E94D /* Constants.swift in Sources */,
+				692A5D2E2B8EAA4700718BD4 /* Constants.swift in Sources */,
+				69F0705A26B6B8EC0027E94D /* OldConstants.swift in Sources */,
 				690DAC11298FE60A00FB8C7B /* Label.swift in Sources */,
 				69F0708226B6B9310027E94D /* ServerError.swift in Sources */,
 				690DAC12298FE60D00FB8C7B /* TableViewCell.swift in Sources */,
