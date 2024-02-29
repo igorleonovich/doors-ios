@@ -10,6 +10,8 @@ import UIKit
 
 class BaseViewController: UIViewController {
     
+    // MARK: Life Cycle
+    
     init() {
         super.init(nibName: nil, bundle: nil)
     }
@@ -21,9 +23,11 @@ class BaseViewController: UIViewController {
 
 class BaseFeatureViewController: BaseViewController {
     
-    var core: Core!
-    var feature: Feature?
+    let core: Core!
+    let feature: Feature?
 
+    // MARK: Life Cycle
+    
     init(core: Core, feature: Feature? = nil) {
         self.core = core
         self.feature = feature
@@ -34,14 +38,7 @@ class BaseFeatureViewController: BaseViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func unloadFeature(name: String) {
-        if name == "console" {
-            feature?.childFeatures.first(where: { $0.name == "console" })?.viewController?.remove()
-            if let indexToRemove = feature?.childFeatures.firstIndex(where: { $0.name == "console" }) {
-                feature?.childFeatures.remove(at: indexToRemove)
-            }
-        }
-    }
+    // MARK: Actions
     
     func loadFeature(_ feature: Feature) {
         if feature.name == "console" {
@@ -51,12 +48,22 @@ class BaseFeatureViewController: BaseViewController {
             feature.viewController = consoleViewController
             add(child: consoleViewController, containerView: consoleView)
         }
-        // [CHECK FOR BUG]
         self.feature?.childFeatures.append(feature)
+    }
+    
+    func unloadFeature(name: String) {
+        if name == "console" {
+            feature?.childFeatures.first(where: { $0.name == "console" })?.viewController?.remove()
+            if let indexToRemove = feature?.childFeatures.firstIndex(where: { $0.name == "console" }) {
+                feature?.childFeatures.remove(at: indexToRemove)
+            }
+        }
     }
 }
 
 class BaseSystemFeatureViewController: BaseFeatureViewController {
+    
+    // MARK: Actions
     
     override func loadFeature(_ feature: Feature) {
         super.loadFeature(feature)
@@ -67,8 +74,6 @@ class BaseSystemFeatureViewController: BaseFeatureViewController {
             feature.viewController = systemControlsViewController
             add(child: systemControlsViewController, containerView: systemControlsView)
         }
-        // [CHECK FOR BUG]
-        self.feature?.childFeatures.append(feature)
     }
 }
 
@@ -77,20 +82,28 @@ class BaseSystemFeatureMenuViewController: BaseSystemFeatureViewController {
     var tableView: TableView!
     fileprivate var isNeedToSkipTap = false
     
+    // MARK: Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        let backgroundView = BlurView()
-        view.addSubview(backgroundView)
-        backgroundView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
-        }
-        backgroundView.addBlur()
+        setupBackground()
         setupData()
         setupUI()
         setupGesture()
     }
     
     // MARK: Setup
+    
+    private func setupBackground() {
+        let backgroundView = BlurView()
+        view.addSubview(backgroundView)
+        backgroundView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+        backgroundView.addBlur()
+    }
+    
+    func setupData() {}
     
     func setupUI() {
         view.backgroundColor = .black.withAlphaComponent(0.5)
@@ -132,8 +145,6 @@ class BaseSystemFeatureMenuViewController: BaseSystemFeatureViewController {
         gesture.delegate = self
         tableView.addGestureRecognizer(gesture)
     }
-    
-    func setupData() {}
     
     
     // MARK: Update

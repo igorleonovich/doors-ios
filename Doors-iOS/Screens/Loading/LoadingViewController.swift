@@ -12,6 +12,8 @@ final class LoadingViewController: BaseViewController {
 
     weak var rootCore: RootCore!
     
+    // MARK: Life Cycle
+    
     init(rootCore: RootCore) {
         self.rootCore = rootCore
         super.init()
