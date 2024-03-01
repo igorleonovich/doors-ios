@@ -57,8 +57,6 @@
 		69A0AF91298DA392002E652E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A0AF8F298DA392002E652E /* SettingsViewController.swift */; };
 		69A0AF93298DA41C002E652E /* SettingsScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A0AF92298DA41C002E652E /* SettingsScreenViewController.swift */; };
 		69A0AF94298DA41C002E652E /* SettingsScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A0AF92298DA41C002E652E /* SettingsScreenViewController.swift */; };
-		69A0AF98298E5292002E652E /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A0AF97298E5292002E652E /* Router.swift */; };
-		69A0AF99298E5292002E652E /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A0AF97298E5292002E652E /* Router.swift */; };
 		69A0AF9B298E6B09002E652E /* SystemControlsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A0AF9A298E6B09002E652E /* SystemControlsViewController.swift */; };
 		69A0AF9C298E6B09002E652E /* SystemControlsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A0AF9A298E6B09002E652E /* SystemControlsViewController.swift */; };
 		69A0AF9F298E6BCD002E652E /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A0AF9E298E6BCD002E652E /* StartViewController.swift */; };
@@ -203,6 +201,8 @@
 		69F070D726B6B9810027E94D /* SecureStoreQueryable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F070CB26B6B9810027E94D /* SecureStoreQueryable.swift */; };
 		69F070D826B6B9810027E94D /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F070CD26B6B9810027E94D /* Device.swift */; };
 		69F070D926B6B9810027E94D /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F070CD26B6B9810027E94D /* Device.swift */; };
+		69F8705F2B9226B300510899 /* NotificationCenter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F8705E2B9226B300510899 /* NotificationCenter+Extensions.swift */; };
+		69F870602B9226B300510899 /* NotificationCenter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F8705E2B9226B300510899 /* NotificationCenter+Extensions.swift */; };
 		C4469644B390573650999F4A /* Pods_Doors_iOS_Uni.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A374D9DADD76B2D9520DD63 /* Pods_Doors_iOS_Uni.framework */; };
 		D5B7D3BDCD217E58EDF280AB /* Pods_Doors_iOS_Extra.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833EE7B3A2BE98682B63DCB0 /* Pods_Doors_iOS_Extra.framework */; };
 /* End PBXBuildFile section */
@@ -246,7 +246,6 @@
 		69A0AF8B298D905D002E652E /* Feature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feature.swift; sourceTree = "<group>"; };
 		69A0AF8F298DA392002E652E /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		69A0AF92298DA41C002E652E /* SettingsScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreenViewController.swift; sourceTree = "<group>"; };
-		69A0AF97298E5292002E652E /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		69A0AF9A298E6B09002E652E /* SystemControlsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemControlsViewController.swift; sourceTree = "<group>"; };
 		69A0AF9E298E6BCD002E652E /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		69A0AFA1298EA415002E652E /* StartScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScreenViewController.swift; sourceTree = "<group>"; };
@@ -347,6 +346,7 @@
 		69F070CB26B6B9810027E94D /* SecureStoreQueryable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecureStoreQueryable.swift; sourceTree = "<group>"; };
 		69F070CC26B6B9810027E94D /* SecureStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecureStore.h; sourceTree = "<group>"; };
 		69F070CD26B6B9810027E94D /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		69F8705E2B9226B300510899 /* NotificationCenter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationCenter+Extensions.swift"; sourceTree = "<group>"; };
 		7A45977E56CE7F70E3512ED8 /* Pods-Doors-iOS-Uni.release (stage).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doors-iOS-Uni.release (stage).xcconfig"; path = "Target Support Files/Pods-Doors-iOS-Uni/Pods-Doors-iOS-Uni.release (stage).xcconfig"; sourceTree = "<group>"; };
 		833EE7B3A2BE98682B63DCB0 /* Pods_Doors_iOS_Extra.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Doors_iOS_Extra.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8AA4B498681E479089C32EA /* Pods-Doors-iOS-Uni.release (prod).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doors-iOS-Uni.release (prod).xcconfig"; path = "Target Support Files/Pods-Doors-iOS-Uni/Pods-Doors-iOS-Uni.release (prod).xcconfig"; sourceTree = "<group>"; };
@@ -446,7 +446,6 @@
 			isa = PBXGroup;
 			children = (
 				690A4820298D754B000C02B4 /* Core.swift */,
-				69A0AF97298E5292002E652E /* Router.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -636,6 +635,7 @@
 				69A0AFC3298F0693002E652E /* UIColor+Extensions.swift */,
 				69285954299CF45600ED7AFA /* UIVisualEffectView+Extensions.swift */,
 				6942270A299194EF0074D2A0 /* UUID+Extensions.swift */,
+				69F8705E2B9226B300510899 /* NotificationCenter+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1145,7 +1145,6 @@
 				690A4824298D767F000C02B4 /* Color.swift in Sources */,
 				69F0705926B6B8EC0027E94D /* OldConstants.swift in Sources */,
 				690DAC0F298FE60300FB8C7B /* TableView.swift in Sources */,
-				69A0AF98298E5292002E652E /* Router.swift in Sources */,
 				69F0708126B6B9310027E94D /* ServerError.swift in Sources */,
 				694227132991A0020074D2A0 /* FeatureMap.swift in Sources */,
 				69A0AF9B298E6B09002E652E /* SystemControlsViewController.swift in Sources */,
@@ -1176,6 +1175,7 @@
 				694227082991932D0074D2A0 /* Defaults.swift in Sources */,
 				69F070BF26B6B9410027E94D /* ConstructorViewController.swift in Sources */,
 				69F0708F26B6B9310027E94D /* SignedDataTask.swift in Sources */,
+				69F8705F2B9226B300510899 /* NotificationCenter+Extensions.swift in Sources */,
 				69F070D426B6B9810027E94D /* InternetAuthenticationType.swift in Sources */,
 				698F26812990F5240097D3B0 /* FileSystemManager.swift in Sources */,
 				69ED6401272CF4F100153653 /* SignUpViewController.swift in Sources */,
@@ -1194,7 +1194,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				69A0AF99298E5292002E652E /* Router.swift in Sources */,
 				690DAC1629901B1D00FB8C7B /* Button.swift in Sources */,
 				69285956299CF45600ED7AFA /* UIVisualEffectView+Extensions.swift in Sources */,
 				69F070D926B6B9810027E94D /* Device.swift in Sources */,
@@ -1266,6 +1265,7 @@
 				694227092991932D0074D2A0 /* Defaults.swift in Sources */,
 				69F070D526B6B9810027E94D /* InternetAuthenticationType.swift in Sources */,
 				69ED6402272CF4F100153653 /* SignUpViewController.swift in Sources */,
+				69F870602B9226B300510899 /* NotificationCenter+Extensions.swift in Sources */,
 				69A0AFB3298EC853002E652E /* RootSessionViewController.swift in Sources */,
 				698F26822990F5240097D3B0 /* FileSystemManager.swift in Sources */,
 				69A0AFBA298EC875002E652E /* UIViewController+Extensions.swift in Sources */,

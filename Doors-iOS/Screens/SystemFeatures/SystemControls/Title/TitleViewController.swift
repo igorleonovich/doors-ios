@@ -10,6 +10,8 @@ import UIKit
 
 final class TitleViewController: BaseSystemFeatureViewController {
     
+    // MARK: Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -24,6 +26,6 @@ final class TitleViewController: BaseSystemFeatureViewController {
             make.edges.equalToSuperview()
         }
         titleLabel.textAlignment = .center
-        titleLabel.text = "Doors".localized(tableName: "Title").uppercased().gapped()
+        titleLabel.text = "Scene".localized(tableName: "Title").uppercased().gapped()
     }
 }

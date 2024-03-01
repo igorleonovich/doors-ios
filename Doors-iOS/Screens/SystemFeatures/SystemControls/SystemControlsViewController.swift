@@ -14,6 +14,8 @@ final class SystemControlsViewController: BaseSystemFeatureViewController {
     private var isInitialSetupPerformed = false
     static let height = 50
     
+    // MARK: Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()

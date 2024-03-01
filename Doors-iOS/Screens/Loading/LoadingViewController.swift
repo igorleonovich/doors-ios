@@ -32,7 +32,7 @@ final class LoadingViewController: BaseViewController {
     // MARK: Setup
     
     private func setupUI() {
-        
+        view.backgroundColor = UIColor.cyan
     }
     
     // MARK: Actions

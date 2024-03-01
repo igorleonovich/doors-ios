@@ -16,7 +16,6 @@ final class SessionViewController: BaseSystemFeatureViewController {
     init(core: Core, feature: Feature? = nil, borderSide: BorderSide? = nil) {
         self.borderSide = borderSide
         super.init(core: core, feature: feature)
-        core.router = self
     }
     
     required init?(coder: NSCoder) {
@@ -89,7 +88,7 @@ final class SessionViewController: BaseSystemFeatureViewController {
            let sessionConfiguration = userViewController.user.rootSessionConfiguration.sessionConfigurations.first(where: { $0.id == sessionId }),
            let index = userViewController.user.rootSessionConfiguration.sessionConfigurations.firstIndex(of: sessionConfiguration) {
                 userViewController.user.rootSessionConfiguration.sessionConfigurations.remove(at: index)
-                NotificationCenter.default.post(name: Notification.Name("DidUpdateUser"), object: nil)
+            NotificationCenter.default.post(name: Notification.Name.didUpdateUser, object: nil)
         }
         onClose()
     }
@@ -100,8 +99,4 @@ final class SessionViewController: BaseSystemFeatureViewController {
         }
         remove()
     }
-}
-
-extension SessionViewController: Router {
-    
 }

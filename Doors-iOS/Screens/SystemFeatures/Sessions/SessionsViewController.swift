@@ -98,7 +98,7 @@ final class SessionsViewController: BaseSystemFeatureViewController {
             loadSessionFeature(with: sessionId)
             let sessionConfiguration = SessionConfiguration(id: sessionId)
             (feature.dependencies.first(where: { $0.name == "rootSession" })?.childFeatures.first(where: { $0.name == "user" })?.viewController as? UserViewController)?.user.rootSessionConfiguration.sessionConfigurations.append(sessionConfiguration)
-                NotificationCenter.default.post(name: Notification.Name("DidUpdateUser"), object: nil)
+            NotificationCenter.default.post(name: Notification.Name.didUpdateUser, object: nil)
         }
         func loadSessionFeature(with sessionId: String) {
             let sessionFeature = SessionFeature(name: "session", dependencies: [feature], sessionId: sessionId)

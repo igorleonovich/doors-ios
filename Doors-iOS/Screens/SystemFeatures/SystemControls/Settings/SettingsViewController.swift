@@ -10,6 +10,8 @@ import UIKit
 
 final class SettingsViewController: BaseSystemFeatureViewController {
     
+    // MARK: Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()

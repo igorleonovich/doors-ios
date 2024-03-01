@@ -21,9 +21,9 @@ final class UserViewController: BaseSystemFeatureViewController {
     
     private func setupNotifications() {
         NotificationCenter.default.addObserver(self,
-            selector: #selector(didUpdateUser),
-            name: Notification.Name("DidUpdateUser"),
-            object: nil)
+                                               selector: #selector(didUpdateUser),
+                                               name: Notification.Name.didUpdateUser,
+                                               object: nil)
     }
     
     // MARK: Actions

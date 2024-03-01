@@ -47,6 +47,7 @@ final class RootSessionViewController: BaseSystemFeatureViewController {
         } else if feature.name == "sessions" {
             let sessionsView = UIView()
             view.addSubview(sessionsView)
+            sessionsView.snap()
             let sessionsViewController = SessionsViewController(core: core, feature: feature)
             feature.viewController = sessionsViewController
             add(child: sessionsViewController, containerView: sessionsView)

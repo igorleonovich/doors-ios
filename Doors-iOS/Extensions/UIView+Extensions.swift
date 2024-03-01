@@ -10,6 +10,23 @@ import UIKit
 
 extension UIView {
     
+    // MARK: SnapKit
+    
+    func snap(offset: Int? = 0) {
+        snp.makeConstraints { make in
+            if let offset = offset {
+                make.top.equalTo(offset)
+                make.leading.equalTo(offset)
+                make.trailing.equalTo(-offset)
+                make.bottom.equalTo(-offset)
+            } else {
+                make.edges.equalToSuperview()
+            }
+        }
+    }
+    
+    // MARK: Borders
+    
     @discardableResult
     func addBorders(color: UIColor, width: CGFloat, sides: [BorderSide]) -> [UIView] {
         var borderViews = [UIView]()
