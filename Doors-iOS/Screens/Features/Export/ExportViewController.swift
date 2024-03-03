@@ -29,12 +29,12 @@ final class ExportViewController: BaseFeatureViewController {
     }
     
     private func loadInitialFeatures() {
-        let doExportFeature = Feature(name: "doExport", dependencies: [])
-        loadFeature(doExportFeature)
+        let doExportFeature = Feature(name: "doExport")
+        loadChildFeature(doExportFeature)
     }
     
-    override func loadFeature(_ feature: Feature) {
-        super.loadFeature(feature)
+    override func loadChildFeature(_ feature: Feature) {
+        super.loadChildFeature(feature)
         if feature.name == "doExport" {
             do {
                 let exportFolderName = "Export"

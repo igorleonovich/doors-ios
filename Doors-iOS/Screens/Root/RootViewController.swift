@@ -64,7 +64,7 @@ final class RootViewController: BaseViewController {
     private func showRootSession() {
         let core = Core()
         core.rootCore = rootCore
-        let rootSessionFeature = Feature(name: "rootSession", dependencies: [])
+        let rootSessionFeature = Feature(name: "rootSession")
         let rootSessionViewController = RootSessionViewController(core: core, feature: rootSessionFeature)
         rootSessionFeature.viewController = rootSessionViewController
         self.rootSessionViewController = rootSessionViewController

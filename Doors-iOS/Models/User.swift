@@ -21,7 +21,7 @@ struct RootSessionConfiguration: Codable {
 
 struct SessionConfiguration: Codable {
     
-    var id: String
+    var id: String = UUID.new
     var features = [UserFeature]()
 }
 

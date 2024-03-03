@@ -49,7 +49,7 @@ final class SessionViewController: BaseSystemFeatureViewController {
         if let feature = feature {
             let systemControlsFeature = Feature(name: "systemControls", dependencies: [feature])
             let mainFeature = Feature(name: "main", dependencies: [systemControlsFeature])
-            [systemControlsFeature, mainFeature].forEach({ loadFeature($0) })
+            [systemControlsFeature, mainFeature].forEach({ loadChildFeature($0) })
             if let sessionId = (feature as? SessionFeature)?.sessionId {
                 (feature.dependencies.first(where: { $0.name == "sessions" })?.dependencies.first(where: { $0.name == "rootSession" })?.childFeatures.first(where: { $0.name == "user" })?.viewController as? UserViewController)?.user.rootSessionConfiguration.sessionConfigurations.first(where: { $0.id == sessionId })?.features.forEach { feature in
                     if feature.name == "console" {
@@ -60,8 +60,8 @@ final class SessionViewController: BaseSystemFeatureViewController {
         }
     }
     
-    override func loadFeature(_ feature: Feature) {
-        super.loadFeature(feature)
+    override func loadChildFeature(_ feature: Feature) {
+        super.loadChildFeature(feature)
         if feature.name == "main" {
             let mainView = UIView()
             self.mainView = mainView
@@ -75,7 +75,7 @@ final class SessionViewController: BaseSystemFeatureViewController {
     func loadFeature(name: String) {
         if let feature = feature, let mainFeature = feature.childFeatures.first(where: { $0.name == "main" }) {
             let consoleFeature = Feature(name: name, dependencies: [feature, mainFeature])
-            loadFeature(consoleFeature)
+            loadChildFeature(consoleFeature)
         }
     }
     

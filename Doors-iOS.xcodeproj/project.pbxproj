@@ -688,7 +688,6 @@
 				690F4121298D6E9300C5239F /* Models */,
 				69BE8D02298D7D7C001EFDD2 /* Extensions */,
 				690A4822298D7666000C02B4 /* Utils */,
-				69F0703026B6AF4F0027E94D /* Configs */,
 				6942270D29919DC40074D2A0 /* Resources */,
 				69F06FFF26B6ADD10027E94D /* AppDelegate.swift */,
 				69F0700126B6ADD10027E94D /* SceneDelegate.swift */,
@@ -697,6 +696,7 @@
 				6919EB70298D1FC600F96016 /* Doors.entitlements */,
 				69F0700D26B6ADDD0027E94D /* Doors-iOS-Uni-Info.plist */,
 				69F0702F26B6AF1C0027E94D /* Doors-iOS-Extra-Info.plist */,
+				69F0703026B6AF4F0027E94D /* Configs */,
 			);
 			path = "Doors-iOS";
 			sourceTree = "<group>";
@@ -1478,6 +1478,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ft.doors.scene.apple.dev;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = YES;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -1504,6 +1505,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ft.doors.scene.apple.dev;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = YES;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;

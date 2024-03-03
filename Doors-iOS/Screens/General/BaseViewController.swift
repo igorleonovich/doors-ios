@@ -40,7 +40,7 @@ class BaseFeatureViewController: BaseViewController {
     
     // MARK: Actions
     
-    func loadFeature(_ feature: Feature) {
+    func loadChildFeature(_ feature: Feature) {
         if feature.name == "console" {
             let consoleView = UIView()
             view.addSubview(consoleView)
@@ -53,8 +53,8 @@ class BaseFeatureViewController: BaseViewController {
     
     func unloadFeature(name: String) {
         if name == "console" {
-            feature?.childFeatures.first(where: { $0.name == "console" })?.viewController?.remove()
-            if let indexToRemove = feature?.childFeatures.firstIndex(where: { $0.name == "console" }) {
+            feature?.childFeatures.first(where: { $0.name == name })?.viewController?.remove()
+            if let indexToRemove = feature?.childFeatures.firstIndex(where: { $0.name == name }) {
                 feature?.childFeatures.remove(at: indexToRemove)
             }
         }
@@ -65,8 +65,8 @@ class BaseSystemFeatureViewController: BaseFeatureViewController {
     
     // MARK: Actions
     
-    override func loadFeature(_ feature: Feature) {
-        super.loadFeature(feature)
+    override func loadChildFeature(_ feature: Feature) {
+        super.loadChildFeature(feature)
         if feature.name == "systemControls" {
             let systemControlsView = UIView()
             view.addSubview(systemControlsView)

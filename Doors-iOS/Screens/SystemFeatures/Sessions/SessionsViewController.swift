@@ -72,8 +72,8 @@ final class SessionsViewController: BaseSystemFeatureViewController {
         }
     }
     
-    override func loadFeature(_ feature: Feature) {
-        super.loadFeature(feature)
+    override func loadChildFeature(_ feature: Feature) {
+        super.loadChildFeature(feature)
         if feature.name == "session" {
             DispatchQueue.main.async { [weak self] in
                 guard let self = self else { return }
@@ -102,7 +102,7 @@ final class SessionsViewController: BaseSystemFeatureViewController {
         }
         func loadSessionFeature(with sessionId: String) {
             let sessionFeature = SessionFeature(name: "session", dependencies: [feature], sessionId: sessionId)
-            loadFeature(sessionFeature)
+            loadChildFeature(sessionFeature)
         }
     }
     

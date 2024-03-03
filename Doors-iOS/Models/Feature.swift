@@ -15,7 +15,7 @@ class Feature: NSObject {
     var childFeatures = [Feature]()
     var viewController: BaseFeatureViewController?
     
-    init(name: String, dependencies: [Feature]) {
+    init(name: String, dependencies: [Feature] = [Feature]()) {
         self.name = name
         self.dependencies = dependencies
         super.init()

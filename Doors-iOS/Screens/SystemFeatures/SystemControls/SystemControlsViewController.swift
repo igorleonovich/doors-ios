@@ -69,14 +69,14 @@ final class SystemControlsViewController: BaseSystemFeatureViewController {
     private func loadInitialFeatures() {
         if let feature = feature {
             let startFeature = Feature(name: "start", dependencies: [feature])
-            let titleFeature = Feature(name: "title", dependencies: [])
+            let titleFeature = Feature(name: "title")
             let settingsFeature = Feature(name: "settings", dependencies: [feature])
-            [startFeature, titleFeature, settingsFeature].forEach({ loadFeature($0) })
+            [startFeature, titleFeature, settingsFeature].forEach({ loadChildFeature($0) })
         }
     }
     
-    override func loadFeature(_ feature: Feature) {
-        super.loadFeature(feature)
+    override func loadChildFeature(_ feature: Feature) {
+        super.loadChildFeature(feature)
         if feature.name == "start" {
             let startView = UIView()
             stackView.addArrangedSubview(startView)

@@ -29,12 +29,12 @@ final class ImportViewController: BaseFeatureViewController {
     }
     
     private func loadInitialFeatures() {
-        let doImportFeature = Feature(name: "doImport", dependencies: [])
-        loadFeature(doImportFeature)
+        let doImportFeature = Feature(name: "doImport")
+        loadChildFeature(doImportFeature)
     }
     
-    override func loadFeature(_ feature: Feature) {
-        super.loadFeature(feature)
+    override func loadChildFeature(_ feature: Feature) {
+        super.loadChildFeature(feature)
         if feature.name == "doImport" {
             if #available(iOS 14.0, *) {
                 let pickerViewController = UIDocumentPickerViewController(documentTypes: ["com.pkware.zip-archive"], in: .import)

@@ -29,17 +29,17 @@ final class RootSessionViewController: BaseSystemFeatureViewController {
             let userFeature = Feature(name: "user", dependencies: [feature])
             let systemControlsFeature = Feature(name: "systemControls", dependencies: [feature])
             let sessionsFeature = Feature(name: "sessions", dependencies: [feature, systemControlsFeature])
-            [userFeature, systemControlsFeature, sessionsFeature].forEach({ loadFeature($0) })
+            [userFeature, systemControlsFeature, sessionsFeature].forEach({ loadChildFeature($0) })
             (userFeature.viewController as? UserViewController)?.user.rootSessionConfiguration.features.forEach { feature in
-                if feature.name == "console" {
-                    loadFeature(name: "console")
+                if feature.name == "console", let consoleFeature = makeChildFeature(name: "console") {
+                    loadChildFeature(consoleFeature)
                 }
             }
         }
     }
     
-    override func loadFeature(_ feature: Feature) {
-        super.loadFeature(feature)
+    override func loadChildFeature(_ feature: Feature) {
+        super.loadChildFeature(feature)
         if feature.name == "user" {
             let userViewController = UserViewController(core: core, feature: feature)
             feature.viewController = userViewController
@@ -60,8 +60,8 @@ final class RootSessionViewController: BaseSystemFeatureViewController {
         }
     }
     
-    @discardableResult
-    func loadFeature(name: String) -> Feature? {
+//    @discardableResult
+    func makeChildFeature(name: String) -> Feature? {
         if let feature = feature {
             var dependencies = [Feature]()
             if name == "console", let sessionsFeature = feature.childFeatures.first(where: { $0.name == "sessions" }) {
@@ -69,9 +69,8 @@ final class RootSessionViewController: BaseSystemFeatureViewController {
             } else if ["import", "export"].contains(name) {
                 dependencies.append(contentsOf: [feature])
             }
-            let feature = Feature(name: name, dependencies: dependencies)
-            loadFeature(feature)
-            return feature
+            let childFeature = Feature(name: name, dependencies: dependencies)
+            return childFeature
         }
         return nil
     }

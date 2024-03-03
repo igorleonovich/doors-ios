@@ -10,5 +10,5 @@ import Foundation
 
 struct Constants {
     
-    static let appGroup = "group.fm.doors"
+    static let appGroupName = "group.com.ft.doors"
 }

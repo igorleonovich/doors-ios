@@ -77,9 +77,9 @@ extension StartScreenViewController: UITableViewDelegate {
                         if let index = userViewController.user.rootSessionConfiguration.features.firstIndex(where: { $0.name == features[indexPath.row].name }) {
                             userViewController.user.rootSessionConfiguration.features.remove(at: index)
                             (rootSessionFeature.viewController as? RootSessionViewController)?.unloadFeature(name: "console")
-                        } else {
+                        } else if let consoleFeature = (rootSessionFeature.viewController as? RootSessionViewController)?.makeChildFeature(name: "console")  {
                             userViewController.user.rootSessionConfiguration.features.append(features[indexPath.row].simple)
-                            (rootSessionFeature.viewController as? RootSessionViewController)?.loadFeature(name: "console")
+                            loadChildFeature(consoleFeature)
                         }
                         userViewController.saveUser()
                     }
@@ -104,9 +104,9 @@ extension StartScreenViewController: UITableViewDelegate {
         case "import":
             if let systemControlsFeature = feature?.dependencies.first(where: { $0.name == "start" })?.dependencies.first(where: { $0.name == "systemControls" }) {
                 if let rootSessionFeature = systemControlsFeature.dependencies.first(where: { $0.name == "rootSession" }) {
-                    if let feature = (rootSessionFeature.viewController as? RootSessionViewController)?.loadFeature(name: "import") {
+                    if let importFeature = (rootSessionFeature.viewController as? RootSessionViewController)?.makeChildFeature(name: "import") {
                         onClose() {
-                            (feature.viewController as? ImportViewController)?.run()
+                            (importFeature.viewController as? ImportViewController)?.run()
                         }
                     }
                 }
@@ -114,9 +114,9 @@ extension StartScreenViewController: UITableViewDelegate {
         case "export":
             if let systemControlsFeature = feature?.dependencies.first(where: { $0.name == "start" })?.dependencies.first(where: { $0.name == "systemControls" }) {
                 if let rootSessionFeature = systemControlsFeature.dependencies.first(where: { $0.name == "rootSession" }) {
-                    if let feature = (rootSessionFeature.viewController as? RootSessionViewController)?.loadFeature(name: "export") {
+                    if let exportFeature = (rootSessionFeature.viewController as? RootSessionViewController)?.makeChildFeature(name: "export") {
                         onClose() {
-                            (feature.viewController as? ExportViewController)?.run()
+                            (exportFeature.viewController as? ExportViewController)?.run()
                         }
                     }
                 }

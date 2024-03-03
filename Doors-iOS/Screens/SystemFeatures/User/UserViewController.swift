@@ -14,7 +14,7 @@ final class UserViewController: BaseSystemFeatureViewController {
     
     // MARK: Constants
     
-    private let doorsServiceFolderName = "Doors/Guest/.doors"
+    private let appFamilyFolderName = "Doors/Guest/.doors"
     private let userFileName = "User"
     
     // MARK: Setup
@@ -34,24 +34,24 @@ final class UserViewController: BaseSystemFeatureViewController {
     }
     
     private func loadInitialFeatures() {
-        let checkDoorsFolderFeature = Feature(name: "checkDoorsFolder", dependencies: [])
-        let setupUserFeature = Feature(name: "setupUser", dependencies: [])
-        [checkDoorsFolderFeature, setupUserFeature].forEach({ loadFeature($0) })
+        let checkAppFamilyFolderFeature = Feature(name: "checkAppFamilyFolder")
+        let setupUserFeature = Feature(name: "setupUser")
+        [checkAppFamilyFolderFeature, setupUserFeature].forEach({ loadChildFeature($0) })
     }
     
-    override func loadFeature(_ feature: Feature) {
-        super.loadFeature(feature)
-        if feature.name == "checkDoorsFolder" {
-            if core.rootCore.fileSystemManager.isFileExists(fileName: doorsServiceFolderName, fileFormat: "") == false {
-                try? core.rootCore.fileSystemManager.createFolder(folderName: doorsServiceFolderName)
+    override func loadChildFeature(_ feature: Feature) {
+        super.loadChildFeature(feature)
+        if feature.name == "checkAppFamilyFolder" {
+            if core.rootCore.fileSystemManager.isFileExists(fileName: appFamilyFolderName, fileFormat: "") == false {
+                try? core.rootCore.fileSystemManager.createFolder(folderName: appFamilyFolderName)
             }
-            if let path = core.rootCore.fileSystemManager.fileURL(fileName: doorsServiceFolderName, fileFormat: "")?.path {
-                print("\n[USER] Doors service folder:\n\(path)")
+            if let path = core.rootCore.fileSystemManager.fileURL(fileName: appFamilyFolderName, fileFormat: "")?.path {
+                print("\n[USER] App family folder:\n\(path)")
             }
         } else if feature.name == "setupUser" {
-            if core.rootCore.fileSystemManager.isFileExists(fileName: "\(doorsServiceFolderName)/\(userFileName)", fileFormat: "json") {
+            if core.rootCore.fileSystemManager.isFileExists(fileName: "\(appFamilyFolderName)/\(userFileName)", fileFormat: "json") {
                 do {
-                    if let data = try core.rootCore.fileSystemManager.getFileData(fileName: "\(doorsServiceFolderName)/\(userFileName)", fileFormat: "json") {
+                    if let data = try core.rootCore.fileSystemManager.getFileData(fileName: "\(appFamilyFolderName)/\(userFileName)", fileFormat: "json") {
                         do {
                             let user = try JSONDecoder().decode(User.self, from: data)
                             print("\n[USER] User detected:\n\(user)")
@@ -73,8 +73,9 @@ final class UserViewController: BaseSystemFeatureViewController {
                 createNewUser()
             }
             core.rootCore.appManager.isUserInitiallyLoaded = true
+            
             func createNewUser() {
-                let sessionConfiguration = SessionConfiguration(id: UUID.new)
+                let sessionConfiguration = SessionConfiguration()
                 let rootSessionConfiguration = RootSessionConfiguration(sessionConfigurations: [sessionConfiguration])
                 user = User(rootSessionConfiguration: rootSessionConfiguration)
                 saveUser()
@@ -85,7 +86,7 @@ final class UserViewController: BaseSystemFeatureViewController {
     func saveUser() {
         do {
             let data = try JSONEncoder().encode(user)
-            if let url = try? core.rootCore.fileSystemManager.saveFile(fileName: "\(doorsServiceFolderName)/\(userFileName)", fileFormat: "json", data: data) {
+            if let url = try? core.rootCore.fileSystemManager.saveFile(fileName: "\(appFamilyFolderName)/\(userFileName)", fileFormat: "json", data: data) {
                 print("\n[USER] File saved at:\(url.path)")
             }
         } catch {
