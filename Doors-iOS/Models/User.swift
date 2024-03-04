@@ -45,8 +45,15 @@ struct UserFeature: Codable {
     let title: String?
     let dependencies: [UserFeature]?
     let childFeatures: [UserFeature]?
+    var accessGroup: AccessGroup! = .free
     
     var simple: UserFeature {
         return UserFeature(name: name, title: nil, dependencies: dependencies, childFeatures: childFeatures)
     }
+}
+
+enum AccessGroup: String, Codable {
+    
+    case free
+    case premium
 }

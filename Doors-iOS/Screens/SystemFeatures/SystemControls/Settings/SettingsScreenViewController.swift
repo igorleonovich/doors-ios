@@ -15,6 +15,20 @@ final class SettingsScreenViewController: BaseSystemFeatureMenuViewController {
     // MARK: Setup
     
     override func setupData() {
+        if core.rootCore.appManager.featureMap?.settingsFeatures.first(where: { $0.name == "multiSession" }) != nil {
+            setupMultiSession()
+        }
+    }
+    
+    override func setupUI() {
+        super.setupUI()
+        updateHeight(contentHeight: CGFloat(settings.count * Int(SettingCell.height)))
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(SettingCell.self, forCellReuseIdentifier: "SettingCell")
+    }
+    
+    private func setupMultiSession() {
         if let rootSessionFeature = feature?.dependencies.first(where: { $0.name == "settings" })?.dependencies.first(where: { $0.name == "systemControls" })?.dependencies.first(where: { $0.name == "rootSession" }) {
             if let sessionsCount = (rootSessionFeature.childFeatures.first(where: { $0.name == "sessions" })?.viewController as? SessionsViewController)?.sessionViewControllers.count, sessionsCount < SessionsViewController.maxSessions {
                 settings.append(.addSession)
@@ -25,14 +39,6 @@ final class SettingsScreenViewController: BaseSystemFeatureMenuViewController {
         if feature?.dependencies.first(where: { $0.name == "settings" })?.dependencies.first(where: { $0.name == "systemControls" })?.dependencies.first(where: { $0.name == "session" }) != nil {
             settings.append(.dropSession)
         }
-    }
-    
-    override func setupUI() {
-        super.setupUI()
-        updateHeight(contentHeight: CGFloat(settings.count * Int(SettingCell.height)))
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.register(SettingCell.self, forCellReuseIdentifier: "SettingCell")
     }
 }
 

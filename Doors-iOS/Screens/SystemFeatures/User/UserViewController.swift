@@ -14,7 +14,7 @@ final class UserViewController: BaseSystemFeatureViewController {
     
     // MARK: Constants
     
-    private let appFamilyFolderName = "Doors/Guest/.doors"
+    private let appFamilyFolderName = "Clusters/1/Domains/Guest/.doors"
     private let userFileName = "User"
     
     // MARK: Setup

@@ -1,18 +1,25 @@
 {
-  "features": [
+  "startFeatures": [
     {
-        "name": "router",
-        "title": "Router",
-    }
-  ],
-  "sessionFeatures": [
+        "name": "scene",
+        "title": "Scene",
+        "childFeatures": [
+            {
+                "name": "editor",
+                "title": "Editor",
+                "childFeatures": [
+                    {
+                        "name": "points",
+                        "title": "Points",
+                        "accessGroup": "premium",
+                    }
+                ]
+            }
+        ]
+    },
     {
         "name": "console",
         "title": "Console",
-    },
-    {
-        "name": "multiSession",
-        "title": "Multi Session",
     },
     {
         "name": "importExport",
@@ -22,5 +29,26 @@
         "name": "reset",
         "title": "Reset",
     }
+  ],
+  "settingsFeatures": [
+    {
+        "name": "multiSession",
+        "title": "Multi Session",
+    },
+    {
+        "name": "auth",
+        "title": "Authentication & Authorization",
+        "childFeatures": [
+            {
+                "name": "localAuth",
+                "title": "Local Authentication & Authorization",
+            },
+            {
+                "name": "globalAuth",
+                "title": "Global Authentication & Authorization",
+            }
+        ]
+    }
   ]
 }
+

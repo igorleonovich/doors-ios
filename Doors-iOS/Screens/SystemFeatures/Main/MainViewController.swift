@@ -46,6 +46,6 @@ final class MainViewController: BaseSystemFeatureViewController {
     }
     
     override func loadChildFeature(_ feature: Feature) {
-        
+        super.loadChildFeature(feature)
     }
 }
