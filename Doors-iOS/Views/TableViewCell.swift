@@ -48,37 +48,3 @@ class TableViewCell: UITableViewCell {
         alpha = isDisabled ? 0.5 : 1
     }
 }
-
-class BaseTableViewCell: TableViewCell {
-    
-    var titleLabel: Label!
-    
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        setupUI()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    // MARK: Setup
-    
-    private func setupUI() {
-        let stackView = UIStackView()
-        addSubview(stackView)
-        stackView.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(10)
-            make.bottom.equalToSuperview().offset(-10)
-            make.left.equalToSuperview().offset(20)
-            make.right.equalToSuperview().offset(-20)
-        }
-        stackView.axis = .horizontal
-        stackView.distribution = .equalCentering
-        stackView.addArrangedSubview(UIView())
-        let titleLabel = Label()
-        self.titleLabel = titleLabel
-        stackView.addArrangedSubview(titleLabel)
-        stackView.addArrangedSubview(UIView())
-    }
-}

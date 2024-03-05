@@ -191,7 +191,7 @@ extension BaseSystemFeatureMenuViewController: UIGestureRecognizerDelegate {
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
         var result = true
         tableView.subviews.forEach { subview in
-            if let subview = subview as? BaseTableViewCell {
+            if let subview = subview as? MenuTableViewCell {
                 let value = subview.titleLabel.point(inside: touch.location(in: subview.titleLabel), with: nil)
                 if value {
                     result = false

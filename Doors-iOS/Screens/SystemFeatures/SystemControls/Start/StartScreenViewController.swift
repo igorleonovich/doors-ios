@@ -146,7 +146,7 @@ extension StartScreenViewController: UITableViewDataSource {
     }
 }
 
-final class StartFeatureCell: BaseTableViewCell {
+final class StartFeatureCell: MenuTableViewCell {
     
     static let height: CGFloat = 50
     

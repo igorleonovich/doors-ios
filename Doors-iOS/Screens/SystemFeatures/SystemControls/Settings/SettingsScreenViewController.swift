@@ -77,7 +77,7 @@ extension SettingsScreenViewController: UITableViewDataSource {
     }
 }
 
-final class SettingCell: BaseTableViewCell {
+final class SettingCell: MenuTableViewCell {
     
     static let height: CGFloat = 50
     
