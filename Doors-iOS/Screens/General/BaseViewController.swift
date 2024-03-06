@@ -107,6 +107,12 @@ class BaseSystemFeatureMenuViewController: BaseSystemFeatureViewController {
     
     func setupUI() {
         view.backgroundColor = .black.withAlphaComponent(0.5)
+        setupTableView()
+        setupBottomButton()
+        setupBackButton()
+    }
+    
+    private func setupTableView() {
         tableView = TableView()
         view.addSubview(tableView)
         tableView.snp.makeConstraints { make in
@@ -128,7 +134,9 @@ class BaseSystemFeatureMenuViewController: BaseSystemFeatureViewController {
             }
             topButton.addTarget(self, action: #selector(onTap), for: .touchUpInside)
         }
-        
+    }
+    
+    private func setupBottomButton() {
         let bottomButton = UIButton()
         view.addSubview(bottomButton)
         bottomButton.snp.makeConstraints { make in
@@ -138,6 +146,16 @@ class BaseSystemFeatureMenuViewController: BaseSystemFeatureViewController {
             make.right.equalToSuperview()
         }
         bottomButton.addTarget(self, action: #selector(onTap), for: .touchUpInside)
+    }
+    
+    private func setupBackButton() {
+        let backButton = Button()
+        view.addSubview(backButton)
+        backButton.snp.makeConstraints { make in
+            make.top.equalTo(20)
+            make.leading.equalTo(20)
+        }
+        backButton.addTarget(self, action: #selector(onBack), for: .touchUpInside)
     }
     
     private func setupGesture() {
@@ -181,8 +199,12 @@ class BaseSystemFeatureMenuViewController: BaseSystemFeatureViewController {
         }
     }
     
-    func onClose(_ completion: (() -> Void)? = nil) {
+    @objc func onClose(_ completion: (() -> Void)? = nil) {
         dismiss(animated: true, completion: completion)
+    }
+    
+    @objc private func onBack() {
+        navigationController?.popViewController(animated: true)
     }
 }
 

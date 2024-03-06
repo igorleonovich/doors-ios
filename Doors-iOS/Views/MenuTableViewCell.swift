@@ -3,13 +3,14 @@
 //  Doors-iOS
 //
 //  Created by Igor Leonovich on 05/03/2024.
-//  Copyright © 2024 IL. All rights reserved.
+//  Copyright © 2023 IL. All rights reserved.
 //
 
 import UIKit
 
 class MenuTableViewCell: TableViewCell {
     
+    var toggleButton: Button!
     var titleLabel: Label!
     var arrowLabel: Label!
     
@@ -33,10 +34,11 @@ class MenuTableViewCell: TableViewCell {
             make.left.equalToSuperview().offset(20)
             make.right.equalToSuperview().offset(-20)
         }
+        stackView.spacing = 10
         
         stackView.addArrangedSubview(UIView())
         
-        let toggleButton = Button()
+        toggleButton = Button()
         toggleButton.addTarget(self, action: #selector(onToggle), for: .touchUpInside)
         toggleButton.backgroundColor = .green
         toggleButton.clipsToBounds = true
@@ -44,22 +46,11 @@ class MenuTableViewCell: TableViewCell {
         toggleButton.snp.makeConstraints { make in
             make.width.equalTo(30)
         }
+        toggleButton.isHidden = true
         stackView.addArrangedSubview(toggleButton)
-        
-        let spacerA = UIView()
-        spacerA.snp.makeConstraints { make in
-            make.width.equalTo(10)
-        }
-        stackView.addArrangedSubview(spacerA)
         
         titleLabel = Label()
         stackView.addArrangedSubview(titleLabel)
-        
-        let spacerB = UIView()
-        spacerB.snp.makeConstraints { make in
-            make.width.equalTo(10)
-        }
-        stackView.addArrangedSubview(spacerB)
         
         arrowLabel = Label()
         arrowLabel.text = ">"

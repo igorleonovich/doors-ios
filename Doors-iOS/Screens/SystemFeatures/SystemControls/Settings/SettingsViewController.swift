@@ -48,9 +48,11 @@ final class SettingsViewController: BaseSystemFeatureViewController {
             let settingsScreenFeature = Feature(name: "settingsScreen", dependencies: [feature])
             let settingsScreenViewController = SettingsScreenViewController(core: core, feature: settingsScreenFeature)
             settingsScreenFeature.viewController = settingsScreenViewController
-            settingsScreenViewController.modalTransitionStyle = .crossDissolve
-            settingsScreenViewController.modalPresentationStyle = .overFullScreen
-            present(settingsScreenViewController, animated: true)
+            
+            let navigationController = UINavigationController(rootViewController: settingsScreenViewController)
+            navigationController.modalTransitionStyle = .crossDissolve
+            navigationController.modalPresentationStyle = .overFullScreen
+            present(navigationController, animated: true)
         }
     }
 }

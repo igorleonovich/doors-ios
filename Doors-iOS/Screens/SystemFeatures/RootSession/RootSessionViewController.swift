@@ -60,7 +60,6 @@ final class RootSessionViewController: BaseSystemFeatureViewController {
         }
     }
     
-//    @discardableResult
     func makeChildFeature(name: String) -> Feature? {
         if let feature = feature {
             var dependencies = [Feature]()

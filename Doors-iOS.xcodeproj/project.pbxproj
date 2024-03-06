@@ -201,10 +201,10 @@
 		69F070D726B6B9810027E94D /* SecureStoreQueryable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F070CB26B6B9810027E94D /* SecureStoreQueryable.swift */; };
 		69F070D826B6B9810027E94D /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F070CD26B6B9810027E94D /* Device.swift */; };
 		69F070D926B6B9810027E94D /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F070CD26B6B9810027E94D /* Device.swift */; };
+		69F719CB2B9775B2003E651A /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F719CA2B9775B2003E651A /* MenuTableViewCell.swift */; };
+		69F719CC2B9775B2003E651A /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F719CA2B9775B2003E651A /* MenuTableViewCell.swift */; };
 		69F8705F2B9226B300510899 /* NotificationCenter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F8705E2B9226B300510899 /* NotificationCenter+Extensions.swift */; };
 		69F870602B9226B300510899 /* NotificationCenter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F8705E2B9226B300510899 /* NotificationCenter+Extensions.swift */; };
-		69F870622B96994E00510899 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F870612B96994E00510899 /* MenuTableViewCell.swift */; };
-		69F870632B96994E00510899 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F870612B96994E00510899 /* MenuTableViewCell.swift */; };
 		C4469644B390573650999F4A /* Pods_Doors_iOS_Uni.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A374D9DADD76B2D9520DD63 /* Pods_Doors_iOS_Uni.framework */; };
 		D5B7D3BDCD217E58EDF280AB /* Pods_Doors_iOS_Extra.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833EE7B3A2BE98682B63DCB0 /* Pods_Doors_iOS_Extra.framework */; };
 /* End PBXBuildFile section */
@@ -348,8 +348,8 @@
 		69F070CB26B6B9810027E94D /* SecureStoreQueryable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecureStoreQueryable.swift; sourceTree = "<group>"; };
 		69F070CC26B6B9810027E94D /* SecureStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecureStore.h; sourceTree = "<group>"; };
 		69F070CD26B6B9810027E94D /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		69F719CA2B9775B2003E651A /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
 		69F8705E2B9226B300510899 /* NotificationCenter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationCenter+Extensions.swift"; sourceTree = "<group>"; };
-		69F870612B96994E00510899 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
 		7A45977E56CE7F70E3512ED8 /* Pods-Doors-iOS-Uni.release (stage).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doors-iOS-Uni.release (stage).xcconfig"; path = "Target Support Files/Pods-Doors-iOS-Uni/Pods-Doors-iOS-Uni.release (stage).xcconfig"; sourceTree = "<group>"; };
 		833EE7B3A2BE98682B63DCB0 /* Pods_Doors_iOS_Extra.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Doors_iOS_Extra.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8AA4B498681E479089C32EA /* Pods-Doors-iOS-Uni.release (prod).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doors-iOS-Uni.release (prod).xcconfig"; path = "Target Support Files/Pods-Doors-iOS-Uni/Pods-Doors-iOS-Uni.release (prod).xcconfig"; sourceTree = "<group>"; };
@@ -620,7 +620,7 @@
 				69399460298F2E8E006B92C3 /* AutoReducingStackView.swift */,
 				690DAC0E298FE60300FB8C7B /* TableView.swift */,
 				69A0AFC7298F1ACC002E652E /* TableViewCell.swift */,
-				69F870612B96994E00510899 /* MenuTableViewCell.swift */,
+				69F719CA2B9775B2003E651A /* MenuTableViewCell.swift */,
 				69285957299CF48700ED7AFA /* BlurView.swift */,
 			);
 			path = Views;
@@ -1110,7 +1110,6 @@
 			files = (
 				69A0AFC8298F1ACC002E652E /* TableViewCell.swift in Sources */,
 				690DAC1529901B1D00FB8C7B /* Button.swift in Sources */,
-				69F870622B96994E00510899 /* MenuTableViewCell.swift in Sources */,
 				69285955299CF45600ED7AFA /* UIVisualEffectView+Extensions.swift in Sources */,
 				690A4821298D754B000C02B4 /* Core.swift in Sources */,
 				69CC047C2992A912001295EB /* ImportViewController.swift in Sources */,
@@ -1147,6 +1146,7 @@
 				692A5D2D2B8EAA4600718BD4 /* Constants.swift in Sources */,
 				69F070D226B6B9810027E94D /* InternetProtocol.swift in Sources */,
 				69A0AF9F298E6BCD002E652E /* StartViewController.swift in Sources */,
+				69F719CB2B9775B2003E651A /* MenuTableViewCell.swift in Sources */,
 				690A4824298D767F000C02B4 /* Color.swift in Sources */,
 				69F0705926B6B8EC0027E94D /* OldConstants.swift in Sources */,
 				690DAC0F298FE60300FB8C7B /* TableView.swift in Sources */,
@@ -1201,7 +1201,6 @@
 			files = (
 				690DAC1629901B1D00FB8C7B /* Button.swift in Sources */,
 				69285956299CF45600ED7AFA /* UIVisualEffectView+Extensions.swift in Sources */,
-				69F870632B96994E00510899 /* MenuTableViewCell.swift in Sources */,
 				69F070D926B6B9810027E94D /* Device.swift in Sources */,
 				69CC047D2992A912001295EB /* ImportViewController.swift in Sources */,
 				69F0706D26B6B9280027E94D /* OldUIView+Extensions.swift in Sources */,
@@ -1238,6 +1237,7 @@
 				69F0705A26B6B8EC0027E94D /* OldConstants.swift in Sources */,
 				690DAC11298FE60A00FB8C7B /* Label.swift in Sources */,
 				69F0708226B6B9310027E94D /* ServerError.swift in Sources */,
+				69F719CC2B9775B2003E651A /* MenuTableViewCell.swift in Sources */,
 				690DAC12298FE60D00FB8C7B /* TableViewCell.swift in Sources */,
 				69A0AFAF298EBBEA002E652E /* UIView+Extensions.swift in Sources */,
 				69F0708626B6B9310027E94D /* UserPrivateInput.swift in Sources */,

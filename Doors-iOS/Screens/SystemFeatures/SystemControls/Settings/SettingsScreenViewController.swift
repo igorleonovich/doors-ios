@@ -18,6 +18,7 @@ final class SettingsScreenViewController: BaseSystemFeatureMenuViewController {
         if core.rootCore.appManager.featureMap?.settingsFeatures.first(where: { $0.name == "multiSession" }) != nil {
             setupMultiSession()
         }
+        settings.append(.setup)
     }
     
     override func setupUI() {
@@ -55,10 +56,15 @@ extension SettingsScreenViewController: UITableViewDelegate {
                 (rootSessionFeature.childFeatures.first(where: { $0.name == "sessions" })?.viewController as? SessionsViewController)?.addSession()
             }
             (feature?.dependencies.first(where: { $0.name == "settings" })?.dependencies.first(where: { $0.name == "systemControls" })?.dependencies.first(where: { $0.name == "session" })?.dependencies.first(where: { $0.name == "sessions" })?.viewController as? SessionsViewController)?.addSession()
+            onClose()
         case .dropSession:
             (feature?.dependencies.first(where: { $0.name == "settings" })?.dependencies.first(where: { $0.name == "systemControls" })?.dependencies.first(where: { $0.name == "session" })?.viewController as? SessionViewController)?.dropSession()
+            onClose()
+        case .setup:
+            let vc = UIViewController()
+            vc.view.backgroundColor = .black
+            navigationController?.pushViewController(vc, animated: true)
         }
-        onClose()
     }
 }
 
@@ -71,6 +77,7 @@ extension SettingsScreenViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "SettingCell", for: indexPath) as? SettingCell {
             cell.configure(setting: settings[indexPath.row])
+            cell.toggleButton.isHidden = true
             return cell
         }
         return UITableViewCell()
@@ -81,11 +88,12 @@ final class SettingCell: MenuTableViewCell {
     
     static let height: CGFloat = 50
     
-    func configure(setting: Setting) {
+    func configure(setting: Setting, isNeedToShowArrow: Bool = false) {
         titleLabel.textAlignment = .center
         titleLabel.textColor = .white
         titleLabel.font = UIFont.systemFont(ofSize: 20, weight: .thin)
         titleLabel.text = setting.title.localized(tableName: "Settings")
+        arrowLabel.isHidden = !isNeedToShowArrow
     }
 }
 
@@ -93,6 +101,7 @@ enum Setting: String, CaseIterable {
     
     case addSession
     case dropSession
+    case setup
     
     var title: String {
         switch self {
@@ -100,6 +109,8 @@ enum Setting: String, CaseIterable {
             return "Add Session"
         case .dropSession:
             return "Drop Session"
+        case .setup:
+            return "Setup"
         }
     }
 }
