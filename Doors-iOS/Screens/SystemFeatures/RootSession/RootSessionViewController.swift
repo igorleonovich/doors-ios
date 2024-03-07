@@ -29,7 +29,9 @@ final class RootSessionViewController: BaseSystemFeatureViewController {
             let userFeature = Feature(name: "user", dependencies: [feature])
             let systemControlsFeature = Feature(name: "systemControls", dependencies: [feature])
             let sessionsFeature = Feature(name: "sessions", dependencies: [feature, systemControlsFeature])
-            [userFeature, systemControlsFeature, sessionsFeature].forEach({ loadChildFeature($0) })
+            let importFeature = Feature(name: "import", dependencies: [feature])
+            let exportFeature = Feature(name: "export", dependencies: [feature])
+            [userFeature, systemControlsFeature, sessionsFeature, importFeature, exportFeature].forEach({ loadChildFeature($0) })
             (userFeature.viewController as? UserViewController)?.user.rootSessionConfiguration.features.forEach { feature in
                 if feature.name == "console", let consoleFeature = makeChildFeature(name: "console") {
                     loadChildFeature(consoleFeature)

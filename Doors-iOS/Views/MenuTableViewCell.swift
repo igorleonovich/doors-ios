@@ -10,9 +10,12 @@ import UIKit
 
 class MenuTableViewCell: TableViewCell {
     
+    weak var delegate: MenuTableViewCellDelegate?
+    
     var toggleButton: Button!
     var titleLabel: Label!
     var arrowLabel: Label!
+    var index = 0
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -31,8 +34,8 @@ class MenuTableViewCell: TableViewCell {
         stackView.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(10)
             make.bottom.equalToSuperview().offset(-10)
-            make.left.equalToSuperview().offset(20)
-            make.right.equalToSuperview().offset(-20)
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().offset(-20)
         }
         stackView.spacing = 10
         
@@ -54,13 +57,25 @@ class MenuTableViewCell: TableViewCell {
         
         arrowLabel = Label()
         arrowLabel.text = ">"
-        arrowLabel.isHidden = false
+        arrowLabel.isHidden = true
         stackView.addArrangedSubview(arrowLabel)
         
         stackView.addArrangedSubview(UIView())
     }
-        
-    @objc private func onToggle() {
-        print("toggle!")
+    
+    // MARK: Actions
+    
+    override func applyIsDisabledState() {
+        super.applyIsDisabledState()
+        toggleButton.backgroundColor = isDisabled ? .gray : .green
     }
+    
+    @objc private func onToggle() {
+        delegate?.onToggle(index)
+    }
+}
+
+protocol MenuTableViewCellDelegate: AnyObject {
+    
+    func onToggle(_ index: Int)
 }

@@ -30,7 +30,7 @@ final class StartViewController: BaseSystemFeatureViewController {
         button.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
-        button.setImage(UIImage(named: "Start")?.withRenderingMode(.alwaysOriginal).withTintColor(Color.foregroundActive), for: .normal)
+        button.setImage(UIImage(named: "Start")?.withForegroundActiveColor, for: .normal)
         button.imageView?.contentMode = .scaleAspectFit
         button.addTarget(self, action: #selector(onTap), for: .touchUpInside)
         
@@ -59,9 +59,11 @@ final class StartViewController: BaseSystemFeatureViewController {
             let startScreenFeature = Feature(name: "startScreen", dependencies: [feature])
             let startScreenViewController = StartScreenViewController(core: core, feature: startScreenFeature)
             startScreenFeature.viewController = startScreenViewController
-            startScreenViewController.modalTransitionStyle = .crossDissolve
-            startScreenViewController.modalPresentationStyle = .overFullScreen
-            present(startScreenViewController, animated: true)
+            
+            let navigationController = NavigationController(rootViewController: startScreenViewController)
+            navigationController.modalTransitionStyle = .crossDissolve
+            navigationController.modalPresentationStyle = .overFullScreen
+            present(navigationController, animated: true)
         }
     }
 }

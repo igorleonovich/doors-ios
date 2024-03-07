@@ -69,16 +69,45 @@ extension StartScreenViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        switch features[indexPath.row].name {
+        guard let feature = feature else { return }
+        let startScreenFeature = Feature(name: "startScreen", dependencies: feature.dependencies)
+        let startScreenViewController = StartScreenViewController(core: core, feature: startScreenFeature)
+        startScreenFeature.viewController = startScreenViewController
+        
+        navigationController?.pushViewController(startScreenViewController, animated: false)
+    }
+}
+
+extension StartScreenViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return features.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "StartFeatureCell", for: indexPath) as? StartFeatureCell {
+            cell.configure(feature: features[indexPath.row])
+            cell.index = indexPath.row
+            cell.delegate = self
+            return cell
+        }
+        return UITableViewCell()
+    }
+}
+
+extension StartScreenViewController: MenuTableViewCellDelegate {
+    
+    func onToggle(_ index: Int) {
+        switch features[index].name {
         case "console":
             if let systemControlsFeature = feature?.dependencies.first(where: { $0.name == "start" })?.dependencies.first(where: { $0.name == "systemControls" }) {
                 if let rootSessionFeature = systemControlsFeature.dependencies.first(where: { $0.name == "rootSession" }) {
                     if let userViewController = rootSessionFeature.childFeatures.first(where: { $0.name == "user" })?.viewController as? UserViewController {
-                        if let index = userViewController.user.rootSessionConfiguration.features.firstIndex(where: { $0.name == features[indexPath.row].name }) {
+                        if let index = userViewController.user.rootSessionConfiguration.features.firstIndex(where: { $0.name == features[index].name }) {
                             userViewController.user.rootSessionConfiguration.features.remove(at: index)
                             (rootSessionFeature.viewController as? RootSessionViewController)?.unloadFeature(name: "console")
                         } else if let consoleFeature = (rootSessionFeature.viewController as? RootSessionViewController)?.makeChildFeature(name: "console")  {
-                            userViewController.user.rootSessionConfiguration.features.append(features[indexPath.row].simple)
+                            userViewController.user.rootSessionConfiguration.features.append(features[index].simple)
                             loadChildFeature(consoleFeature)
                         }
                         userViewController.saveUser()
@@ -87,11 +116,11 @@ extension StartScreenViewController: UITableViewDelegate {
                     if let userViewController = sessionFeature.dependencies.first(where: { $0.name == "sessions" })?.dependencies.first(where: { $0.name == "rootSession" })?.childFeatures.first(where: { $0.name == "user" })?.viewController as? UserViewController {
                         if let sessionId = (sessionFeature as? SessionFeature)?.sessionId {
                             if let sessionIndex = userViewController.user.rootSessionConfiguration.sessionConfigurations.firstIndex(where: { $0.id == sessionId }) {
-                                if let indexToRemove = userViewController.user.rootSessionConfiguration.sessionConfigurations.first(where: { $0.id == sessionId })?.features.firstIndex(where: { $0.name == features[indexPath.row].name }) {
+                                if let indexToRemove = userViewController.user.rootSessionConfiguration.sessionConfigurations.first(where: { $0.id == sessionId })?.features.firstIndex(where: { $0.name == features[index].name }) {
                                     userViewController.user.rootSessionConfiguration.sessionConfigurations[sessionIndex].features.remove(at: indexToRemove)
                                     (sessionFeature.viewController as? SessionViewController)?.unloadFeature(name: "console")
                                 } else {
-                                    userViewController.user.rootSessionConfiguration.sessionConfigurations[sessionIndex].features.append(features[indexPath.row].simple)
+                                    userViewController.user.rootSessionConfiguration.sessionConfigurations[sessionIndex].features.append(features[index].simple)
                                     (sessionFeature.viewController as? SessionViewController)?.loadFeature(name: "console")
                                 }
                                 userViewController.saveUser()
@@ -105,7 +134,8 @@ extension StartScreenViewController: UITableViewDelegate {
             if let systemControlsFeature = feature?.dependencies.first(where: { $0.name == "start" })?.dependencies.first(where: { $0.name == "systemControls" }) {
                 if let rootSessionFeature = systemControlsFeature.dependencies.first(where: { $0.name == "rootSession" }) {
                     if let importFeature = (rootSessionFeature.viewController as? RootSessionViewController)?.makeChildFeature(name: "import") {
-                        onClose() {
+                        (importFeature.viewController as? ImportViewController)?.run()
+                        onBack() {
                             (importFeature.viewController as? ImportViewController)?.run()
                         }
                     }
@@ -115,7 +145,7 @@ extension StartScreenViewController: UITableViewDelegate {
             if let systemControlsFeature = feature?.dependencies.first(where: { $0.name == "start" })?.dependencies.first(where: { $0.name == "systemControls" }) {
                 if let rootSessionFeature = systemControlsFeature.dependencies.first(where: { $0.name == "rootSession" }) {
                     if let exportFeature = (rootSessionFeature.viewController as? RootSessionViewController)?.makeChildFeature(name: "export") {
-                        onClose() {
+                        onBack() {
                             (exportFeature.viewController as? ExportViewController)?.run()
                         }
                     }
@@ -131,29 +161,16 @@ extension StartScreenViewController: UITableViewDelegate {
     }
 }
 
-extension StartScreenViewController: UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return features.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "StartFeatureCell", for: indexPath) as? StartFeatureCell {
-            cell.configure(feature: features[indexPath.row])
-            return cell
-        }
-        return UITableViewCell()
-    }
-}
-
 final class StartFeatureCell: MenuTableViewCell {
     
     static let height: CGFloat = 50
     
     func configure(feature: UserFeature) {
+        toggleButton.isHidden = false
         titleLabel.textAlignment = .center
         titleLabel.textColor = .white
         titleLabel.font = UIFont.systemFont(ofSize: 20, weight: .thin)
         titleLabel.text = feature.title?.localized(tableName: "Feature")
+        arrowLabel.isHidden = false
     }
 }

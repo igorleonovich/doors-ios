@@ -12,7 +12,7 @@ class Button: UIButton {
     
     var isDisabled: Bool = false {
         didSet {
-            refreshAlpha()
+            applyIsDisabledState()
         }
     }
     
@@ -31,7 +31,7 @@ class Button: UIButton {
             case .highlighted:
                 alpha = 0.9
             default:
-                refreshAlpha()
+                applyIsDisabledState()
             }
             return super.state
         }
@@ -42,7 +42,7 @@ class Button: UIButton {
         titleLabel?.minimumScaleFactor = 0.5
     }
     
-    private func refreshAlpha() {
+    private func applyIsDisabledState() {
         alpha = isDisabled ? 0.5 : 1
     }
 }

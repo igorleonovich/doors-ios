@@ -1,0 +1,36 @@
+{
+  "features": [
+    {
+        "name": "rootSession",
+        "childFeatures": [
+            {
+                "name": "user",
+                "dependencies": [
+                    {
+                        "name": "rootSession"
+                    }
+                ]
+            },
+            {
+                "name": "systemControls",
+                "dependencies": [
+                    {
+                        "name": "rootSession"
+                    }
+                ]
+            },
+            {
+                "name": "sessions",
+                "dependencies": [
+                    {
+                        "name": "rootSession"
+                    },
+                    {
+                        "name": "systemControls"
+                    }
+                ]
+            }
+        ]
+    }
+  ]
+}

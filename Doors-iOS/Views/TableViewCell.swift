@@ -13,7 +13,7 @@ class TableViewCell: UITableViewCell {
     var isSelectable = true
     var isDisabled: Bool = false {
         didSet {
-            refreshAlpha()
+            applyIsDisabledState()
         }
     }
     
@@ -44,7 +44,7 @@ class TableViewCell: UITableViewCell {
     
     // MARK: Actions
     
-    private func refreshAlpha() {
+    func applyIsDisabledState() {
         alpha = isDisabled ? 0.5 : 1
     }
 }

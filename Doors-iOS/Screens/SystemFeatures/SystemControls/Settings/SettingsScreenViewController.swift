@@ -63,7 +63,7 @@ extension SettingsScreenViewController: UITableViewDelegate {
         case .setup:
             let vc = UIViewController()
             vc.view.backgroundColor = .black
-            navigationController?.pushViewController(vc, animated: true)
+            navigationController?.pushViewController(vc, animated: false)
         }
     }
 }
@@ -77,10 +77,18 @@ extension SettingsScreenViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "SettingCell", for: indexPath) as? SettingCell {
             cell.configure(setting: settings[indexPath.row])
-            cell.toggleButton.isHidden = true
+            cell.index = indexPath.row
+            cell.delegate = self
             return cell
         }
         return UITableViewCell()
+    }
+}
+
+extension SettingsScreenViewController: MenuTableViewCellDelegate {
+    
+    func onToggle(_ index: Int) {
+            
     }
 }
 
@@ -88,12 +96,18 @@ final class SettingCell: MenuTableViewCell {
     
     static let height: CGFloat = 50
     
-    func configure(setting: Setting, isNeedToShowArrow: Bool = false) {
+    func configure(setting: Setting) {
+        toggleButton.isHidden = true
         titleLabel.textAlignment = .center
         titleLabel.textColor = .white
         titleLabel.font = UIFont.systemFont(ofSize: 20, weight: .thin)
         titleLabel.text = setting.title.localized(tableName: "Settings")
-        arrowLabel.isHidden = !isNeedToShowArrow
+        switch setting {
+        case .setup:
+            arrowLabel.isHidden = false
+        default:
+            arrowLabel.isHidden = true
+        }
     }
 }
 

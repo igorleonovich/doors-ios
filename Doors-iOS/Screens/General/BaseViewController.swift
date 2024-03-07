@@ -80,33 +80,29 @@ class BaseSystemFeatureViewController: BaseFeatureViewController {
 class BaseSystemFeatureMenuViewController: BaseSystemFeatureViewController {
     
     var tableView: TableView!
+    private var backButton: Button!
     fileprivate var isNeedToSkipTap = false
     
     // MARK: Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupBackground()
         setupData()
         setupUI()
         setupGesture()
     }
     
-    // MARK: Setup
-    
-    private func setupBackground() {
-        let backgroundView = BlurView()
-        view.addSubview(backgroundView)
-        backgroundView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
-        }
-        backgroundView.addBlur()
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        view.bringSubviewToFront(backButton)
     }
+    
+    // MARK: Setup
     
     func setupData() {}
     
     func setupUI() {
-        view.backgroundColor = .black.withAlphaComponent(0.5)
+//        view.backgroundColor = .black.withAlphaComponent(0.5)
         setupTableView()
         setupBottomButton()
         setupBackButton()
@@ -149,12 +145,15 @@ class BaseSystemFeatureMenuViewController: BaseSystemFeatureViewController {
     }
     
     private func setupBackButton() {
-        let backButton = Button()
+        backButton = Button()
         view.addSubview(backButton)
         backButton.snp.makeConstraints { make in
-            make.top.equalTo(20)
+            make.top.equalTo(40)
             make.leading.equalTo(20)
+            make.width.equalTo(20)
+            make.height.equalTo(20)
         }
+        backButton.setImage(UIImage(named: "Back")?.withForegroundActiveColor, for: .normal)
         backButton.addTarget(self, action: #selector(onBack), for: .touchUpInside)
     }
     
@@ -163,7 +162,6 @@ class BaseSystemFeatureMenuViewController: BaseSystemFeatureViewController {
         gesture.delegate = self
         tableView.addGestureRecognizer(gesture)
     }
-    
     
     // MARK: Update
     
@@ -203,8 +201,19 @@ class BaseSystemFeatureMenuViewController: BaseSystemFeatureViewController {
         dismiss(animated: true, completion: completion)
     }
     
-    @objc private func onBack() {
-        navigationController?.popViewController(animated: true)
+    @objc func onBack() {
+        onBack(nil)
+    }
+    
+    func onBack(_ completion: (() -> Void)? = nil) {
+        if let navigationController = navigationController {
+            if navigationController.viewControllers.count > 1 {
+                navigationController.popViewController(animated: true)
+                completion?()
+            } else {
+                navigationController.dismiss(animated: true, completion: completion)
+            }
+        }
     }
 }
 
@@ -225,5 +234,31 @@ extension BaseSystemFeatureMenuViewController: UIGestureRecognizerDelegate {
             isNeedToSkipTap = true
         }
         return result
+    }
+}
+
+final class NavigationController: UINavigationController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setNavigationBarHidden(true, animated: false)
+        setupBackground()
+    }
+    
+    private func setupBackground() {
+        let backgroundView = BlurView()
+        view.insertSubview(backgroundView, at: 0)
+        backgroundView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+        backgroundView.addBlur()
+    }
+    
+    override func popViewController(animated: Bool) -> UIViewController? {
+        super.popViewController(animated: false)
+    }
+    
+    override func popToRootViewController(animated: Bool) -> [UIViewController]? {
+        super.popToRootViewController(animated: false)
     }
 }

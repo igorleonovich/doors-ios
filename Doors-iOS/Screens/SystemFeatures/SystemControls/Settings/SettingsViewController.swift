@@ -32,7 +32,7 @@ final class SettingsViewController: BaseSystemFeatureViewController {
         button.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
-        button.setImage(UIImage(named: "Settings")?.withRenderingMode(.alwaysOriginal).withTintColor(Color.foregroundActive), for: .normal)
+        button.setImage(UIImage(named: "Settings")?.withRenderingMode(.alwaysOriginal).withForegroundActiveColor, for: .normal)
         button.imageView?.contentMode = .scaleAspectFit
         button.addTarget(self, action: #selector(onTap), for: .touchUpInside)
     }
@@ -49,7 +49,7 @@ final class SettingsViewController: BaseSystemFeatureViewController {
             let settingsScreenViewController = SettingsScreenViewController(core: core, feature: settingsScreenFeature)
             settingsScreenFeature.viewController = settingsScreenViewController
             
-            let navigationController = UINavigationController(rootViewController: settingsScreenViewController)
+            let navigationController = NavigationController(rootViewController: settingsScreenViewController)
             navigationController.modalTransitionStyle = .crossDissolve
             navigationController.modalPresentationStyle = .overFullScreen
             present(navigationController, animated: true)

@@ -17,6 +17,12 @@
             }
         ]
     },
+  ],
+  "settingsFeatures": [
+    {
+        "name": "multiSession",
+        "title": "Multi Session",
+    },
     {
         "name": "console",
         "title": "Console",
@@ -28,12 +34,6 @@
     {
         "name": "reset",
         "title": "Reset",
-    }
-  ],
-  "settingsFeatures": [
-    {
-        "name": "multiSession",
-        "title": "Multi Session",
     },
     {
         "name": "auth",
@@ -51,4 +51,3 @@
     }
   ]
 }
-
