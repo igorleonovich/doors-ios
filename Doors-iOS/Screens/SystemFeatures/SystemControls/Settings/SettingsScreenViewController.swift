@@ -15,9 +15,36 @@ final class SettingsScreenViewController: BaseSystemFeatureMenuViewController {
     // MARK: Setup
     
     override func setupData() {
-        if core.rootCore.appManager.featureMap?.settingsFeatures.first(where: { $0.name == "multiSession" }) != nil {
-            setupMultiSession()
+        super.setupData()
+        var settingFeatures = [UserFeature]()
+        if let allSettingFeatures = core.rootCore.appManager.featureMap?.settingsFeatures {
+            if let systemControlsFeature = feature?.dependencies.first(where: { $0.name == "settings" })?.dependencies.first(where: { $0.name == "systemControls" }) {
+                if systemControlsFeature.dependencies.first(where: { $0.name == "rootSession" }) != nil {
+                    settingFeatures = allSettingFeatures
+                } else if systemControlsFeature.dependencies.first(where: { $0.name == "session" }) != nil {
+                    settingFeatures = allSettingFeatures.filter({ ["importExport", "reset", "auth"].contains($0.name) == false })
+                }
+            }
         }
+        
+        settingFeatures.forEach { settingFeature in
+            switch settingFeature.name {
+            case "multiSession":
+                setupMultiSession()
+            case "console":
+                settings.append(.console)
+            case "importExport":
+                settings.append(.importUser)
+                settings.append(.exportUser)
+            case "reset":
+                settings.append(.reset)
+            case "auth":
+                settings.append(.auth)
+            default:
+                break
+            }
+        }
+        
         settings.append(.setup)
     }
     
@@ -60,10 +87,15 @@ extension SettingsScreenViewController: UITableViewDelegate {
         case .dropSession:
             (feature?.dependencies.first(where: { $0.name == "settings" })?.dependencies.first(where: { $0.name == "systemControls" })?.dependencies.first(where: { $0.name == "session" })?.viewController as? SessionViewController)?.dropSession()
             onClose()
+        case .console:
+            break
         case .setup:
-            let vc = UIViewController()
-            vc.view.backgroundColor = .black
-            navigationController?.pushViewController(vc, animated: false)
+            guard let feature = feature else { return }
+            let settingsSetupFeature = Feature(name: "settingsSetup", dependencies: [feature])
+            let settingsSetupScreenViewController = SettingsSetupScreenViewController(core: core, feature: settingsSetupFeature)
+            navigationController?.pushViewController(settingsSetupScreenViewController, animated: false)
+        default:
+            break
         }
     }
 }
@@ -87,8 +119,12 @@ extension SettingsScreenViewController: UITableViewDataSource {
 
 extension SettingsScreenViewController: MenuTableViewCellDelegate {
     
-    func onToggle(_ index: Int) {
+    func onToggleAddition(_ index: Int) {
             
+    }
+    
+    func onToggleEnabling(_ index: Int) {
+        
     }
 }
 
@@ -97,7 +133,8 @@ final class SettingCell: MenuTableViewCell {
     static let height: CGFloat = 50
     
     func configure(setting: Setting) {
-        toggleButton.isHidden = true
+        toggleAdditionButton.isHidden = true
+        toggleEnablingButton.isHidden = true
         titleLabel.textAlignment = .center
         titleLabel.textColor = .white
         titleLabel.font = UIFont.systemFont(ofSize: 20, weight: .thin)
@@ -115,6 +152,11 @@ enum Setting: String, CaseIterable {
     
     case addSession
     case dropSession
+    case console
+    case importUser
+    case exportUser
+    case reset
+    case auth
     case setup
     
     var title: String {
@@ -125,6 +167,16 @@ enum Setting: String, CaseIterable {
             return "Drop Session"
         case .setup:
             return "Setup"
+        case .console:
+            return "Console"
+        case .importUser:
+            return "Import"
+        case .exportUser:
+            return "Export"
+        case .reset:
+            return "Reset"
+        case .auth:
+            return "Auth"
         }
     }
 }

@@ -16,7 +16,7 @@
 		690A4816298D73F0000C02B4 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690A4815298D73F0000C02B4 /* BaseViewController.swift */; };
 		690A4818298D743B000C02B4 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690A4817298D743B000C02B4 /* RootViewController.swift */; };
 		690A481A298D7492000C02B4 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690A4819298D7492000C02B4 /* LoadingViewController.swift */; };
-		690A481E298D74C4000C02B4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690A481D298D74C4000C02B4 /* MainViewController.swift */; };
+		690A481E298D74C4000C02B4 /* SessionContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690A481D298D74C4000C02B4 /* SessionContentViewController.swift */; };
 		690A4821298D754B000C02B4 /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690A4820298D754B000C02B4 /* Core.swift */; };
 		690A4824298D767F000C02B4 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690A4823298D767F000C02B4 /* Color.swift */; };
 		690A4827298D77A8000C02B4 /* RootSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690A4826298D77A8000C02B4 /* RootSessionViewController.swift */; };
@@ -52,6 +52,10 @@
 		69627BF92B9913A200B67DEC /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69627BF72B9913A200B67DEC /* UIImage+Extensions.swift */; };
 		698F26812990F5240097D3B0 /* FileSystemManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698F26802990F5240097D3B0 /* FileSystemManager.swift */; };
 		698F26822990F5240097D3B0 /* FileSystemManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698F26802990F5240097D3B0 /* FileSystemManager.swift */; };
+		6995BA882B9A5D67000F543E /* SettingsSetupScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6995BA872B9A5D67000F543E /* SettingsSetupScreenViewController.swift */; };
+		6995BA892B9A5D67000F543E /* SettingsSetupScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6995BA872B9A5D67000F543E /* SettingsSetupScreenViewController.swift */; };
+		6995BA8D2B9B7ED9000F543E /* EditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6995BA8C2B9B7ED9000F543E /* EditorViewController.swift */; };
+		6995BA8E2B9B7ED9000F543E /* EditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6995BA8C2B9B7ED9000F543E /* EditorViewController.swift */; };
 		69A0AF89298D8F6B002E652E /* ConsoleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A0AF88298D8F6B002E652E /* ConsoleViewController.swift */; };
 		69A0AF8A298D8F6D002E652E /* ConsoleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A0AF88298D8F6B002E652E /* ConsoleViewController.swift */; };
 		69A0AF8C298D905D002E652E /* Feature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A0AF8B298D905D002E652E /* Feature.swift */; };
@@ -73,7 +77,7 @@
 		69A0AFB1298EC84E002E652E /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690A4817298D743B000C02B4 /* RootViewController.swift */; };
 		69A0AFB2298EC850002E652E /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690A4819298D7492000C02B4 /* LoadingViewController.swift */; };
 		69A0AFB3298EC853002E652E /* RootSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690A4826298D77A8000C02B4 /* RootSessionViewController.swift */; };
-		69A0AFB4298EC857002E652E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690A481D298D74C4000C02B4 /* MainViewController.swift */; };
+		69A0AFB4298EC857002E652E /* SessionContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690A481D298D74C4000C02B4 /* SessionContentViewController.swift */; };
 		69A0AFB5298EC862002E652E /* SessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690A4829298D77EA000C02B4 /* SessionViewController.swift */; };
 		69A0AFB6298EC868002E652E /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690A4820298D754B000C02B4 /* Core.swift */; };
 		69A0AFB7298EC86C002E652E /* Feature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A0AF8B298D905D002E652E /* Feature.swift */; };
@@ -226,7 +230,7 @@
 		690A4815298D73F0000C02B4 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		690A4817298D743B000C02B4 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		690A4819298D7492000C02B4 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
-		690A481D298D74C4000C02B4 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		690A481D298D74C4000C02B4 /* SessionContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionContentViewController.swift; sourceTree = "<group>"; };
 		690A4820298D754B000C02B4 /* Core.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core.swift; sourceTree = "<group>"; };
 		690A4823298D767F000C02B4 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		690A4826298D77A8000C02B4 /* RootSessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootSessionViewController.swift; sourceTree = "<group>"; };
@@ -247,6 +251,8 @@
 		694227122991A0020074D2A0 /* FeatureMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureMap.swift; sourceTree = "<group>"; };
 		69627BF72B9913A200B67DEC /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		698F26802990F5240097D3B0 /* FileSystemManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSystemManager.swift; sourceTree = "<group>"; };
+		6995BA872B9A5D67000F543E /* SettingsSetupScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSetupScreenViewController.swift; sourceTree = "<group>"; };
+		6995BA8C2B9B7ED9000F543E /* EditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorViewController.swift; sourceTree = "<group>"; };
 		69A0AF88298D8F6B002E652E /* ConsoleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleViewController.swift; sourceTree = "<group>"; };
 		69A0AF8B298D905D002E652E /* Feature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feature.swift; sourceTree = "<group>"; };
 		69A0AF8F298DA392002E652E /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -432,12 +438,13 @@
 			path = Root;
 			sourceTree = "<group>";
 		};
-		690A4813298D73D5000C02B4 /* Main */ = {
+		690A4813298D73D5000C02B4 /* SessionContent */ = {
 			isa = PBXGroup;
 			children = (
-				690A481D298D74C4000C02B4 /* MainViewController.swift */,
+				690A481D298D74C4000C02B4 /* SessionContentViewController.swift */,
+				6995BA8B2B9B7ECD000F543E /* Editor */,
 			);
-			path = Main;
+			path = SessionContent;
 			sourceTree = "<group>";
 		};
 		690A4814298D73DE000C02B4 /* Loading */ = {
@@ -489,6 +496,7 @@
 				690A4812298D73CA000C02B4 /* Root */,
 				690A4814298D73DE000C02B4 /* Loading */,
 				69A0AF8E298DA373002E652E /* SystemFeatures */,
+				6995BA8A2B9B7E00000F543E /* SceneFeatures */,
 				69A0AF86298D8F4F002E652E /* Features */,
 			);
 			path = Screens;
@@ -536,6 +544,22 @@
 			path = _Old;
 			sourceTree = "<group>";
 		};
+		6995BA8A2B9B7E00000F543E /* SceneFeatures */ = {
+			isa = PBXGroup;
+			children = (
+				690A4813298D73D5000C02B4 /* SessionContent */,
+			);
+			path = SceneFeatures;
+			sourceTree = "<group>";
+		};
+		6995BA8B2B9B7ECD000F543E /* Editor */ = {
+			isa = PBXGroup;
+			children = (
+				6995BA8C2B9B7ED9000F543E /* EditorViewController.swift */,
+			);
+			path = Editor;
+			sourceTree = "<group>";
+		};
 		69A0AF86298D8F4F002E652E /* Features */ = {
 			isa = PBXGroup;
 			children = (
@@ -563,7 +587,6 @@
 				69A0AFBC298ED468002E652E /* Sessions */,
 				69A0AF96298E4EE0002E652E /* SystemControls */,
 				690A4828298D77BA000C02B4 /* Session */,
-				690A4813298D73D5000C02B4 /* Main */,
 			);
 			path = SystemFeatures;
 			sourceTree = "<group>";
@@ -573,6 +596,7 @@
 			children = (
 				69A0AF8F298DA392002E652E /* SettingsViewController.swift */,
 				69A0AF92298DA41C002E652E /* SettingsScreenViewController.swift */,
+				6995BA872B9A5D67000F543E /* SettingsSetupScreenViewController.swift */,
 				69CC045F29929DDA001295EB /* Settings.strings */,
 			);
 			path = Settings;
@@ -1118,13 +1142,14 @@
 				690A4821298D754B000C02B4 /* Core.swift in Sources */,
 				69CC047C2992A912001295EB /* ImportViewController.swift in Sources */,
 				69F070D826B6B9810027E94D /* Device.swift in Sources */,
-				690A481E298D74C4000C02B4 /* MainViewController.swift in Sources */,
+				690A481E298D74C4000C02B4 /* SessionContentViewController.swift in Sources */,
 				69A0AF89298D8F6B002E652E /* ConsoleViewController.swift in Sources */,
 				69F0706C26B6B9280027E94D /* OldUIView+Extensions.swift in Sources */,
 				69F0700026B6ADD10027E94D /* AppDelegate.swift in Sources */,
 				69A0AF8C298D905D002E652E /* Feature.swift in Sources */,
 				69285958299CF48700ED7AFA /* BlurView.swift in Sources */,
 				690A482A298D77EA000C02B4 /* SessionViewController.swift in Sources */,
+				6995BA8D2B9B7ED9000F543E /* EditorViewController.swift in Sources */,
 				69F0708926B6B9310027E94D /* RefreshTokenOutput.swift in Sources */,
 				69F070B726B6B9410027E94D /* OldLoadingViewController.swift in Sources */,
 				69A0AFC1298EE391002E652E /* BorderSide.swift in Sources */,
@@ -1135,6 +1160,7 @@
 				69F0700226B6ADD10027E94D /* SceneDelegate.swift in Sources */,
 				69A0AF90298DA392002E652E /* SettingsViewController.swift in Sources */,
 				6928594F2996C47800ED7AFA /* UIScreen+Extensions.swift in Sources */,
+				6995BA882B9A5D67000F543E /* SettingsSetupScreenViewController.swift in Sources */,
 				69F0706A26B6B9280027E94D /* OldUIViewController+Extensions.swift in Sources */,
 				69399461298F2E8E006B92C3 /* AutoReducingStackView.swift in Sources */,
 				69BE8D04298D7D94001EFDD2 /* UIViewController+Extensions.swift in Sources */,
@@ -1217,6 +1243,7 @@
 				69285959299CF48700ED7AFA /* BlurView.swift in Sources */,
 				69A0AFB5298EC862002E652E /* SessionViewController.swift in Sources */,
 				69F0701726B6AE340027E94D /* SceneDelegate.swift in Sources */,
+				6995BA8E2B9B7ED9000F543E /* EditorViewController.swift in Sources */,
 				69A0AFC2298EE391002E652E /* BorderSide.swift in Sources */,
 				69F0706B26B6B9280027E94D /* OldUIViewController+Extensions.swift in Sources */,
 				69F0704E26B6B8DB0027E94D /* OldRootViewController.swift in Sources */,
@@ -1227,6 +1254,7 @@
 				69F0708C26B6B9310027E94D /* NewUserOutput.swift in Sources */,
 				692859502996C47800ED7AFA /* UIScreen+Extensions.swift in Sources */,
 				69A0AFA0298E6BCD002E652E /* StartViewController.swift in Sources */,
+				6995BA892B9A5D67000F543E /* SettingsSetupScreenViewController.swift in Sources */,
 				69F0705E26B6B8EC0027E94D /* SceneManager.swift in Sources */,
 				69A0AFB8298EC86F002E652E /* Color.swift in Sources */,
 				69F0708E26B6B9310027E94D /* ListDTO.swift in Sources */,
@@ -1286,7 +1314,7 @@
 				69A0AFB0298EC84C002E652E /* BaseViewController.swift in Sources */,
 				69A0AF9C298E6B09002E652E /* SystemControlsViewController.swift in Sources */,
 				69F070D726B6B9810027E94D /* SecureStoreQueryable.swift in Sources */,
-				69A0AFB4298EC857002E652E /* MainViewController.swift in Sources */,
+				69A0AFB4298EC857002E652E /* SessionContentViewController.swift in Sources */,
 				69F070CF26B6B9810027E94D /* SecureStoreError.swift in Sources */,
 				69F070D126B6B9810027E94D /* SecureStore.swift in Sources */,
 			);

@@ -11,7 +11,7 @@ import UIKit
 final class SessionViewController: BaseSystemFeatureViewController {
     
     private let borderSide: BorderSide?
-    private weak var mainView: UIView?
+    private weak var sessionContentView: UIView?
     
     init(core: Core, feature: Feature? = nil, borderSide: BorderSide? = nil) {
         self.borderSide = borderSide
@@ -48,8 +48,8 @@ final class SessionViewController: BaseSystemFeatureViewController {
     private func loadInitialFeatures() {
         if let feature = feature {
             let systemControlsFeature = Feature(name: "systemControls", dependencies: [feature])
-            let mainFeature = Feature(name: "main", dependencies: [systemControlsFeature])
-            [systemControlsFeature, mainFeature].forEach({ loadChildFeature($0) })
+            let sessionContentFeature = Feature(name: "sessionContent", dependencies: [systemControlsFeature])
+            [systemControlsFeature, sessionContentFeature].forEach({ loadChildFeature($0) })
             if let sessionId = (feature as? SessionFeature)?.sessionId {
                 (feature.dependencies.first(where: { $0.name == "sessions" })?.dependencies.first(where: { $0.name == "rootSession" })?.childFeatures.first(where: { $0.name == "user" })?.viewController as? UserViewController)?.user.rootSessionConfiguration.sessionConfigurations.first(where: { $0.id == sessionId })?.features.forEach { feature in
                     if feature.name == "console" {
@@ -62,13 +62,13 @@ final class SessionViewController: BaseSystemFeatureViewController {
     
     override func loadChildFeature(_ feature: Feature) {
         super.loadChildFeature(feature)
-        if feature.name == "main" {
-            let mainView = UIView()
-            self.mainView = mainView
-            view.addSubview(mainView)
-            let mainViewController = MainViewController(core: core, feature: feature)
-            feature.viewController = mainViewController
-            add(child: mainViewController, containerView: mainView)
+        if feature.name == "sessionContent" {
+            let sessionContentView = UIView()
+            self.sessionContentView = sessionContentView
+            view.addSubview(sessionContentView)
+            let sessionContentViewController = SessionContentViewController(core: core, feature: feature)
+            feature.viewController = sessionContentViewController
+            add(child: sessionContentViewController, containerView: sessionContentView)
         }
     }
     

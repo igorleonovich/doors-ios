@@ -12,7 +12,8 @@ class MenuTableViewCell: TableViewCell {
     
     weak var delegate: MenuTableViewCellDelegate?
     
-    var toggleButton: Button!
+    var toggleAdditionButton: Button!
+    var toggleEnablingButton: Button!
     var titleLabel: Label!
     var arrowLabel: Label!
     var index = 0
@@ -41,16 +42,26 @@ class MenuTableViewCell: TableViewCell {
         
         stackView.addArrangedSubview(UIView())
         
-        toggleButton = Button()
-        toggleButton.addTarget(self, action: #selector(onToggle), for: .touchUpInside)
-        toggleButton.backgroundColor = .green
-        toggleButton.clipsToBounds = true
-        toggleButton.layer.cornerRadius = 6
-        toggleButton.snp.makeConstraints { make in
+        toggleAdditionButton = Button()
+        toggleAdditionButton.addTarget(self, action: #selector(onToggleAddition), for: .touchUpInside)
+        toggleAdditionButton.clipsToBounds = true
+        toggleAdditionButton.layer.cornerRadius = 6
+        toggleAdditionButton.snp.makeConstraints { make in
             make.width.equalTo(30)
         }
-        toggleButton.isHidden = true
-        stackView.addArrangedSubview(toggleButton)
+        toggleAdditionButton.contentEdgeInsets = .init(top: 5, left: 5, bottom: 5, right: 5)
+        toggleAdditionButton.isHidden = true
+        stackView.addArrangedSubview(toggleAdditionButton)
+        
+        toggleEnablingButton = Button()
+        toggleEnablingButton.addTarget(self, action: #selector(onToggleEnabling), for: .touchUpInside)
+        toggleEnablingButton.clipsToBounds = true
+        toggleEnablingButton.layer.cornerRadius = 6
+        toggleEnablingButton.snp.makeConstraints { make in
+            make.width.equalTo(30)
+        }
+        toggleEnablingButton.isHidden = true
+        stackView.addArrangedSubview(toggleEnablingButton)
         
         titleLabel = Label()
         stackView.addArrangedSubview(titleLabel)
@@ -67,15 +78,24 @@ class MenuTableViewCell: TableViewCell {
     
     override func applyIsDisabledState() {
         super.applyIsDisabledState()
-        toggleButton.backgroundColor = isDisabled ? .gray : .green
+        var toggleAdditionImage = UIImage(named: "Minus")?.withForegroundActiveColor
+        if isDisabled {
+            toggleAdditionImage = UIImage(named: "Plus")?.withForegroundActiveColor
+        }
+        toggleAdditionButton.setImage(toggleAdditionImage, for: .normal)
     }
     
-    @objc private func onToggle() {
-        delegate?.onToggle(index)
+    @objc private func onToggleAddition() {
+        delegate?.onToggleAddition(index)
+    }
+    
+    @objc private func onToggleEnabling() {
+        delegate?.onToggleEnabling(index)
     }
 }
 
 protocol MenuTableViewCellDelegate: AnyObject {
     
-    func onToggle(_ index: Int)
+    func onToggleAddition(_ index: Int)
+    func onToggleEnabling(_ index: Int)
 }

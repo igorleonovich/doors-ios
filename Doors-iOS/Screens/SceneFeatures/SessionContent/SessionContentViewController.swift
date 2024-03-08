@@ -1,5 +1,5 @@
 //
-//  MainViewController.swift
+//  SessionContentViewController.swift
 //  Doors-iOS
 //
 //  Created by Igor Leonovich on 9.05.20.
@@ -8,9 +8,9 @@
 
 import UIKit
 
-final class MainViewController: BaseSystemFeatureViewController {
+final class SessionContentViewController: BaseSystemFeatureViewController {
     
-    private var featuresViewControllers = [BaseFeatureViewController]()
+    private var editorViewController: EditorViewController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,10 +42,35 @@ final class MainViewController: BaseSystemFeatureViewController {
     }
     
     private func loadInitialFeatures() {
-        
+        if let feature = feature {
+            if let editorFeature = core.rootCore.appManager.featureMap?.startFeatures.first(where: { $0.name == "editor" }),
+                editorFeature.isEnabled {
+                let sceneFeature = Feature(name: "editor", dependencies: [feature])
+                loadChildFeature(sceneFeature)
+            }
+        }
     }
     
     override func loadChildFeature(_ feature: Feature) {
         super.loadChildFeature(feature)
+        switch feature.name {
+        case "editor":
+            editorViewController = EditorViewController()
+            add(child: editorViewController)
+        default:
+            break
+        }
+    }
+    
+    override func unloadFeature(name: String) {
+        super.unloadFeature(name: name)
+        guard let feature = feature else { return }
+        switch feature.name {
+        case "editor":
+            let editorViewController = EditorViewController()
+            add(child: editorViewController)
+        default:
+            break
+        }
     }
 }

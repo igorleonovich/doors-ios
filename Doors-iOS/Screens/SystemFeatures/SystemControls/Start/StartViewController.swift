@@ -30,7 +30,7 @@ final class StartViewController: BaseSystemFeatureViewController {
         button.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
-        button.setImage(UIImage(named: "Start")?.withForegroundActiveColor, for: .normal)
+        button.setImage(UIImage(named: "Plus")?.withForegroundActiveColor, for: .normal)
         button.imageView?.contentMode = .scaleAspectFit
         button.addTarget(self, action: #selector(onTap), for: .touchUpInside)
         

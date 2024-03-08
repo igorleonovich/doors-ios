@@ -1,14 +1,14 @@
 //
-//  StartScreenViewController.swift
+//  SettingsSetupScreenViewController.swift
 //  Doors-iOS
 //
-//  Created by Igor Leonovich on 4.02.23.
+//  Created by Igor Leonovich on 07/03/2024.
 //  Copyright © 2023 IL. All rights reserved.
 //
 
 import UIKit
 
-final class StartScreenViewController: BaseSystemFeatureMenuViewController {
+final class SettingsSetupScreenViewController: BaseSystemFeatureMenuViewController {
 
     private var features = [UserFeature]()
     
@@ -16,8 +16,8 @@ final class StartScreenViewController: BaseSystemFeatureMenuViewController {
     
     override func setupData() {
         super.setupData()
-        if let startFeatures = core.rootCore.appManager.featureMap?.startFeatures {
-            features = startFeatures
+        if let settingsFeatures = core.rootCore.appManager.featureMap?.settingsFeatures {
+            features = settingsFeatures
         }
     }
     
@@ -30,14 +30,14 @@ final class StartScreenViewController: BaseSystemFeatureMenuViewController {
     }
 }
 
-extension StartScreenViewController: UITableViewDelegate {
+extension SettingsSetupScreenViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return FeatureCell.height
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if let systemControlsFeature = feature?.dependencies.first(where: { $0.name == "start" })?.dependencies.first(where: { $0.name == "systemControls" }) {
+        if let systemControlsFeature = feature?.dependencies.first(where: { $0.name == "settingsScreen" })?.dependencies.first(where: { $0.name == "settings" })?.dependencies.first(where: { $0.name == "systemControls" }) {
             if let rootSessionFeature = systemControlsFeature.dependencies.first(where: { $0.name == "rootSession" }) {
                 if let userViewController = rootSessionFeature.childFeatures.first(where: { $0.name == "user" })?.viewController as? UserViewController {
                     if userViewController.user.rootSessionConfiguration.features.firstIndex(where: { $0.name == features[indexPath.row].name }) != nil {
@@ -72,7 +72,7 @@ extension StartScreenViewController: UITableViewDelegate {
     }
 }
 
-extension StartScreenViewController: UITableViewDataSource {
+extension SettingsSetupScreenViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return features.count
@@ -89,12 +89,12 @@ extension StartScreenViewController: UITableViewDataSource {
     }
 }
 
-extension StartScreenViewController: MenuTableViewCellDelegate {
+extension SettingsSetupScreenViewController: MenuTableViewCellDelegate {
     
     func onToggleAddition(_ index: Int) {
         switch features[index].name {
         case "console":
-            if let systemControlsFeature = feature?.dependencies.first(where: { $0.name == "start" })?.dependencies.first(where: { $0.name == "systemControls" }) {
+            if let systemControlsFeature = feature?.dependencies.first(where: { $0.name == "settingsScreen" })?.dependencies.first(where: { $0.name == "settings" })?.dependencies.first(where: { $0.name == "systemControls" }) {
                 if let rootSessionFeature = systemControlsFeature.dependencies.first(where: { $0.name == "rootSession" }) {
                     if let userViewController = rootSessionFeature.childFeatures.first(where: { $0.name == "user" })?.viewController as? UserViewController {
                         if let index = userViewController.user.rootSessionConfiguration.features.firstIndex(where: { $0.name == features[index].name }) {
@@ -125,7 +125,7 @@ extension StartScreenViewController: MenuTableViewCellDelegate {
                 tableView.reloadData()
             }
         case "import":
-            if let systemControlsFeature = feature?.dependencies.first(where: { $0.name == "start" })?.dependencies.first(where: { $0.name == "systemControls" }) {
+            if let systemControlsFeature = feature?.dependencies.first(where: { $0.name == "settingsScreen" })?.dependencies.first(where: { $0.name == "settings" })?.dependencies.first(where: { $0.name == "systemControls" }) {
                 if let rootSessionFeature = systemControlsFeature.dependencies.first(where: { $0.name == "rootSession" }) {
                     if let importFeature = (rootSessionFeature.viewController as? RootSessionViewController)?.makeChildFeature(name: "import") {
                         (importFeature.viewController as? ImportViewController)?.run()
@@ -136,7 +136,7 @@ extension StartScreenViewController: MenuTableViewCellDelegate {
                 }
             }
         case "export":
-            if let systemControlsFeature = feature?.dependencies.first(where: { $0.name == "start" })?.dependencies.first(where: { $0.name == "systemControls" }) {
+            if let systemControlsFeature = feature?.dependencies.first(where: { $0.name == "settingsScreen" })?.dependencies.first(where: { $0.name == "settings" })?.dependencies.first(where: { $0.name == "systemControls" }) {
                 if let rootSessionFeature = systemControlsFeature.dependencies.first(where: { $0.name == "rootSession" }) {
                     if let exportFeature = (rootSessionFeature.viewController as? RootSessionViewController)?.makeChildFeature(name: "export") {
                         onBack() {
@@ -156,21 +156,5 @@ extension StartScreenViewController: MenuTableViewCellDelegate {
     
     func onToggleEnabling(_ index: Int) {
         
-    }
-}
-
-final class FeatureCell: MenuTableViewCell {
-    
-    static let height: CGFloat = 50
-    
-    func configure(feature: UserFeature) {
-        toggleAdditionButton.isHidden = false
-        toggleEnablingButton.isHidden = false
-        toggleEnablingButton.backgroundColor = feature.isEnabled ? .green : .gray
-        titleLabel.textAlignment = .center
-        titleLabel.textColor = .white
-        titleLabel.font = UIFont.systemFont(ofSize: 20, weight: .thin)
-        titleLabel.text = feature.title?.localized(tableName: "Feature")
-        arrowLabel.isHidden = feature.childFeatures?.isEmpty ?? true
     }
 }

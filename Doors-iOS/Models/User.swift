@@ -46,9 +46,10 @@ struct UserFeature: Codable {
     let dependencies: [UserFeature]?
     let childFeatures: [UserFeature]?
     var accessGroup: AccessGroup! = .free
+    var isEnabled = false
     
     var simple: UserFeature {
-        return UserFeature(name: name, title: nil, dependencies: dependencies, childFeatures: childFeatures)
+        return UserFeature(name: name, title: nil, dependencies: dependencies, childFeatures: childFeatures, isEnabled: isEnabled)
     }
 }
 
