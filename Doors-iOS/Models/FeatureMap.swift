@@ -10,6 +10,6 @@ import Foundation
 
 struct FeatureMap: Codable {
     
-    let startFeatures: [UserFeature]
-    let settingsFeatures: [UserFeature]
+    var startFeatures: [UserFeature]
+    var settingsFeatures: [UserFeature]
 }

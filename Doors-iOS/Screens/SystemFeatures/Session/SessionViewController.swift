@@ -50,13 +50,6 @@ final class SessionViewController: BaseSystemFeatureViewController {
             let systemControlsFeature = Feature(name: "systemControls", dependencies: [feature])
             let sessionContentFeature = Feature(name: "sessionContent", dependencies: [systemControlsFeature])
             [systemControlsFeature, sessionContentFeature].forEach({ loadChildFeature($0) })
-            if let sessionId = (feature as? SessionFeature)?.sessionId {
-                (feature.dependencies.first(where: { $0.name == "sessions" })?.dependencies.first(where: { $0.name == "rootSession" })?.childFeatures.first(where: { $0.name == "user" })?.viewController as? UserViewController)?.user.rootSessionConfiguration.sessionConfigurations.first(where: { $0.id == sessionId })?.features.forEach { feature in
-                    if feature.name == "console" {
-                        loadFeature(name: "console")
-                    }
-                }
-            }
         }
     }
     

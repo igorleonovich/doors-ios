@@ -24,5 +24,6 @@ class Label: UILabel {
     private func setupUI() {
         adjustsFontSizeToFitWidth = true
         minimumScaleFactor = 0.3
+        textColor = Color.foregroundActive
     }
 }

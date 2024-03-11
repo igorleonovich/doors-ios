@@ -96,10 +96,13 @@ final class SessionsViewController: BaseSystemFeatureViewController {
         } else {
             let sessionId = UUID.new
             loadSessionFeature(with: sessionId)
-            let sessionConfiguration = SessionConfiguration(id: sessionId)
-            (feature.dependencies.first(where: { $0.name == "rootSession" })?.childFeatures.first(where: { $0.name == "user" })?.viewController as? UserViewController)?.user.rootSessionConfiguration.sessionConfigurations.append(sessionConfiguration)
+            if let userViewController = (feature.dependencies.first(where: { $0.name == "rootSession" })?.childFeatures.first(where: { $0.name == "user" })?.viewController as? UserViewController) {
+                let sessionConfiguration = SessionConfiguration(id: sessionId, domainId: userViewController.user.rootDomain.id)
+                userViewController.user.rootSessionConfiguration.sessionConfigurations.append(sessionConfiguration)
+            }
             NotificationCenter.default.post(name: Notification.Name.didUpdateUser, object: nil)
         }
+        
         func loadSessionFeature(with sessionId: String) {
             let sessionFeature = SessionFeature(name: "session", dependencies: [feature], sessionId: sessionId)
             loadChildFeature(sessionFeature)

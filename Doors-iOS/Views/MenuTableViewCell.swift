@@ -49,7 +49,7 @@ class MenuTableViewCell: TableViewCell {
         toggleAdditionButton.snp.makeConstraints { make in
             make.width.equalTo(30)
         }
-        toggleAdditionButton.contentEdgeInsets = .init(top: 5, left: 5, bottom: 5, right: 5)
+        toggleAdditionButton.imageView?.contentMode = .scaleAspectFit
         toggleAdditionButton.isHidden = true
         stackView.addArrangedSubview(toggleAdditionButton)
         
@@ -79,8 +79,10 @@ class MenuTableViewCell: TableViewCell {
     override func applyIsDisabledState() {
         super.applyIsDisabledState()
         var toggleAdditionImage = UIImage(named: "Minus")?.withForegroundActiveColor
+        toggleAdditionButton.contentEdgeInsets = .init(top: 6, left: 6, bottom: 6, right: 6)
         if isDisabled {
             toggleAdditionImage = UIImage(named: "Plus")?.withForegroundActiveColor
+            toggleAdditionButton.contentEdgeInsets = .zero
         }
         toggleAdditionButton.setImage(toggleAdditionImage, for: .normal)
     }

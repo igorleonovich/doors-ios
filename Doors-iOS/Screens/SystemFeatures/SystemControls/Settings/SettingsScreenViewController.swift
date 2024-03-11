@@ -10,47 +10,62 @@ import UIKit
 
 final class SettingsScreenViewController: BaseSystemFeatureMenuViewController {
     
-    private var settings = [Setting]()
+    private var features = [Feature]()
     
     // MARK: Setup
     
     override func setupData() {
         super.setupData()
-        var settingFeatures = [UserFeature]()
-        if let allSettingFeatures = core.rootCore.appManager.featureMap?.settingsFeatures {
+        
+        features.removeAll()
+        
+        var filteredSettingsFeatures = [UserFeature]()
+        if let allSettingsFeatures = (feature?.dependencies.first(where: { $0.name == "settings" })?.dependencies.first(where: { $0.name == "systemControls" })?.dependencies.first(where: { $0.name == "rootSession" })?.childFeatures.first(where: { $0.name == "user"})?.viewController as? UserViewController)?.user.rootDomain.featureMap.settingsFeatures.filter({ $0.isAdded }) {
             if let systemControlsFeature = feature?.dependencies.first(where: { $0.name == "settings" })?.dependencies.first(where: { $0.name == "systemControls" }) {
                 if systemControlsFeature.dependencies.first(where: { $0.name == "rootSession" }) != nil {
-                    settingFeatures = allSettingFeatures
+                    filteredSettingsFeatures = allSettingsFeatures
                 } else if systemControlsFeature.dependencies.first(where: { $0.name == "session" }) != nil {
-                    settingFeatures = allSettingFeatures.filter({ ["importExport", "reset", "auth"].contains($0.name) == false })
+                    filteredSettingsFeatures = allSettingsFeatures.filter({ ["importExport", "reset", "auth"].contains($0.name) == false })
                 }
             }
         }
         
-        settingFeatures.forEach { settingFeature in
+        filteredSettingsFeatures.forEach { settingFeature in
             switch settingFeature.name {
             case "multiSession":
                 setupMultiSession()
             case "console":
-                settings.append(.console)
+                if let feature = makeChildFeature(name: "console") {
+                    features.append(feature)
+                }
             case "importExport":
-                settings.append(.importUser)
-                settings.append(.exportUser)
+                if let feature = makeChildFeature(name: "import") {
+                    features.append(feature)
+                }
+                if let feature = makeChildFeature(name: "export") {
+                    features.append(feature)
+                }
             case "reset":
-                settings.append(.reset)
+                if let feature = makeChildFeature(name: "reset") {
+                    features.append(feature)
+                }
             case "auth":
-                settings.append(.auth)
+                if let feature = makeChildFeature(name: "auth") {
+                    features.append(feature)
+                }
             default:
                 break
             }
         }
         
-        settings.append(.setup)
+        if let feature = makeChildFeature(name: "setup") {
+            features.append(feature)
+        }
     }
     
     override func setupUI() {
         super.setupUI()
-        updateHeight(contentHeight: CGFloat(settings.count * Int(SettingCell.height)))
+        updateHeight(contentHeight: CGFloat(features.count * Int(SettingCell.height)))
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(SettingCell.self, forCellReuseIdentifier: "SettingCell")
@@ -59,14 +74,28 @@ final class SettingsScreenViewController: BaseSystemFeatureMenuViewController {
     private func setupMultiSession() {
         if let rootSessionFeature = feature?.dependencies.first(where: { $0.name == "settings" })?.dependencies.first(where: { $0.name == "systemControls" })?.dependencies.first(where: { $0.name == "rootSession" }) {
             if let sessionsCount = (rootSessionFeature.childFeatures.first(where: { $0.name == "sessions" })?.viewController as? SessionsViewController)?.sessionViewControllers.count, sessionsCount < SessionsViewController.maxSessions {
-                settings.append(.addSession)
+                if let feature = makeChildFeature(name: "addSession") {
+                    features.append(feature)
+                }
             }
         } else if let sessionsCount = (feature?.dependencies.first(where: { $0.name == "settings" })?.dependencies.first(where: { $0.name == "systemControls" })?.dependencies.first(where: { $0.name == "session" })?.dependencies.first(where: { $0.name == "sessions" })?.viewController as? SessionsViewController)?.sessionViewControllers.count, sessionsCount < SessionsViewController.maxSessions {
-            settings.append(.addSession)
+            if let feature = makeChildFeature(name: "addSession") {
+                features.append(feature)
+            }
         }
         if feature?.dependencies.first(where: { $0.name == "settings" })?.dependencies.first(where: { $0.name == "systemControls" })?.dependencies.first(where: { $0.name == "session" }) != nil {
-            settings.append(.dropSession)
+            if let feature = makeChildFeature(name: "dropSession") {
+                features.append(feature)
+            }
         }
+    }
+    
+    func makeChildFeature(name: String) -> Feature? {
+        if let feature = feature {
+            let childFeature = Feature(name: name, dependencies: [feature])
+            return childFeature
+        }
+        return nil
     }
 }
 
@@ -77,21 +106,67 @@ extension SettingsScreenViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        switch settings[indexPath.row] {
-        case .addSession:
+        switch features[indexPath.row].name {
+        case "addSession":
             if let rootSessionFeature = feature?.dependencies.first(where: { $0.name == "settings" })?.dependencies.first(where: { $0.name == "systemControls" })?.dependencies.first(where: { $0.name == "rootSession" }) {
                 (rootSessionFeature.childFeatures.first(where: { $0.name == "sessions" })?.viewController as? SessionsViewController)?.addSession()
             }
             (feature?.dependencies.first(where: { $0.name == "settings" })?.dependencies.first(where: { $0.name == "systemControls" })?.dependencies.first(where: { $0.name == "session" })?.dependencies.first(where: { $0.name == "sessions" })?.viewController as? SessionsViewController)?.addSession()
             onClose()
-        case .dropSession:
+        case "dropSession":
             (feature?.dependencies.first(where: { $0.name == "settings" })?.dependencies.first(where: { $0.name == "systemControls" })?.dependencies.first(where: { $0.name == "session" })?.viewController as? SessionViewController)?.dropSession()
             onClose()
-        case .console:
-            break
-        case .setup:
+        case "console":
+            if let systemControlsFeature = feature?.dependencies.first(where: { $0.name == "settings" })?.dependencies.first(where: { $0.name == "systemControls" }) {
+                if let rootSessionFeature = systemControlsFeature.dependencies.first(where: { $0.name == "rootSession" }) {
+                    if let userViewController = rootSessionFeature.childFeatures.first(where: { $0.name == "user" })?.viewController as? UserViewController {
+                        if let consoleFeature = userViewController.user.rootDomain.featureMap.settingsFeatures.first(where: { $0.name == "console" }) {
+                            if consoleFeature.isEnabled {
+                                if let index = userViewController.user.rootDomain.featureMap.settingsFeatures.firstIndex(where: { $0.name == "console" }) {
+                                    userViewController.user.rootDomain.featureMap.settingsFeatures[index].isEnabled = false
+                                }
+                                (rootSessionFeature.viewController as? RootSessionViewController)?.unloadFeature(name: "console")
+                            } else if let consoleFeature = (rootSessionFeature.viewController as? RootSessionViewController)?.makeChildFeature(name: "console")  {
+                                if let index = userViewController.user.rootDomain.featureMap.settingsFeatures.firstIndex(where: { $0.name == "console" }) {
+                                    userViewController.user.rootDomain.featureMap.settingsFeatures[index].isEnabled = true
+                                }
+                                (rootSessionFeature.viewController as? RootSessionViewController)?.loadChildFeature(consoleFeature)
+                            }
+                            userViewController.saveUser()
+                        }
+                    }
+                }
+                setupData()
+                tableView.reloadData()
+            }
+        case "import":
+            if let systemControlsFeature = feature?.dependencies.first(where: { $0.name == "settingsScreen" })?.dependencies.first(where: { $0.name == "settings" })?.dependencies.first(where: { $0.name == "systemControls" }) {
+                if let rootSessionFeature = systemControlsFeature.dependencies.first(where: { $0.name == "rootSession" }) {
+                    if let importFeature = (rootSessionFeature.viewController as? RootSessionViewController)?.makeChildFeature(name: "import") {
+                        (importFeature.viewController as? ImportViewController)?.run()
+                        onBack() {
+                            (importFeature.viewController as? ImportViewController)?.run()
+                        }
+                    }
+                }
+            }
+        case "export":
+            if let systemControlsFeature = feature?.dependencies.first(where: { $0.name == "settingsScreen" })?.dependencies.first(where: { $0.name == "settings" })?.dependencies.first(where: { $0.name == "systemControls" }) {
+                if let rootSessionFeature = systemControlsFeature.dependencies.first(where: { $0.name == "rootSession" }) {
+                    if let exportFeature = (rootSessionFeature.viewController as? RootSessionViewController)?.makeChildFeature(name: "export") {
+                        onBack() {
+                            (exportFeature.viewController as? ExportViewController)?.run()
+                        }
+                    }
+                }
+            }
+        case "reset":
+            print("\n[TODO] [RESET] Do you really want to reset current user?")
+            try? core.rootCore.fileSystemManager.removeFile(fileName: "Doors", fileFormat: "")
+            UIApplication.rootViewController?.reloadRootSesion()
+        case "setup":
             guard let feature = feature else { return }
-            let settingsSetupFeature = Feature(name: "settingsSetup", dependencies: [feature])
+            let settingsSetupFeature = Feature(name: "setup", dependencies: [feature])
             let settingsSetupScreenViewController = SettingsSetupScreenViewController(core: core, feature: settingsSetupFeature)
             navigationController?.pushViewController(settingsSetupScreenViewController, animated: false)
         default:
@@ -103,12 +178,12 @@ extension SettingsScreenViewController: UITableViewDelegate {
 extension SettingsScreenViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return settings.count
+        return features.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "SettingCell", for: indexPath) as? SettingCell {
-            cell.configure(setting: settings[indexPath.row])
+            cell.configure(feature: features[indexPath.row])
             cell.index = indexPath.row
             cell.delegate = self
             return cell
@@ -132,51 +207,25 @@ final class SettingCell: MenuTableViewCell {
     
     static let height: CGFloat = 50
     
-    func configure(setting: Setting) {
+    func configure(feature: Feature) {
         toggleAdditionButton.isHidden = true
+        applyIsDisabledState()
         toggleEnablingButton.isHidden = true
         titleLabel.textAlignment = .center
-        titleLabel.textColor = .white
         titleLabel.font = UIFont.systemFont(ofSize: 20, weight: .thin)
-        titleLabel.text = setting.title.localized(tableName: "Settings")
-        switch setting {
-        case .setup:
+        switch feature.name {
+        case "addSession":
+            titleLabel.text = "Add Session".localized(tableName: "Settings")
+        case "dropSession":
+            titleLabel.text = "Drop Session".localized(tableName: "Settings")
+        case "console":
+            titleLabel.text = "Console".localized(tableName: "Settings")
+        case "setup":
             arrowLabel.isHidden = false
+            titleLabel.text = "Setup".localized(tableName: "Settings")
         default:
-            arrowLabel.isHidden = true
-        }
-    }
-}
-
-enum Setting: String, CaseIterable {
-    
-    case addSession
-    case dropSession
-    case console
-    case importUser
-    case exportUser
-    case reset
-    case auth
-    case setup
-    
-    var title: String {
-        switch self {
-        case .addSession:
-            return "Add Session"
-        case .dropSession:
-            return "Drop Session"
-        case .setup:
-            return "Setup"
-        case .console:
-            return "Console"
-        case .importUser:
-            return "Import"
-        case .exportUser:
-            return "Export"
-        case .reset:
-            return "Reset"
-        case .auth:
-            return "Auth"
+            arrowLabel.isHidden = feature.childFeatures.isEmpty
+            titleLabel.text = feature.name
         }
     }
 }

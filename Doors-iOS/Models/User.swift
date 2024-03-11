@@ -11,18 +11,19 @@ import Foundation
 struct User: Codable {
     
     var rootSessionConfiguration: RootSessionConfiguration
+    var rootDomain: Domain
 }
 
 struct RootSessionConfiguration: Codable {
     
     var sessionConfigurations: [SessionConfiguration]
-    var features = [UserFeature]()
 }
 
 struct SessionConfiguration: Codable {
     
     var id: String = UUID.new
-    var features = [UserFeature]()
+    var domainId: String
+    var path: String = "/"
 }
 
 extension SessionConfiguration: Equatable {
@@ -46,6 +47,7 @@ struct UserFeature: Codable {
     let dependencies: [UserFeature]?
     let childFeatures: [UserFeature]?
     var accessGroup: AccessGroup! = .free
+    var isAdded = false
     var isEnabled = false
     
     var simple: UserFeature {
@@ -57,4 +59,14 @@ enum AccessGroup: String, Codable {
     
     case free
     case premium
+}
+
+struct Domain: Codable {
+    
+    var id: String = UUID.new
+    var name = Domain.defaultDomainName
+    var childDomains = [Domain]()
+    var featureMap: FeatureMap
+    
+    static let defaultDomainName = "Guest"
 }

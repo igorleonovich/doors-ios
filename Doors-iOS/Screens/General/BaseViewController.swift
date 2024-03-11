@@ -25,6 +25,9 @@ class BaseFeatureViewController: BaseViewController {
     
     let core: Core!
     let feature: Feature?
+    
+    private var consoleView: UIView!
+    private var consoleViewController: ConsoleViewController?
 
     // MARK: Life Cycle
     
@@ -43,8 +46,16 @@ class BaseFeatureViewController: BaseViewController {
     func loadChildFeature(_ feature: Feature) {
         if feature.name == "console" {
             let consoleView = UIView()
+            self.consoleView = consoleView
             view.addSubview(consoleView)
+            consoleView.snp.makeConstraints { make in
+                make.bottom.equalToSuperview()
+                make.leading.equalToSuperview()
+                make.trailing.equalToSuperview()
+                make.height.equalTo(50)
+            }
             let consoleViewController = ConsoleViewController(core: core, feature: feature)
+            self.consoleViewController = consoleViewController
             feature.viewController = consoleViewController
             add(child: consoleViewController, containerView: consoleView)
         }
@@ -53,7 +64,8 @@ class BaseFeatureViewController: BaseViewController {
     
     func unloadFeature(name: String) {
         if name == "console" {
-            feature?.childFeatures.first(where: { $0.name == name })?.viewController?.remove()
+            consoleViewController?.remove()
+            consoleView?.removeFromSuperview()
             if let indexToRemove = feature?.childFeatures.firstIndex(where: { $0.name == name }) {
                 feature?.childFeatures.remove(at: indexToRemove)
             }
@@ -82,6 +94,7 @@ class BaseSystemFeatureMenuViewController: BaseSystemFeatureViewController {
     var tableView: TableView!
     private var backButton: Button!
     fileprivate var isNeedToSkipTap = false
+    private var isInitialSetupPerformed = false
     
     // MARK: Life Cycle
     
@@ -90,6 +103,16 @@ class BaseSystemFeatureMenuViewController: BaseSystemFeatureViewController {
         setupData()
         setupUI()
         setupGesture()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if !isInitialSetupPerformed {
+            isInitialSetupPerformed = true
+        } else {
+            setupData()
+            tableView.reloadData()
+        }
     }
     
     override func viewDidLayoutSubviews() {

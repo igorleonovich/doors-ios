@@ -32,9 +32,9 @@ final class RootSessionViewController: BaseSystemFeatureViewController {
             let importFeature = Feature(name: "import", dependencies: [feature])
             let exportFeature = Feature(name: "export", dependencies: [feature])
             [userFeature, systemControlsFeature, sessionsFeature, importFeature, exportFeature].forEach({ loadChildFeature($0) })
-            (userFeature.viewController as? UserViewController)?.user.rootSessionConfiguration.features.forEach { feature in
-                if feature.name == "console", let consoleFeature = makeChildFeature(name: "console") {
-                    loadChildFeature(consoleFeature)
+            if let consoleFeature = (userFeature.viewController as? UserViewController)?.user.rootDomain.featureMap.settingsFeatures.first(where: { $0.name == "console" }), consoleFeature.isEnabled {
+                if let feature = makeChildFeature(name: "console") {
+                    loadChildFeature(feature)
                 }
             }
         }

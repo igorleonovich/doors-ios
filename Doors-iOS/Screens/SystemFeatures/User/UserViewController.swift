@@ -14,7 +14,13 @@ final class UserViewController: BaseSystemFeatureViewController {
     
     // MARK: Constants
     
-    private let appFamilyFolderName = "Clusters/1/Domains/Guest/.doors"
+    private var appFamilyFolderName: String {
+        var domainName = Domain.defaultDomainName
+        if user != nil {
+            domainName = user.rootDomain.name
+        }
+        return "Clusters/1/Domains/\(domainName)/.doors"
+    }
     private let userFileName = "User"
     
     // MARK: Setup
@@ -75,10 +81,19 @@ final class UserViewController: BaseSystemFeatureViewController {
             core.rootCore.appManager.isUserInitiallyLoaded = true
             
             func createNewUser() {
-                let sessionConfiguration = SessionConfiguration()
-                let rootSessionConfiguration = RootSessionConfiguration(sessionConfigurations: [sessionConfiguration])
-                user = User(rootSessionConfiguration: rootSessionConfiguration)
-                saveUser()
+                if let featureMap = core.rootCore.appManager.featureMap {
+                    let rootDomain = Domain(featureMap: featureMap)
+                    let sessionConfiguration = SessionConfiguration(domainId: rootDomain.id)
+                    let rootSessionConfiguration = RootSessionConfiguration(sessionConfigurations: [sessionConfiguration])
+                    if let featureMap = core.rootCore.appManager.featureMap {
+                        user = User(rootSessionConfiguration: rootSessionConfiguration, rootDomain: rootDomain)
+                    } else {
+                        print("[USER] Error: Cannot find featureMap")
+                    }
+                    saveUser()
+                } else {
+                    print("[USER] Error: Cannot find featureMap")
+                }
             }
         }
     }

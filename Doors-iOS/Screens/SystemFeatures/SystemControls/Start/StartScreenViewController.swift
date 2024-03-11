@@ -37,29 +37,7 @@ extension StartScreenViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if let systemControlsFeature = feature?.dependencies.first(where: { $0.name == "start" })?.dependencies.first(where: { $0.name == "systemControls" }) {
-            if let rootSessionFeature = systemControlsFeature.dependencies.first(where: { $0.name == "rootSession" }) {
-                if let userViewController = rootSessionFeature.childFeatures.first(where: { $0.name == "user" })?.viewController as? UserViewController {
-                    if userViewController.user.rootSessionConfiguration.features.firstIndex(where: { $0.name == features[indexPath.row].name }) != nil {
-                        (cell as? FeatureCell)?.isDisabled = true
-                    } else {
-                        (cell as? FeatureCell)?.isDisabled = false
-                    }
-                }
-            } else if let sessionFeature = systemControlsFeature.dependencies.first(where: { $0.name == "session" }) {
-                if let userViewController = sessionFeature.dependencies.first(where: { $0.name == "sessions" })?.dependencies.first(where: { $0.name == "rootSession" })?.childFeatures.first(where: { $0.name == "user" })?.viewController as? UserViewController {
-                    if let sessionId = (sessionFeature as? SessionFeature)?.sessionId {
-                        if userViewController.user.rootSessionConfiguration.sessionConfigurations.firstIndex(where: { $0.id == sessionId }) != nil {
-                            if userViewController.user.rootSessionConfiguration.sessionConfigurations.first(where: { $0.id == sessionId })?.features.firstIndex(where: { $0.name == features[indexPath.row].name }) != nil {
-                                (cell as? FeatureCell)?.isDisabled = true
-                            } else {
-                                (cell as? FeatureCell)?.isDisabled = false
-                            }
-                        }
-                    }
-                }
-            }
-        }
+        (cell as? TableViewCell)?.isDisabled = !features[indexPath.row].isAdded
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -93,37 +71,6 @@ extension StartScreenViewController: MenuTableViewCellDelegate {
     
     func onToggleAddition(_ index: Int) {
         switch features[index].name {
-        case "console":
-            if let systemControlsFeature = feature?.dependencies.first(where: { $0.name == "start" })?.dependencies.first(where: { $0.name == "systemControls" }) {
-                if let rootSessionFeature = systemControlsFeature.dependencies.first(where: { $0.name == "rootSession" }) {
-                    if let userViewController = rootSessionFeature.childFeatures.first(where: { $0.name == "user" })?.viewController as? UserViewController {
-                        if let index = userViewController.user.rootSessionConfiguration.features.firstIndex(where: { $0.name == features[index].name }) {
-                            userViewController.user.rootSessionConfiguration.features.remove(at: index)
-                            (rootSessionFeature.viewController as? RootSessionViewController)?.unloadFeature(name: "console")
-                        } else if let consoleFeature = (rootSessionFeature.viewController as? RootSessionViewController)?.makeChildFeature(name: "console")  {
-                            userViewController.user.rootSessionConfiguration.features.append(features[index].simple)
-                            loadChildFeature(consoleFeature)
-                        }
-                        userViewController.saveUser()
-                    }
-                } else if let sessionFeature = systemControlsFeature.dependencies.first(where: { $0.name == "session" }) {
-                    if let userViewController = sessionFeature.dependencies.first(where: { $0.name == "sessions" })?.dependencies.first(where: { $0.name == "rootSession" })?.childFeatures.first(where: { $0.name == "user" })?.viewController as? UserViewController {
-                        if let sessionId = (sessionFeature as? SessionFeature)?.sessionId {
-                            if let sessionIndex = userViewController.user.rootSessionConfiguration.sessionConfigurations.firstIndex(where: { $0.id == sessionId }) {
-                                if let indexToRemove = userViewController.user.rootSessionConfiguration.sessionConfigurations.first(where: { $0.id == sessionId })?.features.firstIndex(where: { $0.name == features[index].name }) {
-                                    userViewController.user.rootSessionConfiguration.sessionConfigurations[sessionIndex].features.remove(at: indexToRemove)
-                                    (sessionFeature.viewController as? SessionViewController)?.unloadFeature(name: "console")
-                                } else {
-                                    userViewController.user.rootSessionConfiguration.sessionConfigurations[sessionIndex].features.append(features[index].simple)
-                                    (sessionFeature.viewController as? SessionViewController)?.loadFeature(name: "console")
-                                }
-                                userViewController.saveUser()
-                            }
-                        }
-                    }
-                }
-                tableView.reloadData()
-            }
         case "import":
             if let systemControlsFeature = feature?.dependencies.first(where: { $0.name == "start" })?.dependencies.first(where: { $0.name == "systemControls" }) {
                 if let rootSessionFeature = systemControlsFeature.dependencies.first(where: { $0.name == "rootSession" }) {
@@ -168,7 +115,6 @@ final class FeatureCell: MenuTableViewCell {
         toggleEnablingButton.isHidden = false
         toggleEnablingButton.backgroundColor = feature.isEnabled ? .green : .gray
         titleLabel.textAlignment = .center
-        titleLabel.textColor = .white
         titleLabel.font = UIFont.systemFont(ofSize: 20, weight: .thin)
         titleLabel.text = feature.title?.localized(tableName: "Feature")
         arrowLabel.isHidden = feature.childFeatures?.isEmpty ?? true

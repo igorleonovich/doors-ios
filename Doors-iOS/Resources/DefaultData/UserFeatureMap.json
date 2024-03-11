@@ -8,9 +8,11 @@
                 "name": "points",
                 "title": "Points",
                 "accessGroup": "premium",
+                "isAdded": false,
                 "isEnabled": false
             }
         ],
+        "isAdded": false,
         "isEnabled": false
     },
   ],
@@ -18,26 +20,31 @@
     {
         "name": "multiSession",
         "title": "Multi Session",
+        "isAdded": false,
         "isEnabled": false
     },
     {
         "name": "domains",
         "title": "Domains",
+        "isAdded": false,
         "isEnabled": false
     },
     {
         "name": "console",
         "title": "Console",
+        "isAdded": false,
         "isEnabled": false
     },
     {
         "name": "importExport",
         "title": "Import / Export",
+        "isAdded": false,
         "isEnabled": false
     },
     {
         "name": "reset",
         "title": "Reset",
+        "isAdded": false,
         "isEnabled": false
     },
     {
@@ -47,14 +54,17 @@
             {
                 "name": "localAuth",
                 "title": "Local Authentication & Authorization",
+                "isAdded": false,
                 "isEnabled": false
             },
             {
                 "name": "globalAuth",
                 "title": "Global Authentication & Authorization",
+                "isAdded": false,
                 "isEnabled": false
             }
         ],
+        "isAdded": false,
         "isEnabled": false
     }
   ]

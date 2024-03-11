@@ -53,7 +53,16 @@ final class BlurView: UIView {
         }
         
         func blurView(with intensity: CGFloat = 0.4) -> UIVisualEffectView {
-            let blurEffect = UIBlurEffect(style: .dark)
+            var blurStyle = UIBlurEffect.Style.dark
+            switch traitCollection.userInterfaceStyle {
+            case .light, .unspecified:
+                blurStyle = .light
+            case .dark:
+                break
+            @unknown default:
+                break
+            }
+            let blurEffect = UIBlurEffect(style: blurStyle)
             let blurView = UIVisualEffectView(effect: blurEffect)
             self.blurView = blurView
             blurView.setIntensity(intensity)
