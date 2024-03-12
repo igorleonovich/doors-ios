@@ -12,11 +12,20 @@ final class SettingsSetupScreenViewController: BaseSystemFeatureMenuViewControll
 
     private var features = [UserFeature]()
     
+    private var rootSessionFeature: Feature? {
+        let rootSessionFeature = feature?.dependencies.first(where: { $0.name == "settingsScreen" })?.dependencies.first(where: { $0.name == "settings" })?.dependencies.first(where: { $0.name == "systemControls" })?.dependencies.first(where: { $0.name == "rootSession" })
+        if let rootSessionFeature = rootSessionFeature {
+            return rootSessionFeature
+        } else {
+            return feature?.dependencies.first(where: { $0.name == "settingsScreen" })?.dependencies.first(where: { $0.name == "settings" })?.dependencies.first(where: { $0.name == "systemControls" })?.dependencies.first(where: { $0.name == "session" })?.dependencies.first(where: { $0.name == "sessions" })?.dependencies.first(where: { $0.name == "rootSession" })
+        }
+    }
+    
     // MARK: Setup
     
     override func setupData() {
         super.setupData()
-        if let allSettingsFeatures = (feature?.dependencies.first(where: { $0.name == "settingsScreen" })?.dependencies.first(where: { $0.name == "settings" })?.dependencies.first(where: { $0.name == "systemControls" })?.dependencies.first(where: { $0.name == "rootSession" })?.childFeatures.first(where: { $0.name == "user"})?.viewController as? UserViewController)?.user.rootDomain.featureMap.settingsFeatures {
+        if let allSettingsFeatures = (rootSessionFeature?.childFeatures.first(where: { $0.name == "user"})?.viewController as? UserViewController)?.user.rootDomain.featureMap.settingsFeatures {
             if let systemControlsFeature = feature?.dependencies.first(where: { $0.name == "settingsScreen" })?.dependencies.first(where: { $0.name == "settings" })?.dependencies.first(where: { $0.name == "systemControls" }) {
                 if systemControlsFeature.dependencies.first(where: { $0.name == "rootSession" }) != nil {
                     features = allSettingsFeatures
@@ -79,7 +88,7 @@ extension SettingsSetupScreenViewController: MenuTableViewCellDelegate {
         switch features[index].name {
         case "console":
             if let systemControlsFeature = feature?.dependencies.first(where: { $0.name == "settingsScreen" })?.dependencies.first(where: { $0.name == "settings" })?.dependencies.first(where: { $0.name == "systemControls" }) {
-                if let rootSessionFeature = systemControlsFeature.dependencies.first(where: { $0.name == "rootSession" }) {
+                if let rootSessionFeature = rootSessionFeature {
                     if let userViewController = rootSessionFeature.childFeatures.first(where: { $0.name == "user" })?.viewController as? UserViewController {
                         if let consoleFeature = userViewController.user.rootDomain.featureMap.settingsFeatures.first(where: { $0.name == "console" }) {
                             if consoleFeature.isAdded {
@@ -100,6 +109,35 @@ extension SettingsSetupScreenViewController: MenuTableViewCellDelegate {
                 setupData()
                 tableView.reloadData()
             }
+        case "multiSession":
+            if let rootSessionFeature = rootSessionFeature {
+                if let userViewController = rootSessionFeature.childFeatures.first(where: { $0.name == "user" })?.viewController as? UserViewController {
+                    if let multiSessionFeature = userViewController.user.rootDomain.featureMap.settingsFeatures.first(where: { $0.name == "multiSession" }) {
+                        if multiSessionFeature.isAdded {
+                            if let index = userViewController.user.rootDomain.featureMap.settingsFeatures.firstIndex(where: { $0.name == "multiSession" }) {
+                                userViewController.user.rootDomain.featureMap.settingsFeatures[index].isAdded = false
+                                userViewController.user.rootDomain.featureMap.settingsFeatures[index].isEnabled = false
+                                dropSessions()
+                            }
+                        } else if let index = userViewController.user.rootDomain.featureMap.settingsFeatures.firstIndex(where: { $0.name == "multiSession" }) {
+                            userViewController.user.rootDomain.featureMap.settingsFeatures[index].isAdded = true
+                            userViewController.user.rootDomain.featureMap.settingsFeatures[index].isEnabled = true
+                        }
+                        userViewController.saveUser()
+                    }
+                }
+            }
+            setupData()
+            tableView.reloadData()
+            
+            func dropSessions() {
+                if let sessionFeatures = rootSessionFeature?.childFeatures.first(where: { $0.name == "sessions" })?.childFeatures.filter({ $0.name == "session" }) {
+                    sessionFeatures.enumerated().forEach { index, sessionFeature in
+                        guard index > 0 else { return }
+                        (sessionFeature.viewController as? SessionViewController)?.dropSession()
+                    }
+                }
+            }
         default:
             break
         }
@@ -118,7 +156,7 @@ extension SettingsSetupScreenViewController: MenuTableViewCellDelegate {
                                 }
                                 (rootSessionFeature.viewController as? RootSessionViewController)?.unloadFeature(name: "console")
                             } else if let consoleFeature = (rootSessionFeature.viewController as? RootSessionViewController)?.makeChildFeature(name: "console")  {
-                                if let index = userViewController.user.rootDomain.featureMap.settingsFeatures.firstIndex(where: { $0.name == "console" }), let consoleFeature = (rootSessionFeature.viewController as? RootSessionViewController)?.makeChildFeature(name: "console") {
+                                if let index = userViewController.user.rootDomain.featureMap.settingsFeatures.firstIndex(where: { $0.name == "console" }) {
                                     userViewController.user.rootDomain.featureMap.settingsFeatures[index].isEnabled = true
                                 }
                                 (rootSessionFeature.viewController as? RootSessionViewController)?.loadChildFeature(consoleFeature)

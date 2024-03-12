@@ -45,6 +45,6 @@ class TableViewCell: UITableViewCell {
     // MARK: Actions
     
     func applyIsDisabledState() {
-        alpha = isDisabled ? 0.5 : 1
+        contentView.alpha = isDisabled ? 0.5 : 1
     }
 }

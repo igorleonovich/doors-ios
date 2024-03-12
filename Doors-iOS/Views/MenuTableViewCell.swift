@@ -79,7 +79,7 @@ class MenuTableViewCell: TableViewCell {
     override func applyIsDisabledState() {
         super.applyIsDisabledState()
         var toggleAdditionImage = UIImage(named: "Minus")?.withForegroundActiveColor
-        toggleAdditionButton.contentEdgeInsets = .init(top: 6, left: 6, bottom: 6, right: 6)
+        toggleAdditionButton.contentEdgeInsets = .init(top: 9, left: 9, bottom: 9, right: 9)
         if isDisabled {
             toggleAdditionImage = UIImage(named: "Plus")?.withForegroundActiveColor
             toggleAdditionButton.contentEdgeInsets = .zero

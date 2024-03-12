@@ -10,17 +10,25 @@ import UIKit
 
 final class SettingsScreenViewController: BaseSystemFeatureMenuViewController {
     
-    private var features = [Feature]()
+    private var features = [UserFeature]()
     
     // MARK: Setup
     
     override func setupData() {
-        super.setupData()
-        
         features.removeAll()
+        
+        super.setupData()
         
         var filteredSettingsFeatures = [UserFeature]()
         if let allSettingsFeatures = (feature?.dependencies.first(where: { $0.name == "settings" })?.dependencies.first(where: { $0.name == "systemControls" })?.dependencies.first(where: { $0.name == "rootSession" })?.childFeatures.first(where: { $0.name == "user"})?.viewController as? UserViewController)?.user.rootDomain.featureMap.settingsFeatures.filter({ $0.isAdded }) {
+            if let systemControlsFeature = feature?.dependencies.first(where: { $0.name == "settings" })?.dependencies.first(where: { $0.name == "systemControls" }) {
+                if systemControlsFeature.dependencies.first(where: { $0.name == "rootSession" }) != nil {
+                    filteredSettingsFeatures = allSettingsFeatures
+                } else if systemControlsFeature.dependencies.first(where: { $0.name == "session" }) != nil {
+                    filteredSettingsFeatures = allSettingsFeatures.filter({ ["importExport", "reset", "auth"].contains($0.name) == false })
+                }
+            }
+        } else if let allSettingsFeatures = (feature?.dependencies.first(where: { $0.name == "settings" })?.dependencies.first(where: { $0.name == "systemControls" })?.dependencies.first(where: { $0.name == "session" })?.dependencies.first(where: { $0.name == "sessions" })?.dependencies.first(where: { $0.name == "rootSession" })?.childFeatures.first(where: { $0.name == "user"})?.viewController as? UserViewController)?.user.rootDomain.featureMap.settingsFeatures.filter({ $0.isAdded }) {
             if let systemControlsFeature = feature?.dependencies.first(where: { $0.name == "settings" })?.dependencies.first(where: { $0.name == "systemControls" }) {
                 if systemControlsFeature.dependencies.first(where: { $0.name == "rootSession" }) != nil {
                     filteredSettingsFeatures = allSettingsFeatures
@@ -35,24 +43,14 @@ final class SettingsScreenViewController: BaseSystemFeatureMenuViewController {
             case "multiSession":
                 setupMultiSession()
             case "console":
-                if let feature = makeChildFeature(name: "console") {
-                    features.append(feature)
-                }
+                features.append(settingFeature)
             case "importExport":
-                if let feature = makeChildFeature(name: "import") {
-                    features.append(feature)
-                }
-                if let feature = makeChildFeature(name: "export") {
-                    features.append(feature)
-                }
+                features.append(settingFeature)
+                features.append(settingFeature)
             case "reset":
-                if let feature = makeChildFeature(name: "reset") {
-                    features.append(feature)
-                }
+                features.append(settingFeature)
             case "auth":
-                if let feature = makeChildFeature(name: "auth") {
-                    features.append(feature)
-                }
+                features.append(settingFeature)
             default:
                 break
             }
@@ -90,12 +88,8 @@ final class SettingsScreenViewController: BaseSystemFeatureMenuViewController {
         }
     }
     
-    func makeChildFeature(name: String) -> Feature? {
-        if let feature = feature {
-            let childFeature = Feature(name: name, dependencies: [feature])
-            return childFeature
-        }
-        return nil
+    func makeChildFeature(name: String) -> UserFeature? {
+        return UserFeature(name: name, title: nil, dependencies: nil, childFeatures: nil, accessGroup: .free, isAdded: true, isEnabled: true)
     }
 }
 
@@ -195,7 +189,7 @@ extension SettingsScreenViewController: UITableViewDataSource {
 extension SettingsScreenViewController: MenuTableViewCellDelegate {
     
     func onToggleAddition(_ index: Int) {
-            
+        
     }
     
     func onToggleEnabling(_ index: Int) {
@@ -207,24 +201,27 @@ final class SettingCell: MenuTableViewCell {
     
     static let height: CGFloat = 50
     
-    func configure(feature: Feature) {
+    func configure(feature: UserFeature) {
         toggleAdditionButton.isHidden = true
-        applyIsDisabledState()
+        isDisabled = !feature.isEnabled
         toggleEnablingButton.isHidden = true
         titleLabel.textAlignment = .center
         titleLabel.font = UIFont.systemFont(ofSize: 20, weight: .thin)
         switch feature.name {
         case "addSession":
+            arrowLabel.isHidden = true
             titleLabel.text = "Add Session".localized(tableName: "Settings")
         case "dropSession":
+            arrowLabel.isHidden = true
             titleLabel.text = "Drop Session".localized(tableName: "Settings")
         case "console":
+            arrowLabel.isHidden = true
             titleLabel.text = "Console".localized(tableName: "Settings")
         case "setup":
             arrowLabel.isHidden = false
             titleLabel.text = "Setup".localized(tableName: "Settings")
         default:
-            arrowLabel.isHidden = feature.childFeatures.isEmpty
+            arrowLabel.isHidden = feature.childFeatures?.isEmpty ?? true
             titleLabel.text = feature.name
         }
     }
