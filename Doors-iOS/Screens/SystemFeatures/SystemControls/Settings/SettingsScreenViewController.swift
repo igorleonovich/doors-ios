@@ -58,6 +58,8 @@ final class SettingsScreenViewController: BaseSystemFeatureMenuViewController {
                 features.append(settingFeature)
             case "reset":
                 features.append(settingFeature)
+            case "domains":
+                features.append(settingFeature)
             case "auth":
                 features.append(settingFeature)
             default:
@@ -215,7 +217,6 @@ final class SettingCell: MenuTableViewCell {
         isDisabled = !feature.isEnabled
         toggleEnablingButton.isHidden = true
         titleLabel.textAlignment = .center
-        titleLabel.font = UIFont.systemFont(ofSize: 20, weight: .thin)
         switch feature.name {
         case "addSession":
             arrowLabel.isHidden = true

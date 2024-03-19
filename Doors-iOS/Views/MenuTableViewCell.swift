@@ -72,6 +72,8 @@ class MenuTableViewCell: TableViewCell {
         stackView.addArrangedSubview(arrowLabel)
         
         stackView.addArrangedSubview(UIView())
+        
+        [titleLabel, arrowLabel].forEach({ $0.font = UIFont.systemFont(ofSize: 20, weight: .thin) })
     }
     
     // MARK: Actions

@@ -24,12 +24,6 @@
         "isEnabled": false
     },
     {
-        "name": "domains",
-        "title": "Domains",
-        "isAdded": false,
-        "isEnabled": false
-    },
-    {
         "name": "console",
         "title": "Console",
         "isAdded": false,
@@ -44,6 +38,12 @@
     {
         "name": "reset",
         "title": "Reset",
+        "isAdded": false,
+        "isEnabled": false
+    },
+    {
+        "name": "domains",
+        "title": "Domains",
         "isAdded": false,
         "isEnabled": false
     },

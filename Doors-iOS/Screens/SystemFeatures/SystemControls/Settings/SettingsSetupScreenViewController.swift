@@ -130,6 +130,25 @@ extension SettingsSetupScreenViewController: MenuTableViewCellDelegate {
                     }
                 }
             }
+        case "domains":
+            if let rootSessionFeature = rootSessionFeature {
+                if let userViewController = rootSessionFeature.childFeatures.first(where: { $0.name == "user" })?.viewController as? UserViewController {
+                    if let domainsFeature = userViewController.user.rootDomain.featureMap.settingsFeatures.first(where: { $0.name == "domains" }) {
+                        if domainsFeature.isAdded {
+                            if let index = userViewController.user.rootDomain.featureMap.settingsFeatures.firstIndex(where: { $0.name == "domains" }) {
+                                userViewController.user.rootDomain.featureMap.settingsFeatures[index].isAdded = false
+                                userViewController.user.rootDomain.featureMap.settingsFeatures[index].isEnabled = false
+                            }
+                        } else if let index = userViewController.user.rootDomain.featureMap.settingsFeatures.firstIndex(where: { $0.name == "domains" }), let consoleFeature = (rootSessionFeature.viewController as? RootSessionViewController)?.makeChildFeature(name: "domains") {
+                            userViewController.user.rootDomain.featureMap.settingsFeatures[index].isAdded = true
+                            userViewController.user.rootDomain.featureMap.settingsFeatures[index].isEnabled = true
+                        }
+                        userViewController.saveUser()
+                    }
+                }
+            }
+            setupData()
+            tableView.reloadData()
         default:
             break
         }
